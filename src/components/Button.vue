@@ -1,5 +1,5 @@
 <template>
-    <button class="Button">
+    <button class="Button" @click="onClick()">
         <slot name="icon"></slot>
         <span>
             <slot />
@@ -8,7 +8,21 @@
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        to: {
+            type: Object,
+            required: false
+        }
+    },
+    methods: {
+        onClick() {
+            if (this.to) {
+                this.$router.push(this.to);
+            }
+        }
+    }
+};
 </script>
 
 <style lang="scss">
@@ -35,8 +49,8 @@ export default {};
     }
     svg {
         fill: white;
-        width: 24px;
-        height: 24px;
+        width: var(--icon_size_sm);
+        height: var(--icon_size_sm);
     }
     &:before {
         content: '';

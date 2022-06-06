@@ -1,3 +1,13 @@
+<script setup>
+import Button from '@/components/Button.vue';
+import IconDesign from '@/components/drawable/IconDesign.vue';
+import IconGuide from '@/components/drawable/IconGuide.vue';
+import IconLaunch from '@/components/drawable/IconLaunch.vue';
+import IconMap from '@/components/drawable/IconMap.vue';
+import IconTest from '@/components/drawable/IconTest.vue';
+import Logo from '@/components/drawable/Logo.vue';
+</script>
+
 <template>
     <div class="Welcome">
         <div class="bg_noise"></div>
@@ -8,7 +18,7 @@
         <div class="welcome_wrapper">
             <Logo />
             <p>Creación de interfaces con alto grado de usabilidad.</p>
-            <Button>
+            <Button :to="{ name: 'Projects' }">
                 <template v-slot:icon>
                     <IconGuide />
                 </template>
@@ -62,32 +72,12 @@
     </div>
 </template>
 
-<script>
-import Button from '../components/drawable/Button.vue';
-import IconDesign from '../components/drawable/IconDesign.vue';
-import IconGuide from '../components/drawable/IconGuide.vue';
-import IconLaunch from '../components/drawable/IconLaunch.vue';
-import IconMap from '../components/drawable/IconMap.vue';
-import IconTest from '../components/drawable/IconTest.vue';
-import Logo from '../components/drawable/Logo.vue';
-export default {
-    components: {
-        Logo,
-        Button,
-        IconGuide,
-        IconMap,
-        IconDesign,
-        IconLaunch,
-        IconTest
-    }
-};
-</script>
-
 <style lang="scss">
 .Welcome {
     position: relative;
     overflow: hidden;
     min-height: 100vh;
+    background-color: var(--neutral_color);
     .bg_noise {
         width: 100%;
         height: 100%;
@@ -97,7 +87,7 @@ export default {
         z-index: 2;
         background-image: url(@/assets/noise_pattern.png);
         background-repeat: repeat;
-        opacity: 0.7;
+        opacity: 0.9;
     }
     .bg_blur {
         position: absolute;
@@ -110,17 +100,17 @@ export default {
         min-height: 100vh;
         z-index: 1;
         .circle {
-            width: 45vh;
-            height: 45vh;
+            width: 50vh;
+            height: 50vh;
             border-radius: 50%;
-            filter: blur(20vh);
+            filter: blur(25vh);
             margin-top: 30rem;
             &:nth-child(1) {
                 background-color: var(--primary_color);
                 animation: floating 5s ease-in-out infinite;
             }
             &:nth-child(2) {
-                background-color: var(--accent_color);
+                background-color: #d1a942;
                 animation: floating 6s ease-in-out infinite;
             }
         }
@@ -155,10 +145,11 @@ export default {
             grid-gap: var(--gap);
             article {
                 border-radius: var(--radius);
-                border: 1px solid var(--surface_color);
+                border: 1px solid white;
                 box-sizing: border-box;
                 box-shadow: var(--shadow_deep);
                 background-color: var(--surface_color_alpha);
+                backdrop-filter: blur(1rem);
                 &:nth-child(1) {
                     grid-row: 1 / span 2;
                 }
@@ -192,17 +183,19 @@ export default {
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
-                        gap: 10px;
-                        background-color: var(--surface_color);
+                        gap: var(--gap_sm);
+                        /* background-color: white; */
                         width: 100%;
                         height: 100%;
                         svg {
                             width: 24px;
                             height: 24px;
+                            fill: white;
                         }
                         p {
                             font-size: var(--text_size_sm);
                             font-weight: 500;
+                            color: white;
                         }
                     }
                 }
@@ -210,18 +203,45 @@ export default {
         }
     }
 }
+
+.dark {
+    .Welcome {
+        .bg_noise {
+            opacity: 0.5;
+            filter: invert(1);
+        }
+        .welcome_wrapper {
+            .welcome_grid {
+                article {
+                    border: 1px solid rgba(white, 0.2);
+                    &.stage {
+                        .stage_wrapper {
+                            svg {
+                                fill: rgba(white, 0.7);
+                            }
+                            p {
+                                color: rgba(white, 0.7);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @keyframes floating {
     0% {
         transform: translate(0px);
     }
     25% {
-        transform: translate(10vh, -10vh);
+        transform: translate(15vh, -5vh);
     }
     50% {
         transform: translate(0px);
     }
     75% {
-        transform: translate(-10vh, 10vh);
+        transform: translate(-15vh, 5vh);
     }
     100% {
         transform: translate(0px);
