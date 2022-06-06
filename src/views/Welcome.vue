@@ -86,6 +86,8 @@ export default {
 <style lang="scss">
 .Welcome {
     position: relative;
+    overflow: hidden;
+    min-height: 100vh;
     .bg_noise {
         width: 100%;
         height: 100%;
@@ -108,18 +110,18 @@ export default {
         min-height: 100vh;
         z-index: 1;
         .circle {
-            width: 30vw;
-            height: 30vw;
+            width: 45vh;
+            height: 45vh;
             border-radius: 50%;
-            filter: blur(12vw);
+            filter: blur(20vh);
             margin-top: 30rem;
             &:nth-child(1) {
-                width: 25vw;
-                height: 25vw;
                 background-color: var(--primary_color);
+                animation: floating 5s ease-in-out infinite;
             }
             &:nth-child(2) {
                 background-color: var(--accent_color);
+                animation: floating 6s ease-in-out infinite;
             }
         }
     }
@@ -136,7 +138,10 @@ export default {
         }
         & > p {
             font-weight: 300;
-            margin: 1.5rem 0;
+            margin: {
+                top: 1.5rem;
+                bottom: 2.5rem;
+            }
             color: var(--text_color_70);
             font-size: var(--text_size_xl);
         }
@@ -187,7 +192,7 @@ export default {
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
-                        gap: 8px;
+                        gap: 10px;
                         background-color: var(--surface_color);
                         width: 100%;
                         height: 100%;
@@ -203,6 +208,23 @@ export default {
                 }
             }
         }
+    }
+}
+@keyframes floating {
+    0% {
+        transform: translate(0px);
+    }
+    25% {
+        transform: translate(10vh, -10vh);
+    }
+    50% {
+        transform: translate(0px);
+    }
+    75% {
+        transform: translate(-10vh, 10vh);
+    }
+    100% {
+        transform: translate(0px);
     }
 }
 </style>
