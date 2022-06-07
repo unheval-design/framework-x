@@ -32,6 +32,8 @@ nav {
     height: var(--navbar_height);
     border-bottom: 1px solid var(--border_color_70);
     background-color: var(--neutral_color);
+    position: sticky;
+    top: 0;
     .nav_options {
         height: 100%;
         gap: var(--gap);
