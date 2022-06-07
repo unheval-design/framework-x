@@ -12,6 +12,11 @@ export default createRouter({
             path: '/proyectos',
             name: 'Projects',
             component: () => import('@/views/Projects.vue')
+        },
+        {
+            path: '/etapas',
+            name: 'Stages',
+            component: () => import('@/views/Stages.vue')
         }
     ]
 });

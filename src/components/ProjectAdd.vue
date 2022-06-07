@@ -1,6 +1,12 @@
 <script setup>
 import Input from '@/components/Input.vue';
 import Button from '@/components/Button.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const goToStages = () => {
+    router.push({ name: 'Stages' });
+};
 </script>
 
 <template>
@@ -13,7 +19,7 @@ import Button from '@/components/Button.vue';
                 placeholder="Ej: Nueva web donde publicar eventos y que se puedan inscribir en linea."
             />
         </div>
-        <Button>Crear Proyecto</Button>
+        <Button @click="goToStages()">Crear Proyecto</Button>
     </div>
 </template>
 

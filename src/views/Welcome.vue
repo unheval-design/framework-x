@@ -145,7 +145,7 @@ import Logo from '@/components/drawable/Logo.vue';
             grid-gap: var(--gap);
             article {
                 border-radius: var(--radius);
-                border: 1px solid white;
+                border: 1px solid rgba(white, 0.8);
                 box-sizing: border-box;
                 box-shadow: var(--shadow_deep);
                 background-color: var(--surface_color_alpha);
