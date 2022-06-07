@@ -2,7 +2,10 @@
     --font: "Inter", sans-serif;
     
     --button_height: 40px;
+    --input_height: 40px;
+    --textarea_height: 100px;
     --navbar_height: 64px;
+    --padding_xl: 2.5rem;
     --padding: 1.5rem;
     --padding_sm: 1rem;
     --gap: 20px;
@@ -14,11 +17,14 @@
     --dropdown_width: 150px;
     --list_option_height: 36px;
     --container_width: 1220px;
+    --modal_container_width: 650px;
 
+    --title_size: 20px;
     --text_size_xl: 18px;
     --text_size_l: 16px;
     --text_size: 14px;
     --text_size_sm: 13px;
+    --text_line_height: 1.5;
 
     /* Color styles */
     --accent_color: #FFD66E;
@@ -61,7 +67,7 @@
     --surface_color: #FFFFFF;
     --surface_color_alpha: rgba(255, 255, 255, 0.15);
 
-    --hover_color: var(--neutral_color_90);
+    --hover_color: rgba(0, 0, 0, 0.03);
     /* Text-size styles */
     /* --hero_1: 64px;
     --hero_2: 48px;
@@ -85,6 +91,8 @@
 }
 
 .dark {
+    --text_line_height: 1.6;
+
     --accent_color: #EECE7E;
     --primary_color: #3790ED;
     --error_color: #EF7F79;
@@ -125,5 +133,5 @@
     --surface_color: #242C34;
     --surface_color_alpha: rgba(255, 255, 255, 0.15);
 
-    --hover_color: var(--border_color_70);
+    --hover_color: rgba(210, 225, 240, 0.03);
 }

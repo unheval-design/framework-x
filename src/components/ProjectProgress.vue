@@ -26,7 +26,7 @@ export default {
         border-radius: var(--radius);
         background-color: var(--neutral_color_90);
         width: 100%;
-        height: 6px;
+        height: 4px;
         position: relative;
         &::before {
             content: '';
@@ -41,7 +41,7 @@ export default {
     }
     p {
         font-weight: 500;
-        color: var(--text_color_70);
+        color: var(--text_color_50);
         font-size: var(--text_size_sm);
         white-space: nowrap;
     }
@@ -52,12 +52,14 @@ export default {
         }
     }
     &.stage_2 span {
+        background-color: var(--accent_color_20);
         &:before {
             background-color: var(--accent_color);
             width: 50%;
         }
     }
     &.stage_3 span {
+        background-color: var(--success_color_20);
         &:before {
             background-color: var(--success_color);
             width: 75%;

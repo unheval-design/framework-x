@@ -18,7 +18,7 @@ const dateFormatted = dayjs(props.project.date)
 </script>
 <template>
     <article class="ProjectCard">
-        <IconFolder :class="`stage_${props.project.stage}`" />
+        <IconFolder />
         <div class="project_title">
             <h1>{{ props.project.title }}</h1>
             <p>{{ dateFormatted }}</p>
@@ -47,11 +47,12 @@ article.ProjectCard {
     border-radius: var(--radius);
     padding: var(--padding);
     box-sizing: border-box;
+    transition: background ease-in-out 0.2s;
     cursor: pointer;
     svg {
         width: var(--icon_size_xl);
         height: var(--icon_size_xl);
-        fill: var(--text_color);
+        fill: var(--text_color_50);
         &.stage_1 {
             fill: var(--text_color);
         }
@@ -103,7 +104,8 @@ article.ProjectCard {
         }
     }
     &:hover {
-        border: 1px solid var(--border_color);
+        /* box-shadow: var(--shadow); */
+        background-color: var(--hover_color);
     }
 }
 </style>

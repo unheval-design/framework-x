@@ -1,6 +1,8 @@
 <script setup>
 import IconAdd from '@/components/drawable/IconAdd.vue';
 import Navbar from '@/components/Navbar.vue';
+import ProjectAdd from '@/components/ProjectAdd.vue';
+import Modal from '@/components/Modal.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
 import { ref } from '@vue/reactivity';
 
@@ -83,12 +85,29 @@ const projectsList = ref([
         completed: false
     }
 ]);
+const flagCreateProjectModal = ref(false);
+const openCreateProjectModal = () => {
+    flagCreateProjectModal.value = true;
+};
+const closeCreateProjectModal = () => {
+    flagCreateProjectModal.value = false;
+};
 </script>
 
 <template>
+    <Teleport to="body">
+        <Modal :show="flagCreateProjectModal" @close="closeCreateProjectModal">
+            <template v-slot:title>Nuevo Proyecto</template>
+            <template v-slot:text>
+                Un proyecto nuevo sirve como guia interactiva para construir
+                cualquier tipo de interfaz.
+            </template>
+            <ProjectAdd />
+        </Modal>
+    </Teleport>
     <Navbar />
     <div class="projects_container">
-        <article class="add_new_project">
+        <article class="add_new_project" @click="openCreateProjectModal()">
             <div class="icon_wrapper">
                 <IconAdd />
             </div>
@@ -116,10 +135,11 @@ const projectsList = ref([
         flex-direction: column;
         justify-content: space-evenly;
         height: 240px;
-        border: 1px dashed var(--border_color_70);
+        border: 1px dashed var(--border_color);
         border-radius: var(--radius);
         padding: var(--padding_sm) 0;
         box-sizing: border-box;
+        /* transition: all ease-in-out 0.2s; */
         cursor: pointer;
         .icon_wrapper {
             width: 56px;
