@@ -1,5 +1,9 @@
 <template>
-    <button class="Button" :class="{ secondary: secondary }" @click="onClick()">
+    <button
+        class="Button"
+        :class="[{ secondary: secondary }, { small: small }]"
+        @click="onClick()"
+    >
         <slot name="icon"></slot>
         <span>
             <slot />
@@ -15,6 +19,9 @@ export default {
             required: false
         },
         secondary: {
+            type: Boolean
+        },
+        small: {
             type: Boolean
         }
     },
@@ -73,9 +80,16 @@ export default {
     }
     &.secondary {
         background-color: var(--neutral_color_70);
+        svg {
+            fill: var(--text_color);
+        }
         span {
             color: var(--text_color);
         }
+    }
+    &.small {
+        height: var(--button_height_small);
+        padding: 0 var(--padding_sm);
     }
 }
 </style>

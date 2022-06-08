@@ -2,6 +2,7 @@
     --font: "Inter", sans-serif;
     
     --button_height: 40px;
+    --button_height_small: 32px;
     --input_height: 40px;
     --textarea_height: 100px;
     --navbar_height: 64px;
