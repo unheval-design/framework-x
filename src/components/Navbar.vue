@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import IconNotes from './drawable/IconNotes.vue';
-import Logo from './drawable/Logo.vue';
+import IconNotes from './drawables/IconNotes.vue';
+import Logo from './drawables/Logo.vue';
 import SwitchTheme from './SwitchTheme.vue';
 export default {
     components: { Logo, SwitchTheme, IconNotes }

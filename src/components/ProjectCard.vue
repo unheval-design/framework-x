@@ -1,7 +1,7 @@
 <script setup>
 import { useDateFormat } from '@vueuse/core';
-import IconCheck from './drawable/IconCheck.vue';
-import IconFolder from './drawable/IconFolder.vue';
+import IconCheck from './drawables/IconCheck.vue';
+import IconFolder from './drawables/IconFolder.vue';
 import ProjectProgress from './ProjectProgress.vue';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es';

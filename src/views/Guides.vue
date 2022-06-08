@@ -1,5 +1,5 @@
 <script setup>
-import IconTodo from '@/components/drawable/IconTodo.vue';
+import IconTodo from '@/components/drawables/IconTodo.vue';
 import Navbar from '@/components/Navbar.vue';
 import Guide from '@/components/Guide.vue';
 import GuidesNav from '@/components/GuidesNav.vue';
@@ -37,6 +37,10 @@ watchEffect(() => {
     padding: var(--padding);
     width: var(--container_width);
     margin: 0 auto;
+    .Guide {
+        max-width: 100%;
+        width: 720px;
+    }
     .GuidesNav {
         z-index: 5;
         position: sticky;

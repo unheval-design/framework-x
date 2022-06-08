@@ -1,13 +1,13 @@
 <script setup>
 import Navbar from '@/components/Navbar.vue';
-import IconEmpathize from '@/components/drawable/IconEmpathize.vue';
-import IconDefine from '@/components/drawable/IconDefine.vue';
-import IconIdea from '@/components/drawable/IconIdea.vue';
-import IconPrototype from '@/components/drawable/IconPrototype.vue';
-import IconMap from '@/components/drawable/IconMap.vue';
-import IconDesign from '@/components/drawable/IconDesign.vue';
-import IconLaunch from '@/components/drawable/IconLaunch.vue';
-import IconTest from '@/components/drawable/IconTest.vue';
+import IconEmpathize from '@/components/drawables/IconEmpathize.vue';
+import IconDefine from '@/components/drawables/IconDefine.vue';
+import IconIdea from '@/components/drawables/IconIdea.vue';
+import IconPrototype from '@/components/drawables/IconPrototype.vue';
+import IconMap from '@/components/drawables/IconMap.vue';
+import IconDesign from '@/components/drawables/IconDesign.vue';
+import IconLaunch from '@/components/drawables/IconLaunch.vue';
+import IconTest from '@/components/drawables/IconTest.vue';
 import Modal from '@/components/Modal.vue';
 import StageCard from '@/components/StageCard.vue';
 import { ref } from '@vue/reactivity';

@@ -1,6 +1,6 @@
 <script setup>
 import { useSlots } from '@vue/runtime-core';
-import IconClose from './drawable/IconClose.vue';
+import IconClose from './drawables/IconClose.vue';
 const slot = useSlots();
 const emit = defineEmits(['close']);
 

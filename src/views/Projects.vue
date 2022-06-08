@@ -1,5 +1,5 @@
 <script setup>
-import IconAdd from '@/components/drawable/IconAdd.vue';
+import IconAdd from '@/components/drawables/IconAdd.vue';
 import Navbar from '@/components/Navbar.vue';
 import ProjectAdd from '@/components/ProjectAdd.vue';
 import Modal from '@/components/Modal.vue';

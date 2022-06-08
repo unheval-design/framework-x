@@ -1,11 +1,11 @@
 <script setup>
 import Button from '@/components/Button.vue';
-import IconDesign from '@/components/drawable/IconDesign.vue';
-import IconGuide from '@/components/drawable/IconGuide.vue';
-import IconLaunch from '@/components/drawable/IconLaunch.vue';
-import IconMap from '@/components/drawable/IconMap.vue';
-import IconTest from '@/components/drawable/IconTest.vue';
-import Logo from '@/components/drawable/Logo.vue';
+import IconDesign from '@/components/drawables/IconDesign.vue';
+import IconGuide from '@/components/drawables/IconGuide.vue';
+import IconLaunch from '@/components/drawables/IconLaunch.vue';
+import IconMap from '@/components/drawables/IconMap.vue';
+import IconTest from '@/components/drawables/IconTest.vue';
+import Logo from '@/components/drawables/Logo.vue';
 </script>
 
 <template>

@@ -1,8 +1,8 @@
 <script setup>
 import { useColorMode } from '@vueuse/core';
-import IconSun from '@/components/drawable/IconSun.vue';
-import IconSystem from '@/components/drawable/IconSystem.vue';
-import IconMoon from '@/components/drawable/IconMoon.vue';
+import IconSun from '@/components/drawables/IconSun.vue';
+import IconContrast from '@/components/drawables/IconContrast.vue';
+import IconMoon from '@/components/drawables/IconMoon.vue';
 import Dropdown from '@/components/Dropdown.vue';
 import { ref } from '@vue/reactivity';
 import { onMounted } from '@vue/runtime-core';
@@ -54,7 +54,7 @@ const hideThemeMenu = () => {
                     :class="{ active: modeSelected == 'system' }"
                     @click="changeTheme({ theme: 'auto' })"
                 >
-                    <IconSystem />
+                    <IconContrast />
                     Sistema
                 </li>
             </ul>
