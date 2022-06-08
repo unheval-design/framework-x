@@ -131,7 +131,7 @@
     --border_color_70: #2F3944;
     --border_color_50: #242C33;
     --surface_color: #242C34;
-    --surface_color_alpha: rgba(255, 255, 255, 0.15);
+    --surface_color_alpha: rgba(255, 255, 255, 0.1);
 
     --hover_color: rgba(210, 225, 240, 0.03);
 }

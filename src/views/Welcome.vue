@@ -145,7 +145,7 @@ import Logo from '@/components/drawable/Logo.vue';
             grid-gap: var(--gap);
             article {
                 border-radius: var(--radius);
-                border: 1px solid rgba(white, 0.8);
+                border: 1px solid white;
                 box-sizing: border-box;
                 box-shadow: var(--shadow_deep);
                 background-color: var(--surface_color_alpha);
@@ -188,14 +188,15 @@ import Logo from '@/components/drawable/Logo.vue';
                         width: 100%;
                         height: 100%;
                         svg {
-                            width: 24px;
-                            height: 24px;
+                            width: 28px;
+                            height: 28px;
                             fill: white;
                         }
                         p {
                             font-size: var(--text_size_sm);
                             font-weight: 500;
                             color: white;
+                            display: none;
                         }
                     }
                 }

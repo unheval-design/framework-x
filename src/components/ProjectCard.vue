@@ -83,15 +83,15 @@ article.ProjectCard {
         align-items: center;
         justify-content: center;
         i {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             svg {
-                width: 18px;
-                height: 18px;
+                width: 16px;
+                height: 16px;
                 fill: var(--neutral_color);
             }
             background-color: var(--primary_color);

@@ -17,6 +17,11 @@ export default createRouter({
             path: '/etapas',
             name: 'Stages',
             component: () => import('@/views/Stages.vue')
+        },
+        {
+            path: '/guias',
+            name: 'Guides',
+            component: () => import('@/views/Guides.vue')
         }
     ]
 });

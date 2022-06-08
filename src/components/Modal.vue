@@ -94,6 +94,10 @@ const close = () => {
                 }
                 .modal_body {
                     margin-top: var(--padding_xl);
+                    .grid {
+                        display: grid;
+                        grid-gap: var(--gap);
+                    }
                 }
             }
         }

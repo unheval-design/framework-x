@@ -1,44 +1,21 @@
 <script setup>
-import IconMap from './drawable/IconMap.vue';
-import IconDesign from './drawable/IconDesign.vue';
-import IconLaunch from './drawable/IconLaunch.vue';
-import IconTest from './drawable/IconTest.vue';
+import { useRouter } from 'vue-router';
+import { ref } from '@vue/reactivity';
+
 const props = defineProps({
-    stage: {
-        type: Number,
-        required: true
+    compact: {
+        type: Boolean
     }
 });
 </script>
 
 <template>
-    <article class="StageCard">
-        <div class="stage_card_wrapper" v-if="props.stage === 1">
-            <IconMap />
+    <article class="StageCard" :class="{ compact: compact }">
+        <div class="stage_card_wrapper">
+            <slot name="icon" />
             <div class="stage_title">
-                <h1>Etapa 1: Análisis</h1>
-                <p>Empatizar y Definir</p>
-            </div>
-        </div>
-        <div class="stage_card_wrapper" v-if="props.stage === 2">
-            <IconDesign />
-            <div class="stage_title">
-                <h1>Etapa 2: Diseño</h1>
-                <p>Idear y Prototipar</p>
-            </div>
-        </div>
-        <div class="stage_card_wrapper" v-if="props.stage === 3">
-            <IconLaunch />
-            <div class="stage_title">
-                <h1>Etapa 3: Implementación</h1>
-                <p>Prototipar</p>
-            </div>
-        </div>
-        <div class="stage_card_wrapper" v-if="props.stage === 4">
-            <IconTest />
-            <div class="stage_title">
-                <h1>Etapa 4: Pruebas</h1>
-                <p>Probar</p>
+                <h1><slot name="title" /></h1>
+                <p><slot name="text" /></p>
             </div>
         </div>
     </article>
@@ -86,6 +63,20 @@ const props = defineProps({
     &:hover {
         border: 1px solid var(--primary_color);
         background-color: var(--primary_color_10);
+    }
+    &.compact {
+        height: 80px;
+        padding: var(--padding_xl);
+        .stage_card_wrapper {
+            justify-content: flex-start;
+            flex-direction: row;
+            svg {
+                margin-right: var(--padding);
+            }
+            .stage_title {
+                align-items: flex-start;
+            }
+        }
     }
 }
 </style>
