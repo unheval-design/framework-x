@@ -33,7 +33,9 @@ import Logo from '@/components/drawable/Logo.vue';
                 </article>
                 <article class="stage">
                     <div class="stage_wrapper">
-                        <IconDesign />
+                        <i>
+                            <IconDesign />
+                        </i>
                         <p>Diseño</p>
                     </div>
                 </article>
@@ -45,7 +47,9 @@ import Logo from '@/components/drawable/Logo.vue';
                 </article>
                 <article class="stage">
                     <div class="stage_wrapper">
-                        <IconMap />
+                        <i>
+                            <IconMap />
+                        </i>
                         <p>Análisis</p>
                     </div>
                 </article>
@@ -57,13 +61,17 @@ import Logo from '@/components/drawable/Logo.vue';
                 </article>
                 <article class="stage">
                     <div class="stage_wrapper">
-                        <IconLaunch />
+                        <i>
+                            <IconLaunch />
+                        </i>
                         <p>Implementación</p>
                     </div>
                 </article>
                 <article class="stage">
                     <div class="stage_wrapper">
-                        <IconTest />
+                        <i>
+                            <IconTest />
+                        </i>
                         <p>Pruebas</p>
                     </div>
                 </article>
@@ -187,10 +195,21 @@ import Logo from '@/components/drawable/Logo.vue';
                         /* background-color: white; */
                         width: 100%;
                         height: 100%;
-                        svg {
-                            width: 28px;
-                            height: 28px;
-                            fill: white;
+                        i {
+                            backdrop-filter: blur(1px);
+                            background-color: rgba(white, 0.5);
+                            border: 1px solid white;
+                            border-radius: 50%;
+                            width: 56px;
+                            height: 56px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            svg {
+                                width: 20px;
+                                height: 20px;
+                                fill: var(--text_color_70);
+                            }
                         }
                         p {
                             font-size: var(--text_size_sm);
@@ -217,8 +236,12 @@ import Logo from '@/components/drawable/Logo.vue';
                     border: 1px solid rgba(white, 0.2);
                     &.stage {
                         .stage_wrapper {
-                            svg {
-                                fill: rgba(white, 0.7);
+                            i {
+                                background-color: rgba(white, 0.15);
+                                border: 1px solid rgba(white, 0.3);
+                                svg {
+                                    fill: var(--text_color);
+                                }
                             }
                             p {
                                 color: rgba(white, 0.7);
