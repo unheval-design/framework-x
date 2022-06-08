@@ -31,17 +31,18 @@ const closeStageTwoModal = () => {
     flagStageTwoModal.value = false;
 };
 
-const goToGuidesStageThree = () => {
-    router.replace({ name: 'Guides' });
-};
-const goToGuidesStageFour = () => {
-    router.replace({ name: 'Guides' });
-};
 const goToGuidesStageOne = () => {
-    router.replace({ name: 'Guides' });
+    router.replace({ name: 'Guides', params: { id: 1 } });
 };
 const goToGuidesStageTwo = () => {
-    router.replace({ name: 'Guides' });
+    router.replace({ name: 'Guides', params: { id: 6 } });
+};
+
+const goToGuidesStageThree = () => {
+    router.replace({ name: 'Guides', params: { id: 11 } });
+};
+const goToGuidesStageFour = () => {
+    router.replace({ name: 'Guides', params: { id: 16 } });
 };
 
 const selectStage = (stage) => {

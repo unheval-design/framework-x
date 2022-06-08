@@ -1,5 +1,5 @@
 <template>
-    <button class="Button" @click="onClick()">
+    <button class="Button" :class="{ secondary: secondary }" @click="onClick()">
         <slot name="icon"></slot>
         <span>
             <slot />
@@ -13,6 +13,9 @@ export default {
         to: {
             type: Object,
             required: false
+        },
+        secondary: {
+            type: Boolean
         }
     },
     methods: {
@@ -40,6 +43,7 @@ export default {
     letter-spacing: 0.03rem;
     gap: 10px;
     position: relative;
+    overflow: hidden;
     span {
         color: white;
         font-weight: 500;
@@ -66,6 +70,12 @@ export default {
     }
     &:hover:before {
         clip-path: circle(200% at 0 0);
+    }
+    &.secondary {
+        background-color: var(--neutral_color_70);
+        span {
+            color: var(--text_color);
+        }
     }
 }
 </style>

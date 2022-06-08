@@ -10,6 +10,7 @@
             <li>
                 <IconNotes />
             </li>
+            <slot name="options" />
         </ul>
     </nav>
 </template>
@@ -23,7 +24,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 nav {
     display: flex;
     justify-content: space-between;
@@ -34,6 +35,7 @@ nav {
     background-color: var(--neutral_color);
     position: sticky;
     top: 0;
+    z-index: 10;
     .nav_options {
         height: 100%;
         gap: var(--gap);

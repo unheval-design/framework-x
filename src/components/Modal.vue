@@ -46,7 +46,7 @@ const close = () => {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 15;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -60,7 +60,7 @@ const close = () => {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 2;
+        z-index: 16;
         width: var(--modal_container_width);
         .modal_content {
             background-color: var(--neutral_color);

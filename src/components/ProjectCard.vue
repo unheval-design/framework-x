@@ -20,14 +20,11 @@ const dateFormatted = dayjs(props.project.date)
     <article class="ProjectCard">
         <IconFolder />
         <div class="project_title">
-            <h1>{{ props.project.title }}</h1>
+            <h1>{{ project.title }}</h1>
             <p>{{ dateFormatted }}</p>
         </div>
-        <ProjectProgress
-            v-if="!props.project.completed"
-            :stage="props.project.stage"
-        />
-        <div class="project_completed" v-if="props.project.completed">
+        <ProjectProgress v-if="!project.completed" :stage="project.stage" />
+        <div class="project_completed" v-if="project.completed">
             <i>
                 <IconCheck />
             </i>
