@@ -29,23 +29,28 @@ export const guides = {
     }
 };
 
-export const guidesTableContent = {
+export const guideTableContent = {
     1: [
-        ['Definición'],
-        ['¿Cuándo usar la entrevista a usuario?'],
+        [{ name: 'Definición', href: 'guide_1_title_1' }],
         [
-            'Métodos de Entrevista',
-            'Abiertas',
-            'Estructuradas',
-            'Semi-estructuradas'
+            {
+                name: '¿Cuándo usar la entrevista a usuario?',
+                href: 'guide_1_title_2'
+            }
         ],
         [
-            'Preparación de la entrevista',
-            'Estableciendo tus objetivos',
-            'Encontrar Participantes',
-            'Estructura de la entrevista'
+            { name: 'Métodos de Entrevista', href: 'guide_1_title_3' },
+            { name: 'Abiertas', href: 'guide_1_title_4' },
+            { name: 'Estructuradas', href: 'guide_1_title_5' },
+            { name: 'Semi-estructuradas', href: 'guide_1_title_6' }
         ],
-        ['Evaluación']
+        [
+            { name: 'Preparación de la entrevista', href: 'guide_1_title_7' },
+            { name: 'Estableciendo tus objetivos', href: 'guide_1_title_8' },
+            { name: 'Encontrar Participantes', href: 'guide_1_title_9' },
+            { name: 'Estructura de la entrevista', href: 'guide_1_title_10' }
+        ],
+        [{ name: 'Evaluación', href: 'guide_1_title_11' }]
     ],
     2: [
         ['Definición'],

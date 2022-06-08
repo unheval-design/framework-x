@@ -6,19 +6,10 @@ const guideId = inject('guideId');
 </script>
 
 <template>
-    <div class="Guide">
+    <section class="Guide">
         <Guide1 v-if="guideId === 1" />
         <Guide2 v-if="guideId === 2" />
-    </div>
+    </section>
 </template>
 
-<style lang="scss">
-.Guide {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    p {
-        line-height: var(--text_line_height);
-    }
-}
-</style>
+<style lang="scss"></style>
