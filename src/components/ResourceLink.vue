@@ -1,0 +1,83 @@
+<script setup>
+import IconJumpLink from '@/components/drawables/IconJumpLink.vue';
+import Dropdown from '@/components/Dropdown.vue';
+import { ref } from '@vue/reactivity';
+import { nextTick, onMounted } from '@vue/runtime-core';
+const resourceRef = ref();
+const flagResource = ref(false);
+const x = ref(0);
+const y = ref(0);
+
+defineProps({
+    type: {
+        type: String,
+        default: 'download',
+        validator: (value) => {
+            return ['tool', 'download'].indexOf(value) !== -1;
+        }
+    }
+});
+
+onMounted(() => {
+    nextTick(() => {
+        x.value = resourceRef.value?.offsetLeft;
+        y.value = resourceRef.value?.offsetTop + 30;
+    });
+});
+
+const showResource = () => {
+    flagResource.value = true;
+    nextTick(() => {
+        x.value = resourceRef.value?.offsetLeft;
+        y.value = resourceRef.value?.offsetTop + 30;
+    });
+};
+
+const hideResource = () => {
+    flagResource.value = false;
+};
+</script>
+
+<template>
+    <strong
+        class="ResourceLink"
+        :class="type"
+        ref="resourceRef"
+        @click="showResource()"
+    >
+        <IconJumpLink />
+        <span><slot /></span>
+        <Teleport to="body">
+            <Dropdown
+                :style="`top: ${y}px; left: ${x}px`"
+                :show="flagResource"
+                @close="hideResource"
+            >
+                <slot name="popup" />
+            </Dropdown>
+        </Teleport>
+    </strong>
+</template>
+
+<style lang="scss">
+.ResourceLink {
+    opacity: 1;
+    span {
+        cursor: pointer;
+        font-weight: 500;
+        display: inline-block;
+        color: var(--primary_color);
+        text-decoration-line: underline;
+        &:hover {
+            text-decoration-line: underline;
+        }
+    }
+    svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--text_color_50);
+        margin-right: 3px;
+        margin-bottom: -3px;
+    }
+}
+</style>

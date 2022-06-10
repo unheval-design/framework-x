@@ -6,6 +6,10 @@ const props = defineProps({
     show: {
         default: false,
         type: Boolean
+    },
+    fixed: {
+        default: false,
+        type: Boolean
     }
 });
 const emit = defineEmits(['close']);
@@ -16,7 +20,12 @@ onClickOutside(target, () => {
 
 <template>
     <Transition name="fade">
-        <div class="Dropdown" ref="target" v-if="props.show">
+        <div
+            class="Dropdown"
+            :class="{ fixed: fixed }"
+            ref="target"
+            v-if="props.show"
+        >
             <slot />
         </div>
     </Transition>
@@ -33,18 +42,23 @@ onClickOutside(target, () => {
     background-color: var(--surface_color);
     padding: var(--padding_sm) 0;
     min-width: var(--dropdown_width);
+    width: fit-content;
+    &.fixed {
+        position: fixed;
+    }
 }
 
 .fade-enter-active {
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .fade-leave-active {
-    transition: opacity 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
     opacity: 0;
+    transform: translateY(-5px);
 }
 </style>

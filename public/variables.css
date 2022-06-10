@@ -26,7 +26,7 @@
     --text_size_l: 16px;
     --text_size: 14px;
     --text_size_sm: 13px;
-    --text_line_height: 1.5;
+    --text_line_height: 1.6;
 
     /* Color styles */
     --accent_color: #FFD66E;
@@ -93,7 +93,7 @@
 }
 
 .dark {
-    --text_line_height: 1.6;
+    --text_line_height: 1.7;
 
     --accent_color: #EECE7E;
     --primary_color: #3790ED;
