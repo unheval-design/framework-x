@@ -1,5 +1,5 @@
 <script setup>
-import IconJumpLink from '@/components/drawables/IconJumpLink.vue';
+import IconLink from '@/components/drawables/IconLink.vue';
 import Dropdown from '@/components/Dropdown.vue';
 import { ref } from '@vue/reactivity';
 import { nextTick, onMounted } from '@vue/runtime-core';
@@ -20,16 +20,16 @@ defineProps({
 
 onMounted(() => {
     nextTick(() => {
-        x.value = resourceRef.value?.offsetLeft;
-        y.value = resourceRef.value?.offsetTop + 30;
+        x.value = resourceRef.value?.offsetLeft + 18;
+        y.value = resourceRef.value?.offsetTop + 28;
     });
 });
 
 const showResource = () => {
     flagResource.value = true;
     nextTick(() => {
-        x.value = resourceRef.value?.offsetLeft;
-        y.value = resourceRef.value?.offsetTop + 30;
+        x.value = resourceRef.value?.offsetLeft + 18;
+        y.value = resourceRef.value?.offsetTop + 28;
     });
 };
 
@@ -45,7 +45,7 @@ const hideResource = () => {
         ref="resourceRef"
         @click="showResource()"
     >
-        <IconJumpLink />
+        <IconLink />
         <span><slot /></span>
         <Teleport to="body">
             <Dropdown

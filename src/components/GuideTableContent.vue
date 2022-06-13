@@ -30,10 +30,16 @@ ul.GuideTableContent {
         gap: var(--gap_sm);
         li {
             padding-left: var(--padding);
+            display: flex;
             a {
                 color: var(--text_color_50);
                 font-size: var(--text_size);
                 text-decoration: none;
+                flex: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 2px 0;
             }
             &:first-child {
                 padding-left: 0;

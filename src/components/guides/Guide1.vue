@@ -6,6 +6,19 @@ import Blockquote from '@/components/Blockquote.vue';
 import Chip from '@/components/Chip.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
+import TestCard from '@/components/TestCard.vue';
+
+const question1 = {
+    question: '¿Cuando dedo usar entrevistas a usuarios?',
+    answer: 1,
+    alternatives: ['Cuando deseo profundizar en un tema especifico.', 'Cuando deseo hacer una recolección de datos significativa.', 'Cuando deseo estudiar el comportamiento de mis usuarios a futuro.']
+}
+
+const question2 = {
+    question: 'Cuando quiero explorar las dificultades en mi sitio web pero no tengo definido los problemas principales, podría usar una entrevista de tipo:',
+    answer: 3,
+    alternatives: ['Abierta', 'Estructurada', 'Semi-estructurada']
+}
 
 </script>
 
@@ -161,7 +174,7 @@ import ResourceCard from '@/components/ResourceCard.vue';
                     <template v-slot:popup>
                         <ResourceCard
                             type="download"
-                            title="Plantilla.pdf"
+                            title="screener.pdf"
                             description="Formato basico para entrevistas"
                         />
                     </template>
@@ -208,6 +221,10 @@ import ResourceCard from '@/components/ResourceCard.vue';
             <p>
                 Valida tu aprendizaje
             </p>
+            <aside class="tests_grid">
+                <TestCard :question="question1"/>
+                <TestCard :question="question2"/>
+            </aside>
         </section>
     </GuideBody>
 </template>

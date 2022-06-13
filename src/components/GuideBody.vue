@@ -38,7 +38,7 @@ export default {};
         opacity: 0.9;
     }
     ul {
-        li {
+        & > li {
             list-style-type: disc;
             list-style-position: inside;
             text-indent: -22px;
@@ -46,7 +46,7 @@ export default {};
         }
     }
     ol {
-        li {
+        & > li {
             list-style-type: decimal;
             list-style-position: inside;
             text-indent: -22px;
@@ -57,9 +57,17 @@ export default {};
     ol {
         padding-left: 2px;
     }
+    i {
+        font-style: italic;
+    }
     .tips_grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-gap: var(--gap);
+    }
+    .tests_grid {
+        display: grid;
+        grid-template-columns: 1fr;
         grid-gap: var(--gap);
     }
 }
