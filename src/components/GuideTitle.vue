@@ -43,6 +43,7 @@ const playAudio = () => {
         color: var(--text_color);
         font-weight: 600;
         font-size: var(--title_size);
+        line-height: var(--text_line_height);
     }
     .guide_title_options {
         display: flex;
@@ -60,6 +61,21 @@ const playAudio = () => {
                 font-size: var(--text_size);
                 color: var(--text_color_70);
             }
+        }
+    }
+}
+.dark {
+    .GuideTitle {
+        h1 {
+            background: -webkit-linear-gradient(
+                315deg,
+                var(--accent_color),
+                var(--primary_color),
+                var(--text_color)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     }
 }

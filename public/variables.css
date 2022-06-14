@@ -21,13 +21,13 @@
     --container_width: 1220px;
     --modal_container_width: 650px;
 
-    --title_size: 20px;
+    --title_size: 24px;
     --text_size_xl: 18px;
     --text_size_l: 16px;
     --text_size: 14px;
     --text_size_sm: 13px;
     --text_line_height: 1.7;
-    --text_line_height_sm: 1.4;
+    --title_line_height: 1.4;
 
     /* Color styles */
     --accent_color: #FFD66E;
@@ -95,7 +95,7 @@
 
 .dark {
     --text_line_height: 1.8;
-    --text_line_height_sm: 1.5;
+    --title_line_height: 1.5;
 
     --accent_color: #EECE7E;
     --primary_color: #3790ED;

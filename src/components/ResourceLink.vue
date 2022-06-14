@@ -1,4 +1,5 @@
 <script setup>
+import IconDownloadFile from '@/components/drawables/IconDownloadFile.vue';
 import IconLink from '@/components/drawables/IconLink.vue';
 import Dropdown from '@/components/Dropdown.vue';
 import { ref } from '@vue/reactivity';
@@ -45,7 +46,8 @@ const hideResource = () => {
         ref="resourceRef"
         @click="showResource()"
     >
-        <IconLink />
+        <IconDownloadFile v-if="type === 'download'" />
+        <IconLink v-if="type === 'tool'" />
         <span><slot /></span>
         <Teleport to="body">
             <Dropdown
@@ -64,7 +66,7 @@ const hideResource = () => {
     opacity: 1;
     span {
         cursor: pointer;
-        font-weight: 500;
+        font-weight: 400;
         display: inline-block;
         color: var(--primary_color);
         text-decoration-line: underline;

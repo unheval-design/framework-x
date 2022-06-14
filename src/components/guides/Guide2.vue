@@ -4,6 +4,7 @@ import GuideBody from '@/components/GuideBody.vue';
 import Blockquote from '@/components/Blockquote.vue';
 import Reference from '@/components/Reference.vue';
 import TestCard from '@/components/TestCard.vue';
+import Heading from '@/components/Heading.vue';
 
 const question1 = {
     question: '¿Cuando dedo hacer el análisis heurístico?',
@@ -24,7 +25,7 @@ const question2 = {
         <template v-slot:timeRead>4</template>
     </GuideTitle>
     <GuideBody>
-        <h1 id="guide_2_title_1">Definición</h1>
+        <Heading type="h1" id="guide_2_title_1">Definición</Heading>
         <section>
             <p>
                 Un análisis heurístico se utiliza para identificar problemas
@@ -46,7 +47,7 @@ const question2 = {
                 mejorar la usabilidad y eficiencia de un producto digital.
             </Blockquote>
         </section>
-        <h1 id="guide_2_title_2">¿Cuándo hacer el análisis heurístico?</h1>
+        <Heading type="h1" id="guide_2_title_2">¿Cuándo hacer el análisis heurístico?</Heading>
         <section>
             <p>
                 Se puede realizar en cualquier etapa avanzada del proceso del
@@ -59,13 +60,13 @@ const question2 = {
                 </ul>
             </p>
         </section>
-        <h1 id="guide_2_title_3">Selección de expertos</h1>
+        <Heading type="h1" id="guide_2_title_3">Selección de expertos</Heading>
         <section>
-            <h2 id="guide_2_title_4">Perfil del Experto</h2>
+            <Heading type="h2" id="guide_2_title_4">Perfil del Experto</Heading>
             <p>
                 Un experto en evaluación heurística es idealmente un experto en pruebas de usabilidad. Por lo general, provienen de las disciplinas de factores humanos, diseño de interacción (IXD), HCI(interacción hombre-computadora) y/o Diseño UX, con antecedentes complementarios en disciplinas como la psicología, la informática, las ciencias de la información y el comercio.
             </p>
-            <h2 id="guide_2_title_5">Tamaño de muestra</h2>
+            <Heading type="h2" id="guide_2_title_5">Tamaño de muestra</Heading>
             <p>
                 Es útil tener en cuenta que a pesar de que un solo experimentado profesional del UX es generalmente experto en identificar los problemas de usabilidad más críticos, un grupo de evaluadores es generalmente la mejor opción.
             </p>
@@ -75,9 +76,9 @@ const question2 = {
             <Reference image="https://miro.medium.com/max/1400/1*8nyjZ3xihC6Bselj3gezvQ.png" description="Toptal.com imagen de referencia"/>
             <Blockquote>A medida que aumenta el número de evaluadores, aumenta la proporción de problemas de usabilidad identificados. Pero después de 10 evaluadores, las ganancias potenciales son insignificantes.</Blockquote>
         </section>
-        <h1 id="guide_2_title_6">Ventajas y Desventajas</h1>
+        <Heading type="h1" id="guide_2_title_6">Ventajas y Desventajas</Heading>
         <section>
-            <h2 id="guide_2_title_7">Ventajas</h2>
+            <Heading type="h2" id="guide_2_title_7">Ventajas</Heading>
             <p>
                 <ul>
                     <li>Descubre muchos problemas de usabilidad y mejora significativamente el UX de un producto.</li>
@@ -87,7 +88,7 @@ const question2 = {
                     <li>Evaluar diseños utilizando un conjunto de heurísticas puede ayudar a identificar problemas de usabilidad con flujos de usuario específicos y determinar el impacto en la experiencia general del usuario.</li>
                 </ul>
             </p>
-            <h2 id="guide_2_title_8">Desventajas</h2>
+            <Heading type="h2" id="guide_2_title_8">Desventajas</Heading>
             <p>
                 <ul>
                     <li>Los expertos en usabilidad son a menudo difíciles de encontrar y pueden ser caros.</li>
@@ -97,7 +98,7 @@ const question2 = {
                 </ul>
             </p>
         </section>
-        <h1 id="guide_2_title_9">Evaluación</h1>
+        <Heading type="h1" id="guide_2_title_9">Evaluación</Heading>
         <section>
             <p>
                 Valida tu aprendizaje

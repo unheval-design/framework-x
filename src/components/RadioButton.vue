@@ -83,7 +83,7 @@ const handleInput = (value) => {
         cursor: pointer;
         color: var(--text_color);
         font-size: var(--text_size_l);
-        line-height: var(--text_line_height_sm);
+        line-height: var(--title_line_height);
         .circle {
             border: 1px solid var(--border_color);
             border-radius: 50%;
