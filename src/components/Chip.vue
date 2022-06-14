@@ -20,7 +20,7 @@ defineProps({
 .Chip {
     border-radius: var(--radius);
     background-color: var(--neutral_color_90);
-    font-size: var(--text_size);
+    font-size: var(--text_size_sm);
     font-weight: 500;
     padding: 5px 10px;
     display: flex;
@@ -28,6 +28,7 @@ defineProps({
     width: fit-content;
     gap: 7px;
     color: var(--text_color);
+    user-select: none;
     svg {
         width: var(--icon_size_sm);
         height: var(--icon_size_sm);

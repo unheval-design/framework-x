@@ -1,5 +1,8 @@
 <script setup>
 import CheckButton from '@/components/CheckButton.vue';
+import Chip from '@/components/Chip.vue';
+import HoverIcon from '@/components/HoverIcon.vue';
+import IconTrash from '@/components/drawables/IconTrash.vue';
 import { ref } from '@vue/reactivity';
 import { nextTick, onMounted, watchEffect } from '@vue/runtime-core';
 import { onClickOutside } from '@vueuse/core';
@@ -46,6 +49,10 @@ const resize = () => {
     });
 };
 
+const changePrority = (priority) => {
+    props.task.priority = priority;
+};
+
 watchEffect(() => {
     if (props.task.id === todo.lastTaskCreated) editTask();
 });
@@ -55,23 +62,45 @@ watchEffect(() => {
     <div class="Task" :class="{ completed: task.completed }">
         <div class="task_overlay" @click="editTask()"></div>
         <CheckButton rounded v-model:checked="task.completed" />
-        <p v-show="!editable" @click="editTask()">{{ task.name }}</p>
-        <textarea
-            placeholder="Tarea..."
-            v-show="editable"
-            ref="taskInput"
-            v-model.trim="task.name"
-            @input="resize()"
-            @focus="resize()"
-            @blur="noEditTask()"
-        />
+        <div class="task_wrapper">
+            <p v-show="!editable" @click="editTask()">{{ task.name }}</p>
+            <textarea
+                placeholder="Tarea..."
+                v-show="editable"
+                ref="taskInput"
+                v-model.trim="task.name"
+                @input="resize()"
+                @focus="resize()"
+                @blur="noEditTask()"
+            />
+            <div v-if="task.name" class="task_priority">
+                <Chip @click="changePrority(1)" v-if="task.priority === 0"
+                    >Bajo</Chip
+                >
+                <Chip
+                    @click="changePrority(2)"
+                    color="warning"
+                    v-if="task.priority === 1"
+                    >Medio</Chip
+                >
+                <Chip
+                    @click="changePrority(0)"
+                    color="error"
+                    v-if="task.priority === 2"
+                    >Alto</Chip
+                >
+            </div>
+        </div>
+        <HoverIcon @click="todo.remove(task.id)">
+            <IconTrash />
+        </HoverIcon>
     </div>
 </template>
 
 <style lang="scss">
 .Task {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding: var(--padding);
     gap: var(--gap);
     border-bottom: 1px solid var(--border_color_70);
@@ -87,30 +116,51 @@ watchEffect(() => {
         background-color: transparent;
         z-index: 0;
     }
-    p {
-        line-height: 20px;
-        width: 100%;
-        min-height: 20px;
+    .task_wrapper {
         z-index: 1;
-    }
-    textarea {
-        display: block;
-        background-color: transparent;
         width: 100%;
-        height: 20px;
-        border: none;
-        color: var(--text_color);
-        font-family: var(--font);
-        line-height: 20px;
-        padding: 0;
-        font-weight: 300;
-        resize: none;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        z-index: 1;
+        p {
+            line-height: 20px;
+            width: 100%;
+            min-height: 20px;
+        }
+        textarea {
+            display: block;
+            background-color: transparent;
+            width: 100%;
+            height: 20px;
+            border: none;
+            color: var(--text_color);
+            font-family: var(--font);
+            line-height: 20px;
+            padding: 0;
+            font-weight: 300;
+            resize: none;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+        }
+        .task_priority {
+            margin-top: var(--gap_sm);
+            margin-left: -2px;
+            width: fit-content;
+            .Chip {
+                cursor: pointer;
+            }
+        }
     }
-    &.completed {
+    .IconTrash {
+        opacity: 0;
+        width: var(--icon_size_sm);
+        height: var(--icon_size_sm);
+        margin-top: -1px;
+        fill: var(--text_color_50);
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            fill: var(--text_color);
+        }
+    }
+    &.completed .task_wrapper {
         p {
             text-decoration: line-through;
             color: var(--text_color_50);
@@ -133,6 +183,11 @@ watchEffect(() => {
             transform: scaleX(1);
             transition: transform 0.2s ease-in-out;
             transform-origin: left;
+        }
+    }
+    &:hover {
+        .IconTrash {
+            opacity: 1;
         }
     }
 }

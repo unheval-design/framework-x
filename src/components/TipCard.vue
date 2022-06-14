@@ -52,10 +52,10 @@ const slot = useSlots();
     display: flex;
     flex-direction: column;
     gap: var(--gap_sm);
-    span {
+    /* & > span {
         font-size: var(--text_size);
         font-weight: 500;
-    }
+    } */
     img {
         width: 100%;
         object-fit: cover;

@@ -10,6 +10,7 @@ export default {};
 
 <style lang="scss">
 .HoverIcon {
+    z-index: 5;
     cursor: pointer;
 }
 </style>

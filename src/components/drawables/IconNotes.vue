@@ -1,5 +1,6 @@
 <template>
     <svg
+        class="IconNotes"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
@@ -15,4 +16,8 @@
 export default {};
 </script>
 
-<style></style>
+<style>
+.IconNotes {
+    transform: scale(0.95);
+}
+</style>

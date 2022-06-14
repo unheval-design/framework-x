@@ -43,6 +43,7 @@ const closeModalSlide = () => {
 <style lang="scss">
 .Todo {
     nav.todo_nav {
+        position: relative;
         .todo_nav_title {
             flex: 1;
             padding-left: var(--gap);
@@ -65,6 +66,10 @@ const closeModalSlide = () => {
                 height: var(--icon_size);
             }
         }
+    }
+    .todo_wrapper {
+        height: calc(100vh - #{var(--navbar_height)});
+        overflow: auto;
     }
 }
 </style>

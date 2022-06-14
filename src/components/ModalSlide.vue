@@ -1,5 +1,5 @@
 <script setup>
-import { useSlots } from '@vue/runtime-core';
+import { useSlots, watchEffect } from '@vue/runtime-core';
 const slot = useSlots();
 const emit = defineEmits(['close']);
 
@@ -13,6 +13,11 @@ const props = defineProps({
 const close = () => {
     emit('close');
 };
+
+watchEffect(() => {
+    if (props.show) document.body.style.overflow = 'hidden';
+    if (!props.show) document.body.style.overflow = 'auto';
+});
 </script>
 <template>
     <Transition name="fade_modal">
