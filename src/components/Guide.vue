@@ -6,6 +6,7 @@ import Guide4 from '@/components/guides/Guide4.vue';
 import Guide5 from '@/components/guides/Guide5.vue';
 import Guide6 from '@/components/guides/Guide6.vue';
 import Guide7 from '@/components/guides/Guide7.vue';
+import Guide8 from '@/components/guides/Guide8.vue';
 import { inject } from '@vue/runtime-core';
 const guideId = inject('guideId');
 </script>
@@ -19,6 +20,7 @@ const guideId = inject('guideId');
         <Guide5 v-if="guideId === 5" />
         <Guide6 v-if="guideId === 6" />
         <Guide7 v-if="guideId === 7" />
+        <Guide8 v-if="guideId === 8" />
     </section>
 </template>
 

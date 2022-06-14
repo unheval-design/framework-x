@@ -7,25 +7,25 @@ export const substages = {
     5: 'Probar'
 };
 export const guides = {
-    '1,2,3,4,5,6': {
+    '1,2,3,4,5': {
         start: 1,
-        last: 6,
+        last: 5,
         substage: {
             id: 1,
             name: substages[1]
         },
         stage: 1,
-        pages: 6
+        pages: 5
     },
-    '7,8,9,10': {
-        start: 7,
+    '6,7,8,9,10': {
+        start: 6,
         last: 10,
         substage: {
             id: 2,
             name: substages[2]
         },
         stage: 1,
-        pages: 4
+        pages: 5
     }
 };
 
@@ -108,123 +108,158 @@ export const guideTableContent = {
     ],
     4: [
         [{ name: 'Definición', href: 'guide_4_title_1' }],
+        [{ name: '¿Cuándo hacer benchmarking?', href: 'guide_4_title_2' }],
         [
             {
-                name: '¿Por qué usar User Journey Map?',
-                href: 'guide_4_title_2'
-            }
-        ],
-        [
-            {
-                name: 'Elemento del User Journey Map',
+                name: '¿Cómo aplicar benchmarking?',
                 href: 'guide_4_title_3'
             },
-            { name: 'Actor', href: 'guide_4_title_4' },
-            { name: 'Escenario + Expectativas', href: 'guide_4_title_5' },
-            { name: 'Fases del viaje?', href: 'guide_4_title_6' },
             {
-                name: 'Acciones, pensamientos y emociones',
+                name: 'Elije que medir',
+                href: 'guide_4_title_4'
+            },
+            {
+                name: 'Decida como medir',
+                href: 'guide_4_title_5'
+            },
+            {
+                name: 'Recopile la primera medición',
+                href: 'guide_4_title_6'
+            },
+            {
+                name: 'Rediseñar el producto',
                 href: 'guide_4_title_7'
             },
             {
-                name: 'Oportunidades',
+                name: 'Recopilar medidas adicionales',
                 href: 'guide_4_title_8'
+            },
+            {
+                name: 'Interprete los Hallazgos',
+                href: 'guide_4_title_9'
             }
         ],
-        [{ name: 'Evaluación', href: 'guide_4_title_9' }]
+        [{ name: 'Evaluación', href: 'guide_4_title_10' }]
     ],
     5: [
         [{ name: 'Definición', href: 'guide_5_title_1' }],
         [
             {
-                name: '¿Cuándo usar el Card Sorting?',
+                name: '¿Por qué usar User Journey Map?',
                 href: 'guide_5_title_2'
             }
         ],
         [
             {
-                name: 'Ventajas y Desventajas',
+                name: 'Elemento del User Journey Map',
                 href: 'guide_5_title_3'
             },
-            { name: 'Ventajas', href: 'guide_5_title_4' },
-            { name: 'Desventajas', href: 'guide_5_title_5' }
-        ],
-        [
+            { name: 'Actor', href: 'guide_5_title_4' },
+            { name: 'Escenario + Expectativas', href: 'guide_5_title_5' },
+            { name: 'Fases del viaje?', href: 'guide_5_title_6' },
             {
-                name: 'Tipos de Card Sorting',
-                href: 'guide_5_title_6'
+                name: 'Acciones, pensamientos y emociones',
+                href: 'guide_5_title_7'
             },
-            { name: 'Abierta', href: 'guide_5_title_7' },
-            { name: 'Cerrada', href: 'guide_5_title_8' },
-            { name: 'Híbrida', href: 'guide_5_title_9' }
-        ],
-        [
             {
-                name: '¿Que herramientas usar para hacer Card Sorting?',
-                href: 'guide_5_title_10'
+                name: 'Oportunidades',
+                href: 'guide_5_title_8'
             }
         ],
-        [{ name: 'Evaluación', href: 'guide_5_title_11' }]
+        [{ name: 'Evaluación', href: 'guide_5_title_9' }]
     ],
     6: [
         [{ name: 'Definición', href: 'guide_6_title_1' }],
         [
             {
-                name: '¿Cuándo hacer el mapa del sitio?',
+                name: '¿Cuándo usar el Card Sorting?',
                 href: 'guide_6_title_2'
             }
         ],
         [
             {
-                name: 'Tipos de mapas de sitio',
+                name: 'Ventajas y Desventajas',
                 href: 'guide_6_title_3'
             },
-            { name: 'Mapa del sitio plano', href: 'guide_6_title_4' },
-            { name: 'Mapa del sitio profundo', href: 'guide_6_title_5' }
+            { name: 'Ventajas', href: 'guide_6_title_4' },
+            { name: 'Desventajas', href: 'guide_6_title_5' }
         ],
         [
             {
-                name: '¿Cómo crear el mapa del sitio?',
+                name: 'Tipos de Card Sorting',
                 href: 'guide_6_title_6'
             },
-            { name: 'Reuniendo el contenido', href: 'guide_6_title_7' },
-            { name: 'Creación del mapa del sitio', href: 'guide_6_title_8' }
+            { name: 'Abierta', href: 'guide_6_title_7' },
+            { name: 'Cerrada', href: 'guide_6_title_8' },
+            { name: 'Híbrida', href: 'guide_6_title_9' }
         ],
-        [{ name: 'Evaluación', href: 'guide_6_title_9' }]
+        [
+            {
+                name: '¿Que herramientas usar para hacer Card Sorting?',
+                href: 'guide_6_title_10'
+            }
+        ],
+        [{ name: 'Evaluación', href: 'guide_6_title_11' }]
     ],
     7: [
         [{ name: 'Definición', href: 'guide_7_title_1' }],
         [
             {
-                name: '¿Por qué usamos flujos de usuario?',
+                name: '¿Cuándo hacer el mapa del sitio?',
                 href: 'guide_7_title_2'
+            }
+        ],
+        [
+            {
+                name: 'Tipos de mapas de sitio',
+                href: 'guide_7_title_3'
             },
-            { name: 'Crear una interfaz intuitiva', href: 'guide_7_title_3' },
+            { name: 'Mapa del sitio plano', href: 'guide_7_title_4' },
+            { name: 'Mapa del sitio profundo', href: 'guide_7_title_5' }
+        ],
+        [
+            {
+                name: '¿Cómo crear el mapa del sitio?',
+                href: 'guide_7_title_6'
+            },
+            { name: 'Reuniendo el contenido', href: 'guide_7_title_7' },
+            { name: 'Creación del mapa del sitio', href: 'guide_7_title_8' }
+        ],
+        [{ name: 'Evaluación', href: 'guide_7_title_9' }]
+    ],
+    8: [
+        [{ name: 'Definición', href: 'guide_8_title_1' }],
+        [
+            {
+                name: '¿Por qué usamos flujos de usuario?',
+                href: 'guide_8_title_2'
+            },
+            { name: 'Crear una interfaz intuitiva', href: 'guide_8_title_3' },
             {
                 name: 'Evaluar las interfaces existentes',
-                href: 'guide_7_title_4'
+                href: 'guide_8_title_4'
             },
             {
                 name: 'Presentar su producto a clientes o colegas',
-                href: 'guide_7_title_5'
+                href: 'guide_8_title_5'
             }
         ],
         [
             {
                 name: '¿Cuándo hacer los flujos de usuario?',
-                href: 'guide_7_title_6'
+                href: 'guide_8_title_6'
             }
         ],
         [
             {
                 name: 'Tipos de diagramas de Flujo de Usuario',
-                href: 'guide_7_title_7'
+                href: 'guide_8_title_7'
             },
-            { name: 'Flujos de Tareas', href: 'guide_7_title_8' },
-            { name: 'Wireflows', href: 'guide_7_title_9' },
-            { name: 'Flujos de Usuario', href: 'guide_7_title_10' }
+            { name: 'Flujos de Tareas', href: 'guide_8_title_8' },
+            { name: 'Wireflows', href: 'guide_8_title_9' },
+            { name: 'Flujos de Usuario', href: 'guide_8_title_10' }
         ],
-        [{ name: 'Evaluación', href: 'guide_7_title_11' }]
+        [{ name: 'Evaluación', href: 'guide_8_title_11' }]
     ]
 };
 

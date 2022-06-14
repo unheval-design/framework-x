@@ -2,165 +2,151 @@
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
 import TestCard from '@/components/TestCard.vue';
-import Blockquote from '@/components/Blockquote.vue';
-import ResourceLink from '@/components/ResourceLink.vue';
-import ResourceCard from '@/components/ResourceCard.vue';
 import Heading from '@/components/Heading.vue';
+import Blockquote from '@/components/Blockquote.vue';
+import imageOne from '@/assets/images/guide-4/image_1.png'
+import imageTwo from '@/assets/images/guide-4/image_2.png'
+import Reference from '@/components/Reference.vue';
 
 const question1 = {
-    question: '¿Por que hacemos el user journey map?',
+    question: '¿Cuándo hacer el benchmarking?',
     answer: 1,
     alternatives: [
-        'Por que necesitamos entender si los procesos o etapas de un proceso están bien optimizados.',
-        'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.',
-        'Por que queremos detectar si las tareas son completadas y el grado de satisfacción del usuario.'
+        'Antes de la fase definir o después de la fase de pruebas.',
+        'Antes de las pruebas o después de empatizar.',
+        'Después de definir o antes de las pruebas.'
     ]
 };
 
 const question2 = {
-    question: '¿Qué son las oportunidades en un user journey map?',
+    question: 'Si estoy trabajando en un producto nuevo ¿Contra que puedo hacer el benchmarking?',
     answer: 3,
     alternatives: [
-        'Información que describe cómo se puede optimizar la experiencia del usuario.',
-        'Rutas que tiene el usuario para completar su recorrido.',
-        'Experiencias favorables del usuario en el recorrido.'
+        'Con un producto estándar en la industria.',
+        'Con un producto similar de mi empresa.',
+        'Con un producto que me sea familiar y sepa sus características.'
     ]
 };
 </script>
 <template>
     <GuideTitle>
-        User Journey Map
-        <template v-slot:timeRead>6</template>
+        UX Benchmarking
+        <template v-slot:timeRead>8</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1" id="guide_4_title_1">Definición</Heading>
         <section>
             <p>
-                El “Journey Map” es una herramienta proveniente del Design
-                Thinking y define las distintas actividades que desarrolla un
-                usuario en el uso de un producto o servicio. Con el paso del
-                tiempo se descubrió que también puede responder a cómo
-                interactúan los usuarios con marcas o servicios.
+                Nos referimos a la evaluación comparativa como una práctica
+                porque, idealmente, una vez que comienza la evaluación
+                comparativa, puede realizar un seguimiento de su progreso a lo
+                largo del tiempo, una y otra vez, rediseño tras rediseño: es un
+                proceso continuo.
             </p>
             <p>
-                Dentro del proceso del Design Thinking, es una herramienta muy
-                eficaz para diseñar una solución, o para detectar puntos
-                conflictivos de un producto o servicio existentes que pudieran
-                requerir una mejora, y fue definida de esta manera por Philip
-                Kotler en 2013.
-            </p>
-        </section>
-        <Heading type="h1" id="guide_4_title_2">¿Por qué usar User Journey Map?</Heading>
-        <section>
-            <p>
-                El User Journer Map es un proceso que brinda una visión
-                holística de la experiencia del cliente al descubrir momentos
-                tanto de frustración como de placer a lo largo de una serie de
-                interacciones. Realizado con éxito, revela oportunidades para
-                abordar los puntos débiles de los clientes, aliviar la
-                fragmentación y, en última instancia, crear una mejor
-                experiencia para sus usuarios.
-            </p>
-            <p>
-                El proceso de creación de un mapa fuerza la conversación y un
-                modelo mental alineado para todo el equipo. Los mapas también
-                pueden convertirse en la base para la toma de decisiones a
-                medida que el equipo avanza.
-            </p>
-        </section>
-        <Heading type="h1" id="guide_4_title_3">Elementos del User Journey Map</Heading>
-        <section>
-            <p>
-                El mapa está compuesto por filas (secciones fijas) y columnas
-                (el número de columnas varía según el proyecto). Te
-                sugerimos definir las etapas con el tiempo de duración, de ese
-                modo podrás saber cuántas columnas necesitas.
-            </p>
-            <p>
-                Los mapas de viaje vienen en todas las formas y
-                tamaños. Independientemente de cómo se vean, los mapas de viaje
-                tienen los siguientes 5 elementos clave en común:
-            </p>
-            <Heading type="h2" id="guide_4_title_4">Actor</Heading>
-            <p>
-                Es la persona o usuario que experimenta el viaje. Los actores
-                generalmente se alinean con personas y sus acciones en el mapa
-                se basan en datos.
-            </p>
-            <p>
-                Por ejemplo: una universidad podría elegir a un estudiante o a
-                un docente como actor; cada uno daría como resultado diferentes
-                viajes. Para capturar ambos puntos de vista, la universidad
-                necesitará construir dos mapas separados, uno para cada uno de
-                los dos tipos de usuarios.
-            </p>
-            <Heading type="h2" id="guide_4_title_5">Escenario + Expectativas</Heading>
-            <p>
-                El escenario describe la situación que aborda el User Journey
-                Map y está asociado con la meta o necesidad de un actor y sus
-                expectativas específicas. Por ejemplo, un escenario podría ser
-                cambiar de planes móviles para ahorrar dinero, y las
-                expectativas incluyen encontrar fácilmente toda la información
-                necesaria para tomar una decisión.
-            </p>
-            <Blockquote>
-                Los escenarios pueden ser reales (para productos y servicios
-                existentes) o anticipados, para productos que aún se encuentran
-                en la etapa de diseño.
-            </Blockquote>
-            <Heading type="h2" id="guide_4_title_6">Fases del viaje</Heading>
-            <p>
-                Las fases del viaje son las diferentes etapas de alto nivel del
-                viaje. Proporcionan organización para el resto de la información
-                del User Journey Map (acciones, pensamientos y emociones). Las
-                etapas variarán de un escenario a otro; cada organización
-                normalmente tendrá datos que le ayuden a determinar cuáles son
-                estas fases para un escenario determinado. 
-            </p>
-            <p>Aquí hay unos ejemplos:</p>
-            <p>
-                <ul>
-                    <li>Para un escenario de comercio electrónico (como comprar parlantes Bluetooth), las fases pueden ser descubrir, probar, comprar, usar, buscar soporte.</li>
-                    <li>Para compras grandes (o de lujo) (como conducir una prueba y comprar un automóvil), las fases pueden ser compromiso, educación, investigación, evaluación, justificación.</li>
-                    <li>Para un escenario de negocio a negocio (como el despliegue de una herramienta interna), las fases podrían ser compra, adopción, retención, expansión, promoción.</li>
-                </ul>
-            </p>
-            <Heading type="h2" id="guide_4_title_7">Acciones, pensamientos y emociones</Heading>
-            <p>
-                Estos son comportamientos, pensamientos y sentimientos que el actor tiene a lo largo del viaje y que se mapean dentro de cada una de las fases del viaje.
-            </p>
-            <p>Las acciones: son los comportamientos reales y los pasos tomados por los usuarios.</p>
-            <p>Los pensamientos: corresponden a las preguntas, motivaciones y necesidades de información de los usuarios en diferentes etapas de viaje.</p>
-            <p>Las emociones: Se trazan como una sola línea a lo largo de las fases del viaje, indicando literalmente los "altibajos" emocionales de la experiencia.</p>
-            <Heading type="h2" id="guide_4_title_8">Oportunidades</Heading>
-            <p>
-                Las oportunidades son información que se obtiene del mapeo; hablan de cómo se puede optimizar la experiencia del usuario. Las perspectivas y las oportunidades ayudan al equipo a extraer conocimiento del mapa:
+                Esencialmente, la evaluación comparativa implica recopilar 
+                datos cuantitativos que describen la experiencia. Por ejemplo,
+                podríamos recopilar cualquiera de las siguientes métricas de UX:
             </p>
             <p>
                 <ul>
-                    <li>¿Qué hay que hacer con este conocimiento?</li>
-                    <li>¿Quién es dueño de qué cambio?</li>
-                    <li>¿Dónde están las mayores oportunidades?</li>
-                    <li>¿Cómo vamos a medir las mejoras que implementamos?</li>
+                    <li>Tiempo promedio para hacer una compra.</li>
+                    <li>Número de clics en un botón ”Enviar”.</li>
+                    <li>Tasa de éxito para completar una solicitud.</li>
+                    <li>Calificación promedio de facilidad de uso para crear una cuenta.</li>
+                    <li>Tasa de retención de ocho semanas para una aplicación (porcentaje de usuarios que siguen usando la aplicación después de ocho semanas).</li>
+                </ul>
+            </p>
+            <Blockquote>Puede recopilar esas métricas de UX utilizando potencialmente cualquier metodología cuantitativa; pero los análisis, las encuestas y las pruebas de usabilidad cuantitativas son los tres métodos que a menudo funcionan mejor para la evaluación comparativa.</Blockquote>
+            <p>Una vez que tienes esos números, tienes que compararlos con algo. Un solo número no tiene sentido, ya que no tienes idea de si es bueno o malo. Con la evaluación comparativa, puede comparar sus métricas de UX con cuatro posibles puntos de referencia diferentes:</p>
+            <p>Por ejemplo:</p>
+            <p><strong>Una versión anterior del producto o servicio:</strong> En 2019, el tiempo promedio para realizar una compra fue de 58 segundos. Después de nuestro reciente rediseño, el tiempo promedio para realizar una compra ahora es de 43 segundos.</p>
+            <p><strong>Un competidor:</strong> Nuestra tasa de éxito para completar la solicitud es del 86%, mientras que la de nuestros competidores es del 62%.</p>
+            <p><strong>Un estándar de la industria:</strong> La calificación promedio de facilidad de uso para crear una cuenta en el sitio web de nuestro hotel es 5.3/7. La calificación promedio de facilidad de uso para esa tarea en un estudio de los 6 principales sitios web de hoteles fue 6.5/7.</p>
+            <p><strong>Un objetivo determinado por las partes interesadas:</strong> Nuestra tasa de retención de ocho semanas es del 8%, pero nuestro objetivo es al menos el 15%.</p>
+            <Blockquote>Al empezar puede que no tenga versiones anteriores de su producto/servicio por lo que es bueno comparar con un competidor o estándar de la industria.</Blockquote>
+        </section>
+        <Heading type="h1" id="guide_4_title_2">¿Cuándo hacer benchmarking?</Heading>
+        <section>
+            <p>
+                El benchmarking puede ocurrir al final de un ciclo de diseño (por ejemplo, después de la fase de pruebas) y antes de que comience el próximo ciclo (por ejemplo, antes de la fase definir).
+            </p>
+            <Reference
+                :image="imageOne"
+                description="Benchmark en el ciclo de diseño. Fuente: www.nngroup.com" />
+        </section>
+        <Heading type="h1" id="guide_4_title_3">¿Cómo aplicar benchmarking?</Heading>
+        <section>
+            <p>
+                Para realizar un estudio de UX Benchmarking de extremo a extremo, primero decida qué va a medir y qué método de investigación utilizará para recopilar esas métricas.
+            </p>
+            <Heading type="h2" id="guide_4_title_4">Elije que medir</Heading>
+            <p>
+                Céntrese en las métricas clave que mejor reflejen la calidad de la experiencia del usuario que le interesa evaluar. Podría considerar las siguientes preguntas:
+            </p>
+            <p>
+                <ul>
+                    <li>¿En qué producto te centrarás? (sitio web, aplicación, etc.)</li>
+                    <li>¿A qué grupo de usuarios se dirigirá?</li>
+                    <li>¿Qué tareas o funciones desea medir?</li>
                 </ul>
             </p>
             <p>
-                Puedes usar esta
-                <ResourceLink type="download">
-                    plantilla de journey map
-                    <template v-slot:popup>
-                        <ResourceCard
-                            type="download"
-                            title="user_journey_map.pdf"
-                            description="Formato basico para journey map"
-                        />
-                    </template>
-                </ResourceLink>
-                para empezar a definir tus participantes.
+                
+            </p>
+            <p><strong>Tareas:</strong> Averigüe las principales tareas que los usuarios completan en su producto. Si su organización no tiene tareas principales existentes, puede comenzar documentando (la mayoría) de las tareas en el producto/servicio. Luego, priorice la lista de tareas y seleccione aproximadamente de 5 a 10 que sean mas importantes para su usuario.</p>
+            <p>Por ejemplo:</p>
+            <p>
+                <ul>
+                    <li>Para una aplicación de altavoz inteligente una posible tarea seria “configuración de un nuevo altavoz inteligente”.</li>
+                    <li>Para un sitio web de comercio electrónico una posible tarea seria “realizar una compra”.</li>
+                    <li>Para un sitio web de banca móvil una posible tarea seria “actualización de la información de contacto”.</li>
+                    <li>Para un sitio web de agencia B2B una posible tarea seria “Envío de un formulario de cliente potenciales”.</li>
+                </ul>
+            </p>
+            <p>
+                <strong>Métrica: </strong> Ahora que se ha centrado en un conjunto de tareas, ¿cómo puede medirlas? El marco HEART(Happiness, Engagement, Adoption, Retention, Task effectiveness and efficiency) de Google proporciona una descripción general concisa de los diferentes tipos de métricas que puede recopilar y realizar un seguimiento. La siguiente tabla es una adaptación del marco HEART:
+            </p>
+            <Reference
+                :image="imageTwo"
+                description="not found" />
+            <Heading type="h2" id="guide_4_title_5">Decida cómo medir</Heading>
+            <p>
+                Cuando se trata de determinar la metodología para recopilar sus métricas, debe considerar el compromiso de tiempo que requiere el método de investigación, el costo de dicho método, la habilidad de los investigadores involucrados y las herramientas de investigación disponibles para usted.
+            </p>
+            <p>
+                Hay 3 métodos de investigación que funcionan bien en UX Benchmarking: pruebas de usabilidad cuantitativas, análisis y datos de encuestas.
+            </p>
+            <p><strong>Pruebas cuantitativas de usabilidad:</strong> Los participantes realizan las tareas principales en un sistema y los investigadores recopilan métricas que miden el desempeño de los usuarios en esas tareas.</p>
+            <p><strong>Análisis:</strong> Los datos de uso del sistema se recopilan automáticamente.</p>
+            <p><strong>Encuestas:</strong> Los usuarios responden preguntas para informar sobre su comportamiento, antecedentes u opiniones.</p>
+            <Heading type="h2" id="guide_4_title_6">Recopile la primera medición: Establezca la línea de base</Heading>
+            <p>
+                Ahora que ha determinado qué métricas recopilar y cómo recopilarlas, es hora de recopilar sus métricas de referencia.
+            </p>
+            <p>
+                A medida que recopila su primer conjunto de medidas, considere los factores externos que pueden afectar sus datos y, cuando sea posible, planifique en torno a ellos. Por ejemplo, si tiene un sitio web de comercio electrónico que utiliza análisis para recopilar métricas de ventas para la evaluación comparativa, desconfíe de factores como campañas de marketing extensas o influencias económicas a gran escala que pueden alterar sus métricas y dificultar la correlación del cambio de diseño con los resultados.
+            </p>
+            <Heading type="h2" id="guide_4_title_7">Rediseñar el producto</Heading>
+            <p>
+                Este proceso se explica dentro de la siguiente sección a detalle (definir, idear y prototipar) por lo que esta metodología lo acompañara desde aquí hasta el final de todo el proceso.
+            </p>
+            <Heading type="h2" id="guide_4_title_8">Recopilar medidas adicionales</Heading>
+            <p>
+                Después de lanzar su rediseño, mida su diseño nuevamente. No existe una regla estricta sobre cuánto tiempo esperar después de que se lanza un diseño para volver a medir. Si está realizando un seguimiento de los análisis, existe el beneficio adicional de la medición continua. Sin embargo, para la recopilación de datos basada en tareas, como encuestas y pruebas de usabilidad cuantitativas, deberá determinar el momento adecuado para recopilar los datos.
+            </p>
+            <p>
+                Los usuarios a menudo odian el cambio , así que dales un poco de tiempo para adaptarse al rediseño antes de medirlo. La cantidad de tiempo varía según la frecuencia con la que los usuarios acceden a su producto. Para los productos a los que se accede diariamente, tal vez 2 o 3 semanas sea tiempo suficiente. Para un producto al que los usuarios acceden una o dos veces por semana, 4 o 5 semanas antes de medir es mejor.
+            </p>
+            <Heading type="h2" id="guide_4_title_9">Interprete los Hallazgos</Heading>
+            <p>
+                Ahora que ha recopilado al menos dos puntos de datos, es hora de interpretar sus hallazgos. No debe tomar sus métricas al pie de la letra, ya que la muestra utilizada para su estudio probablemente sea mucho más pequeña que la población total de sus usuarios.
+            </p>
+            <p>
+                La interpretación de sus métricas es muy contextual para su producto y las métricas que ha elegido recopilar.
             </p>
         </section>
-         
-        <Heading type="h1" id="guide_4_title_11">Evaluación</Heading>
+        <Heading type="h1" id="guide_4_title_10">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
             <aside class="tests_grid">

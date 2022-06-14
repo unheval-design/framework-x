@@ -32,6 +32,9 @@ export default {};
         font-size: var(--text_size_l);
         font-weight: 600;
     }
+    strong {
+        font-weight: 500;
+    }
     p {
         font-size: var(--text_size_l);
         line-height: var(--text_line_height);

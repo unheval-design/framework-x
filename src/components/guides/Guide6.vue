@@ -29,72 +29,75 @@ const question2 = {
 </script>
 <template>
     <GuideTitle>
-        Mapa del Sitio
+        Card Sorting
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1" id="guide_6_title_1">Definición</Heading>
         <section>
             <p>
-               Diseñar un sitio web puede parecer bastante abrumador con tantas cosas que considerar, es fácil caer en una mala estructuración de la información que queremos mostrar.
+               Parte de hacer que un sitio sea fácil de usar es organizar la información para que los visitantes del sitio puedan encontrar lo que buscan sin mucho esfuerzo. Con demasiada frecuencia, el contenido se estructura en función de lo que tiene sentido para la empresa, no para los visitantes.
             </p>
             <p>
-                Una mala estructuración puede conducir a una mala experiencia del usuario y, más allá de eso, a la pérdida de negocios. Si sus visitantes no saben a dónde ir o qué hacer, se irán.
-            </p>
-            <p>
-                Un mapa del sitio de la experiencia del usuario (UX) es una representación visual de la arquitectura de la información de su producto que describe las diferentes páginas de su producto, junto con la jerarquía entre esas páginas. A veces se denomina diagrama de arquitectura de la información (IA) o esquema de contenido.
+                Card Sorting (clasificación de tarjetas) es una técnica de investigación de UX para descubrir cómo las personas entienden y clasifican la información. Esta técnica se usa cuando un equipo quiere agrupar y etiquetar la información del sitio web de una manera que tenga sentido para el público objetivo. La clasificación de tarjetas crea una base para una arquitectura de información (IA) robusta, y una IA sólida permite la creación de un sistema de navegación que coincida con las expectativas de los usuarios.
             </p>
         </section>
-        <Heading type="h1" id="guide_6_title_2">¿Cuándo hacer el mapa del sitio?</Heading>
+        <Heading type="h1" id="guide_6_title_2">¿Cuándo usar el Card Sorting?</Heading>
         <section>
             <p>
-                Los sitemaps se hacen al principio del proceso de diseño de UX, justo después de la fase de descubrimiento. Por lo general, creará un mapa del sitio después del User Journey Map y el Card Sorting(Babich, 2019) . Para un sitio web existente, trabaje en una auditoría del sitio o en un inventario de contenido antes de diseñar el nuevo mapa del sitio.
+                La clasificación de tarjetas es útil en dos casos:
+            </p>
+            <p>
+                <ul>
+                    <li>Cuando se quiere descubrir cómo las personas entienden y agrupan diferentes conceptos. Desea revelar el modelo mental del usuario, y esta comprensión lo ayudará a diseñar mejores productos para ellos.</li>
+                    <li>Cuando desea mejorar el diseño existente o crear un nuevo diseño, su objetivo es comprender cómo los usuarios categorizan la información y hacer que la interfaz de usuario sea predecible para ellos.</li>
+                </ul>
             </p>
         </section>
-        <Heading type="h1" id="guide_6_title_3">Tipos de mapas de sitio</Heading>
+        <Heading type="h1" id="guide_6_title_3">Ventajas y Desventajas</Heading>
         <section>
-            <p>Por lo general, hay dos tipos de mapas de sitio: un mapa de sitio plano y un mapa de sitio profundo.</p>
-            <Heading type="h2" id="guide_6_title_4">Mapa del sitio plano</Heading>
+            <Heading type="h2" id="guide_6_title_4">Ventajas</Heading>
             <p>
-                Generalmente tiene cuatro o menos filas verticales. Se utiliza para productos de tamaño pequeño a mediano en los que hay que organizar entre 10 y 100 páginas de información.
+                <ul>
+                    <li>Es simple y económico ejecutar sesiones de clasificación de tarjetas.</li>
+                    <li>Rápido para realizar investigaciones y obtener resultados de los usuarios, especialmente si las sesiones se realizan de forma remota.</li>
+                    <li>Proporciona una buena perspectiva sobre los usuarios y cómo esperarían que se organizara la información.</li>
+                </ul>
             </p>
-            <Heading type="h2" id="guide_6_title_5">Mapa del sitio profundo</Heading>
+            <Heading type="h2" id="guide_6_title_5">Desventajas</Heading>
             <p>
-                el mapa del sitio profundo o detallado es cuando el mapa tiene cinco o más filas verticales. Es mejor usar un mapa del sitio completo si el producto tiene más de 100 a 1000 páginas/contenidos que deben organizarse.
+                <ul>
+                    <li>Los resultados pueden variar y es posible que no haya un patrón real en los datos.</li>
+                    <li>El análisis de los resultados puede llevar mucho tiempo dependiendo de la complejidad de los datos.</li>
+                    <li>La clasificación de tarjetas no tiene en cuenta las tareas y los objetivos de los usuarios, por lo que si la investigación se utiliza sin tener esto en cuenta, podría terminar con una estructura que el usuario no pueda utilizar para completar sus tareas en el sitio.</li>
+                </ul>
             </p>
         </section>
-        <Heading type="h1" id="guide_6_title_6">¿Cómo crear el mapa del sitio?</Heading>
+        <Heading type="h1" id="guide_6_title_6">Tipos de Card Sorting</Heading>
         <section>
-            <p>Un mapa del sitio de UX consta de páginas vinculadas, cada una con un número de referencia y una etiqueta . Los números de referencia lo ayudan a realizar un seguimiento de las páginas, incluso cuando avanza a esquemas, prototipos e iteraciones (Mears, 2013).</p>
+            <p>Hay tres técnicas de UX de Card Sorting entre las que puede elegir: abierta, cerrada e híbrida.</p>
+            <Heading type="h2" id="guide_6_title_7">Abierta</Heading>
+            <p>A cada participante se le entrega una pila de tarjetas que se completan previamente con temas y luego se les pide que agrupen esas tarjetas de la forma que deseen. Después de eso, el participante debe crear etiquetas para los grupos que eligió. Los participantes no tienen ninguna restricción para nombrar.</p>
+            <p>Este tipo de clasificación es excelente cuando desea diseñar un nuevo sitio web o mejorar el existente. Al analizar los resultados de la clasificación de tarjetas, es fácil ver si la estructura del sitio web que tiene en este momento coincide con la forma en que las personas organizarían la misma información.</p>
             <Reference
                 :image="imageOne"
-                description="A single page in a UX sitemap. Author: Jennifer Jhang." />
-            <p>Al crear el mapa del sitio, siempre comience la primera fila con una página significativa: página de inicio; luego aplique estratégicamente las subpáginas necesarias debajo de la primera fila. Todavía es beneficioso hacer una lluvia de ideas con su equipo antes de estructurar el mapa.</p>
-            <Heading type="h2" id="guide_6_title_7">Reuniendo el contenido</Heading>
-            <p>
-                <ol>
-                    <li>Escriba las páginas significativas en pegatinas(post-it)</li>
-                    <li>Escriba las piezas de información representativas que son necesarias para el producto final.</li>
-                    <li>Ordenar los contenidos y etiquetarlos según sus características/orígenes.</li>
-                    <li>En función de la clasificación del contenido, decida las páginas secundarias y las subpáginas.</li>
-                </ol>
-            </p>
-            <Heading type="h2" id="guide_6_title_8">Creación del mapa del sitio</Heading>
-            <p>
-                <ol>
-                    <li>Coloque las páginas principales como la fila superior del mapa.</li>
-                    <li>Etiquete cada página en su plan, ordene sus etiquetas y cree la hoja de ruta estructurada.</li>
-                    <li>Coloque estratégicamente las páginas secundarias, agréguelas a las siguientes filas según la importancia del contenido.</li>
-                    <li>Una vez que el sitio esté organizado, discuta el mapa del sitio y su flujo dentro de su equipo. Recorte, agregue o reemplace las piezas de información/páginas si es necesario.</li>
-                    <li>Reorganiza las páginas y ensambla la estructura final del producto en tu mapa del sitio.</li>
-                </ol>
-            </p>
-            <p>Un mapa del sitio basico deberia tener una estructura similar al siguiente:</p>
+                description="Open Card Sort. Fuente: interaction-design.org" />
+            <Heading type="h2" id="guide_6_title_8">Cerrada</Heading>
+            <p>Los investigadores crean etiquetas para categorías y les piden a los participantes que clasifiquen las tarjetas en categorías predefinidas. Todo lo que los participantes deben hacer es relacionar el contenido con las categorías existentes. Este tipo de clasificación de tarjetas no revela cómo los usuarios conceptualizan los temas, pero lo ayuda a comprender qué tan bien una estructura de categoría existente admite el contenido.</p>
+            <p>La clasificación de tarjetas cerradas funciona mejor para priorizar y clasificar funciones. Por ejemplo, puede aplicarlo para filtros de búsqueda en la aplicación de comercio electrónico. Los usuarios pueden distribuir todos los filtros de búsqueda que tiene en los grupos 'Obligatorio', 'Opcional' o 'Uso frecuente' a 'Nunca lo uso'.</p>
             <Reference
                 :image="imageTwo"
-                description="UX sitemap example of a dessert blog website. Author: Jennifer Jhang." />
+                description="Closed Card Sort. Fuente: interaction-design.org" />
+            <Heading type="h2" id="guide_6_title_9">Híbrida</Heading>
+            <p>Como sugiere el nombre, este tipo de clasificación de tarjetas donde los participantes clasifican las tarjetas en categorías predefinidas pero también pueden crear sus propias categorías.</p>
+            <p>La clasificación de tarjeta híbrida funciona mejor cuando los investigadores desean generar ideas para agrupar información y saben que les faltan algunas categorías en su estructura de categorías actual. Pueden obtener información sobre las categorías que faltan, y esta información puede informar las decisiones de diseño.</p>
         </section>
-        <Heading type="h1" id="guide_6_title_9">Evaluación</Heading>
+        <Heading type="h1" id="guide_6_title_10">¿Que herramientas usar para hacer Card Sorting?</Heading>
+        <section>
+            <p>Para realizar una ordenación de tarjetas, necesita dos cosas: usuarios reales y tarjetas. </p>
+            <p>Para las tarjetas, puede usar tarjetas físicas reales (pedazos de papel) o una de varias herramientas de software de clasificación de tarjetas en línea como Miro si va acompañarlo de una entrevista una guia presencial o también Optimal Workshop si desea una herramienta mas automatizada. </p>
+        </section>
+        <Heading type="h1" id="guide_6_title_11">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
             <aside class="tests_grid">

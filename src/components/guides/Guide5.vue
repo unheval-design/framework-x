@@ -2,101 +2,164 @@
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
 import TestCard from '@/components/TestCard.vue';
-import Reference from '@/components/Reference.vue';
-import imageOne from '@/assets/images/guide-5/image_1.png'
-import imageTwo from '@/assets/images/guide-5/image_2.png'
+import Blockquote from '@/components/Blockquote.vue';
+import ResourceLink from '@/components/ResourceLink.vue';
+import ResourceCard from '@/components/ResourceCard.vue';
 import Heading from '@/components/Heading.vue';
 
 const question1 = {
-    question: '¿Por qué hacemos el Card Sorting?',
+    question: '¿Por que hacemos el user journey map?',
     answer: 1,
     alternatives: [
-        'Por que necesitamos descubrir cómo las personas entienden y categorizan la información.',
+        'Por que necesitamos entender si los procesos o etapas de un proceso están bien optimizados.',
         'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.',
-        'Por que queremos entender como agrupar los elementos de nuestra interfaz.'
+        'Por que queremos detectar si las tareas son completadas y el grado de satisfacción del usuario.'
     ]
 };
 
 const question2 = {
-    question: '¿Cuándo usariamos un Card Sorting de tipo cerrado?',
+    question: '¿Qué son las oportunidades en un user journey map?',
     answer: 3,
     alternatives: [
-        'Si deseamos priorizar y clasificar funciones.',
-        'Si deseamos descubrir nuevas categorias para un mismo grupo de tarjetas.',
-        'Si deseamos mejorar la categorizacion para las funcionalidades de nuestra interfaz.'
+        'Información que describe cómo se puede optimizar la experiencia del usuario.',
+        'Rutas que tiene el usuario para completar su recorrido.',
+        'Experiencias favorables del usuario en el recorrido.'
     ]
 };
 </script>
 <template>
     <GuideTitle>
-        Card Sorting
+        User Journey Map
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1" id="guide_5_title_1">Definición</Heading>
         <section>
             <p>
-               Parte de hacer que un sitio sea fácil de usar es organizar la información para que los visitantes del sitio puedan encontrar lo que buscan sin mucho esfuerzo. Con demasiada frecuencia, el contenido se estructura en función de lo que tiene sentido para la empresa, no para los visitantes.
+                El “Journey Map” es una herramienta proveniente del Design
+                Thinking y define las distintas actividades que desarrolla un
+                usuario en el uso de un producto o servicio. Con el paso del
+                tiempo se descubrió que también puede responder a cómo
+                interactúan los usuarios con marcas o servicios.
             </p>
             <p>
-                Card Sorting (clasificación de tarjetas) es una técnica de investigación de UX para descubrir cómo las personas entienden y clasifican la información. Esta técnica se usa cuando un equipo quiere agrupar y etiquetar la información del sitio web de una manera que tenga sentido para el público objetivo. La clasificación de tarjetas crea una base para una arquitectura de información (IA) robusta, y una IA sólida permite la creación de un sistema de navegación que coincida con las expectativas de los usuarios.
+                Dentro del proceso del Design Thinking, es una herramienta muy
+                eficaz para diseñar una solución, o para detectar puntos
+                conflictivos de un producto o servicio existentes que pudieran
+                requerir una mejora, y fue definida de esta manera por Philip
+                Kotler en 2013.
             </p>
         </section>
-        <Heading type="h1" id="guide_5_title_2">¿Cuándo usar el Card Sorting?</Heading>
+        <Heading type="h1" id="guide_5_title_2">¿Por qué usar User Journey Map?</Heading>
         <section>
             <p>
-                La clasificación de tarjetas es útil en dos casos:
+                El User Journer Map es un proceso que brinda una visión
+                holística de la experiencia del cliente al descubrir momentos
+                tanto de frustración como de placer a lo largo de una serie de
+                interacciones. Realizado con éxito, revela oportunidades para
+                abordar los puntos débiles de los clientes, aliviar la
+                fragmentación y, en última instancia, crear una mejor
+                experiencia para sus usuarios.
+            </p>
+            <p>
+                El proceso de creación de un mapa fuerza la conversación y un
+                modelo mental alineado para todo el equipo. Los mapas también
+                pueden convertirse en la base para la toma de decisiones a
+                medida que el equipo avanza.
+            </p>
+        </section>
+        <Heading type="h1" id="guide_5_title_3">Elementos del User Journey Map</Heading>
+        <section>
+            <p>
+                El mapa está compuesto por filas (secciones fijas) y columnas
+                (el número de columnas varía según el proyecto). Te
+                sugerimos definir las etapas con el tiempo de duración, de ese
+                modo podrás saber cuántas columnas necesitas.
+            </p>
+            <p>
+                Los mapas de viaje vienen en todas las formas y
+                tamaños. Independientemente de cómo se vean, los mapas de viaje
+                tienen los siguientes 5 elementos clave en común:
+            </p>
+            <Heading type="h2" id="guide_5_title_4">Actor</Heading>
+            <p>
+                Es la persona o usuario que experimenta el viaje. Los actores
+                generalmente se alinean con personas y sus acciones en el mapa
+                se basan en datos.
+            </p>
+            <p>
+                Por ejemplo: una universidad podría elegir a un estudiante o a
+                un docente como actor; cada uno daría como resultado diferentes
+                viajes. Para capturar ambos puntos de vista, la universidad
+                necesitará construir dos mapas separados, uno para cada uno de
+                los dos tipos de usuarios.
+            </p>
+            <Heading type="h2" id="guide_5_title_5">Escenario + Expectativas</Heading>
+            <p>
+                El escenario describe la situación que aborda el User Journey
+                Map y está asociado con la meta o necesidad de un actor y sus
+                expectativas específicas. Por ejemplo, un escenario podría ser
+                cambiar de planes móviles para ahorrar dinero, y las
+                expectativas incluyen encontrar fácilmente toda la información
+                necesaria para tomar una decisión.
+            </p>
+            <Blockquote>
+                Los escenarios pueden ser reales (para productos y servicios
+                existentes) o anticipados, para productos que aún se encuentran
+                en la etapa de diseño.
+            </Blockquote>
+            <Heading type="h2" id="guide_5_title_6">Fases del viaje</Heading>
+            <p>
+                Las fases del viaje son las diferentes etapas de alto nivel del
+                viaje. Proporcionan organización para el resto de la información
+                del User Journey Map (acciones, pensamientos y emociones). Las
+                etapas variarán de un escenario a otro; cada organización
+                normalmente tendrá datos que le ayuden a determinar cuáles son
+                estas fases para un escenario determinado. 
+            </p>
+            <p>Aquí hay unos ejemplos:</p>
+            <p>
+                <ul>
+                    <li>Para un escenario de comercio electrónico (como comprar parlantes Bluetooth), las fases pueden ser descubrir, probar, comprar, usar, buscar soporte.</li>
+                    <li>Para compras grandes (o de lujo) (como conducir una prueba y comprar un automóvil), las fases pueden ser compromiso, educación, investigación, evaluación, justificación.</li>
+                    <li>Para un escenario de negocio a negocio (como el despliegue de una herramienta interna), las fases podrían ser compra, adopción, retención, expansión, promoción.</li>
+                </ul>
+            </p>
+            <Heading type="h2" id="guide_5_title_7">Acciones, pensamientos y emociones</Heading>
+            <p>
+                Estos son comportamientos, pensamientos y sentimientos que el actor tiene a lo largo del viaje y que se mapean dentro de cada una de las fases del viaje.
+            </p>
+            <p>Las acciones: son los comportamientos reales y los pasos tomados por los usuarios.</p>
+            <p>Los pensamientos: corresponden a las preguntas, motivaciones y necesidades de información de los usuarios en diferentes etapas de viaje.</p>
+            <p>Las emociones: Se trazan como una sola línea a lo largo de las fases del viaje, indicando literalmente los "altibajos" emocionales de la experiencia.</p>
+            <Heading type="h2" id="guide_5_title_8">Oportunidades</Heading>
+            <p>
+                Las oportunidades son información que se obtiene del mapeo; hablan de cómo se puede optimizar la experiencia del usuario. Las perspectivas y las oportunidades ayudan al equipo a extraer conocimiento del mapa:
             </p>
             <p>
                 <ul>
-                    <li>Cuando se quiere descubrir cómo las personas entienden y agrupan diferentes conceptos. Desea revelar el modelo mental del usuario, y esta comprensión lo ayudará a diseñar mejores productos para ellos.</li>
-                    <li>Cuando desea mejorar el diseño existente o crear un nuevo diseño, su objetivo es comprender cómo los usuarios categorizan la información y hacer que la interfaz de usuario sea predecible para ellos.</li>
+                    <li>¿Qué hay que hacer con este conocimiento?</li>
+                    <li>¿Quién es dueño de qué cambio?</li>
+                    <li>¿Dónde están las mayores oportunidades?</li>
+                    <li>¿Cómo vamos a medir las mejoras que implementamos?</li>
                 </ul>
             </p>
-        </section>
-        <Heading type="h1" id="guide_5_title_3">Ventajas y Desventajas</Heading>
-        <section>
-            <Heading type="h2" id="guide_5_title_4">Ventajas</Heading>
             <p>
-                <ul>
-                    <li>Es simple y económico ejecutar sesiones de clasificación de tarjetas.</li>
-                    <li>Rápido para realizar investigaciones y obtener resultados de los usuarios, especialmente si las sesiones se realizan de forma remota.</li>
-                    <li>Proporciona una buena perspectiva sobre los usuarios y cómo esperarían que se organizara la información.</li>
-                </ul>
+                Puedes usar esta
+                <ResourceLink type="download">
+                    plantilla de journey map
+                    <template v-slot:popup>
+                        <ResourceCard
+                            type="download"
+                            title="user_journey_map.pdf"
+                            description="Formato basico para journey map"
+                        />
+                    </template>
+                </ResourceLink>
+                para empezar a definir tus participantes.
             </p>
-            <Heading type="h2" id="guide_5_title_5">Desventajas</Heading>
-            <p>
-                <ul>
-                    <li>Los resultados pueden variar y es posible que no haya un patrón real en los datos.</li>
-                    <li>El análisis de los resultados puede llevar mucho tiempo dependiendo de la complejidad de los datos.</li>
-                    <li>La clasificación de tarjetas no tiene en cuenta las tareas y los objetivos de los usuarios, por lo que si la investigación se utiliza sin tener esto en cuenta, podría terminar con una estructura que el usuario no pueda utilizar para completar sus tareas en el sitio.</li>
-                </ul>
-            </p>
         </section>
-        <Heading type="h1" id="guide_5_title_6">Tipos de Card Sorting</Heading>
-        <section>
-            <p>Hay tres técnicas de UX de Card Sorting entre las que puede elegir: abierta, cerrada e híbrida.</p>
-            <Heading type="h2" id="guide_5_title_7">Abierta</Heading>
-            <p>A cada participante se le entrega una pila de tarjetas que se completan previamente con temas y luego se les pide que agrupen esas tarjetas de la forma que deseen. Después de eso, el participante debe crear etiquetas para los grupos que eligió. Los participantes no tienen ninguna restricción para nombrar.</p>
-            <p>Este tipo de clasificación es excelente cuando desea diseñar un nuevo sitio web o mejorar el existente. Al analizar los resultados de la clasificación de tarjetas, es fácil ver si la estructura del sitio web que tiene en este momento coincide con la forma en que las personas organizarían la misma información.</p>
-            <Reference
-                :image="imageOne"
-                description="Open Card Sort. Fuente: interaction-design.org" />
-            <Heading type="h2" id="guide_5_title_8">Cerrada</Heading>
-            <p>Los investigadores crean etiquetas para categorías y les piden a los participantes que clasifiquen las tarjetas en categorías predefinidas. Todo lo que los participantes deben hacer es relacionar el contenido con las categorías existentes. Este tipo de clasificación de tarjetas no revela cómo los usuarios conceptualizan los temas, pero lo ayuda a comprender qué tan bien una estructura de categoría existente admite el contenido.</p>
-            <p>La clasificación de tarjetas cerradas funciona mejor para priorizar y clasificar funciones. Por ejemplo, puede aplicarlo para filtros de búsqueda en la aplicación de comercio electrónico. Los usuarios pueden distribuir todos los filtros de búsqueda que tiene en los grupos 'Obligatorio', 'Opcional' o 'Uso frecuente' a 'Nunca lo uso'.</p>
-            <Reference
-                :image="imageTwo"
-                description="Closed Card Sort. Fuente: interaction-design.org" />
-            <Heading type="h2" id="guide_5_title_9">Híbrida</Heading>
-            <p>Como sugiere el nombre, este tipo de clasificación de tarjetas donde los participantes clasifican las tarjetas en categorías predefinidas pero también pueden crear sus propias categorías.</p>
-            <p>La clasificación de tarjeta híbrida funciona mejor cuando los investigadores desean generar ideas para agrupar información y saben que les faltan algunas categorías en su estructura de categorías actual. Pueden obtener información sobre las categorías que faltan, y esta información puede informar las decisiones de diseño.</p>
-        </section>
-        <Heading type="h1" id="guide_5_title_10">¿Que herramientas usar para hacer Card Sorting?</Heading>
-        <section>
-            <p>Para realizar una ordenación de tarjetas, necesita dos cosas: usuarios reales y tarjetas. </p>
-            <p>Para las tarjetas, puede usar tarjetas físicas reales (pedazos de papel) o una de varias herramientas de software de clasificación de tarjetas en línea como Miro si va acompañarlo de una entrevista una guia presencial o también Optimal Workshop si desea una herramienta mas automatizada. </p>
-        </section>
+         
         <Heading type="h1" id="guide_5_title_11">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
