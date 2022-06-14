@@ -1,8 +1,5 @@
 <template>
-    <div
-        class="RadioButton"
-        :class="[size, { success: success }, { error: error }]"
-    >
+    <div class="RadioButton" :class="[{ success: success }, { error: error }]">
         <input
             type="radio"
             :id="id"

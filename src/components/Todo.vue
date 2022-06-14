@@ -3,6 +3,8 @@ import { useTodoStore } from '@/stores/todo.js';
 import useGuide from '@/hooks/useGuide.js';
 import IconBack from '@/components/drawables/IconBack.vue';
 import IconAdd from '@/components/drawables/IconAdd.vue';
+import HoverIcon from '@/components/HoverIcon.vue';
+import Task from '@/components/todo/Task.vue';
 
 const todo = useTodoStore();
 const { guide } = useGuide();
@@ -15,18 +17,24 @@ const closeModalSlide = () => {
 <template>
     <div class="Todo">
         <nav class="todo_nav">
-            <IconBack @click="closeModalSlide()" />
+            <HoverIcon>
+                <IconBack @click="closeModalSlide()" />
+            </HoverIcon>
             <div class="todo_nav_title">
                 <p>Tareas</p>
                 <small>{{ guide.substage.name }}</small>
             </div>
-            <IconAdd @click="todo.add()" />
+            <HoverIcon>
+                <IconAdd hover @click="todo.add()" />
+            </HoverIcon>
         </nav>
         <div class="todo_wrapper">
             <ul>
-                <li v-for="(task, index) in todo.list" :key="index">
-                    {{ task.name }}
-                </li>
+                <Task
+                    v-for="(task, index) in todo.list"
+                    :key="index"
+                    :task="task"
+                />
             </ul>
         </div>
     </div>
