@@ -1,19 +1,22 @@
 import { guides } from '@/helpers/stagesData.js';
 import { ref, inject } from '@vue/runtime-core';
-import { watchEffect } from 'vue';
+import { computed, watch, watchEffect } from 'vue';
 
 const useGuide = () => {
     const guideId = inject('guideId');
-    let guide = ref();
+    const guide = ref();
 
     Object.keys(guides).forEach((key) => {
         const ids = key.split(',');
-        if (ids.includes(guideId.value.toString())) guide = guides[key];
-        guide = {
-            ...guide,
-            current: guideId.value - guide.start + 1
-        };
+        if (ids.includes(guideId.value.toString())) {
+            guide.value = guides[key];
+            guide.value = {
+                ...guide.value,
+                current: guideId.value - guide.value.start + 1
+            };
+        }
     });
+    console.log('getGuide');
 
     return { guide };
 };

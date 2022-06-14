@@ -3,21 +3,38 @@ import IconTodo from '@/components/drawables/IconTodo.vue';
 import Navbar from '@/components/Navbar.vue';
 import Guide from '@/components/Guide.vue';
 import GuidesNav from '@/components/GuidesNav.vue';
+import ModalSlide from '@/components/ModalSlide.vue';
+import Todo from '@/components/Todo.vue';
 import GuideTableContent from '@/components/GuideTableContent.vue';
 import { useRoute } from 'vue-router';
-import { provide, ref, watchEffect } from '@vue/runtime-core';
+import { provide, ref, watch, watchEffect } from '@vue/runtime-core';
+
 const route = useRoute();
 const guideId = ref(Number(route.params.id));
+const flagTodoModal = ref(false);
+
 provide('guideId', guideId);
+
+const openTodoModal = () => {
+    flagTodoModal.value = true;
+};
+
+const closeTodoModal = () => {
+    flagTodoModal.value = false;
+};
+
 watchEffect(() => {
     guideId.value = Number(route.params.id);
 });
 </script>
 <template>
+    <ModalSlide :show="flagTodoModal" @close="closeTodoModal">
+        <Todo @close="closeTodoModal" />
+    </ModalSlide>
     <Navbar>
         <template v-slot:options>
             <li>
-                <IconTodo />
+                <IconTodo @click="openTodoModal()" />
             </li>
         </template>
     </Navbar>
