@@ -5,6 +5,8 @@ import IconBack from '@/components/drawables/IconBack.vue';
 import IconAdd from '@/components/drawables/IconAdd.vue';
 import HoverIcon from '@/components/HoverIcon.vue';
 import Task from '@/components/todo/Task.vue';
+import Empty from '@/components/Empty.vue';
+import IconTodo from '@/components/drawables/IconTodo.vue'
 
 const todo = useTodoStore();
 const { guide } = useGuide();
@@ -29,13 +31,24 @@ const closeModalSlide = () => {
             </HoverIcon>
         </nav>
         <div class="todo_wrapper">
-            <ul>
+            <ul v-if="todo.list.length">
                 <Task
                     v-for="(task, index) in todo.list"
                     :key="index"
                     :task="task"
                 />
             </ul>
+            <Empty v-if="!todo.list.length">
+                <template v-slot:icon>
+                    <IconTodo />
+                </template>
+                <template v-slot:title>
+                    Aún no hay tareas
+                </template>
+                <template v-slot:description>
+                    Añade tus tareas pendientes y haz un seguimiento de ellas.
+                </template>
+            </Empty>
         </div>
     </div>
 </template>
