@@ -1,5 +1,7 @@
 <script setup>
-import { inject, onMounted, useSlots } from '@vue/runtime-core';
+import { inject, onMounted, ref, useSlots } from '@vue/runtime-core';
+const guideId = inject('guideId');
+const id = ref('');
 
 const props = defineProps({
     type: {
@@ -8,10 +10,6 @@ const props = defineProps({
         validator: (value) => {
             return ['h1', 'h2'].indexOf(value) !== -1;
         }
-    },
-    id: {
-        type: String,
-        required: true
     }
 });
 
@@ -19,10 +17,11 @@ const guideTableContent = inject('guideTableContent');
 const slot = useSlots();
 
 onMounted(() => {
+    id.value = `guide_${guideId.value}_title_${guideTableContent.value.length}`;
     const name = slot.default()[0].children;
     guideTableContent.value.push({
         name,
-        href: props.id,
+        href: id.value,
         type: props.type
     });
 });

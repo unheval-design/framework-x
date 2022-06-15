@@ -30,7 +30,7 @@ const question2 = {
         <template v-slot:timeRead>3</template>
     </GuideTitle>
     <GuideBody>
-        <Heading type="h1" id="guide_3_title_1">Definición</Heading>
+        <Heading type="h1">Definición</Heading>
         <section>
             <p>
                 Es una herramienta para la síntesis de información sobre el
@@ -47,9 +47,7 @@ const question2 = {
                 agentes sujetos a examen).
             </p>
         </section>
-        <Heading type="h1" id="guide_3_title_2"
-            >¿Cuándo usar el mapa de empatía?</Heading
-        >
+        <Heading type="h1">¿Cuándo usar el mapa de empatía?</Heading>
         <section>
             <p>
                 Cuando hay mucha información de campo y hay necesidad de
@@ -57,31 +55,27 @@ const question2 = {
                 objetivo con el fin de desarrollar una mayor empatía.
             </p>
         </section>
-        <Heading type="h1" id="guide_3_title_3"
-            >Elementos de un mapa de empatía</Heading
-        >
+        <Heading type="h1">Elementos de un mapa de empatía</Heading>
         <section>
             <p>
                 Un mapa de empatía esta segmentado en 6 partes o elementos que
                 describen al cliente/usuario, estas son:
             </p>
-            <Heading type="h2" id="guide_3_title_4">¿Qué ve?</Heading>
+            <Heading type="h2">¿Qué ve?</Heading>
             <p>
                 Analiza el entorno cotidiano del cliente/usuario. Qué es lo que
                 suele mirar en redes sociales, television, en donde vive,
                 trabaja o estudia. Tenemos que conocer el contexto social de la
                 persona.
             </p>
-            <Heading type="h2" id="guide_3_title_5"
-                >¿Qué dice y qué hace?</Heading
-            >
+            <Heading type="h2">¿Qué dice y qué hace?</Heading>
             <p>
                 Habrá que observar la coherencia que existe entre lo que el
                 cliente habla o muestra y las acciones que lo respaldan. Examina
                 de cerca su comportamiento para conocer qué tipo de cliente es,
                 teniendo en cuenta sus ocupaciones, pasatiempos e intereses.
             </p>
-            <Heading type="h2" id="guide_3_title_6">¿Qué oye?</Heading>
+            <Heading type="h2">¿Qué oye?</Heading>
             <p>
                 Implica toda la información que llega al cliente, ya sean
                 conversaciones con sus amigos o familiares, la estación de radio
@@ -89,9 +83,7 @@ const question2 = {
                 y otras comunicaciones que puedan generar opiniones o reseñas de
                 las marcas.
             </p>
-            <Heading type="h2" id="guide_3_title_7"
-                >¿Qué piensa y qué siente?</Heading
-            >
+            <Heading type="h2">¿Qué piensa y qué siente?</Heading>
             <p>
                 Aquí se plantea la situación general en la que se encuentra el
                 cliente/usuario, involucra sus aspectos demográficos, económicos
@@ -100,15 +92,13 @@ const question2 = {
                 sueños y sus aspiraciones. A partir de ello también se determina
                 cómo es que siente o percibe a la marca.
             </p>
-            <Heading type="h2" id="guide_3_title_8"
-                >¿Cuáles son los esfuerzos que realiza?</Heading
-            >
+            <Heading type="h2">¿Cuáles son los esfuerzos que realiza?</Heading>
             <p>
                 Esta parte representa los obstáculos a los que se enfrenta el
                 cliente/usuario en su vida, junto con las dudas, preocupaciones
                 y frustraciones que experimenta.
             </p>
-            <Heading type="h2" id="guide_3_title_9">
+            <Heading type="h2">
                 ¿Cuáles son los resultados/beneficios que espera obtener?
             </Heading>
             <p>
@@ -116,9 +106,7 @@ const question2 = {
                 cliente/usuario una vez que supera sus obstáculos.
             </p>
         </section>
-        <Heading type="h1" id="guide_3_title_10"
-            >¿Cómo aplicar el mapa de empatía?</Heading
-        >
+        <Heading type="h1">¿Cómo aplicar el mapa de empatía?</Heading>
         <section>
             <p>
                 La construcción de los mapas de empatía es un ejercicio rápido
@@ -138,7 +126,7 @@ const question2 = {
                 que se ha descrito del cliente/usuario.
             </p>
         </section>
-        <Heading type="h1" id="guide_3_title_11">Evaluación</Heading>
+        <Heading type="h1">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
             <aside class="tests_grid">

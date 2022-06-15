@@ -21,7 +21,7 @@ defineProps({
 
 onMounted(() => {
     nextTick(() => {
-        x.value = resourceRef.value?.offsetLeft + 18;
+        x.value = resourceRef.value?.offsetLeft;
         y.value = resourceRef.value?.offsetTop + 28;
     });
 });
@@ -29,7 +29,7 @@ onMounted(() => {
 const showResource = () => {
     flagResource.value = true;
     nextTick(() => {
-        x.value = resourceRef.value?.offsetLeft + 18;
+        x.value = resourceRef.value?.offsetLeft;
         y.value = resourceRef.value?.offsetTop + 28;
     });
 };
@@ -46,8 +46,8 @@ const hideResource = () => {
         ref="resourceRef"
         @click="showResource()"
     >
-        <IconDownloadFile v-if="type === 'download'" />
-        <IconLink v-if="type === 'tool'" />
+        <!-- <IconDownloadFile v-if="type === 'download'" />
+        <IconLink v-if="type === 'tool'" /> -->
         <span><slot /></span>
         <Teleport to="body">
             <Dropdown

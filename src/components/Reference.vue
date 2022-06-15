@@ -32,7 +32,7 @@ export default {
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;
-    gap: var(--gap_sm);
+    gap: var(--gap);
     img {
         border-radius: var(--radius);
     }

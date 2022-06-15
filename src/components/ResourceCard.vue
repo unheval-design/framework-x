@@ -43,6 +43,7 @@ defineProps({
     display: flex;
     align-items: center;
     gap: var(--gap);
+    min-width: 240px;
     i.resource_image {
         width: 80px;
         height: 80px;

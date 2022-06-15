@@ -5,6 +5,7 @@ import Blockquote from '@/components/Blockquote.vue';
 import Reference from '@/components/Reference.vue';
 import TestCard from '@/components/TestCard.vue';
 import Heading from '@/components/Heading.vue';
+import imageOne from '@/assets/images/guide-2/image_1.png'
 
 const question1 = {
     question: '¿Cuando dedo hacer el análisis heurístico?',
@@ -25,7 +26,7 @@ const question2 = {
         <template v-slot:timeRead>4</template>
     </GuideTitle>
     <GuideBody>
-        <Heading type="h1" id="guide_2_title_1">Definición</Heading>
+        <Heading type="h1" >Definición</Heading>
         <section>
             <p>
                 Un análisis heurístico se utiliza para identificar problemas
@@ -47,7 +48,7 @@ const question2 = {
                 mejorar la usabilidad y eficiencia de un producto digital.
             </Blockquote>
         </section>
-        <Heading type="h1" id="guide_2_title_2">¿Cuándo hacer el análisis heurístico?</Heading>
+        <Heading type="h1" >¿Cuándo hacer el análisis heurístico?</Heading>
         <section>
             <p>
                 Se puede realizar en cualquier etapa avanzada del proceso del
@@ -60,25 +61,25 @@ const question2 = {
                 </ul>
             </p>
         </section>
-        <Heading type="h1" id="guide_2_title_3">Selección de expertos</Heading>
+        <Heading type="h1" >Selección de expertos</Heading>
         <section>
-            <Heading type="h2" id="guide_2_title_4">Perfil del Experto</Heading>
+            <Heading type="h2" >Perfil del Experto</Heading>
             <p>
                 Un experto en evaluación heurística es idealmente un experto en pruebas de usabilidad. Por lo general, provienen de las disciplinas de factores humanos, diseño de interacción (IXD), HCI(interacción hombre-computadora) y/o Diseño UX, con antecedentes complementarios en disciplinas como la psicología, la informática, las ciencias de la información y el comercio.
             </p>
-            <Heading type="h2" id="guide_2_title_5">Tamaño de muestra</Heading>
+            <Heading type="h2" >Tamaño de muestra</Heading>
             <p>
                 Es útil tener en cuenta que a pesar de que un solo experimentado profesional del UX es generalmente experto en identificar los problemas de usabilidad más críticos, un grupo de evaluadores es generalmente la mejor opción.
             </p>
             <p>
                 Entre 5 y 8 individuos es el punto dulce: deben ser capaces de señalar más del 80% de problemas de usabilidad. Sin embargo el uso de más de 10 evaluadores heurísticos no producirá mejores resultados.
             </p>
-            <Reference image="https://miro.medium.com/max/1400/1*8nyjZ3xihC6Bselj3gezvQ.png" description="Toptal.com imagen de referencia"/>
+            <Reference :image="imageOne" description="Imagen de referencia. Author: Toptal.com."/>
             <Blockquote>A medida que aumenta el número de evaluadores, aumenta la proporción de problemas de usabilidad identificados. Pero después de 10 evaluadores, las ganancias potenciales son insignificantes.</Blockquote>
         </section>
-        <Heading type="h1" id="guide_2_title_6">Ventajas y Desventajas</Heading>
+        <Heading type="h1" >Ventajas y Desventajas</Heading>
         <section>
-            <Heading type="h2" id="guide_2_title_7">Ventajas</Heading>
+            <Heading type="h2" >Ventajas</Heading>
             <p>
                 <ul>
                     <li>Descubre muchos problemas de usabilidad y mejora significativamente el UX de un producto.</li>
@@ -88,7 +89,7 @@ const question2 = {
                     <li>Evaluar diseños utilizando un conjunto de heurísticas puede ayudar a identificar problemas de usabilidad con flujos de usuario específicos y determinar el impacto en la experiencia general del usuario.</li>
                 </ul>
             </p>
-            <Heading type="h2" id="guide_2_title_8">Desventajas</Heading>
+            <Heading type="h2" >Desventajas</Heading>
             <p>
                 <ul>
                     <li>Los expertos en usabilidad son a menudo difíciles de encontrar y pueden ser caros.</li>
@@ -98,7 +99,7 @@ const question2 = {
                 </ul>
             </p>
         </section>
-        <Heading type="h1" id="guide_2_title_9">Evaluación</Heading>
+        <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>
                 Valida tu aprendizaje

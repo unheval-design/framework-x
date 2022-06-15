@@ -43,6 +43,7 @@ onClickOutside(target, () => {
     padding: var(--padding_sm) 0;
     min-width: var(--dropdown_width);
     width: fit-content;
+    z-index: 10;
     &.fixed {
         position: fixed;
     }

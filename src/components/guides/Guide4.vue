@@ -34,7 +34,7 @@ const question2 = {
         <template v-slot:timeRead>8</template>
     </GuideTitle>
     <GuideBody>
-        <Heading type="h1" id="guide_4_title_1">Definición</Heading>
+        <Heading type="h1" >Definición</Heading>
         <section>
             <p>
                 Nos referimos a la evaluación comparativa como una práctica
@@ -66,7 +66,7 @@ const question2 = {
             <p><strong>Un objetivo determinado por las partes interesadas:</strong> Nuestra tasa de retención de ocho semanas es del 8%, pero nuestro objetivo es al menos el 15%.</p>
             <Blockquote>Al empezar puede que no tenga versiones anteriores de su producto/servicio por lo que es bueno comparar con un competidor o estándar de la industria.</Blockquote>
         </section>
-        <Heading type="h1" id="guide_4_title_2">¿Cuándo hacer benchmarking?</Heading>
+        <Heading type="h1" >¿Cuándo hacer benchmarking?</Heading>
         <section>
             <p>
                 El benchmarking puede ocurrir al final de un ciclo de diseño (por ejemplo, después de la fase de pruebas) y antes de que comience el próximo ciclo (por ejemplo, antes de la fase definir).
@@ -75,12 +75,12 @@ const question2 = {
                 :image="imageOne"
                 description="Benchmark en el ciclo de diseño. Fuente: www.nngroup.com" />
         </section>
-        <Heading type="h1" id="guide_4_title_3">¿Cómo aplicar benchmarking?</Heading>
+        <Heading type="h1" >¿Cómo aplicar benchmarking?</Heading>
         <section>
             <p>
                 Para realizar un estudio de UX Benchmarking de extremo a extremo, primero decida qué va a medir y qué método de investigación utilizará para recopilar esas métricas.
             </p>
-            <Heading type="h2" id="guide_4_title_4">Elije que medir</Heading>
+            <Heading type="h2" >Elije que medir</Heading>
             <p>
                 Céntrese en las métricas clave que mejor reflejen la calidad de la experiencia del usuario que le interesa evaluar. Podría considerar las siguientes preguntas:
             </p>
@@ -110,7 +110,7 @@ const question2 = {
             <Reference
                 :image="imageTwo"
                 description="not found" />
-            <Heading type="h2" id="guide_4_title_5">Decida cómo medir</Heading>
+            <Heading type="h2" >Decida cómo medir</Heading>
             <p>
                 Cuando se trata de determinar la metodología para recopilar sus métricas, debe considerar el compromiso de tiempo que requiere el método de investigación, el costo de dicho método, la habilidad de los investigadores involucrados y las herramientas de investigación disponibles para usted.
             </p>
@@ -120,25 +120,25 @@ const question2 = {
             <p><strong>Pruebas cuantitativas de usabilidad:</strong> Los participantes realizan las tareas principales en un sistema y los investigadores recopilan métricas que miden el desempeño de los usuarios en esas tareas.</p>
             <p><strong>Análisis:</strong> Los datos de uso del sistema se recopilan automáticamente.</p>
             <p><strong>Encuestas:</strong> Los usuarios responden preguntas para informar sobre su comportamiento, antecedentes u opiniones.</p>
-            <Heading type="h2" id="guide_4_title_6">Recopile la primera medición: Establezca la línea de base</Heading>
+            <Heading type="h2" >Recopile la primera medición: Establezca la línea de base</Heading>
             <p>
                 Ahora que ha determinado qué métricas recopilar y cómo recopilarlas, es hora de recopilar sus métricas de referencia.
             </p>
             <p>
                 A medida que recopila su primer conjunto de medidas, considere los factores externos que pueden afectar sus datos y, cuando sea posible, planifique en torno a ellos. Por ejemplo, si tiene un sitio web de comercio electrónico que utiliza análisis para recopilar métricas de ventas para la evaluación comparativa, desconfíe de factores como campañas de marketing extensas o influencias económicas a gran escala que pueden alterar sus métricas y dificultar la correlación del cambio de diseño con los resultados.
             </p>
-            <Heading type="h2" id="guide_4_title_7">Rediseñar el producto</Heading>
+            <Heading type="h2" >Rediseñar el producto</Heading>
             <p>
                 Este proceso se explica dentro de la siguiente sección a detalle (definir, idear y prototipar) por lo que esta metodología lo acompañara desde aquí hasta el final de todo el proceso.
             </p>
-            <Heading type="h2" id="guide_4_title_8">Recopilar medidas adicionales</Heading>
+            <Heading type="h2" >Recopilar medidas adicionales</Heading>
             <p>
                 Después de lanzar su rediseño, mida su diseño nuevamente. No existe una regla estricta sobre cuánto tiempo esperar después de que se lanza un diseño para volver a medir. Si está realizando un seguimiento de los análisis, existe el beneficio adicional de la medición continua. Sin embargo, para la recopilación de datos basada en tareas, como encuestas y pruebas de usabilidad cuantitativas, deberá determinar el momento adecuado para recopilar los datos.
             </p>
             <p>
                 Los usuarios a menudo odian el cambio , así que dales un poco de tiempo para adaptarse al rediseño antes de medirlo. La cantidad de tiempo varía según la frecuencia con la que los usuarios acceden a su producto. Para los productos a los que se accede diariamente, tal vez 2 o 3 semanas sea tiempo suficiente. Para un producto al que los usuarios acceden una o dos veces por semana, 4 o 5 semanas antes de medir es mejor.
             </p>
-            <Heading type="h2" id="guide_4_title_9">Interprete los Hallazgos</Heading>
+            <Heading type="h2" >Interprete los Hallazgos</Heading>
             <p>
                 Ahora que ha recopilado al menos dos puntos de datos, es hora de interpretar sus hallazgos. No debe tomar sus métricas al pie de la letra, ya que la muestra utilizada para su estudio probablemente sea mucho más pequeña que la población total de sus usuarios.
             </p>
@@ -146,7 +146,7 @@ const question2 = {
                 La interpretación de sus métricas es muy contextual para su producto y las métricas que ha elegido recopilar.
             </p>
         </section>
-        <Heading type="h1" id="guide_4_title_10">Evaluación</Heading>
+        <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
             <aside class="tests_grid">

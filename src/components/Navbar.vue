@@ -35,7 +35,7 @@ nav {
     background-color: var(--neutral_color);
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 11;
     .nav_options {
         height: 100%;
         gap: var(--gap);

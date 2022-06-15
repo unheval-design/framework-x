@@ -33,7 +33,7 @@ const question2 = {
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
-        <Heading type="h1" id="guide_5_title_1">Definición</Heading>
+        <Heading type="h1" >Definición</Heading>
         <section>
             <p>
                 El “Journey Map” es una herramienta proveniente del Design
@@ -50,7 +50,7 @@ const question2 = {
                 Kotler en 2013.
             </p>
         </section>
-        <Heading type="h1" id="guide_5_title_2">¿Por qué usar User Journey Map?</Heading>
+        <Heading type="h1" >¿Por qué usar User Journey Map?</Heading>
         <section>
             <p>
                 El User Journer Map es un proceso que brinda una visión
@@ -68,7 +68,7 @@ const question2 = {
                 medida que el equipo avanza.
             </p>
         </section>
-        <Heading type="h1" id="guide_5_title_3">Elementos del User Journey Map</Heading>
+        <Heading type="h1" >Elementos del User Journey Map</Heading>
         <section>
             <p>
                 El mapa está compuesto por filas (secciones fijas) y columnas
@@ -81,7 +81,7 @@ const question2 = {
                 tamaños. Independientemente de cómo se vean, los mapas de viaje
                 tienen los siguientes 5 elementos clave en común:
             </p>
-            <Heading type="h2" id="guide_5_title_4">Actor</Heading>
+            <Heading type="h2" >Actor</Heading>
             <p>
                 Es la persona o usuario que experimenta el viaje. Los actores
                 generalmente se alinean con personas y sus acciones en el mapa
@@ -94,7 +94,7 @@ const question2 = {
                 necesitará construir dos mapas separados, uno para cada uno de
                 los dos tipos de usuarios.
             </p>
-            <Heading type="h2" id="guide_5_title_5">Escenario + Expectativas</Heading>
+            <Heading type="h2" >Escenario + Expectativas</Heading>
             <p>
                 El escenario describe la situación que aborda el User Journey
                 Map y está asociado con la meta o necesidad de un actor y sus
@@ -108,7 +108,7 @@ const question2 = {
                 existentes) o anticipados, para productos que aún se encuentran
                 en la etapa de diseño.
             </Blockquote>
-            <Heading type="h2" id="guide_5_title_6">Fases del viaje</Heading>
+            <Heading type="h2" >Fases del viaje</Heading>
             <p>
                 Las fases del viaje son las diferentes etapas de alto nivel del
                 viaje. Proporcionan organización para el resto de la información
@@ -125,14 +125,14 @@ const question2 = {
                     <li>Para un escenario de negocio a negocio (como el despliegue de una herramienta interna), las fases podrían ser compra, adopción, retención, expansión, promoción.</li>
                 </ul>
             </p>
-            <Heading type="h2" id="guide_5_title_7">Acciones, pensamientos y emociones</Heading>
+            <Heading type="h2" >Acciones, pensamientos y emociones</Heading>
             <p>
                 Estos son comportamientos, pensamientos y sentimientos que el actor tiene a lo largo del viaje y que se mapean dentro de cada una de las fases del viaje.
             </p>
             <p>Las acciones: son los comportamientos reales y los pasos tomados por los usuarios.</p>
             <p>Los pensamientos: corresponden a las preguntas, motivaciones y necesidades de información de los usuarios en diferentes etapas de viaje.</p>
             <p>Las emociones: Se trazan como una sola línea a lo largo de las fases del viaje, indicando literalmente los "altibajos" emocionales de la experiencia.</p>
-            <Heading type="h2" id="guide_5_title_8">Oportunidades</Heading>
+            <Heading type="h2" >Oportunidades</Heading>
             <p>
                 Las oportunidades son información que se obtiene del mapeo; hablan de cómo se puede optimizar la experiencia del usuario. Las perspectivas y las oportunidades ayudan al equipo a extraer conocimiento del mapa:
             </p>
@@ -160,7 +160,7 @@ const question2 = {
             </p>
         </section>
          
-        <Heading type="h1" id="guide_5_title_11">Evaluación</Heading>
+        <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
             <aside class="tests_grid">

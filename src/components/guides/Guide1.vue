@@ -8,6 +8,7 @@ import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import TestCard from '@/components/TestCard.vue';
 import Heading from '@/components/Heading.vue';
+import imageKeep from '@/assets/images/brands/keep.png';
 
 const question1 = {
     question: '¿Cuando dedo usar entrevistas a usuarios?',
@@ -29,7 +30,7 @@ const question2 = {
         <template v-slot:timeRead>5</template>
     </GuideTitle>
     <GuideBody>
-        <Heading type="h1" id="guide_1_title_1">Definición</Heading>
+        <Heading type="h1" >Definición</Heading>
         <section>
             <p>
                 Las entrevistas con usuarios, son un método cualitativo donde un
@@ -66,7 +67,7 @@ const question2 = {
                 </ul>
             </p>
         </section>
-        <Heading type="h1" id="guide_1_title_2">¿Cuándo usar la entrevista a usuario?</Heading>
+        <Heading type="h1" >¿Cuándo usar la entrevista a usuario?</Heading>
         <section>
             <p>
                 Se las utiliza como método de recolección de datos en la fase inicial de un proyecto, para posteriormente crear Mapas de Empatía y Journey Map.
@@ -78,12 +79,12 @@ const question2 = {
                 Las entrevistas no son buenas para predecir el comportamiento futuro, especialmente la intención de compra futura o descubrir las expectativas de precios.
             </p>
         </section>
-        <Heading type="h1" id="guide_1_title_3">Métodos de Entrevista</Heading>
+        <Heading type="h1" >Métodos de Entrevista</Heading>
         <section>
             <p>
                 Existen 3 tipos de entrevistas categorizadas por el grado de flexibilidad en el abordaje de los temas:
             </p>
-            <Heading type="h2" id="guide_1_title_4">Abiertas</Heading>
+            <Heading type="h2" >Abiertas</Heading>
             <p>
                 Permiten al usuario comentar su experiencia sin ningún tipo de limitaciones en su respuesta.
             </p>
@@ -98,7 +99,7 @@ const question2 = {
             <p>
                 Puede usarse en fases conceptuales de un proyecto, cuando no tenemos preguntas concretas sino temas generales que queremos explorar. No es muy habitual su uso, pero puede tener sentido cuando estamos tratando de validar o desarrollar una idea inicial de producto.
             </p>
-            <Heading type="h2" id="guide_1_title_5">Estructuradas</Heading>
+            <Heading type="h2" >Estructuradas</Heading>
             <p>
                 Las preguntas ya están definidas y se utilizan preguntas cerradas.
             </p>
@@ -113,7 +114,7 @@ const question2 = {
             <p>
                 No suele usarse en fases exploratorias de un proyecto, ya que es complicado definir las preguntas que nos interesa responder si aun no comprendemos el problema. No debe confundirse con una encuesta, ya que en una entrevista estructurada el usuario puede responder libremente e incluso plantear otras cuestiones no previstas, mientras que en una encuesta las opciones de respuesta están cerradas.
             </p>
-            <Heading type="h2" id="guide_1_title_6">Semi-estructuradas</Heading>
+            <Heading type="h2" >Semi-estructuradas</Heading>
             <p>
                 Una entrevista semi-estructurada combina preguntas cerradas con abiertas y permite recoger información sistemática con un margen para explorar nuevos temas surgidos durante la entrevista.
             </p>
@@ -121,9 +122,9 @@ const question2 = {
                 Si queremos descubrir nuevas necesidades o problemas de los usuarios, optaremos por un metodo mas abierto, mientras que si lo que pretendemos es comprender mejr un tema cocreto que ya hemos identificado y estudiado previamente, optaremos por un enfoque más estructurado.
             </Blockquote>
         </section>
-        <Heading type="h1" id="guide_1_title_7">Preparación de la entrevista</Heading>
+        <Heading type="h1" >Preparación de la entrevista</Heading>
         <section>
-            <Heading type="h2" id="guide_1_title_8">Estableciendo tus objetivos</Heading>
+            <Heading type="h2" >Estableciendo tus objetivos</Heading>
             <p>
                 Aclarar los objetivos, lo que espera obtener de la investigación, es un aspecto extremadamente desafiante de muchos compromisos.
             </p>
@@ -139,13 +140,13 @@ const question2 = {
             <p>
                 Podrias apoyarte de
                 <ResourceLink type="tool">
-                    Google Keeps
+                    Google Keep
                     <template v-slot:popup>
                         <ResourceCard
-                            title="Google Keeps"
+                            title="Google Keep"
                             description="Herramienta para organizar ideas"
                             type="tool"
-                            src="https://androidtr.es/wp-content/uploads/2020/11/google-keep.jpg.webp"
+                            :src="imageKeep"
                             />
                     </template>
                 </ResourceLink>
@@ -161,7 +162,7 @@ const question2 = {
                     Encontrar todos los errores de responsividad de la pagina web de la UNHEVAL.
                 </TipCard>
             </aside>
-            <Heading type="h2" id="guide_1_title_9">Encontrar Participantes</Heading>
+            <Heading type="h2" >Encontrar Participantes</Heading>
             <p>
                 Encontrar participantes es una parte crucial de la preparación para el trabajo de campo, sin embargo, algunos equipos lo tratan de manera muy casual, confiando en amigos y familiares, o atrapando a los participantes en la calle o en la tienda, lo que se conoce como intercepción.
             </p>
@@ -182,7 +183,7 @@ const question2 = {
                 </ResourceLink>
                 para empezar a definir tus participantes.
             </p>
-            <Heading type="h2" id="guide_1_title_10">Estructura de la entrevista</Heading>
+            <Heading type="h2" >Estructura de la entrevista</Heading>
             <p>
                 Un buen guion permitirá recoger la información que se necesita sin distracciones.
             </p>
@@ -217,7 +218,7 @@ const question2 = {
                 </ul>
             </p>
         </section>
-        <Heading type="h1" id="guide_1_title_11">Evaluación</Heading>
+        <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>
                 Valida tu aprendizaje

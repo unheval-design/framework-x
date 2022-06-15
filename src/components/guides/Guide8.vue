@@ -37,7 +37,7 @@ const question2 = {
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
-        <Heading type="h1" id="guide_8_title_1">Definición</Heading>
+        <Heading type="h1" >Definición</Heading>
         <section>
             <p>
                 Si lo definimos de forma literal, UX significa “user experience”
@@ -57,7 +57,7 @@ const question2 = {
                 donde queremos que el usuario actúe.
             </Blockquote>
         </section>
-        <Heading type="h1" id="guide_8_title_2"
+        <Heading type="h1" 
             >¿Cuándo se debe incorporar el UX Writing?</Heading
         >
         <section>
@@ -74,18 +74,18 @@ const question2 = {
                 piezas.
             </p>
         </section>
-        <Heading type="h1" id="guide_8_title_3"
+        <Heading type="h1" 
             >Aspectos a tener en cuenta</Heading
         >
         <section>
-            <Heading type="h2" id="guide_8_title_4">El usuario</Heading>
+            <Heading type="h2" >El usuario</Heading>
             <p>
                 Debemos conocer bien al usuario y entender sus emociones, sus
                 necesidades e intereses para darle lo que busca, pero no solo
                 basta con conocerlo bien, debemos saber guiarlo por la interfaz
                 para que su experiencia sea positiva.
             </p>
-            <Heading type="h2" id="guide_8_title_5"
+            <Heading type="h2" 
                 >Voz y tono de la marca</Heading
             >
             <p>
@@ -102,7 +102,7 @@ const question2 = {
                 simpatía. Aún así, si tu identidad de marca es seria y
                 profesional, los textos no tienen que aparentar lo contrario.
             </p>
-            <Heading type="h2" id="guide_8_title_6">Los objetivos</Heading>
+            <Heading type="h2" >Los objetivos</Heading>
             <p>
                 La redacción UX está muy relacionada con los objetivos que tiene
                 la marca. Si tu intención es vender un servicio/producto nuevo,
@@ -110,7 +110,7 @@ const question2 = {
                 buscas es aumentar tu lista de suscriptores, el UX writer sabrá
                 guiar al usuario hacia ese objetivo de manera intuitiva.
             </p>
-            <Heading type="h2" id="guide_8_title_6"
+            <Heading type="h2" 
                 >Movimientos previos y posteriores</Heading
             >
             <p>
@@ -124,7 +124,7 @@ const question2 = {
                 actuar.
             </p>
         </section>
-        <Heading type="h1" id="guide_8_title_7"
+        <Heading type="h1" 
             >¿Cómo conseguir un UX Writing atractivo y de conversión?</Heading
         >
         <section>
@@ -153,7 +153,7 @@ const question2 = {
                 </ul>
             </p>
         </section>
-        <Heading type="h1" id="guide_8_title_11">Evaluación</Heading>
+        <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
             <aside class="tests_grid">

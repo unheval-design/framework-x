@@ -46,6 +46,7 @@ ul.GuideTableContent {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 padding: 2px 0;
+                transition: color 0.2s ease-in-out;
                 &.h2 {
                     margin-left: var(--padding);
                     font-weight: 300;
