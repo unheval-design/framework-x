@@ -19,19 +19,19 @@ defineProps({
     }
 });
 
-onMounted(() => {
-    nextTick(() => {
-        x.value = resourceRef.value?.offsetLeft;
-        y.value = resourceRef.value?.offsetTop + 28;
-    });
-});
+// onMounted(() => {
+//     nextTick(() => {
+//         x.value = resourceRef.value?.offsetLeft;
+//         y.value = resourceRef.value?.offsetTop + 28;
+//     });
+// });
 
 const showResource = () => {
-    flagResource.value = true;
     nextTick(() => {
         x.value = resourceRef.value?.offsetLeft;
         y.value = resourceRef.value?.offsetTop + 28;
     });
+    flagResource.value = true;
 };
 
 const hideResource = () => {
