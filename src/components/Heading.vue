@@ -1,5 +1,7 @@
 <script setup>
-defineProps({
+import { inject, onMounted, useSlots } from '@vue/runtime-core';
+
+const props = defineProps({
     type: {
         type: String,
         default: 'h1',
@@ -11,6 +13,18 @@ defineProps({
         type: String,
         required: true
     }
+});
+
+const guideTableContent = inject('guideTableContent');
+const slot = useSlots();
+
+onMounted(() => {
+    const name = slot.default()[0].children;
+    guideTableContent.value.push({
+        name,
+        href: props.id,
+        type: props.type
+    });
 });
 </script>
 

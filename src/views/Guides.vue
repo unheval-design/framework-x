@@ -7,12 +7,14 @@ import ModalSlide from '@/components/ModalSlide.vue';
 import Todo from '@/components/Todo.vue';
 import GuideTableContent from '@/components/GuideTableContent.vue';
 import { useRoute } from 'vue-router';
-import { provide, ref, watch, watchEffect } from '@vue/runtime-core';
+import { computed, provide, ref, watch, watchEffect } from '@vue/runtime-core';
 
 const route = useRoute();
 const guideId = ref(Number(route.params.id));
 const flagTodoModal = ref(false);
+const guideTableContent = ref([]);
 
+provide('guideTableContent', guideTableContent);
 provide('guideId', guideId);
 
 const openTodoModal = () => {
@@ -23,9 +25,19 @@ const closeTodoModal = () => {
     flagTodoModal.value = false;
 };
 
+const params = computed(() => route.hash);
+
 watchEffect(() => {
     guideId.value = Number(route.params.id);
 });
+
+watch(
+    params,
+    () => {
+        if (!params.value) guideTableContent.value = [];
+    },
+    { deep: true }
+);
 </script>
 <template>
     <ModalSlide :show="flagTodoModal" @close="closeTodoModal">

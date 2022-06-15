@@ -5,6 +5,7 @@ import { ID } from '@/helpers/utils.js';
 export const useTodoStore = defineStore('todo', () => {
     const list = ref([]);
     const lastTaskCreated = ref(null);
+
     const add = () => {
         const task = {
             id: ID(),
