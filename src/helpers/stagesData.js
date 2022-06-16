@@ -29,4 +29,17 @@ export const guides = {
     }
 };
 
+export const GUIDES = {
+    1: 'Entrevistas a Usuarios',
+    2: 'Análisis Heurístico',
+    3: 'Mapa de Empatía',
+    4: 'UX Benchmarking',
+    5: 'User Journey Map',
+    6: 'Card Sorting',
+    7: 'Mapa del Sitio',
+    8: 'UX Writing',
+    9: 'Wireframe',
+    10: 'Flujo de Usuario'
+};
+
 export default guides;

@@ -18,15 +18,18 @@ const useGuideContextMenu = () => {
 
         document.body.addEventListener('click', (e) => {
             if (e.target.offsetParent != contextMenu) {
+                if (contextMenu.classList.contains('visible'))
+                    document.body.style.overflow = 'initial';
                 contextMenu.classList.remove('visible');
             }
-            document.body.style.overflow = 'initial';
         });
     });
 
     const closeContextMenu = () => {
         nextTick(() => {
             const contextMenu = document.getElementById('GuideContextMenu');
+            if (contextMenu.classList.contains('visible'))
+                document.body.style.overflow = 'initial';
             contextMenu.classList.remove('visible');
         });
     };

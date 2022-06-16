@@ -1,12 +1,17 @@
 <template>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-        <path d="M9 24H18V27H9V24ZM9 18H24V21H9V18ZM9 12H24V15H9V12Z" />
+    <svg
+        class="IconTodo"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+    >
         <path
-            d="M21 39H6V9H42V24H45V9C45 8.20435 44.6839 7.44129 44.1213 6.87868C43.5587 6.31607 42.7956 6 42 6H6C5.20435 6 4.44129 6.31607 3.87868 6.87868C3.31607 7.44129 3 8.20435 3 9V39C3 39.7956 3.31607 40.5587 3.87868 41.1213C4.44129 41.6839 5.20435 42 6 42H21V39Z"
-        />
+            d="m14 21.414l-5-5.001L10.413 15L14 18.586L21.585 11L23 12.415l-9 8.999z"
+        ></path>
         <path
-            d="M33 38.385L29.115 34.5L27 36.615L33 42.615L45 30.615L42.885 28.5L33 38.385Z"
-        />
+            d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2Zm0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12Z"
+        ></path>
     </svg>
 </template>
 
@@ -14,4 +19,8 @@
 export default {};
 </script>
 
-<style></style>
+<style>
+.IconTodo {
+    transform: scale(1.05);
+}
+</style>

@@ -5,6 +5,7 @@ import IconAddNote from '@/components/drawables/IconAddNote.vue';
 import IconAddTask from '@/components/drawables/IconAddTask.vue';
 import { useClipboard, useTextSelection } from '@vueuse/core';
 import { useTodoStore } from '@/stores/todo.js';
+import { useNotesStore } from '@/stores/notes.js';
 import { ref } from '@vue/reactivity';
 import { computed } from '@vue/runtime-core';
 
@@ -28,21 +29,34 @@ const addTask = () => {
     todo.notify();
     close();
 };
+
+const addNote = () => {
+    const notes = useNotesStore();
+    notes.add(selection.value);
+    notes.notify();
+    close();
+};
 </script>
 
 <template>
     <Dropdown fixed id="GuideContextMenu" :show="true">
         <ul>
             <li @click="copy()">
-                <IconCopy />
+                <i>
+                    <IconCopy />
+                </i>
                 Copiar
             </li>
-            <li>
-                <IconAddNote />
+            <li @click="addNote()">
+                <i>
+                    <IconAddNote />
+                </i>
                 Agregar a notas
             </li>
             <li @click="addTask()">
-                <IconAddTask />
+                <i>
+                    <IconAddTask />
+                </i>
                 Agregar a tareas
             </li>
         </ul>
@@ -66,10 +80,16 @@ const addTask = () => {
                 color: var(--text_color);
                 cursor: pointer;
                 user-select: none;
-                svg {
-                    width: var(--icon_size_sm);
-                    height: var(--icon_size_sm);
-                    fill: var(--text_color);
+                i {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 20px;
+                    svg {
+                        width: var(--icon_size_sm);
+                        height: var(--icon_size_sm);
+                        fill: var(--text_color);
+                    }
                 }
                 &:hover {
                     background-color: var(--hover_color);

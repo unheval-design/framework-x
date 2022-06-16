@@ -1,19 +1,18 @@
 <script setup>
-import { useTodoStore } from '@/stores/todo.js';
+import { useNotesStore } from '@/stores/notes.js';
 import useGuide from '@/hooks/useGuide.js';
 import IconBack from '@/components/drawables/IconBack.vue';
-import IconAdd from '@/components/drawables/IconAdd.vue';
 import HoverIcon from '@/components/HoverIcon.vue';
-import Task from '@/components/Task.vue';
+import Note from '@/components/Note.vue';
 import Empty from '@/components/Empty.vue';
-import IconTodo from '@/components/drawables/IconTodo.vue';
+import IconNotes from '@/components/drawables/IconNotes.vue';
 import { onMounted } from '@vue/runtime-core';
 
 const { guide } = useGuide();
-const todo = useTodoStore();
+const notes = useNotesStore();
 
 onMounted(() => {
-    todo.notify(false);
+    notes.notify(false);
 });
 
 const emit = defineEmits(['close']);
@@ -22,34 +21,30 @@ const closeModalSlide = () => {
 };
 </script>
 <template>
-    <div class="Todo">
-        <nav class="todo_nav">
+    <div class="Notes">
+        <nav class="notes_nav">
             <HoverIcon>
                 <IconBack @click="closeModalSlide()" />
             </HoverIcon>
-            <div class="todo_nav_title">
-                <p>Tareas</p>
-                <small>{{ guide.substage.name }}</small>
+            <div class="notes_nav_title">
+                <p>Notas</p>
             </div>
-            <HoverIcon>
-                <IconAdd hover @click="todo.add()" />
-            </HoverIcon>
         </nav>
         <div class="todo_wrapper">
-            <ul v-if="todo.list.length">
-                <Task
-                    v-for="(task, index) in todo.list"
+            <ul v-if="notes.list.length">
+                <Note
+                    v-for="(note, index) in notes.list"
                     :key="index"
-                    :task="task"
+                    :note="note"
                 />
             </ul>
-            <Empty v-if="!todo.list.length">
+            <Empty v-if="!notes.list.length">
                 <template v-slot:icon>
-                    <IconTodo />
+                    <IconNotes />
                 </template>
-                <template v-slot:title> Aún no hay tareas </template>
+                <template v-slot:title> Aún no hay notas </template>
                 <template v-slot:description>
-                    Añade tus tareas pendientes y haz un seguimiento de ellas.
+                    Añade tus notas para acceder mas tarde a ellas.
                 </template>
             </Empty>
         </div>
@@ -57,10 +52,10 @@ const closeModalSlide = () => {
 </template>
 
 <style lang="scss">
-.Todo {
-    nav.todo_nav {
+.Notes {
+    nav.notes_nav {
         position: relative;
-        .todo_nav_title {
+        .notes_nav_title {
             flex: 1;
             padding-left: var(--gap);
             p {

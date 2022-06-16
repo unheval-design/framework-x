@@ -40,21 +40,27 @@ const hideThemeMenu = () => {
                     :class="{ active: modeSelected == 'light' }"
                     @click="changeTheme({ theme: 'light' })"
                 >
-                    <IconSun />
+                    <i>
+                        <IconSun />
+                    </i>
                     Claro
                 </li>
                 <li
                     :class="{ active: modeSelected == 'dark' }"
                     @click="changeTheme({ theme: 'dark' })"
                 >
-                    <IconMoon />
+                    <i>
+                        <IconMoon />
+                    </i>
                     Oscuro
                 </li>
                 <li
                     :class="{ active: modeSelected == 'system' }"
                     @click="changeTheme({ theme: 'auto' })"
                 >
-                    <IconContrast />
+                    <i>
+                        <IconContrast />
+                    </i>
                     Sistema
                 </li>
             </ul>
@@ -87,10 +93,16 @@ const hideThemeMenu = () => {
                 padding: 0 var(--padding_sm);
                 color: var(--text_color);
                 cursor: pointer;
-                svg {
-                    width: var(--icon_size_sm);
-                    height: var(--icon_size_sm);
-                    fill: var(--text_color);
+                i {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 20px;
+                    svg {
+                        width: var(--icon_size_sm);
+                        height: var(--icon_size_sm);
+                        fill: var(--text_color);
+                    }
                 }
                 &:hover {
                     background-color: var(--hover_color);

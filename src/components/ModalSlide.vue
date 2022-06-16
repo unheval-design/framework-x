@@ -16,7 +16,7 @@ const close = () => {
 
 watchEffect(() => {
     if (props.show) document.body.style.overflow = 'hidden';
-    if (!props.show) document.body.style.overflow = 'auto';
+    if (!props.show) document.body.style.overflow = 'initial';
 });
 </script>
 <template>

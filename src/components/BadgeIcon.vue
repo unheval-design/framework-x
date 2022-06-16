@@ -19,10 +19,13 @@ defineProps({
     position: relative;
     z-index: 5;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     span {
         position: absolute;
-        right: -1px;
-        bottom: 2px;
+        right: -2px;
+        top: -3px;
         width: 8px;
         height: 8px;
         background-color: var(--error_color);

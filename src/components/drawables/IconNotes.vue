@@ -18,6 +18,6 @@ export default {};
 
 <style>
 .IconNotes {
-    transform: scale(0.95);
+    transform: scale(0.98);
 }
 </style>

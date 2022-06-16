@@ -63,17 +63,17 @@ watchEffect(() => {
         <div class="task_overlay" @click="editTask()"></div>
         <CheckButton rounded v-model:checked="task.completed" />
         <div class="task_wrapper">
-            <p v-show="!editable" @click="editTask()">{{ task.name }}</p>
+            <p v-show="!editable" @click="editTask()">{{ task.title }}</p>
             <textarea
                 placeholder="Tarea..."
                 v-show="editable"
                 ref="taskInput"
-                v-model.trim="task.name"
+                v-model.trim="task.title"
                 @input="resize()"
                 @focus="resize()"
                 @blur="noEditTask()"
             />
-            <div v-if="task.name" class="task_priority">
+            <div v-if="task.title" class="task_priority">
                 <Chip @click="changePrority(1)" v-if="task.priority === 0"
                     >Bajo</Chip
                 >

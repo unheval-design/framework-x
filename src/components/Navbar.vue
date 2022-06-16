@@ -2,21 +2,44 @@
 import IconNotes from './drawables/IconNotes.vue';
 import Logo from './drawables/Logo.vue';
 import SwitchTheme from './SwitchTheme.vue';
+import ModalSlide from '@/components/ModalSlide.vue';
+import Notes from '@/components/Notes.vue';
+import BadgeIcon from '@/components/BadgeIcon.vue';
+import { useNotesStore } from '@/stores/notes.js';
+import { ref } from '@vue/reactivity';
+
+const flagNotesModal = ref(false);
+const notes = useNotesStore();
+
+const openNotesModal = () => {
+    flagNotesModal.value = true;
+};
+
+const closeNotesModal = () => {
+    flagNotesModal.value = false;
+};
 </script>
 
 <template>
+    <Teleport to="body">
+        <ModalSlide :show="flagNotesModal" @close="closeNotesModal">
+            <Notes @close="closeNotesModal" />
+        </ModalSlide>
+    </Teleport>
     <nav>
         <router-link to="/">
             <Logo small theme />
         </router-link>
         <ul class="nav_options">
+            <slot name="options" />
+            <li>
+                <BadgeIcon :show="notes.noteAdded">
+                    <IconNotes @click="openNotesModal()" />
+                </BadgeIcon>
+            </li>
             <li>
                 <SwitchTheme />
             </li>
-            <li>
-                <IconNotes />
-            </li>
-            <slot name="options" />
         </ul>
     </nav>
 </template>

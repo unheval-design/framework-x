@@ -43,9 +43,11 @@ watch(
 );
 </script>
 <template>
-    <ModalSlide :show="flagTodoModal" @close="closeTodoModal">
-        <Todo @close="closeTodoModal" />
-    </ModalSlide>
+    <Teleport to="body">
+        <ModalSlide :show="flagTodoModal" @close="closeTodoModal">
+            <Todo @close="closeTodoModal" />
+        </ModalSlide>
+    </Teleport>
     <Navbar>
         <template v-slot:options>
             <li>

@@ -4,24 +4,23 @@ import { ID } from '@/helpers/utils.js';
 
 export const useTodoStore = defineStore('todo', () => {
     const listAll = ref([]);
-    const substage = ref(0);
+    const guide = ref(0);
     const taskAdded = ref(false);
     const lastTaskCreated = ref(null);
 
-    const add = (name) => {
+    const add = (title) => {
         const task = {
             id: ID(),
             completed: false,
-            name,
+            title,
             priority: 0,
-            substage: substage.value
+            guide: guide.value
         };
         lastTaskCreated.value = task.id;
         listAll.value.unshift(task);
     };
     const notify = (status = true) => {
         taskAdded.value = status;
-        console.log('notify');
     };
 
     const remove = (id) => {
@@ -29,14 +28,16 @@ export const useTodoStore = defineStore('todo', () => {
     };
 
     const list = computed(() =>
-        listAll.value.filter((task) => task.substage === substage.value)
+        listAll.value.filter(
+            (task) => task.guide.substage.id === guide.value.substage.id
+        )
     );
 
     return {
         list,
         add,
         notify,
-        substage,
+        guide,
         remove,
         lastTaskCreated,
         taskAdded

@@ -14,13 +14,18 @@ import Guide9 from '@/components/guides/Guide9.vue';
 import Guide10 from '@/components/guides/Guide10.vue';
 import useGuide from '@/hooks/useGuide.js';
 import { useTodoStore } from '@/stores/todo.js';
+import { useNotesStore } from '@/stores/notes.js';
 
 const guideId = inject('guideId');
 const { guideRef, closeContextMenu } = useGuideContextMenu();
 const { guide } = useGuide();
+const currentGuide = { id: guideId.value, substage: guide.value.substage };
 
 const todo = useTodoStore();
-todo.substage = guide.value.substage.id;
+const notes = useNotesStore();
+
+todo.guide = currentGuide;
+notes.guide = currentGuide;
 </script>
 
 <template>
