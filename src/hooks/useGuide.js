@@ -16,7 +16,6 @@ const useGuide = () => {
             };
         }
     });
-    console.log('getGuide');
 
     return { guide };
 };

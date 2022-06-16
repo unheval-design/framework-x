@@ -24,7 +24,7 @@ watchEffect(() => {
         <div class="ModalSlide" v-if="show">
             <div class="modal_overlay" @click="close()"></div>
             <aside>
-                <div class="modal_content">
+                <div class="modal_slide_content">
                     <div class="modal_wrapper">
                         <div class="modal_body">
                             <slot />
@@ -57,7 +57,7 @@ watchEffect(() => {
         z-index: 16;
         width: var(--modal_slide_container_width);
         height: 100vh;
-        .modal_content {
+        .modal_slide_content {
             background-color: var(--neutral_color);
             /* padding: var(--padding_xl); */
             position: relative;
@@ -71,16 +71,16 @@ watchEffect(() => {
     transition: all 0.5s ease;
 }
 
-.fade_modal-enter-active .modal_content {
+.fade_modal-enter-active .modal_slide_content {
     transition: all 0.3s ease;
 }
 
-.fade_modal-leave-active .modal_content {
+.fade_modal-leave-active .modal_slide_content {
     transition: all 0.3s ease;
 }
 
-.fade_modal-enter-from .modal_content,
-.fade_modal-leave-to .modal_content {
+.fade_modal-enter-from .modal_slide_content,
+.fade_modal-leave-to .modal_slide_content {
     /* opacity: 0; */
     transform: translateX(var(--modal_slide_container_width));
 }

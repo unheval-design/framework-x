@@ -1,4 +1,7 @@
 <script setup>
+import { inject } from '@vue/runtime-core';
+import useGuideContextMenu from '@/hooks/useGuideContextMenu.js';
+import GuideContextMenu from '@/components/GuideContextMenu.vue';
 import Guide1 from '@/components/guides/Guide1.vue';
 import Guide2 from '@/components/guides/Guide2.vue';
 import Guide3 from '@/components/guides/Guide3.vue';
@@ -9,12 +12,20 @@ import Guide7 from '@/components/guides/Guide7.vue';
 import Guide8 from '@/components/guides/Guide8.vue';
 import Guide9 from '@/components/guides/Guide9.vue';
 import Guide10 from '@/components/guides/Guide10.vue';
-import { inject, ref, provide } from '@vue/runtime-core';
+import useGuide from '@/hooks/useGuide.js';
+import { useTodoStore } from '@/stores/todo.js';
+
 const guideId = inject('guideId');
+const { guideRef, closeContextMenu } = useGuideContextMenu();
+const { guide } = useGuide();
+
+const todo = useTodoStore();
+todo.substage = guide.value.substage.id;
 </script>
 
 <template>
-    <section class="Guide">
+    <section ref="guideRef" class="Guide">
+        <GuideContextMenu @close="closeContextMenu" />
         <Guide1 v-if="guideId === 1" />
         <Guide2 v-if="guideId === 2" />
         <Guide3 v-if="guideId === 3" />

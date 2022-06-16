@@ -230,4 +230,5 @@ const question2 = {
         </section>
     </GuideBody>
 </template>
-<style lang="scss"></style>
+<style lang="scss">
+</style>

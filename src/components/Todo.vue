@@ -6,10 +6,15 @@ import IconAdd from '@/components/drawables/IconAdd.vue';
 import HoverIcon from '@/components/HoverIcon.vue';
 import Task from '@/components/todo/Task.vue';
 import Empty from '@/components/Empty.vue';
-import IconTodo from '@/components/drawables/IconTodo.vue'
+import IconTodo from '@/components/drawables/IconTodo.vue';
+import { onMounted } from '@vue/runtime-core';
 
-const todo = useTodoStore();
 const { guide } = useGuide();
+const todo = useTodoStore();
+
+onMounted(() => {
+    todo.notify(false);
+});
 
 const emit = defineEmits(['close']);
 const closeModalSlide = () => {
@@ -42,9 +47,7 @@ const closeModalSlide = () => {
                 <template v-slot:icon>
                     <IconTodo />
                 </template>
-                <template v-slot:title>
-                    Aún no hay tareas
-                </template>
+                <template v-slot:title> Aún no hay tareas </template>
                 <template v-slot:description>
                     Añade tus tareas pendientes y haz un seguimiento de ellas.
                 </template>

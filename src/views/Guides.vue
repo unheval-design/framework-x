@@ -6,9 +6,12 @@ import GuidesNav from '@/components/GuidesNav.vue';
 import ModalSlide from '@/components/ModalSlide.vue';
 import Todo from '@/components/Todo.vue';
 import GuideTableContent from '@/components/GuideTableContent.vue';
+import BadgeIcon from '@/components/BadgeIcon.vue';
 import { useRoute } from 'vue-router';
 import { computed, provide, ref, watch, watchEffect } from '@vue/runtime-core';
+import { useTodoStore } from '@/stores/todo.js';
 
+const todo = useTodoStore();
 const route = useRoute();
 const guideId = ref(Number(route.params.id));
 const flagTodoModal = ref(false);
@@ -46,7 +49,9 @@ watch(
     <Navbar>
         <template v-slot:options>
             <li>
-                <IconTodo @click="openTodoModal()" />
+                <BadgeIcon :show="todo.taskAdded">
+                    <IconTodo @click="openTodoModal()" />
+                </BadgeIcon>
             </li>
         </template>
     </Navbar>

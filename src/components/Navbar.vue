@@ -1,3 +1,9 @@
+<script setup>
+import IconNotes from './drawables/IconNotes.vue';
+import Logo from './drawables/Logo.vue';
+import SwitchTheme from './SwitchTheme.vue';
+</script>
+
 <template>
     <nav>
         <router-link to="/">
@@ -14,15 +20,6 @@
         </ul>
     </nav>
 </template>
-
-<script>
-import IconNotes from './drawables/IconNotes.vue';
-import Logo from './drawables/Logo.vue';
-import SwitchTheme from './SwitchTheme.vue';
-export default {
-    components: { Logo, SwitchTheme, IconNotes }
-};
-</script>
 
 <style lang="scss">
 nav {
@@ -46,7 +43,8 @@ nav {
             display: flex;
             align-items: center;
             cursor: pointer;
-            & > svg {
+            & > svg,
+            & > .BadgeIcon > svg {
                 fill: var(--text_color);
                 width: var(--icon_size);
                 height: var(--icon_size);

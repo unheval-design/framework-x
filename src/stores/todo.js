@@ -1,25 +1,44 @@
 import { defineStore } from 'pinia';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { ID } from '@/helpers/utils.js';
 
 export const useTodoStore = defineStore('todo', () => {
-    const list = ref([]);
+    const listAll = ref([]);
+    const substage = ref(0);
+    const taskAdded = ref(false);
     const lastTaskCreated = ref(null);
 
-    const add = () => {
+    const add = (name) => {
         const task = {
             id: ID(),
             completed: false,
-            name: '',
-            priority: 0
+            name,
+            priority: 0,
+            substage: substage.value
         };
         lastTaskCreated.value = task.id;
-        list.value.unshift(task);
+        listAll.value.unshift(task);
+    };
+    const notify = (status = true) => {
+        taskAdded.value = status;
+        console.log('notify');
     };
 
     const remove = (id) => {
-        list.value = list.value.filter((task) => task.id !== id);
+        listAll.value = listAll.value.filter((task) => task.id !== id);
     };
 
-    return { list, add, remove, lastTaskCreated };
+    const list = computed(() =>
+        listAll.value.filter((task) => task.substage === substage.value)
+    );
+
+    return {
+        list,
+        add,
+        notify,
+        substage,
+        remove,
+        lastTaskCreated,
+        taskAdded
+    };
 });

@@ -19,13 +19,6 @@ defineProps({
     }
 });
 
-// onMounted(() => {
-//     nextTick(() => {
-//         x.value = resourceRef.value?.offsetLeft;
-//         y.value = resourceRef.value?.offsetTop + 28;
-//     });
-// });
-
 const showResource = () => {
     nextTick(() => {
         x.value = resourceRef.value?.offsetLeft;
@@ -46,8 +39,6 @@ const hideResource = () => {
         ref="resourceRef"
         @click="showResource()"
     >
-        <!-- <IconDownloadFile v-if="type === 'download'" />
-        <IconLink v-if="type === 'tool'" /> -->
         <span><slot /></span>
         <Teleport to="body">
             <Dropdown

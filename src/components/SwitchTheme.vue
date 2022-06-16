@@ -91,7 +91,6 @@ const hideThemeMenu = () => {
                     width: var(--icon_size_sm);
                     height: var(--icon_size_sm);
                     fill: var(--text_color);
-                    opacity: 0.5;
                 }
                 &:hover {
                     background-color: var(--hover_color);
