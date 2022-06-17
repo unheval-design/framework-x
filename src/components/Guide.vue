@@ -16,16 +16,19 @@ import Guide11 from '@/components/guides/Guide11.vue';
 import useGuide from '@/hooks/useGuide.js';
 import { useTodoStore } from '@/stores/todo.js';
 import { useNotesStore } from '@/stores/notes.js';
+import { useProjectsStore } from '@/stores/projects.js';
 
 const guideId = inject('guideId');
 const { guideRef, closeContextMenu } = useGuideContextMenu();
 const { guide } = useGuide();
 const currentGuide = { id: guideId.value, substage: guide.value.substage };
 
+const projects = useProjectsStore();
 const todo = useTodoStore();
 const notes = useNotesStore();
 
 todo.guide = currentGuide;
+todo.project = projects.current.id;
 notes.guide = currentGuide;
 </script>
 

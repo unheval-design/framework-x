@@ -8,7 +8,6 @@ import Empty from '@/components/Empty.vue';
 import IconNotes from '@/components/drawables/IconNotes.vue';
 import { onMounted } from '@vue/runtime-core';
 
-const { guide } = useGuide();
 const notes = useNotesStore();
 
 onMounted(() => {
