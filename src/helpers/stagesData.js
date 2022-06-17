@@ -6,6 +6,7 @@ export const substages = {
     4: 'Prototipar',
     5: 'Probar'
 };
+
 export const guides = {
     '1,2,3,4,5': {
         start: 1,

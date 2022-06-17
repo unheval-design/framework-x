@@ -1,39 +1,40 @@
+<script setup>
+import { useSlots } from '@vue/runtime-core';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const props = defineProps({
+    to: {
+        type: Object,
+        required: false
+    },
+    secondary: {
+        type: Boolean
+    },
+    small: {
+        type: Boolean
+    }
+});
+const onClick = () => {
+    if (props.to) {
+        router.push(props.to);
+    }
+};
+
+const slot = useSlots();
+</script>
 <template>
     <button
         class="Button"
         :class="[{ secondary: secondary }, { small: small }]"
         @click="onClick()"
     >
-        <slot name="icon"></slot>
+        <i v-if="slot.icon"><slot name="icon" /></i>
         <span>
             <slot />
         </span>
     </button>
 </template>
-
-<script>
-export default {
-    props: {
-        to: {
-            type: Object,
-            required: false
-        },
-        secondary: {
-            type: Boolean
-        },
-        small: {
-            type: Boolean
-        }
-    },
-    methods: {
-        onClick() {
-            if (this.to) {
-                this.$router.push(this.to);
-            }
-        }
-    }
-};
-</script>
 
 <style lang="scss">
 .Button {

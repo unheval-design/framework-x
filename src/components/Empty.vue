@@ -1,10 +1,19 @@
-<script setup></script>
+<script setup>
+defineProps({
+    full: {
+        type: Boolean,
+        default: false
+    }
+});
+</script>
 
 <template>
-    <div class="Empty">
-        <i>
-            <slot name="icon" />
-        </i>
+    <div class="Empty" :class="{ full: full }">
+        <div class="icon_wrapper">
+            <span></span>
+            <i><slot name="icon" /></i>
+            <span></span>
+        </div>
         <b><slot name="title" /></b>
         <small><slot name="description" /></small>
         <slot name="button" />
@@ -21,22 +30,44 @@
     flex-direction: column;
     padding: var(--padding);
     box-sizing: border-box;
-    i {
-        background-color: var(--primary_color_10);
-        width: 64px;
-        height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: var(--radius);
-        svg {
-            width: var(--icon_size);
-            height: var(--icon_size);
-            fill: var(--text_color);
+    .icon_wrapper {
+        position: relative;
+        i {
+            position: relative;
+            background-color: var(--primary_color_10);
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            z-index: 2;
+            svg {
+                width: var(--icon_size);
+                height: var(--icon_size);
+                fill: var(--text_color);
+            }
+        }
+        span {
+            width: 36px;
+            height: 36px;
+            background-color: var(--accent_color_10);
+            position: absolute;
+            left: -18px;
+            top: -18px;
+            border-radius: var(--radius);
+            &:last-of-type {
+                background-color: var(--success_color_10);
+                left: inherit;
+                top: inherit;
+                right: -18px;
+                bottom: -18px;
+            }
+            z-index: 1;
         }
     }
     b {
-        margin-top: var(--gap);
+        margin-top: var(--padding_xl);
         font-weight: 500;
         text-align: center;
         color: var(--text_color);
@@ -50,9 +81,18 @@
         text-align: center;
         line-height: var(--title_line_height);
         margin-top: 8px;
+        strong {
+            font-weight: 500;
+            background-color: var(--primary_color_10);
+        }
     }
     .Button {
-        margin-top: var(--gap);
+        margin-top: var(--padding);
+    }
+    &.full {
+        small {
+            max-width: 320px;
+        }
     }
 }
 </style>

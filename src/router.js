@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { useProjectsStore } from '@/stores/projects.js';
 
 export default createRouter({
+    scrollBehavior(to, from, savedPosition) {
+        return { top: 0 };
+    },
     history: createWebHistory(),
     routes: [
         {

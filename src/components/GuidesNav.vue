@@ -1,14 +1,23 @@
 <script setup>
 import GuidesProgress from '@/components/GuidesProgress.vue';
+import SubstageCompleted from '@/components/SubstageCompleted.vue';
 import Button from '@/components/Button.vue';
-import { inject } from '@vue/runtime-core';
+import IconCheck from '@/components/drawables/IconCheck.vue';
+import { inject, ref } from '@vue/runtime-core';
 import { useRouter } from 'vue-router';
 import { LAST_GUIDE_ID } from '@/helpers/stagesData.js';
+import { isCheckpoint } from '@/helpers/utils.js';
 import { useProjectsStore } from '@/stores/projects.js';
+import Modal from '@/components/Modal.vue';
+
+import JSConfetti from 'js-confetti';
+
+const jsConfetti = new JSConfetti();
 
 const guideId = inject('guideId');
 const router = useRouter();
 const projects = useProjectsStore();
+const flagCompletedModal = ref(false);
 
 const goToPrevious = () => {
     if (guideId.value > 1) {
@@ -23,9 +32,24 @@ const goToNext = () => {
         router.push({ name: 'Guides', params: { id: nextGuideId } });
     }
 };
+
+const openCompletedModal = () => {
+    jsConfetti.addConfetti({
+        confettiColors: ['#FFD66E', '#318BEA', '#FFEFC5', '#ADD0F7']
+    });
+    flagCompletedModal.value = true;
+};
+const closeCompletedModal = () => {
+    flagCompletedModal.value = false;
+};
 </script>
 
 <template>
+    <Teleport to="body">
+        <Modal :show="flagCompletedModal" @close="closeCompletedModal">
+            <SubstageCompleted @click="goToNext()" />
+        </Modal>
+    </Teleport>
     <aside class="GuidesNav">
         <div class="guides_wrapper">
             <GuidesProgress />
@@ -35,7 +59,15 @@ const goToNext = () => {
         </div>
         <div class="guide_nav_controls">
             <Button secondary @click="goToPrevious()">Anterior</Button>
-            <Button @click="goToNext()">Continuar</Button>
+            <Button v-if="!isCheckpoint(guideId)" @click="goToNext()"
+                >Continuar</Button
+            >
+            <Button v-if="isCheckpoint(guideId)" @click="openCompletedModal()">
+                <template v-slot:icon>
+                    <IconCheck />
+                </template>
+                Completar</Button
+            >
         </div>
     </aside>
 </template>

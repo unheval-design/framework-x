@@ -13,3 +13,9 @@ export const getGuide = (guideId = 0) => {
 
     return guide;
 };
+
+export const isCheckpoint = (guideId) => {
+    return Object.values(guides)
+        .map((n) => n.last)
+        .includes(guideId);
+};
