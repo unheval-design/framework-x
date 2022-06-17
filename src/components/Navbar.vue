@@ -53,6 +53,7 @@ nav {
     height: var(--navbar_height);
     border-bottom: 1px solid var(--border_color_70);
     background-color: var(--neutral_color);
+    box-sizing: border-box;
     position: sticky;
     top: 0;
     z-index: 11;

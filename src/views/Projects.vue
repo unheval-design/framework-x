@@ -1,14 +1,18 @@
 <script setup>
 import IconAdd from '@/components/drawables/IconAdd.vue';
+import IconFolder from '@/components/drawables/IconFolder.vue';
 import Navbar from '@/components/Navbar.vue';
+import Button from '@/components/Button.vue';
 import ProjectAdd from '@/components/ProjectAdd.vue';
 import Modal from '@/components/Modal.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
 import { ref } from '@vue/reactivity';
 import { useProjectsStore } from '@/stores/projects.js';
-const projects = useProjectsStore();
+import Empty from '@/components/Empty.vue';
 
+const projects = useProjectsStore();
 const flagCreateProjectModal = ref(false);
+
 const openCreateProjectModal = () => {
     flagCreateProjectModal.value = true;
 };
@@ -30,7 +34,26 @@ const closeCreateProjectModal = () => {
     </Teleport>
     <Navbar />
     <div class="projects_container">
-        <div class="projects_wrapper">
+        <div class="projects_wrapper empty" v-if="!projects.list.length">
+            <Empty>
+                <template v-slot:icon>
+                    <IconFolder />
+                </template>
+                <template v-slot:title> Aún no hay proyectos </template>
+                <template v-slot:description>
+                    Crea tu primer proyecto, dando click al siguiente boton.
+                </template>
+                <template v-slot:button>
+                    <Button @click="openCreateProjectModal()">
+                        <template v-slot:icon>
+                            <IconAdd />
+                        </template>
+                        Crear Proyecto
+                    </Button>
+                </template>
+            </Empty>
+        </div>
+        <div class="projects_wrapper" v-if="projects.list.length">
             <div class="projects_title">
                 <h1>Tus Proyectos</h1>
                 <p>
@@ -61,11 +84,18 @@ const closeCreateProjectModal = () => {
 
 <style lang="scss">
 .projects_container {
-    margin-top: 8rem;
     .projects_wrapper {
         padding: var(--padding);
         width: var(--container_width);
         margin: 0 auto;
+        margin-top: 8rem;
+        &.empty {
+            margin-top: 0;
+            padding: 0;
+            min-height: calc(100vh - 2 * var(--navbar_height));
+            display: flex;
+            align-items: center;
+        }
         .projects_title {
             h1 {
                 font-size: var(--title_size);
@@ -98,8 +128,8 @@ const closeCreateProjectModal = () => {
                 transition: background ease-in-out 0.1s;
                 cursor: pointer;
                 .icon_wrapper {
-                    width: 56px;
-                    height: 56px;
+                    width: 36px;
+                    height: 36px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;

@@ -1,14 +1,14 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-  <div class="Empty">
-      <i>
-          <slot name="icon" />
-      </i>
-      <b><slot name="title" /></b>
-      <small><slot name="description" /></small>
-  </div>
+    <div class="Empty">
+        <i>
+            <slot name="icon" />
+        </i>
+        <b><slot name="title" /></b>
+        <small><slot name="description" /></small>
+        <slot name="button" />
+    </div>
 </template>
 
 <style lang="scss">
@@ -28,7 +28,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50%;
+        border-radius: var(--radius);
         svg {
             width: var(--icon_size);
             height: var(--icon_size);
@@ -49,7 +49,10 @@
         width: 100%;
         text-align: center;
         line-height: var(--title_line_height);
-        margin-top: 10px;
+        margin-top: 8px;
+    }
+    .Button {
+        margin-top: var(--gap);
     }
 }
 </style>
