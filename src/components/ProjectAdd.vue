@@ -2,9 +2,24 @@
 import Input from '@/components/Input.vue';
 import Button from '@/components/Button.vue';
 import { useRouter } from 'vue-router';
+import { ID } from '@/helpers/utils.js';
+import { useProjectsStore } from '@/stores/projects.js';
+import { ref } from '@vue/reactivity';
 
 const router = useRouter();
+const projects = useProjectsStore();
+const title = ref('');
+const description = ref('');
+
 const goToStages = () => {
+    projects.add({
+        id: ID(),
+        title: title.value,
+        description: description.value,
+        date: '2020-01-01',
+        step: 0,
+        completed: false
+    });
     router.push({ name: 'Stages' });
 };
 </script>
@@ -12,11 +27,16 @@ const goToStages = () => {
 <template>
     <div class="ProjectAdd">
         <div class="project_add_form">
-            <Input label="Titulo" placeholder="Ej: Pagina web de eventos" />
+            <Input
+                label="Titulo"
+                placeholder="Ej: Pagina web de eventos"
+                v-model="title"
+            />
             <Input
                 label="Descripción"
                 type="textarea"
                 placeholder="Ej: Nueva web donde publicar eventos y que se puedan inscribir en linea."
+                v-model="description"
             />
         </div>
         <Button @click="goToStages()">Crear Proyecto</Button>

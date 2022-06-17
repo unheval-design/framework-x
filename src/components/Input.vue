@@ -10,9 +10,25 @@ const props = defineProps({
     },
     type: {
         type: String,
-        default: 'text'
+        default: 'text',
+        validator: (value) => {
+            return (
+                ['text', 'textarea', 'number', 'date', 'password'].indexOf(
+                    value
+                ) !== -1
+            );
+        }
+    },
+    modelValue: {
+        type: [String, Number]
     }
 });
+
+const emit = defineEmits(['update:modelValue']);
+
+const handleInput = (value) => {
+    emit('update:modelValue', value);
+};
 </script>
 <template>
     <div class="Input">
@@ -22,10 +38,14 @@ const props = defineProps({
                 v-if="props.type !== 'textarea'"
                 :type="props.type"
                 :placeholder="props.placeholder"
+                :value="modelValue"
+                @input="handleInput($event.target.value)"
             />
             <textarea
                 v-if="props.type === 'textarea'"
                 :placeholder="props.placeholder"
+                :value="modelValue"
+                @input="handleInput($event.target.value)"
             />
         </div>
     </div>

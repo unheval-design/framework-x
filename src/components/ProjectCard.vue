@@ -5,7 +5,12 @@ import IconFolder from './drawables/IconFolder.vue';
 import ProjectProgress from './ProjectProgress.vue';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es';
+import { useProjectsStore } from '@/stores/projects.js';
+import { useRouter } from 'vue-router';
+import { getGuide } from '@/helpers/utils.js';
 
+const router = useRouter();
+const projects = useProjectsStore();
 const props = defineProps({
     project: {
         type: Object,
@@ -15,15 +20,23 @@ const props = defineProps({
 const dateFormatted = dayjs(props.project.date)
     .locale('es')
     .format('D [de] MMM, YYYY');
+
+const goToProject = () => {
+    projects.select(props.project.id);
+    router.push({ name: 'Stages' });
+};
 </script>
 <template>
-    <article class="ProjectCard">
+    <article @click="goToProject()" class="ProjectCard">
         <IconFolder />
         <div class="project_title">
             <h1>{{ project.title }}</h1>
             <p>{{ dateFormatted }}</p>
         </div>
-        <ProjectProgress v-if="!project.completed" :stage="project.stage" />
+        <ProjectProgress
+            v-if="!project.completed"
+            :stage="getGuide(project.guide).stage"
+        />
         <div class="project_completed" v-if="project.completed">
             <i>
                 <IconCheck />

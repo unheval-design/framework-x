@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { useProjectsStore } from '@/stores/projects.js';
 
 export default createRouter({
     history: createWebHistory(),
@@ -16,7 +17,16 @@ export default createRouter({
         {
             path: '/etapas',
             name: 'Stages',
-            component: () => import('@/views/Stages.vue')
+            component: () => import('@/views/Stages.vue'),
+            beforeEnter: (from, to, next) => {
+                const projects = useProjectsStore();
+                if (projects.current.step === 0) next();
+                else
+                    next({
+                        name: 'Guides',
+                        params: { id: projects.current.guide }
+                    });
+            }
         },
         {
             path: '/guias/:id',

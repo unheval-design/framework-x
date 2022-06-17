@@ -4,18 +4,24 @@ import Button from '@/components/Button.vue';
 import { inject } from '@vue/runtime-core';
 import { useRouter } from 'vue-router';
 import { LAST_GUIDE_ID } from '@/helpers/stagesData.js';
+import { useProjectsStore } from '@/stores/projects.js';
 
 const guideId = inject('guideId');
 const router = useRouter();
+const projects = useProjectsStore();
 
 const goToPrevious = () => {
-    if (guideId.value > 1)
+    if (guideId.value > 1) {
         router.push({ name: 'Guides', params: { id: guideId.value - 1 } });
+    }
 };
 
 const goToNext = () => {
-    if (guideId.value < LAST_GUIDE_ID)
-        router.push({ name: 'Guides', params: { id: guideId.value + 1 } });
+    if (guideId.value < LAST_GUIDE_ID) {
+        const nextGuideId = guideId.value + 1;
+        projects.update({ guide: nextGuideId });
+        router.push({ name: 'Guides', params: { id: nextGuideId } });
+    }
 };
 </script>
 

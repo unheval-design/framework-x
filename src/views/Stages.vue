@@ -12,7 +12,9 @@ import Modal from '@/components/Modal.vue';
 import StageCard from '@/components/StageCard.vue';
 import { ref } from '@vue/reactivity';
 import { useRouter } from 'vue-router';
+import { useProjectsStore } from '@/stores/projects.js';
 
+const projects = useProjectsStore();
 const flagStageOneModal = ref(false);
 const flagStageTwoModal = ref(false);
 const router = useRouter();
@@ -32,16 +34,20 @@ const closeStageTwoModal = () => {
 };
 
 const goToGuidesStageOne = () => {
+    projects.update({ guide: 1, step: 1 });
     router.replace({ name: 'Guides', params: { id: 1 } });
 };
 const goToGuidesStageTwo = () => {
+    projects.update({ guide: 6, step: 2 });
     router.replace({ name: 'Guides', params: { id: 6 } });
 };
 
 const goToGuidesStageThree = () => {
+    projects.update({ guide: 11, step: 2 });
     router.replace({ name: 'Guides', params: { id: 11 } });
 };
 const goToGuidesStageFour = () => {
+    projects.update({ guide: 16, step: 2 });
     router.replace({ name: 'Guides', params: { id: 16 } });
 };
 
@@ -68,7 +74,7 @@ const selectStage = (stage) => {
                         >Mapa de empatia, Journey Map, etc.</template
                     >
                 </StageCard>
-                <StageCard compact @click="goToGuidesStageOne()">
+                <StageCard compact @click="goToGuidesStageTwo()">
                     <template v-slot:icon><IconDefine /></template>
                     <template v-slot:title>Definir</template>
                     <template v-slot:text
@@ -84,12 +90,12 @@ const selectStage = (stage) => {
                 empezar.
             </template>
             <div class="grid">
-                <StageCard compact @click="goToGuidesStageTwo()">
+                <StageCard compact @click="goToGuidesStageThree()">
                     <template v-slot:icon><IconIdea /></template>
                     <template v-slot:title>Idear</template>
                     <template v-slot:text>Lluvia de ideas, Moodboards</template>
                 </StageCard>
-                <StageCard compact @click="goToGuidesStageTwo()">
+                <StageCard compact @click="goToGuidesStageFour()">
                     <template v-slot:icon><IconPrototype /></template>
                     <template v-slot:title>Prototipar</template>
                     <template v-slot:text

@@ -27,7 +27,7 @@ const closeNotesModal = () => {
         </ModalSlide>
     </Teleport>
     <nav>
-        <router-link to="/">
+        <router-link :to="{ name: 'Projects' }">
             <Logo small theme />
         </router-link>
         <ul class="nav_options">

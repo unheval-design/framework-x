@@ -5,86 +5,9 @@ import ProjectAdd from '@/components/ProjectAdd.vue';
 import Modal from '@/components/Modal.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
 import { ref } from '@vue/reactivity';
+import { useProjectsStore } from '@/stores/projects.js';
+const projects = useProjectsStore();
 
-const projectsList = ref([
-    {
-        id: 1,
-        title: 'Project 1',
-        date: '2020-01-01',
-        stage: 1,
-        completed: false
-    },
-    {
-        id: 2,
-        title: 'Project 2',
-        date: '2020-01-01',
-        stage: 2,
-        completed: false
-    },
-    {
-        id: 3,
-        title: 'Project 3',
-        date: '2020-02-11',
-        stage: 4,
-        completed: false
-    },
-    {
-        id: 4,
-        title: 'Project 4',
-        date: '2020-03-01',
-        stage: 3,
-        completed: false
-    },
-    {
-        id: 5,
-        title: 'Project 5',
-        date: '2020-01-01',
-        stage: 3,
-        completed: false
-    },
-    {
-        id: 6,
-        title: 'Project 6',
-        date: '2020-01-01',
-        stage: 2,
-        completed: false
-    },
-    {
-        id: 7,
-        title: 'Project 7',
-        date: '2020-01-01',
-        stage: 4,
-        completed: true
-    },
-    {
-        id: 8,
-        title: 'Project 8',
-        date: '2020-02-01',
-        stage: 1,
-        completed: false
-    },
-    {
-        id: 9,
-        title: 'Project 9',
-        date: '2020-05-01',
-        stage: 3,
-        completed: false
-    },
-    {
-        id: 10,
-        title: 'Project 10',
-        date: '2020-01-01',
-        stage: 1,
-        completed: false
-    },
-    {
-        id: 11,
-        title: 'Project 11',
-        date: '2020-01-01',
-        stage: 4,
-        completed: false
-    }
-]);
 const flagCreateProjectModal = ref(false);
 const openCreateProjectModal = () => {
     flagCreateProjectModal.value = true;
@@ -127,7 +50,7 @@ const closeCreateProjectModal = () => {
                     <span>Nuevo Proyecto</span>
                 </article>
                 <ProjectCard
-                    v-for="(project, index) in projectsList"
+                    v-for="(project, index) in projects.list"
                     :key="index"
                     :project="project"
                 />
