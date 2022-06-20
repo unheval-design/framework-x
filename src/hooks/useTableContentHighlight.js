@@ -5,22 +5,18 @@ const useTableContentHighlight = () => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 const id = entry.target.getAttribute('id');
-                if (entry.intersectionRatio > 0) {
-                    document
-                        .querySelector(
-                            `.GuideTableContent ol li a[href="#${id}"]`
-                        )
-                        .classList.add('active');
-                } else {
-                    document
-                        .querySelector(
-                            `.GuideTableContent ol li a[href="#${id}"]`
-                        )
-                        .classList.remove('active');
+                const tableContent = document.querySelector(
+                    `.GuideTableContent ol li a[href="#${id}"]`
+                );
+                if (tableContent) {
+                    if (entry.intersectionRatio > 0) {
+                        tableContent.classList.add('active');
+                    } else {
+                        tableContent.classList.remove('active');
+                    }
                 }
             });
         });
-
         // Track all sections that have an `id` applied
         document.querySelectorAll('h1[id], h2[id]').forEach((title) => {
             observer.observe(title);
