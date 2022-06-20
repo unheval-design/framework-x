@@ -12,6 +12,6 @@ export default {};
 
 <style scoped>
 .IconAdd {
-    transform: scale(1.4);
+    /* transform: scale(1.4); */
 }
 </style>

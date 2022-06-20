@@ -128,16 +128,16 @@ const closeCreateProjectModal = () => {
                 transition: background ease-in-out 0.1s;
                 cursor: pointer;
                 .icon_wrapper {
-                    width: 36px;
-                    height: 36px;
+                    width: 40px;
+                    height: 40px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                 }
                 svg {
-                    width: 48px;
-                    height: 48px;
+                    width: 40px;
+                    height: 40px;
                     fill: var(--text_color);
                 }
                 span {

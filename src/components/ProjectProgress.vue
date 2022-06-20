@@ -10,7 +10,8 @@ export default {
     props: {
         stage: {
             type: Number,
-            required: true
+            required: true,
+            default: 0
         }
     }
 };

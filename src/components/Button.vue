@@ -59,10 +59,18 @@ const slot = useSlots();
         position: relative;
         margin-top: -2px;
     }
-    svg {
-        fill: white;
-        width: var(--icon_size_sm);
-        height: var(--icon_size_sm);
+    i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+            fill: white;
+            width: var(--icon_size_sm);
+            height: var(--icon_size_sm);
+            &.IconAdd {
+                transform: scale(1.3);
+            }
+        }
     }
     &:before {
         content: '';
