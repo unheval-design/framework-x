@@ -149,6 +149,7 @@ const selectStage = (stage) => {
         padding: var(--padding);
         width: var(--container_width);
         margin: 0 auto;
+        box-sizing: border-box;
         .stages_title {
             h1 {
                 font-size: var(--title_size);
@@ -165,7 +166,7 @@ const selectStage = (stage) => {
         .stages_grid {
             margin-top: var(--padding_xl);
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             grid-gap: var(--gap);
         }
     }

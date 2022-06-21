@@ -29,24 +29,27 @@ const goToProject = () => {
 <template>
     <article @click="goToProject()" class="ProjectCard">
         <IconFolder />
-        <div class="project_title">
-            <h1>{{ project.title }}</h1>
-            <p>{{ dateFormatted }}</p>
-        </div>
-        <ProjectProgress
-            v-if="!project.completed"
-            :stage="getGuide(project.guide).stage"
-        />
-        <div class="project_completed" v-if="project.completed">
-            <i>
-                <IconCheck />
-            </i>
-            <span>Finalizado</span>
+        <div class="project_content">
+            <div class="project_title">
+                <h1>{{ project.title }}</h1>
+                <p>{{ dateFormatted }}</p>
+            </div>
+            <ProjectProgress
+                v-if="!project.completed"
+                :stage="getGuide(project.guide).stage"
+            />
+            <div class="project_completed" v-if="project.completed">
+                <i>
+                    <IconCheck />
+                </i>
+                <span>Finalizado</span>
+            </div>
         </div>
     </article>
 </template>
 
-<style lang="scss" IconFolder>
+<style lang="scss">
+@import '@/assets/css/breakpoints';
 article.ProjectCard {
     display: flex;
     align-items: flex-start;
@@ -76,46 +79,69 @@ article.ProjectCard {
             fill: var(--primary_color);
         }
     }
-    .project_title {
-        h1 {
-            font-weight: 500;
-            color: var(--text_color);
-            font-size: var(--text_size_l);
-        }
-        p {
-            color: var(--text_color_50);
-            font-size: var(--text_size_sm);
-            margin-top: 7px;
-        }
-    }
-    .project_completed {
+    .project_content {
+        width: 100%;
+        flex: 0.65;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        i {
-            width: 20px;
-            height: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        .project_title {
+            h1 {
+                font-weight: 500;
+                color: var(--text_color);
+                font-size: var(--text_size_l);
+            }
+            p {
+                color: var(--text_color_50);
+                font-size: var(--text_size_sm);
+                margin-top: 7px;
+            }
+        }
+        .project_completed {
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            svg {
-                width: 16px;
-                height: 16px;
-                fill: var(--neutral_color);
+            i {
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                svg {
+                    width: 16px;
+                    height: 16px;
+                    fill: var(--neutral_color);
+                }
+                background-color: var(--primary_color);
             }
-            background-color: var(--primary_color);
-        }
-        span {
-            color: var(--text_color);
-            font-weight: 500;
-            font-size: var(--text_size);
-            margin-left: var(--gap_sm);
+            span {
+                color: var(--text_color);
+                font-weight: 500;
+                font-size: var(--text_size);
+                margin-left: var(--gap_sm);
+            }
         }
     }
+
     &:hover {
         /* box-shadow: var(--shadow); */
         background-color: var(--hover_color);
+    }
+}
+
+@include screen('sm') {
+    article.ProjectCard {
+        min-height: 80px;
+        height: auto;
+        flex-direction: row;
+        gap: var(--gap);
+        .project_content {
+            flex: inherit;
+            .project_title {
+                margin-bottom: var(--gap_sm);
+            }
+        }
     }
 }
 </style>

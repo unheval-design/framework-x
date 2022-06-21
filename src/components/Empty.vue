@@ -21,6 +21,8 @@ defineProps({
 </template>
 
 <style lang="scss">
+@import '@/assets/css/breakpoints';
+
 .Empty {
     width: 100%;
     height: calc(100% - var(--navbar_height));
@@ -92,6 +94,27 @@ defineProps({
     &.full {
         small {
             max-width: 320px;
+        }
+    }
+}
+
+@include screen('md') {
+    .Empty {
+        .icon_wrapper {
+            i {
+                width: 56px;
+                height: 56px;
+            }
+            span {
+                width: 28px;
+                height: 28px;
+                left: -14px;
+                top: -14px;
+                &:last-of-type {
+                    right: -14px;
+                    bottom: -14px;
+                }
+            }
         }
     }
 }

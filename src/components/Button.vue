@@ -45,7 +45,7 @@ const slot = useSlots();
     border-radius: var(--radius);
     background-color: var(--primary_color);
     height: var(--button_height);
-    padding: 0 var(--padding_sm);
+    padding: 0 var(--padding);
     font-family: var(--font);
     font-size: var(--text_size);
     letter-spacing: 0.03rem;

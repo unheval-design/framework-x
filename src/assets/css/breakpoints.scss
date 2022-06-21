@@ -20,13 +20,18 @@ $breakpoints: (
 }
 
 @include screen('md') {
-  :root {
-    --text_size_xl: 16px;
-    --padding_sm: .8rem;
-    --padding: 1rem;
-    --gap: 18px;
-    --gap_sm: 10px;
-  }
+  	:root {
+		--text_size_xl: 16px;
+		--text_size_l: 14px;
+		--text_size_sm: 12px;
+		--title_size: 20px;
+		--padding_sm: .8rem;
+		--padding: 1.2rem;
+		--gap: 18px;
+		--gap_sm: 10px;
+		--icon_size_xl: 28px;
+		--padding_xl: 2rem;
+  	}
 }
 
 @include screen('xs') {

@@ -57,9 +57,7 @@ const closeCreateProjectModal = () => {
             <div class="projects_title">
                 <h1>Tus Proyectos</h1>
                 <p>
-                    Utilizamos una metodologia flexible, puedes empezar desde el
-                    principio o desde una etapa <br />
-                    especifica si ya tienes algun avance de tu interfaz.
+                    Para empezar a trabajar selecciona o crea un nuevo proyecto.
                 </p>
             </div>
             <section class="projects_grid">
@@ -83,12 +81,17 @@ const closeCreateProjectModal = () => {
 </template>
 
 <style lang="scss">
+@import '@/assets/css/breakpoints';
+
 .projects_container {
     .projects_wrapper {
         padding: var(--padding);
-        width: var(--container_width);
+        padding-top: var(--padding);
+        max-width: var(--container_width);
+        width: 100%;
         margin: 0 auto;
         margin-top: 8rem;
+        box-sizing: border-box;
         &.empty {
             margin-top: 0;
             padding: 0;
@@ -111,7 +114,7 @@ const closeCreateProjectModal = () => {
         }
         .projects_grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             grid-gap: var(--gap);
             width: 100%;
             margin-top: var(--padding_xl);
@@ -148,6 +151,43 @@ const closeCreateProjectModal = () => {
                 &:hover {
                     border-color: var(--primary_color);
                     background-color: var(--primary_color_10);
+                }
+            }
+        }
+    }
+}
+
+@include screen('md') {
+    .projects_container {
+        .projects_wrapper {
+            margin-top: 3rem;
+            .projects_grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+        }
+    }
+}
+
+@include screen('sm') {
+    .projects_container {
+        .projects_wrapper {
+            margin-top: 3rem;
+            .projects_grid {
+                grid-template-columns: 1fr;
+                article.add_new_project {
+                    flex-direction: row;
+                    height: 80px;
+                    justify-content: flex-start;
+                    padding: 0 var(--padding);
+                    gap: var(--gap);
+                    .icon_wrapper {
+                        width: 32px;
+                        height: 32px;
+                    }
+                    svg {
+                        width: 32px;
+                        height: 32px;
+                    }
                 }
             }
         }
