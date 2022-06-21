@@ -119,6 +119,7 @@ watchEffect(() => {
     .task_wrapper {
         z-index: 1;
         width: 100%;
+        flex: 1;
         p {
             line-height: 20px;
             width: 100%;

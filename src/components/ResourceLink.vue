@@ -42,6 +42,7 @@ const hideResource = () => {
         <span><slot /></span>
         <Teleport to="body">
             <Dropdown
+                class="ResourceLinkDropdown"
                 :style="`top: ${y}px; left: ${x}px`"
                 :show="flagResource"
                 @close="hideResource"
@@ -53,6 +54,8 @@ const hideResource = () => {
 </template>
 
 <style lang="scss">
+@import '@/assets/css/breakpoints';
+
 .ResourceLink {
     opacity: 1;
     span {
@@ -71,6 +74,16 @@ const hideResource = () => {
         fill: var(--text_color_50);
         margin-right: 3px;
         margin-bottom: -3px;
+    }
+}
+
+@include screen('sm') {
+    .ResourceLinkDropdown {
+        top: inherit !important;
+        left: var(--padding) !important;
+        bottom: var(--padding);
+        position: fixed;
+        width: calc(100% - 2 * var(--padding));
     }
 }
 </style>

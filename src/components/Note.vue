@@ -46,6 +46,7 @@ const notes = useNotesStore();
         fill: var(--text_color);
     }
     .note_wrapper {
+        flex: 1;
         p {
             line-height: 20px;
             width: 100%;
