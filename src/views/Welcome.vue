@@ -81,6 +81,7 @@ import Logo from '@/components/drawables/Logo.vue';
 </template>
 
 <style lang="scss">
+@import '@/assets/css/breakpoints';
 .Welcome {
     position: relative;
     overflow: hidden;
@@ -126,11 +127,12 @@ import Logo from '@/components/drawables/Logo.vue';
     .welcome_wrapper {
         position: relative;
         z-index: 3;
-        padding-top: 8rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: var(--padding);
+        padding-top: 8rem;
         .Logo {
             margin-left: -20px;
         }
@@ -138,18 +140,20 @@ import Logo from '@/components/drawables/Logo.vue';
             font-weight: 300;
             margin: {
                 top: 1.5rem;
-                bottom: 2.5rem;
+                bottom: 2rem;
             }
             color: var(--text_color_70);
             font-size: var(--text_size_xl);
+            text-align: center;
+            line-height: var(--title_line_height);
         }
         .welcome_grid {
             margin-top: 5rem;
             width: 720px;
             height: 400px;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
             grid-gap: var(--gap);
             article {
                 border-radius: var(--radius);
@@ -269,6 +273,88 @@ import Logo from '@/components/drawables/Logo.vue';
     }
     100% {
         transform: translate(0px);
+    }
+}
+
+@include screen('md') {
+    .Welcome {
+        .welcome_wrapper {
+            padding-top: 3rem;
+            .Logo {
+                width: 200px;
+            }
+            & > p {
+                margin: {
+                    top: 1rem;
+                    bottom: 1.5rem;
+                }
+            }
+            .welcome_grid {
+                margin-top: 3rem;
+                width: 560px;
+                height: 360px;
+                article {
+                    &.example {
+                        padding: var(--padding_sm);
+                    }
+                    &.stage {
+                        .stage_wrapper {
+                            i {
+                                width: 48px;
+                                height: 48px;
+                                svg {
+                                    width: 18px;
+                                    height: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include screen('sm') {
+    .Welcome {
+        .welcome_wrapper {
+            .welcome_grid {
+                width: 360px;
+                height: 720px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+                article {
+                    &:nth-child(1) {
+                        grid-row: 1 / span 2;
+                    }
+                    &:nth-child(3) {
+                        grid-row: 4 / span 2;
+                        grid-column: 1 / span 2;
+                    }
+                    &:nth-child(4) {
+                        grid-column: 1;
+                    }
+                    &:nth-child(5) {
+                        grid-row: 2 / span 2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include screen('xs') {
+    .Welcome {
+        .welcome_wrapper {
+            .Logo {
+                width: 180px;
+            }
+            .welcome_grid {
+                width: 100%;
+                max-width: 280px;
+                height: 600px;
+            }
+        }
     }
 }
 </style>

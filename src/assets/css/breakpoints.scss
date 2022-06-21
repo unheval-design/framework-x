@@ -1,28 +1,36 @@
 $breakpoints: (
-  'extra-small-phone': ( max-width: 375px ),
-  'small-phone': ( max-width: 425px ),
-  'phone': ( max-width: 599px ),
-  'tablet-portrait': ( max-width: 768px ),
-  'tablet-medium': ( max-width: 992px ),
-  'tablet-landscape': ( max-width: 1024px ),
-  'desktop': ( max-width: 1200px ),
-  'large-desktop': ( max-width: 1440px ),
-  'big-desktop': ( max-width: 1800px )
+  'xs': ( max-width: 425px ),
+  'sm': ( max-width: 600px ),
+  'md': ( max-width: 960px ),
+  'lg': ( max-width: 1264px ),
+  'xl': ( max-width: 1904px )
 ) !default;
 
 
 @mixin screen($breakpoint) {
-  // If the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {
-    // Prints a media query based on the value
     @media #{inspect(map-get($breakpoints, $breakpoint))} {
       @content;
     }
   }
-
-    // If the key doesn't exist in the map
   @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@include screen('md') {
+  :root {
+    --text_size_xl: 16px;
+    --padding_sm: .8rem;
+    --padding: 1rem;
+    --gap: 18px;
+    --gap_sm: 10px;
+  }
+}
+
+@include screen('xs') {
+  :root {
+    --text_size_xl: 14px;
   }
 }
