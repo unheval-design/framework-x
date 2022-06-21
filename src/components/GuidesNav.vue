@@ -35,7 +35,9 @@ const goToNext = () => {
 
 const openCompletedModal = () => {
     jsConfetti.addConfetti({
-        confettiColors: ['#FFD66E', '#318BEA', '#FFEFC5', '#ADD0F7']
+        confettiColors: ['#FFD66E', '#318BEA', '#FFEFC5', '#ADD0F7'],
+        confettiRadius: 4,
+        confettiNumber: 200
     });
     flagCompletedModal.value = true;
 };

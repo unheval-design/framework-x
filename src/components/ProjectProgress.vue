@@ -18,6 +18,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/css/breakpoints';
+
 .ProjectProgress {
     display: flex;
     align-items: center;
@@ -70,6 +72,14 @@ export default {
         &:before {
             background-color: var(--primary_color);
             width: 100%;
+        }
+    }
+}
+
+@include screen('sm') {
+    .ProjectProgress {
+        span {
+            height: 3px;
         }
     }
 }

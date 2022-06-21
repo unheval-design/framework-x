@@ -65,23 +65,54 @@ watch(
     </div>
 </template>
 <style lang="scss">
+@import '@/assets/css/breakpoints';
+
 .guides_grid {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 320px;
     grid-gap: var(--gap_xl);
-    grid-auto-rows: max-content;
+    grid-auto-rows: max-content; */
+    display: flex;
+    gap: var(--gap_xl);
     padding: var(--padding);
-    width: var(--container_width);
+    box-sizing: border-box;
+    max-width: var(--container_width);
+    width: 100%;
     margin: 0 auto;
     .Guide {
-        max-width: 100%;
-        width: 720px;
+        flex: 1;
+        .guide_wrapper {
+            width: 100%;
+            max-width: 720px;
+        }
     }
     .GuidesNav {
+        width: 320px;
         z-index: 5;
         position: sticky;
         top: calc(#{var(--navbar_height)} + #{var(--padding)});
         height: calc(100vh - #{var(--navbar_height)} - 2 * #{var(--padding)});
+    }
+}
+
+@include screen('nm') {
+    .guides_grid {
+        flex-direction: column;
+        gap: var(--gap);
+        .Guide {
+            .guide_wrapper {
+                max-width: inherit;
+            }
+        }
+        .GuidesNav {
+            width: 100%;
+            height: auto;
+            .guides_wrapper {
+                .guide_table_content {
+                    display: none;
+                }
+            }
+        }
     }
 }
 </style>

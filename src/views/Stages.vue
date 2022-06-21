@@ -111,9 +111,8 @@ const selectStage = (stage) => {
             <div class="stages_title">
                 <h1>Selecciona una Etapa</h1>
                 <p>
-                    Utilizamos una metodologia flexible, puedes empezar desde el
-                    principio o desde una etapa <br />
-                    especifica si ya tienes algun avance de tu interfaz.
+                    Empieza desde el análisis o escoje una etapa especifica, si
+                    ya tienes algo trabajado.
                 </p>
             </div>
             <section class="stages_grid">
@@ -143,11 +142,15 @@ const selectStage = (stage) => {
 </template>
 
 <style lang="scss">
+@import '@/assets/css/breakpoints';
+
 .stages_container {
     margin-top: 8rem;
     .stages_wrapper {
         padding: var(--padding);
-        width: var(--container_width);
+        padding-top: 0;
+        max-width: var(--container_width);
+        width: 100%;
         margin: 0 auto;
         box-sizing: border-box;
         .stages_title {
@@ -168,6 +171,28 @@ const selectStage = (stage) => {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             grid-gap: var(--gap);
+        }
+    }
+}
+
+@include screen('md') {
+    .stages_container {
+        margin-top: 3rem;
+        .stages_wrapper {
+            .stages_grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+        }
+    }
+}
+
+@include screen('sm') {
+    .stages_container {
+        margin-top: 3rem;
+        .stages_wrapper {
+            .stages_grid {
+                grid-template-columns: 1fr;
+            }
         }
     }
 }

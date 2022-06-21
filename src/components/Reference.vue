@@ -35,6 +35,7 @@ export default {
     gap: var(--gap);
     img {
         border-radius: var(--radius);
+        width: 100%;
     }
     caption {
         width: 100%;

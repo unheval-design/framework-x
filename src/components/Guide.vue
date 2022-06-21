@@ -34,18 +34,20 @@ notes.guide = currentGuide;
 
 <template>
     <section ref="guideRef" class="Guide">
-        <GuideContextMenu @close="closeContextMenu" />
-        <Guide1 v-if="guideId === 1" />
-        <Guide2 v-if="guideId === 2" />
-        <Guide3 v-if="guideId === 3" />
-        <Guide4 v-if="guideId === 4" />
-        <Guide5 v-if="guideId === 5" />
-        <Guide6 v-if="guideId === 6" />
-        <Guide7 v-if="guideId === 7" />
-        <Guide8 v-if="guideId === 8" />
-        <Guide9 v-if="guideId === 9" />
-        <Guide10 v-if="guideId === 10" />
-        <Guide11 v-if="guideId === 11" />
+        <div class="guide_wrapper">
+            <GuideContextMenu @close="closeContextMenu" />
+            <Guide1 v-if="guideId === 1" />
+            <Guide2 v-if="guideId === 2" />
+            <Guide3 v-if="guideId === 3" />
+            <Guide4 v-if="guideId === 4" />
+            <Guide5 v-if="guideId === 5" />
+            <Guide6 v-if="guideId === 6" />
+            <Guide7 v-if="guideId === 7" />
+            <Guide8 v-if="guideId === 8" />
+            <Guide9 v-if="guideId === 9" />
+            <Guide10 v-if="guideId === 10" />
+            <Guide11 v-if="guideId === 11" />
+        </div>
     </section>
 </template>
 

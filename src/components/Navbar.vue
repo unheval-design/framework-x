@@ -45,6 +45,8 @@ const closeNotesModal = () => {
 </template>
 
 <style lang="scss">
+@import '@/assets/css/breakpoints';
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -73,6 +75,14 @@ nav {
                 width: var(--icon_size);
                 height: var(--icon_size);
             }
+        }
+    }
+}
+
+@include screen('sm') {
+    nav {
+        .Logo.small {
+            width: 140px;
         }
     }
 }

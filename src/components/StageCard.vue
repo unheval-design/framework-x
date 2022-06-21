@@ -22,6 +22,8 @@ const props = defineProps({
 </template>
 
 <style lang="scss">
+@import '@/assets/css/breakpoints';
+
 .StageCard {
     display: flex;
     align-items: center;
@@ -66,13 +68,28 @@ const props = defineProps({
     }
     &.compact {
         height: 80px;
-        padding: var(--padding_xl);
+        padding: var(--padding);
         .stage_card_wrapper {
             justify-content: flex-start;
             flex-direction: row;
+            gap: var(--gap);
             svg {
-                margin-right: var(--padding);
+                /* margin-right: var(--padding); */
             }
+            .stage_title {
+                align-items: flex-start;
+            }
+        }
+    }
+}
+
+@include screen('sm') {
+    .StageCard {
+        height: 80px;
+        .stage_card_wrapper {
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: var(--gap);
             .stage_title {
                 align-items: flex-start;
             }

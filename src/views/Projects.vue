@@ -86,7 +86,7 @@ const closeCreateProjectModal = () => {
 .projects_container {
     .projects_wrapper {
         padding: var(--padding);
-        padding-top: var(--padding);
+        padding-top: 0;
         max-width: var(--container_width);
         width: 100%;
         margin: 0 auto;
@@ -181,12 +181,12 @@ const closeCreateProjectModal = () => {
                     padding: 0 var(--padding);
                     gap: var(--gap);
                     .icon_wrapper {
-                        width: 32px;
-                        height: 32px;
+                        width: 28px;
+                        height: 28px;
                     }
                     svg {
-                        width: 32px;
-                        height: 32px;
+                        width: 28px;
+                        height: 28px;
                     }
                 }
             }

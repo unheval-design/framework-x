@@ -279,7 +279,6 @@ import Logo from '@/components/drawables/Logo.vue';
 @include screen('md') {
     .Welcome {
         .welcome_wrapper {
-            padding-top: 3rem;
             .Logo {
                 width: 200px;
             }

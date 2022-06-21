@@ -25,7 +25,7 @@ const slot = useSlots();
 blockquote {
     border-radius: var(--radius);
     background-color: var(--neutral_color_90);
-    /* font-size: var(--text_size); */
+    font-size: var(--text_size_l);
     padding: var(--padding);
     display: flex;
     align-items: flex-start;

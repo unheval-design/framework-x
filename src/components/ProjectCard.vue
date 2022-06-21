@@ -27,7 +27,11 @@ const goToProject = () => {
 };
 </script>
 <template>
-    <article @click="goToProject()" class="ProjectCard">
+    <article
+        @click="goToProject()"
+        class="ProjectCard"
+        :class="`stage_${getGuide(project.guide).stage}`"
+    >
         <IconFolder />
         <div class="project_content">
             <div class="project_title">
@@ -66,16 +70,24 @@ article.ProjectCard {
         width: var(--icon_size_xl);
         height: var(--icon_size_xl);
         fill: var(--text_color_50);
-        &.stage_1 {
+    }
+    &.stage_1 {
+        svg {
             fill: var(--text_color);
         }
-        &.stage_2 {
+    }
+    &.stage_2 {
+        svg {
             fill: var(--accent_color);
         }
-        &.stage_3 {
+    }
+    &.stage_3 {
+        svg {
             fill: var(--success_color);
         }
-        &.stage_4 {
+    }
+    &.stage_4 {
+        svg {
             fill: var(--primary_color);
         }
     }
@@ -136,6 +148,9 @@ article.ProjectCard {
         height: auto;
         flex-direction: row;
         gap: var(--gap);
+        svg {
+            margin-top: -2px;
+        }
         .project_content {
             flex: inherit;
             .project_title {
