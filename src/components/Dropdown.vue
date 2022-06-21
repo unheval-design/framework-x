@@ -10,6 +10,10 @@ const props = defineProps({
     fixed: {
         default: false,
         type: Boolean
+    },
+    left: {
+        default: false,
+        type: Boolean
     }
 });
 const emit = defineEmits(['close']);
@@ -22,7 +26,7 @@ onClickOutside(target, () => {
     <Transition name="fade">
         <div
             class="Dropdown"
-            :class="{ fixed: fixed }"
+            :class="[{ fixed: fixed }, { left: left }]"
             ref="target"
             v-if="props.show"
         >
@@ -46,6 +50,9 @@ onClickOutside(target, () => {
     z-index: 10;
     &.fixed {
         position: fixed;
+    }
+    &.left {
+        left: 0;
     }
 }
 

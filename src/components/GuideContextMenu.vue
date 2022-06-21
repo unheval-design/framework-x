@@ -6,7 +6,6 @@ import IconAddTask from '@/components/drawables/IconAddTask.vue';
 import { useClipboard, useTextSelection } from '@vueuse/core';
 import { useTodoStore } from '@/stores/todo.js';
 import { useNotesStore } from '@/stores/notes.js';
-import { ref } from '@vue/reactivity';
 import { computed } from '@vue/runtime-core';
 
 const state = useTextSelection();
@@ -65,8 +64,9 @@ const addNote = () => {
 
 <style lang="scss">
 #GuideContextMenu {
-    z-index: 10000;
+    z-index: -1;
     display: none;
+    opacity: 0;
     &.Dropdown {
         ul {
             li {
@@ -107,6 +107,12 @@ const addNote = () => {
 }
 
 #GuideContextMenu.visible {
+    z-index: 100;
     display: block;
+}
+#GuideContextMenu.show {
+    z-index: 100;
+    opacity: 1;
+    /* display: block; */
 }
 </style>

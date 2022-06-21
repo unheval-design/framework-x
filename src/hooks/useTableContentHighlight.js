@@ -17,7 +17,7 @@ const useTableContentHighlight = () => {
                 }
             });
         });
-        // Track all sections that have an `id` applied
+
         document.querySelectorAll('h1[id], h2[id]').forEach((title) => {
             observer.observe(title);
         });

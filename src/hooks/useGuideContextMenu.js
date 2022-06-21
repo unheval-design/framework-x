@@ -6,18 +6,30 @@ const useGuideContextMenu = () => {
     const guideRef = ref();
     const state = useTextSelection();
     const selection = computed(() => state.text.value.trim());
+    const leftOffset = ref(0);
 
     nextTick(() => {
         const contextMenu = document.getElementById('GuideContextMenu');
+
         guideRef.value.addEventListener('contextmenu', (event) => {
             if (selection.value) {
                 event.preventDefault();
+
                 const { clientX: mouseX, clientY: mouseY } = event;
+                const bodyWidth = document.body.getBoundingClientRect().width;
+                const bodyHeight = window.innerHeight;
 
                 contextMenu.style.top = `${mouseY}px`;
                 contextMenu.style.left = `${mouseX}px`;
 
+                if (mouseX + 175 > bodyWidth) {
+                    contextMenu.style.left = `${bodyWidth - 175}px`;
+                }
+                if (mouseY + 140 > bodyHeight) {
+                    contextMenu.style.top = `${bodyHeight - 140}px`;
+                }
                 contextMenu.classList.add('visible');
+                contextMenu.classList.add('show');
                 document.body.style.overflow = 'hidden';
             }
         });
@@ -27,6 +39,9 @@ const useGuideContextMenu = () => {
                 if (contextMenu.classList.contains('visible'))
                     document.body.style.overflow = 'initial';
                 contextMenu.classList.remove('visible');
+                contextMenu.classList.remove('show');
+                leftOffset.value = 0;
+                contextMenu.style.left = '0px';
             }
         });
     });
@@ -37,6 +52,7 @@ const useGuideContextMenu = () => {
             if (contextMenu.classList.contains('visible'))
                 document.body.style.overflow = 'initial';
             contextMenu.classList.remove('visible');
+            contextMenu.classList.remove('show');
         });
     };
 
