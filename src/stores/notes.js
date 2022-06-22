@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { ID } from '@/helpers/utils.js';
+import { random } from '@/helpers/utils.js';
 
 export const useNotesStore = defineStore(
     'notes',
@@ -13,6 +14,7 @@ export const useNotesStore = defineStore(
             const note = {
                 id: ID(),
                 title,
+                color: random(0, 4),
                 guide: guide.value
             };
             listAll.value.unshift(note);

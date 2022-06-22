@@ -5,7 +5,7 @@ import IconTrash from '@/components/drawables/IconTrash.vue';
 import { useNotesStore } from '@/stores/notes.js';
 import { GUIDES } from '@/helpers/stagesData.js';
 
-defineProps({
+const props = defineProps({
     note: {
         type: Object,
         required: true
@@ -13,16 +13,21 @@ defineProps({
 });
 
 const notes = useNotesStore();
+
+const changeColor = () => {
+    if (props.note.color < 5) props.note.color++;
+    if (props.note.color === 5) props.note.color = 0;
+};
 </script>
 
 <template>
-    <div class="Note">
-        <IconNotesFilled />
+    <div class="Note" :class="`color_${note.color}`">
+        <HoverIcon @click="changeColor()">
+            <IconNotesFilled />
+        </HoverIcon>
         <div class="note_wrapper">
             <b>{{ note.guide.substage.name }} / {{ GUIDES[note.guide.id] }}</b>
-            <p>
-                {{ note.title }}
-            </p>
+            <p>{{ note.title }}</p>
         </div>
         <HoverIcon @click="notes.remove(note.id)">
             <IconTrash />
@@ -72,6 +77,26 @@ const notes = useNotesStore();
     &:hover {
         .IconTrash {
             opacity: 1;
+        }
+    }
+    &.color_1 {
+        .IconNotesFilled {
+            fill: var(--primary_color);
+        }
+    }
+    &.color_2 {
+        .IconNotesFilled {
+            fill: var(--accent_color);
+        }
+    }
+    &.color_3 {
+        .IconNotesFilled {
+            fill: var(--success_color);
+        }
+    }
+    &.color_4 {
+        .IconNotesFilled {
+            fill: var(--error_color);
         }
     }
 }

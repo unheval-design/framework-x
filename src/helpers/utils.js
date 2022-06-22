@@ -19,3 +19,7 @@ export const isCheckpoint = (guideId) => {
         .map((n) => n.last)
         .includes(guideId);
 };
+
+export const random = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+};
