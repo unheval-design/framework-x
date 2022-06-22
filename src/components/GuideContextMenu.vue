@@ -6,11 +6,13 @@ import IconAddTask from '@/components/drawables/IconAddTask.vue';
 import { useClipboard, useTextSelection } from '@vueuse/core';
 import { useTodoStore } from '@/stores/todo.js';
 import { useNotesStore } from '@/stores/notes.js';
+import { useToastStore } from '@/stores/toast.js';
 import { computed } from '@vue/runtime-core';
 
 const state = useTextSelection();
 const selection = computed(() => state.text.value.trim());
 const emit = defineEmits(['close']);
+const toast = useToastStore();
 
 const close = () => {
     emit('close');
@@ -20,6 +22,8 @@ const copy = () => {
     const { copy } = useClipboard({ source: selection });
     copy();
     close();
+    toast.type = 1;
+    toast.message = 'Texto copiado';
 };
 
 const addTask = () => {
@@ -27,6 +31,8 @@ const addTask = () => {
     todo.add(selection.value);
     todo.notify();
     close();
+    toast.type = 2;
+    toast.message = 'Tarea creada';
 };
 
 const addNote = () => {
@@ -34,6 +40,8 @@ const addNote = () => {
     notes.add(selection.value);
     notes.notify();
     close();
+    toast.type = 3;
+    toast.message = 'Nota agregada';
 };
 </script>
 
@@ -46,17 +54,17 @@ const addNote = () => {
                 </i>
                 Copiar
             </li>
-            <li @click="addNote()">
-                <i>
-                    <IconAddNote />
-                </i>
-                Agregar a notas
-            </li>
             <li @click="addTask()">
                 <i>
                     <IconAddTask />
                 </i>
                 Agregar a tareas
+            </li>
+            <li @click="addNote()">
+                <i>
+                    <IconAddNote />
+                </i>
+                Agregar a notas
             </li>
         </ul>
     </Dropdown>

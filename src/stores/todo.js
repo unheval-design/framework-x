@@ -20,7 +20,6 @@ export const useTodoStore = defineStore(
                 guide: guide.value,
                 project: project.value
             };
-            console.log(task);
             lastTaskCreated.value = task.id;
             listAll.value.unshift(task);
         };
