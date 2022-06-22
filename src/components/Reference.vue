@@ -41,8 +41,9 @@ export default {
         width: 100%;
         text-align: left;
         font-style: italic;
-        font-size: var(--text_size);
+        font-size: var(--text_size_sm);
         color: var(--text_color_70);
+        line-height: var(--title_line_height);
     }
 }
 </style>

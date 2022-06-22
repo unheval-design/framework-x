@@ -42,6 +42,7 @@ onMounted(() => {
 h1,
 h2 {
     position: relative;
+    line-height: var(--title_line_height);
     a {
         position: absolute;
         left: -16px;
