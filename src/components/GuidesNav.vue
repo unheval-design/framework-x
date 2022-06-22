@@ -87,6 +87,8 @@ const closeCompletedModal = () => {
         .guide_table_content {
             border-top: 1px solid var(--border_color_70);
             padding: var(--padding);
+            max-height: calc(100vh - 270px);
+            overflow: auto;
         }
     }
     .guide_nav_controls {

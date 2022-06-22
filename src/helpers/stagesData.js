@@ -1,10 +1,11 @@
-export const LAST_GUIDE_ID = 11;
+export const LAST_GUIDE_ID = 12;
 export const substages = {
     1: 'Empatizar',
     2: 'Definir',
     3: 'Idear',
-    4: 'Prototipar',
-    5: 'Probar'
+    4: 'Prototipar I',
+    5: 'Prototipar II',
+    6: 'Probar'
 };
 
 export const guides = {
@@ -28,15 +29,15 @@ export const guides = {
         stage: 1,
         pages: 5
     },
-    '11,12,13,14,15': {
+    '11,12,13': {
         start: 11,
-        last: 15,
+        last: 13,
         substage: {
             id: 3,
             name: substages[3]
         },
         stage: 2,
-        pages: 5
+        pages: 3
     }
 };
 
@@ -50,7 +51,9 @@ export const GUIDES = {
     7: 'Mapa del Sitio',
     8: 'UX Writing',
     9: 'Wireframe',
-    10: 'Flujo de Usuario'
+    10: 'Flujo de Usuario',
+    11: 'Moodboards',
+    12: 'Lluvia de Ideas'
 };
 
 export const GUIDES_SPEECH = {
@@ -63,7 +66,9 @@ export const GUIDES_SPEECH = {
     7: 'Mapa del Sitio',
     8: 'UX Writing',
     9: 'Wireframe',
-    10: 'Flujo de Usuario'
+    10: 'Flujo de Usuario',
+    11: 'Moodboards',
+    12: 'Lluvia de Ideas'
 };
 
 export default guides;

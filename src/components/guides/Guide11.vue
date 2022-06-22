@@ -18,21 +18,23 @@ import imageFive from '@/assets/images/guide-11/image_5.png';
 import imageSix from '@/assets/images/guide-11/image_6.png';
 
 const question1 = {
-    question:
-        '¿Por qué los flujos de usuario ayudan a hacer una interfaz intuitiva para el usuario?',
+    question: '¿Para qué usamos los moodboard?',
     answer: 1,
     alternatives: [
-        'Por que esta validado por los mismos usuarios para ser facil y rapido de navegar.',
-        'Por que fue diseñado por profesionales UX.',
-        'Por que estandarizan la forma en que cualquier usuario navega en una interfaz.'
+        'Organizar información, que siva de inspiración en el proceso de diseño.',
+        'Definir como seran los componentes a diseñar.',
+        'Organizar elementos que sirvan para comparar con nuestro diseño actual.'
     ]
 };
 
 const question2 = {
-    question:
-        'Si deseo representar una tarea que no presenta complejidad de escenarios o rutas, podria usar:',
+    question: '¿Cuál es la ventaja de usar un moodboard digital?',
     answer: 3,
-    alternatives: ['Flujo de tareas.', 'Wireflows.', 'Flujo de usuario.']
+    alternatives: [
+        'Pueden contener enormes especios de trabajo para recolectar mucha información.',
+        'Por que ayudan a que el proceso de recoleccion sea mas rápida.',
+        'Pueden contener mayor numero de personas trabajando al mismo tiempo.'
+    ]
 };
 </script>
 

@@ -14,16 +14,17 @@ export default {};
     flex-direction: column;
     margin-top: var(--gap);
     color: var(--text_color);
+    gap: var(--gap_block);
     section {
         display: flex;
         flex-direction: column;
-        gap: var(--gap_sm);
+        gap: var(--gap_block);
     }
     h1 {
         font-size: var(--text_size_xl);
         font-weight: 600;
         margin-top: var(--gap);
-        margin-bottom: var(--gap_sm);
+        /* margin-bottom: 8px; */
         &:nth-of-type(1) {
             margin-top: 0;
         }

@@ -58,7 +58,7 @@ const answer = ref(null);
     gap: var(--gap_sm);
     h2 {
         font-size: var(--text_size_l);
-        line-height: var(--text_line_height);
+        line-height: var(--title_line_height);
     }
     .test_alternatives {
         padding: 0;

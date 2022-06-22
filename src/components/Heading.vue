@@ -39,6 +39,8 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+@import '@/assets/css/breakpoints';
+
 h1,
 h2 {
     position: relative;
@@ -57,6 +59,15 @@ h2 {
     &:hover {
         a {
             opacity: 1;
+        }
+    }
+}
+
+@include screen('md') {
+    h1,
+    h2 {
+        a {
+            left: -12px;
         }
     }
 }
