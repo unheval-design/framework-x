@@ -22,13 +22,18 @@ const onClick = () => {
             <template v-slot:description>
                 <p v-if="guideId == 5">
                     Has completado de la subetapa de
-                    <strong>Empatizar</strong>, con las siguientes guias toca
-                    <strong>Definir</strong> tu solucion.
+                    <strong>Empatizar</strong>, con las siguientes guías toca
+                    <strong>Definir</strong> tu solución.
                 </p>
                 <p v-if="guideId == 10">
                     Has completado de la subetapa de
-                    <strong>Definir</strong>, con las siguientes guias toca
-                    <strong>Idear</strong> tu solucion.
+                    <strong>Definir</strong>, con las siguientes guías toca
+                    <strong>Idear</strong> tu solución.
+                </p>
+                <p v-if="guideId == 13">
+                    Has completado de la subetapa de
+                    <strong>Idear</strong>, con las siguientes guías toca
+                    <strong>Diseñar</strong> tu solución.
                 </p>
             </template>
             <template v-slot:button>
