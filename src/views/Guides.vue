@@ -6,7 +6,9 @@ import GuidesNav from '@/components/GuidesNav.vue';
 import ModalSlide from '@/components/ModalSlide.vue';
 import Todo from '@/components/Todo.vue';
 import GuideTableContent from '@/components/GuideTableContent.vue';
+import CurrentProject from '@/components/CurrentProject.vue';
 import BadgeIcon from '@/components/BadgeIcon.vue';
+import Dropdown from '@/components/Dropdown.vue';
 import { useRoute } from 'vue-router';
 import { computed, provide, ref, watch, watchEffect } from '@vue/runtime-core';
 import { useTodoStore } from '@/stores/todo.js';
@@ -51,6 +53,9 @@ watch(
     <Navbar>
         <template v-slot:options>
             <li>
+                <CurrentProject />
+            </li>
+            <li>
                 <BadgeIcon :show="todo.taskAdded">
                     <IconTodo @click="openTodoModal()" />
                 </BadgeIcon>
@@ -68,10 +73,6 @@ watch(
 @import '@/assets/css/breakpoints';
 
 .guides_grid {
-    /* display: grid;
-    grid-template-columns: 1fr 320px;
-    grid-gap: var(--gap_xl);
-    grid-auto-rows: max-content; */
     display: flex;
     gap: var(--gap_xl);
     padding: var(--padding);

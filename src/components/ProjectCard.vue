@@ -36,7 +36,7 @@ const goToProject = () => {
         <div class="project_content">
             <div class="project_title">
                 <h1>{{ project.title }}</h1>
-                <p>{{ dateFormatted }}</p>
+                <p>{{ project.description }}</p>
             </div>
             <ProjectProgress
                 v-if="!project.completed"
@@ -107,6 +107,7 @@ article.ProjectCard {
                 color: var(--text_color_50);
                 font-size: var(--text_size_sm);
                 margin-top: 7px;
+                line-height: var(--title_line_height);
             }
         }
         .project_completed {
@@ -137,7 +138,6 @@ article.ProjectCard {
     }
 
     &:hover {
-        /* box-shadow: var(--shadow); */
         background-color: var(--hover_color);
     }
 }

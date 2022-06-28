@@ -86,4 +86,20 @@ nav {
         }
     }
 }
+
+@include screen('xs') {
+    nav {
+        .logo_box {
+            display: block;
+            height: 40px;
+            width: 40px;
+        }
+        .Logo.small {
+            width: 160px;
+            .logo_letter {
+                display: none;
+            }
+        }
+    }
+}
 </style>

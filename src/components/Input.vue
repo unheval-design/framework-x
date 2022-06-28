@@ -84,7 +84,7 @@ const handleInput = (value) => {
         textarea {
             padding: var(--padding_sm);
             height: var(--textarea_height);
-            line-height: var(--text_line_height);
+            line-height: var(--title_line_height);
             resize: none;
         }
     }
