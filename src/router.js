@@ -21,7 +21,7 @@ export default createRouter({
             path: '/etapas',
             name: 'Stages',
             component: () => import('@/views/Stages.vue'),
-            beforeEnter: (from, to, next) => {
+            beforeEnter: (to, from, next) => {
                 const projects = useProjectsStore();
                 if (projects.current.step === 0) next();
                 else
@@ -34,7 +34,18 @@ export default createRouter({
         {
             path: '/guias/:id',
             name: 'Guides',
-            component: () => import('@/views/Guides.vue')
+            component: () => import('@/views/Guides.vue'),
+            beforeEnter: (to, from, next) => {
+                const projects = useProjectsStore();
+                if (to.params.id == projects.current.guide) {
+                    next();
+                } else {
+                    next({
+                        name: 'Guides',
+                        params: { id: projects.current.guide }
+                    });
+                }
+            }
         }
     ]
 });
