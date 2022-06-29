@@ -55,6 +55,9 @@ export default {};
             list-style-position: inside;
             text-indent: -22px;
             margin-left: 20px;
+            &[bold]::marker {
+                font-weight: 500;
+            }
         }
     }
     ul,

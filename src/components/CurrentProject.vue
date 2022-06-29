@@ -16,7 +16,7 @@ const hideCurrentProject = () => {
     flagCurrentProject.value = false;
 };
 
-const progress = computed(() => (projects.current.guide / 20) * 100);
+const progress = computed(() => (projects.current.guide / 17) * 100);
 </script>
 
 <template>

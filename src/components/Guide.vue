@@ -16,6 +16,8 @@ import Guide11 from '@/components/guides/Guide11.vue';
 import Guide12 from '@/components/guides/Guide12.vue';
 import Guide13 from '@/components/guides/Guide13.vue';
 import Guide14 from '@/components/guides/Guide14.vue';
+import Guide15 from '@/components/guides/Guide15.vue';
+import Guide16 from '@/components/guides/Guide16.vue';
 import useGuide from '@/hooks/useGuide.js';
 import { useTodoStore } from '@/stores/todo.js';
 import { useNotesStore } from '@/stores/notes.js';
@@ -53,6 +55,8 @@ notes.guide = currentGuide;
             <Guide12 v-if="guideId === 12" />
             <Guide13 v-if="guideId === 13" />
             <Guide14 v-if="guideId === 14" />
+            <Guide15 v-if="guideId === 15" />
+            <Guide16 v-if="guideId === 16" />
         </div>
     </section>
 </template>

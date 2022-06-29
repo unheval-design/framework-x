@@ -36,7 +36,7 @@ const goToProject = () => {
         <div class="project_content">
             <div class="project_title">
                 <h1>{{ project.title }}</h1>
-                <p>{{ project.description }}</p>
+                <p>{{ dateFormatted }}</p>
             </div>
             <ProjectProgress
                 v-if="!project.completed"

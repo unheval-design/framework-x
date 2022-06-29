@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router';
 import { ID } from '@/helpers/utils.js';
 import { useProjectsStore } from '@/stores/projects.js';
 import { ref } from '@vue/reactivity';
+import dayjs from 'dayjs';
 
 const router = useRouter();
 const projects = useProjectsStore();
@@ -16,7 +17,7 @@ const goToStages = () => {
         id: ID(),
         title: title.value,
         description: description.value,
-        date: '2020-01-01',
+        date: dayjs().format('YYYY-MM-DD'),
         step: 0,
         completed: false
     });
@@ -35,7 +36,7 @@ const goToStages = () => {
             <Input
                 label="Descripción"
                 type="textarea"
-                placeholder="Ej: Nueva web donde publicar eventos y que se puedan inscribir en linea."
+                placeholder="Ej: Nueva web donde publicar eventos"
                 v-model="description"
             />
         </div>

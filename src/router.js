@@ -36,14 +36,15 @@ export default createRouter({
             name: 'Guides',
             component: () => import('@/views/Guides.vue'),
             beforeEnter: (to, from, next) => {
+                console.log('beforeEnter');
                 const projects = useProjectsStore();
-                if (to.params.id == projects.current.guide) {
-                    next();
-                } else {
+                if (to.params.id > projects?.current?.guide) {
                     next({
                         name: 'Guides',
-                        params: { id: projects.current.guide }
+                        params: { id: projects?.current?.guide }
                     });
+                } else {
+                    next();
                 }
             }
         }

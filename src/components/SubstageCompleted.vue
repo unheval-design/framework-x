@@ -30,10 +30,10 @@ const onClick = () => {
                     <strong>Definir</strong>, con las siguientes guías toca
                     <strong>Idear</strong> tu solución.
                 </p>
-                <p v-if="guideId == 13">
+                <p v-if="guideId == 14">
                     Has completado de la subetapa de
                     <strong>Idear</strong>, con las siguientes guías toca
-                    <strong>Diseñar</strong> tu solución.
+                    <strong>Prototipar</strong> tu solución.
                 </p>
             </template>
             <template v-slot:button>
