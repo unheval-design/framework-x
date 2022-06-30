@@ -35,6 +35,12 @@ const onClick = () => {
                     <strong>Idear</strong>, con las siguientes guías toca
                     <strong>Prototipar</strong> tu solución.
                 </p>
+                <p v-if="guideId == 16">
+                    Has completado de la subetapa de
+                    <strong>Prototipar I</strong>, en las siguientes guías
+                    continua <strong>Prototipar II</strong> para una solución
+                    mas real.
+                </p>
             </template>
             <template v-slot:button>
                 <Button @click="onClick()"> Continuar </Button>

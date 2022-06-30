@@ -56,7 +56,7 @@ const question2 = {
             </p>
             <Reference
                 :image="imageOne"
-                description="Skyfly mobile app design. Author: Taras Migulko"
+                description="Skyfly mobile app design. Author: Taras Migulko."
             />
         </section>
         <Heading type="h1">¿Para qué sirven los mockups?</Heading>

@@ -33,9 +33,16 @@ export default {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
+    &[small] {
+        img {
+            max-height: 240px;
+        }
+    }
     img {
         border-radius: var(--radius);
         width: 100%;
+        max-height: 360px;
+        object-fit: cover;
     }
     caption {
         width: 100%;
