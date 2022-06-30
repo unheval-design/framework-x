@@ -6,13 +6,21 @@ import { ID } from '@/helpers/utils.js';
 import { useProjectsStore } from '@/stores/projects.js';
 import { ref } from '@vue/reactivity';
 import dayjs from 'dayjs';
+import { computed, provide } from '@vue/runtime-core';
 
 const router = useRouter();
 const projects = useProjectsStore();
 const title = ref('');
 const description = ref('');
+const triggerForm = ref(false);
+
+provide('triggerForm', triggerForm);
+
+const validationTitle = computed(() => title.value.length > 0);
 
 const goToStages = () => {
+    triggerForm.value = true;
+    if (!validationTitle.value) return;
     projects.add({
         id: ID(),
         title: title.value,
@@ -30,8 +38,11 @@ const goToStages = () => {
         <div class="project_add_form">
             <Input
                 label="Titulo"
+                required
                 placeholder="Ej: Pagina web de eventos"
                 v-model="title"
+                :validation="validationTitle"
+                errorMessage="Título de proyecto no debe estar vacío"
             />
             <Input
                 label="Descripción"
@@ -40,7 +51,11 @@ const goToStages = () => {
                 v-model="description"
             />
         </div>
-        <Button @click="goToStages()">Crear Proyecto</Button>
+        <Button
+            :disabled="!validationTitle && triggerForm"
+            @click="goToStages()"
+            >Crear Proyecto</Button
+        >
     </div>
 </template>
 

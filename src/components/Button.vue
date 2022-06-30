@@ -13,6 +13,9 @@ const props = defineProps({
     },
     small: {
         type: Boolean
+    },
+    disabled: {
+        type: Boolean
     }
 });
 const onClick = () => {
@@ -26,7 +29,11 @@ const slot = useSlots();
 <template>
     <button
         class="Button"
-        :class="[{ secondary: secondary }, { small: small }]"
+        :class="[
+            { secondary: secondary },
+            { small: small },
+            { disabled: disabled }
+        ]"
         @click="onClick()"
     >
         <i v-if="slot.icon"><slot name="icon" /></i>
@@ -99,6 +106,11 @@ const slot = useSlots();
     &.small {
         height: var(--button_height_small);
         padding: 0 var(--padding_sm);
+    }
+    &.disabled {
+        user-select: none;
+        pointer-events: none;
+        opacity: 0.5;
     }
 }
 </style>
