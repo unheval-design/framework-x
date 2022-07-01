@@ -9,6 +9,8 @@ export default {};
 </script>
 
 <style lang="scss">
+@import '@/assets/css/breakpoints';
+
 .GuideBody {
     display: flex;
     flex-direction: column;
@@ -71,6 +73,10 @@ export default {};
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: var(--gap);
+        @include screen('sm') {
+            grid-template-columns: 1fr;
+            grid-gap: var(--gap_sm);
+        }
     }
     .tests_grid {
         display: grid;

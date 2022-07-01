@@ -8,6 +8,7 @@ import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import TestCard from '@/components/TestCard.vue';
 import Heading from '@/components/Heading.vue';
+import Challenge from '@/components/Challenge.vue';
 import imageKeep from '@/assets/images/brands/keep.png';
 
 const question1 = {
@@ -121,6 +122,45 @@ const question2 = {
             <Blockquote>
                 Si queremos descubrir nuevas necesidades o problemas de los usuarios, optaremos por un metodo mas abierto, mientras que si lo que pretendemos es comprender mejr un tema cocreto que ya hemos identificado y estudiado previamente, optaremos por un enfoque más estructurado.
             </Blockquote>
+            <Heading type="h2" >Reto #1</Heading>
+            <Challenge time="10">
+                Crea una entrevista dirigido a posibles usuarios de la pagina
+                web de eventos, aplicando lo aprendido.
+                <template v-slot:tools>
+                    <ResourceLink name="Google Keep" type="tool">
+                        <ResourceCard
+                            title="Google Keep"
+                            description="Herramienta para organizar ideas"
+                            type="tool"
+                            :src="imageKeep"
+                            />
+                    </ResourceLink>
+                     <ResourceLink name="Google Forms" type="tool">
+                        <ResourceCard
+                            title="Google Forms"
+                            description="Herramienta para organizar ideas"
+                            type="tool"
+                            :src="imageKeep"
+                            />
+                    </ResourceLink>
+                    <ResourceLink name="Formato" type="download">
+                        <ResourceCard
+                            title="Formato"
+                            description="Herramienta para organizar ideas"
+                            type="download"
+                            :src="imageKeep"
+                            />
+                    </ResourceLink>
+                    <ResourceLink name="Ejemplos" type="download">
+                        <ResourceCard
+                            title="Ejemplos"
+                            description="Herramienta para organizar ideas"
+                            type="download"
+                            :src="imageKeep"
+                            />
+                    </ResourceLink>
+                </template>
+            </Challenge>
         </section>
         <Heading type="h1" >Preparación de la entrevista</Heading>
         <section>
@@ -217,6 +257,45 @@ const question2 = {
                     </li>
                 </ul>
             </p>
+            <Heading type="h2" >Reto #2</Heading>
+            <Challenge time="5">
+                Crea una entrevista dirigido a posibles usuarios de la pagina
+                web de eventos, aplicando lo aprendido.
+                <template v-slot:tools>
+                    <ResourceLink name="Google Keep" type="tool">
+                        <ResourceCard
+                            title="Google Keep"
+                            description="Herramienta para organizar ideas"
+                            type="tool"
+                            :src="imageKeep"
+                            />
+                    </ResourceLink>
+                     <ResourceLink name="Google Forms" type="tool">
+                        <ResourceCard
+                            title="Google Forms"
+                            description="Herramienta para organizar ideas"
+                            type="tool"
+                            :src="imageKeep"
+                            />
+                    </ResourceLink>
+                    <ResourceLink name="Formato" type="download">
+                        <ResourceCard
+                            title="Formato"
+                            description="Herramienta para organizar ideas"
+                            type="download"
+                            :src="imageKeep"
+                            />
+                    </ResourceLink>
+                    <ResourceLink name="Ejemplos" type="download">
+                        <ResourceCard
+                            title="Ejemplos"
+                            description="Herramienta para organizar ideas"
+                            type="download"
+                            :src="imageKeep"
+                            />
+                    </ResourceLink>
+                </template>
+            </Challenge>
         </section>
         <Heading type="h1" >Evaluación</Heading>
         <section>

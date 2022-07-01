@@ -29,6 +29,7 @@ defineProps({
     gap: 7px;
     color: var(--text_color);
     user-select: none;
+    white-space: nowrap;
     svg {
         width: var(--icon_size_sm);
         height: var(--icon_size_sm);

@@ -24,7 +24,7 @@ const slot = useSlots();
 <style lang="scss">
 blockquote {
     border-radius: var(--radius);
-    background-color: var(--neutral_color_90);
+    background-color: var(--neutral_color_95);
     font-size: var(--text_size_l);
     padding: var(--padding);
     display: flex;
@@ -32,6 +32,7 @@ blockquote {
     gap: var(--gap);
     color: var(--text_color);
     line-height: var(--text_line_height);
+    border: 1px solid var(--border_color_70);
     svg {
         min-width: var(--icon_size);
         height: var(--icon_size);

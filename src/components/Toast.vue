@@ -3,6 +3,7 @@ import { useToastStore } from '@/stores/toast.js';
 import IconNotes from '@/components/drawables/IconNotes.vue';
 import IconTodo from '@/components/drawables/IconTodo.vue';
 import IconCopy from '@/components/drawables/IconCopy.vue';
+import IconTools from '@/components/drawables/IconTools.vue';
 const toast = useToastStore();
 </script>
 
@@ -13,6 +14,7 @@ const toast = useToastStore();
                 <IconCopy v-if="toast.type === 1" />
                 <IconTodo v-if="toast.type === 2" />
                 <IconNotes v-if="toast.type === 3" />
+                <IconTools v-if="toast.type === 4" />
                 <span>{{ toast.message }}</span>
             </div>
         </div>

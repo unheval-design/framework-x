@@ -1,4 +1,4 @@
-export const LAST_GUIDE_ID = 17;
+export const LAST_GUIDE_ID = 18;
 export const substages = {
     1: 'Empatizar',
     2: 'Definir',

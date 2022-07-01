@@ -16,6 +16,12 @@ const props = defineProps({
     },
     disabled: {
         type: Boolean
+    },
+    color: {
+        type: String,
+        validator: (value) => {
+            return ['primary', 'error'].indexOf(value) !== -1;
+        }
     }
 });
 const onClick = () => {
@@ -59,12 +65,13 @@ const slot = useSlots();
     gap: 10px;
     position: relative;
     overflow: hidden;
+    cursor: inherit;
     span {
         color: white;
         font-weight: 500;
         font-size: 14px;
         position: relative;
-        margin-top: -2px;
+        /* margin-top: -2px; */
     }
     i {
         display: flex;
@@ -111,6 +118,9 @@ const slot = useSlots();
         user-select: none;
         pointer-events: none;
         opacity: 0.5;
+    }
+    &.error {
+        background-color: var(--error_color);
     }
 }
 </style>

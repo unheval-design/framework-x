@@ -2,6 +2,7 @@
 import IconDownloadFile from '@/components/drawables/IconDownloadFile.vue';
 import IconLink from '@/components/drawables/IconLink.vue';
 import Dropdown from '@/components/Dropdown.vue';
+import Chip from '@/components/Chip.vue';
 import { ref } from '@vue/reactivity';
 import { nextTick, onMounted } from '@vue/runtime-core';
 const resourceRef = ref();
@@ -16,6 +17,9 @@ defineProps({
         validator: (value) => {
             return ['tool', 'download'].indexOf(value) !== -1;
         }
+    },
+    name: {
+        type: String
     }
 });
 
@@ -39,7 +43,7 @@ const hideResource = () => {
         ref="resourceRef"
         @click="showResource()"
     >
-        <span><slot /></span>
+        <Chip :color="type === 'tool' ? 'success' : 'warning'">{{ name }}</Chip>
         <Teleport to="body">
             <Dropdown
                 class="ResourceLinkDropdown"
@@ -47,7 +51,7 @@ const hideResource = () => {
                 :show="flagResource"
                 @close="hideResource"
             >
-                <slot name="popup" />
+                <slot />
             </Dropdown>
         </Teleport>
     </strong>
@@ -58,7 +62,7 @@ const hideResource = () => {
 
 .ResourceLink {
     opacity: 1;
-    span {
+    /* span {
         cursor: pointer;
         font-weight: 400;
         display: inline-block;
@@ -67,7 +71,7 @@ const hideResource = () => {
         &:hover {
             text-decoration-line: underline;
         }
-    }
+    } */
     svg {
         width: 16px;
         height: 16px;
