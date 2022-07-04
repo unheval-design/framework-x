@@ -45,8 +45,8 @@ defineProps({
             border-radius: var(--radius);
             z-index: 2;
             svg {
-                width: var(--icon_size);
-                height: var(--icon_size);
+                width: var(--icon_size_xl);
+                height: var(--icon_size_xl);
                 fill: var(--text_color);
             }
         }

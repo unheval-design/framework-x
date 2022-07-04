@@ -30,6 +30,9 @@ const goToNext = () => {
         const nextGuideId = guideId.value + 1;
         projects.update({ guide: nextGuideId });
         router.push({ name: 'Guides', params: { id: nextGuideId } });
+    } else {
+        projects.update({ completed: true });
+        router.push({ name: 'Finish' });
     }
 };
 

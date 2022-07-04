@@ -113,7 +113,7 @@ article.ProjectCard {
         .project_completed {
             display: flex;
             align-items: center;
-            justify-content: center;
+            /* justify-content: center; */
             i {
                 width: 20px;
                 height: 20px;

@@ -13,6 +13,11 @@ export default createRouter({
             component: () => import('@/views/Welcome.vue')
         },
         {
+            path: '/resumen',
+            name: 'Finish',
+            component: () => import('@/views/Finish.vue')
+        },
+        {
             path: '/proyectos',
             name: 'Projects',
             component: () => import('@/views/Projects.vue')
@@ -38,13 +43,18 @@ export default createRouter({
             beforeEnter: (to, from, next) => {
                 console.log('beforeEnter');
                 const projects = useProjectsStore();
-                if (to.params.id > projects?.current?.guide) {
-                    next({
-                        name: 'Guides',
-                        params: { id: projects?.current?.guide }
-                    });
-                } else {
-                    next();
+                if (projects?.current?.completed) {
+                    next({ name: 'Finish' });
+                }
+                if (!projects?.current?.completed) {
+                    if (to.params.id > projects?.current?.guide) {
+                        next({
+                            name: 'Guides',
+                            params: { id: projects?.current?.guide }
+                        });
+                    } else {
+                        next();
+                    }
                 }
             }
         }

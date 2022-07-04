@@ -17,12 +17,13 @@ export const useProjectsStore = defineStore(
             select(project.id);
         };
 
-        const update = ({ guide, step }) => {
+        const update = ({ guide, step, completed }) => {
             const projectUpdated = list.value.find(
                 (p) => p.id === current.value.id
             );
             if (guide) projectUpdated.guide = guide;
             if (step) projectUpdated.step = step;
+            if (completed) projectUpdated.completed = completed;
             current.value = projectUpdated;
             Object.assign(list.value, projectUpdated);
         };
