@@ -6,23 +6,51 @@ import Blockquote from '@/components/Blockquote.vue';
 import Chip from '@/components/Chip.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
-import TestCard from '@/components/TestCard.vue';
+import Evaluation from '@/components/Evaluation.vue';
 import Heading from '@/components/Heading.vue';
 import Challenge from '@/components/Challenge.vue';
 import imageKeep from '@/assets/images/brands/keep.png';
 import imageDocs from '@/assets/images/brands/docs.png';
+import { computed, onMounted, ref } from '@vue/runtime-core';
 
-const question1 = {
-    question: '¿Cuando dedo usar entrevistas a usuarios?',
-    answer: 1,
-    alternatives: ['Cuando deseo profundizar en un tema especifico.', 'Cuando deseo hacer una recolección de datos significativa.', 'Cuando deseo estudiar el comportamiento de mis usuarios a futuro.']
-}
-
-const question2 = {
-    question: 'Cuando quiero explorar las dificultades en mi sitio web pero no tengo definido los problemas principales, podría usar una entrevista de tipo:',
-    answer: 3,
-    alternatives: ['Abierta', 'Estructurada', 'Semi-estructurada']
-}
+const questions = ref([
+    {
+        id: 1,
+        question: '¿Cuando dedo usar entrevistas a usuarios?',
+        alternatives: [
+            {
+                answer: true,
+                description: 'Cuando deseo profundizar en un tema especifico.',
+            },
+            {
+                answer: false,
+                description: 'Cuando deseo hacer una recolección de datos significativa.',
+            },
+            {
+                answer: false,
+                description: 'Cuando deseo estudiar el comportamiento de mis usuarios a futuro.',
+            }
+        ]
+    },
+    {
+        id: 2,
+        question: 'Cuando quiero explorar las dificultades en mi sitio web pero no tengo definido los problemas principales, podría usar una entrevista de tipo:',
+        alternatives: [
+            {
+                answer: true,
+                description: 'Abierta'
+            },
+            {
+                answer: false,
+                description: 'Estructurada'
+            },
+            {
+                answer: false,
+                description: 'Semi-estructurada'
+            }
+        ],
+    }
+])
 
 const challenge1_tasks = [
     'Establecer objetivo',
@@ -36,7 +64,7 @@ const challenge1_tasks = [
 
 <template>
     <GuideTitle>
-        Entrevistas a Usuarios
+        Entrevistas a Usuarios {{questionsList}}
         <template v-slot:timeRead>5</template>
     </GuideTitle>
     <GuideBody>
@@ -246,8 +274,7 @@ const challenge1_tasks = [
                 Valida tu aprendizaje
             </p>
             <aside class="tests_grid">
-                <TestCard :question="question1"/>
-                <TestCard :question="question2"/>
+                <Evaluation :questions="questions"/>
             </aside>
         </section>
     </GuideBody>

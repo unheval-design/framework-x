@@ -49,10 +49,6 @@ const resize = () => {
     });
 };
 
-const changePrority = (priority) => {
-    props.task.priority = priority;
-};
-
 watchEffect(() => {
     if (props.task.id === todo.lastTaskCreated) editTask();
 });
@@ -73,22 +69,7 @@ watchEffect(() => {
                 @focus="resize()"
                 @blur="noEditTask()"
             />
-            <div v-if="task.title" class="task_status">
-                <Chip @click="changePrority(1)" v-if="task.priority === 0"
-                    >Bajo</Chip
-                >
-                <Chip
-                    @click="changePrority(2)"
-                    color="warning"
-                    v-if="task.priority === 1"
-                    >Medio</Chip
-                >
-                <Chip
-                    @click="changePrority(0)"
-                    color="error"
-                    v-if="task.priority === 2"
-                    >Alto</Chip
-                >
+            <div class="task_status">
                 <Chip v-if="task.challenge">Reto #{{ task.challenge }}</Chip>
             </div>
         </div>
@@ -148,9 +129,6 @@ watchEffect(() => {
             width: fit-content;
             display: flex;
             gap: var(--gap_sm);
-            .Chip {
-                cursor: pointer;
-            }
         }
     }
     .IconTrash {

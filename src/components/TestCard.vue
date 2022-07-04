@@ -2,12 +2,14 @@
 import { ref } from '@vue/reactivity';
 import RadioButton from '@/components/RadioButton.vue';
 import { ID } from '@/helpers/utils.js';
-defineProps({
+import { onMounted } from '@vue/runtime-core';
+const props = defineProps({
     question: {
         type: Object,
         required: true
     }
 });
+
 const id = ID();
 const answer = ref(null);
 </script>
@@ -17,28 +19,28 @@ const answer = ref(null);
         <h2>{{ question.question }}</h2>
         <div class="test_alternatives">
             <RadioButton
-                :success="question.answer === 1"
-                :error="question.answer !== 1"
+                :success="answer === 1 && question.alternatives[0].answer"
+                :error="answer === 1 && !question.alternatives[0].answer"
                 :name="`alternative_${id}`"
-                :label="question.alternatives[0]"
+                :label="question.alternatives[0].description"
                 :val="1"
                 v-model:model.number="answer"
                 :class="{ msg: answer === 1 }"
             />
             <RadioButton
-                :success="question.answer === 2"
-                :error="question.answer !== 2"
+                :success="answer === 2 && question.alternatives[1].answer"
+                :error="answer === 2 && !question.alternatives[1].answer"
                 :name="`alternative_${id}`"
-                :label="question.alternatives[1]"
+                :label="question.alternatives[1].description"
                 :val="2"
                 v-model:model.number="answer"
                 :class="{ msg: answer === 2 }"
             />
             <RadioButton
-                :success="question.answer === 3"
-                :error="question.answer !== 3"
+                :success="answer === 3 && question.alternatives[2].answer"
+                :error="answer === 3 && !question.alternatives[2].answer"
                 :name="`alternative_${id}`"
-                :label="question.alternatives[2]"
+                :label="question.alternatives[2].description"
                 :val="3"
                 v-model:model.number="answer"
                 :class="{ msg: answer === 3 }"

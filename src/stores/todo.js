@@ -16,7 +16,6 @@ export const useTodoStore = defineStore(
                 id: ID(),
                 completed: false,
                 title,
-                priority: 0,
                 guide: guide.value,
                 project: project.value,
                 challenge
