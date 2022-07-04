@@ -10,6 +10,7 @@ import TestCard from '@/components/TestCard.vue';
 import Heading from '@/components/Heading.vue';
 import Challenge from '@/components/Challenge.vue';
 import imageKeep from '@/assets/images/brands/keep.png';
+import imageDocs from '@/assets/images/brands/docs.png';
 
 const question1 = {
     question: '¿Cuando dedo usar entrevistas a usuarios?',
@@ -22,6 +23,14 @@ const question2 = {
     answer: 3,
     alternatives: ['Abierta', 'Estructurada', 'Semi-estructurada']
 }
+
+const challenge1_tasks = [
+    'Establecer objetivo',
+    'Definir perfil general del participante',
+    'Redactar una introducción',
+    'Definir las preguntas',
+    'Redactar un cierre'
+]
 
 </script>
 
@@ -122,45 +131,6 @@ const question2 = {
             <Blockquote>
                 Si queremos descubrir nuevas necesidades o problemas de los usuarios, optaremos por un metodo mas abierto, mientras que si lo que pretendemos es comprender mejr un tema cocreto que ya hemos identificado y estudiado previamente, optaremos por un enfoque más estructurado.
             </Blockquote>
-            <Heading type="h2" >Reto #1</Heading>
-            <Challenge time="10">
-                Crea una entrevista dirigido a posibles usuarios de la pagina
-                web de eventos, aplicando lo aprendido.
-                <template v-slot:tools>
-                    <ResourceLink name="Google Keep" type="tool">
-                        <ResourceCard
-                            title="Google Keep"
-                            description="Herramienta para organizar ideas"
-                            type="tool"
-                            :src="imageKeep"
-                            />
-                    </ResourceLink>
-                     <ResourceLink name="Google Forms" type="tool">
-                        <ResourceCard
-                            title="Google Forms"
-                            description="Herramienta para organizar ideas"
-                            type="tool"
-                            :src="imageKeep"
-                            />
-                    </ResourceLink>
-                    <ResourceLink name="Formato" type="download">
-                        <ResourceCard
-                            title="Formato"
-                            description="Herramienta para organizar ideas"
-                            type="download"
-                            :src="imageKeep"
-                            />
-                    </ResourceLink>
-                    <ResourceLink name="Ejemplos" type="download">
-                        <ResourceCard
-                            title="Ejemplos"
-                            description="Herramienta para organizar ideas"
-                            type="download"
-                            :src="imageKeep"
-                            />
-                    </ResourceLink>
-                </template>
-            </Challenge>
         </section>
         <Heading type="h1" >Preparación de la entrevista</Heading>
         <section>
@@ -178,19 +148,7 @@ const question2 = {
                 </ol>
             </p>
             <p>
-                Podrias apoyarte de
-                <ResourceLink type="tool">
-                    Google Keep
-                    <template v-slot:popup>
-                        <ResourceCard
-                            title="Google Keep"
-                            description="Herramienta para organizar ideas"
-                            type="tool"
-                            :src="imageKeep"
-                            />
-                    </template>
-                </ResourceLink>
-                para ir apuntando los objetivos que vayas descubriendo.</p>
+                Podrias apoyarte de Google Keep para ir apuntando los objetivos que vayas descubriendo.</p>
             <p>
                 Las respuestas han de ser siempre concretas y precisas, ya que las respuestas generales harán que se pierda el objetivo fácilmente o no se puedan alcanzar.
             </p>
@@ -210,25 +168,11 @@ const question2 = {
                 Lo mejor es crear varios perfiles en función de criterios tanto demográficos (género, edad lugar de residencia) como de comportamiento (sistema operativo, actividades, tipo de uso) y plasmarlo en un documento. Este documento se denomina (Screener de captación de usuarios).
             </p>
             <p>
-                Screener de captación de usuarios: Es un documento-guia en el que se describen una serie de características que deben cumplir los usuarios para participar en una prueba de investigación. Puedes usar esta
-                <ResourceLink type="download">
-                    plantilla de screener
-                    <template v-slot:popup>
-                        <ResourceCard
-                            type="download"
-                            title="screener.pdf"
-                            description="Formato basico para entrevistas"
-                        />
-                    </template>
-                </ResourceLink>
-                para empezar a definir tus participantes.
+                Screener de captación de usuarios: Es un documento-guia en el que se describen una serie de características que deben cumplir los usuarios para participar en una prueba de investigación.
             </p>
             <Heading type="h2" >Estructura de la entrevista</Heading>
             <p>
-                Un buen guion permitirá recoger la información que se necesita sin distracciones.
-            </p>
-            <p>
-                Una estructura básica podría tener la siguiente estructura:
+                Un buen guion permitirá recoger la información que se necesita sin distracciones. Una estructura básica podría tener la siguiente estructura:
             </p>
             <p>
                 <ul>
@@ -257,46 +201,45 @@ const question2 = {
                     </li>
                 </ul>
             </p>
-            <Heading type="h2" >Reto #2</Heading>
-            <Challenge time="5">
-                Crea una entrevista dirigido a posibles usuarios de la pagina
-                web de eventos, aplicando lo aprendido.
-                <template v-slot:tools>
-                    <ResourceLink name="Google Keep" type="tool">
-                        <ResourceCard
-                            title="Google Keep"
-                            description="Herramienta para organizar ideas"
-                            type="tool"
-                            :src="imageKeep"
-                            />
-                    </ResourceLink>
-                     <ResourceLink name="Google Forms" type="tool">
-                        <ResourceCard
-                            title="Google Forms"
-                            description="Herramienta para organizar ideas"
-                            type="tool"
-                            :src="imageKeep"
-                            />
-                    </ResourceLink>
-                    <ResourceLink name="Formato" type="download">
-                        <ResourceCard
-                            title="Formato"
-                            description="Herramienta para organizar ideas"
-                            type="download"
-                            :src="imageKeep"
-                            />
-                    </ResourceLink>
-                    <ResourceLink name="Ejemplos" type="download">
-                        <ResourceCard
-                            title="Ejemplos"
-                            description="Herramienta para organizar ideas"
-                            type="download"
-                            :src="imageKeep"
-                            />
-                    </ResourceLink>
-                </template>
-            </Challenge>
         </section>
+        <Heading type="h1" >Reto #1</Heading>
+        <Challenge time="1" :id="1" :tasks="challenge1_tasks">
+            Crea un guión de entrevista para usuarios de la pagina web de eventos de la UNHEVAL.
+            <template v-slot:tools>
+                <ResourceLink name="Google Docs" type="tool">
+                    <ResourceCard
+                        title="Google Docs"
+                        description="Herramienta para organizar ideas"
+                        type="tool"
+                        :src="imageDocs"
+                        />
+                </ResourceLink>
+                    <ResourceLink name="Google Keep" type="tool">
+                    <ResourceCard
+                        title="Google Keep"
+                        description="Herramienta para organizar ideas"
+                        type="tool"
+                        :src="imageKeep"
+                        />
+                </ResourceLink>
+                <ResourceLink name="Formato" type="download">
+                    <ResourceCard
+                        title="Formato"
+                        description="Herramienta para organizar ideas"
+                        type="download"
+                        :src="imageKeep"
+                        />
+                </ResourceLink>
+                <ResourceLink name="Ejemplos" type="download">
+                    <ResourceCard
+                        title="Ejemplos"
+                        description="Herramienta para organizar ideas"
+                        type="download"
+                        :src="imageKeep"
+                        />
+                </ResourceLink>
+            </template>
+        </Challenge>
         <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>

@@ -73,7 +73,7 @@ watchEffect(() => {
                 @focus="resize()"
                 @blur="noEditTask()"
             />
-            <div v-if="task.title" class="task_priority">
+            <div v-if="task.title" class="task_status">
                 <Chip @click="changePrority(1)" v-if="task.priority === 0"
                     >Bajo</Chip
                 >
@@ -89,6 +89,7 @@ watchEffect(() => {
                     v-if="task.priority === 2"
                     >Alto</Chip
                 >
+                <Chip v-if="task.challenge">Reto #{{ task.challenge }}</Chip>
             </div>
         </div>
         <HoverIcon @click="todo.remove(task.id)">
@@ -141,10 +142,12 @@ watchEffect(() => {
             display: flex;
             align-items: center;
         }
-        .task_priority {
+        .task_status {
             margin-top: var(--gap_sm);
             margin-left: -2px;
             width: fit-content;
+            display: flex;
+            gap: var(--gap_sm);
             .Chip {
                 cursor: pointer;
             }

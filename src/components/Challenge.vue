@@ -6,21 +6,32 @@ import IconPlay from '@/components/drawables/IconPlay.vue';
 import IconStop from '@/components/drawables/IconStop.vue';
 import start from '@/assets/media/start.wav';
 import end from '@/assets/media/end.wav';
-import { computed, onMounted, ref, watch } from '@vue/runtime-core';
+import { computed, inject, onMounted, ref, watch } from '@vue/runtime-core';
 import dayjs from 'dayjs';
 import { useToastStore } from '@/stores/toast.js';
+import { useTodoStore } from '@/stores/todo.js';
 
 const timeLeft = ref('00:00');
 const isPlaying = ref(false);
 const interval = ref();
+const flagTodoModal = inject('flagTodoModal');
 
+const todo = useTodoStore();
 const toast = useToastStore();
 const audioStart = new Audio(start);
 const audioEnd = new Audio(end);
 
 const props = defineProps({
+    id: {
+        type: Number,
+        required: true
+    },
     time: {
         type: String,
+        required: true
+    },
+    tasks: {
+        type: Array,
         required: true
     }
 });
@@ -35,6 +46,20 @@ onMounted(() => {
     getTimeLeft();
 });
 
+const addTasks = () => {
+    todo.removeChallengeTasks(props.id);
+    props.tasks.map((t) => {
+        todo.add(t, true, false, props.id);
+    });
+    setTimeout(() => {
+        flagTodoModal.value = true;
+    }, 1500);
+    setTimeout(() => {
+        toast.type = 2;
+        toast.message = 'Tareas agregadas';
+    }, 3200);
+};
+
 const play = () => {
     if (isPlaying.value) {
         stop();
@@ -45,6 +70,7 @@ const play = () => {
     }, 1000);
     isPlaying.value = true;
     audioStart.play();
+    addTasks();
     toast.type = 4;
     toast.message = 'Reto iniciado';
 };
@@ -72,6 +98,14 @@ watch(timeLeftFormatted, () => {
             <p>
                 <slot></slot>
             </p>
+            <aside class="challenge_todo">
+                <b>Tareas</b>
+                <ul>
+                    <li v-for="(task, index) in tasks" :key="index">
+                        {{ task }}
+                    </li>
+                </ul>
+            </aside>
             <aside>
                 <b>Herramientas</b>
                 <div class="chip_grid">
@@ -84,7 +118,7 @@ watch(timeLeftFormatted, () => {
                         <IconPlay v-if="!isPlaying" />
                         <IconStop v-if="isPlaying" />
                     </template>
-                    {{ timeLeftFormatted }}
+                    {{ isPlaying ? timeLeftFormatted : 'Comenzar' }}
                 </Button>
             </div>
         </div>
@@ -109,7 +143,7 @@ watch(timeLeftFormatted, () => {
         flex-direction: column;
         gap: var(--gap);
         p {
-            line-height: var(--text_line_height);
+            line-height: var(--title_line_height);
         }
         aside {
             b {
@@ -130,6 +164,14 @@ watch(timeLeftFormatted, () => {
             justify-content: flex-end;
             padding-top: var(--gap_sm);
             border-top: 1px solid var(--border_color_70);
+        }
+        .challenge_todo {
+            ul {
+                li {
+                    font-size: var(--text_size_l);
+                    line-height: var(--text_line_height);
+                }
+            }
         }
     }
     & > svg {

@@ -11,17 +11,19 @@ export const useTodoStore = defineStore(
         const taskAdded = ref(false);
         const lastTaskCreated = ref(null);
 
-        const add = (title) => {
+        const add = (title, reverse = false, focus = true, challenge) => {
             const task = {
                 id: ID(),
                 completed: false,
                 title,
                 priority: 0,
                 guide: guide.value,
-                project: project.value
+                project: project.value,
+                challenge
             };
-            lastTaskCreated.value = task.id;
-            listAll.value.unshift(task);
+            if (focus) lastTaskCreated.value = task.id;
+            if (!reverse) listAll.value.unshift(task);
+            if (reverse) listAll.value.push(task);
         };
         const notify = (status = true) => {
             taskAdded.value = status;
@@ -29,6 +31,12 @@ export const useTodoStore = defineStore(
 
         const remove = (id) => {
             listAll.value = listAll.value.filter((task) => task.id !== id);
+        };
+
+        const removeChallengeTasks = (challengeId) => {
+            listAll.value = listAll.value.filter(
+                (task) => task.challenge !== challengeId
+            );
         };
 
         const list = computed(() =>
@@ -47,6 +55,7 @@ export const useTodoStore = defineStore(
             guide,
             project,
             remove,
+            removeChallengeTasks,
             lastTaskCreated,
             taskAdded
         };

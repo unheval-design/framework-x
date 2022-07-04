@@ -21,6 +21,7 @@ const guideTableContent = ref([]);
 
 provide('guideTableContent', guideTableContent);
 provide('guideId', guideId);
+provide('flagTodoModal', flagTodoModal);
 
 const openTodoModal = () => {
     flagTodoModal.value = true;
