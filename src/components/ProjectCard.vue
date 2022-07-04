@@ -1,8 +1,8 @@
 <script setup>
 import { useDateFormat } from '@vueuse/core';
-import IconCheck from './drawables/IconCheck.vue';
-import IconFolder from './drawables/IconFolder.vue';
-import ProjectProgress from './ProjectProgress.vue';
+import IconCheck from '@/components/drawables/IconCheck.vue';
+import IconFolder from '@/components/drawables/IconFolder.vue';
+import ProjectProgress from '@/components/ProjectProgress.vue';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es';
 import { useProjectsStore } from '@/stores/projects.js';

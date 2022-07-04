@@ -49,6 +49,9 @@ const toast = useToastStore();
             fill: var(--neutral_color);
             width: var(--icon_size_sm);
         }
+        span {
+            white-space: nowrap;
+        }
     }
 }
 @include screen('sm') {
