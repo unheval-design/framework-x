@@ -85,7 +85,7 @@ watch(
         flex: 1;
         .guide_wrapper {
             width: 100%;
-            max-width: 720px;
+            max-width: 680px;
         }
     }
     .GuidesNav {

@@ -18,6 +18,7 @@ onMounted(() => {
         );
     });
 });
+
 const questionsList = ref(
     shuffle(props.questions.map((q) => q.id)).splice(0, 2)
 );

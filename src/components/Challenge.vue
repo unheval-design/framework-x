@@ -170,7 +170,7 @@ watch(timeLeftFormatted, () => {
             ul {
                 li {
                     font-size: var(--text_size_l);
-                    line-height: var(--text_line_height);
+                    line-height: var(--title_line_height);
                 }
             }
         }

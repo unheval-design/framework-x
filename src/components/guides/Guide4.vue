@@ -9,8 +9,9 @@ import Challenge from '@/components/Challenge.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import TipCard from '@/components/TipCard.vue';
+import { ref } from '@vue/reactivity';
 
-const questions = [
+const questions = ref([
     {
         id: 1,
         question: '¿Cuándo hacer el benchmarking?',
@@ -29,7 +30,7 @@ const questions = [
             { answer: false, description: 'Con un producto que me sea familiar y sepa sus características.'}
         ]
     }
-];
+]);
 
 const challenge3_tasks = [
     'Definir la competencia',

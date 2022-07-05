@@ -1,41 +1,50 @@
 <script setup>
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
-import TestCard from '@/components/TestCard.vue';
+import Evaluation from '@/components/Evaluation.vue';
 import Reference from '@/components/Reference.vue';
 import imageOne from '@/assets/images/guide-9/image_1.png'
 import imageTwo from '@/assets/images/guide-9/image_2.png'
 import imageThree from '@/assets/images/guide-9/image_3.png'
-import imagePs from '@/assets/images/brands/ps.png';
-import imageAi from '@/assets/images/brands/ai.png';
-import imageXd from '@/assets/images/brands/xd.png';
 import imageFigma from '@/assets/images/brands/figma.png';
 import Blockquote from '@/components/Blockquote.vue';
 import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
+import Challenge from '@/components/Challenge.vue';
+import TipCard from '@/components/TipCard.vue';
+import imageDoOne from '@/assets/images/guide-9/image_do_1.png';
+import imageDontOne from '@/assets/images/guide-9/image_dont_1.png';
+import imageDoTwo from '@/assets/images/guide-9/image_do_2.png';
+import imageDontTwo from '@/assets/images/guide-9/image_dont_2.png';
+import { ref } from '@vue/reactivity';
 
-const question1 = {
-    question:
-        '¿Por qué hacemos Wireframes?',
-    answer: 1,
-    alternatives: [
-        'Ayudan a crear flujos o rutas para nuestros usuarios.',
-        'Ayudan a comunicar la estructura de páginas individuales y como se conectan esas páginas.',
-        'Ayudan a visualizar el producto para que el equipo de desarrollo empiece a trabajar en paralelo.'
-    ]
-};
+const questions = ref([
+    {
+        id: 1,
+        question: '¿Por qué hacemos Wireframes?',
+        alternatives: [
+            { answer: true, description: 'Ayudan a crear flujos o rutas para nuestros usuarios.'},
+            { answer: false, description: 'Ayudan a comunicar la estructura de páginas individuales y como se conectan esas páginas.'},
+            { answer: false, description: 'Ayudan a visualizar el producto para que el equipo de desarrollo empiece a trabajar en paralelo.' }
+        ]
+    },
+    {
+        id: 2,
+        question: '¿Cuando hariamos wireframes dibujando a mano?',
+        alternatives: [
+            { answer: true, description: 'Cuando queremos crear e iterar rapidamente.'},
+            { answer: false, description: 'Cuando trabajamos en un producto pequeño.'},
+            { answer: false, description: 'Cuando ya tenemos la idea clara y no necesitamos wireframes con muchos detalles e iteracciones.'}
+        ]
+    }
+]);
 
-const question2 = {
-    question:
-        '¿Cuando hariamos wireframes dibujando a mano?',
-    answer: 3,
-    alternatives: [
-        'Cuando queremos crear e iterar rapidamente.',
-        'Cuando trabajamos en un producto pequeño.',
-        'Cuando ya tenemos la idea clara y no necesitamos wireframes con muchos detalles e iteracciones.'
-    ]
-};
+
+const challenge8_tasks = [
+    'Realizar un wireframe a mano',
+    'Realizar un wireframe digital'
+];
 </script>
 <template>
     <GuideTitle>
@@ -100,81 +109,40 @@ const question2 = {
             <p>
                 También conocidos como representaciones de baja fidelidad, estos son esquemas de página muy simples, generalmente en blanco y negro.
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontOne">
+                    </template>
+                    Inviertir demasiado tiempo en la creación de wireframes que pueden ser descartados después de la revisión porque no cuentan con la aprobación del equipo.
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoOne">
+                    </template>
+                    Wireframes simples y directos en lugar de los que parecen pantallas o páginas reales. Se agregaran más detalles más adelante cuando apruebe.
+                </TipCard>
+            </aside>
             <Heading type="h2" >Wireframes anotados</Heading>
             <p>Estos agregan una amplia gama de detalles a un esquema básico. Las anotaciones son notas breves, generalmente en el costado o en la parte inferior de un wireframe, que describen cada elemento del wireframe, generalmente separados por áreas de contenido y funcionalidad, y muestran (brevemente) el motivo y el propósito de cada elemento.</p>
             <Heading type="h2" >Wireframes de flujo de usuario</Heading>
             <p>Cuando la anotación no es suficiente para mostrar cómo un usuario de sitio o aplicación se moverá lógicamente a través del contenido de una página a otra, es posible que se requiera más información. Estos wireframes de flujo de usuario pueden ser vistas estáticas de un wireframe completamente interactivo, pero podrían incluir una presentación de diapositivas o una colección de wireframes en serie para mostrar un flujo de usuario principal o un conjunto de flujos de usuario.</p>
             <Heading type="h2" >Wireframes interactivos de alta definición</Heading>
             <p>Puede experimentar interacciones (p. ej., toques, clics y deslizamientos) dentro o entre wireframes individuales. Agregar interacciones antes de pasar a las maquetas completas o la creación de prototipos en vivo ahorra horas al diseñador y al desarrollador. Esta variación de wireframes solo se puede realizar en presentaciones y diseño gráfico, o en software de creación de prototipos y wireframing.</p>
-        </section>
-        <Heading type="h1" >¿Que herramientas usar para hacer Wireframes?</Heading>
-        <section>
-            <p>Puede crear su diseño de wireframe utilizando uno de los siguientes métodos:</p>
-            <Heading type="h2" >Dibujando</Heading>
-            <p>Los bocetos dibujados a mano son rápidos de crear y rápidos de iterar. Esbozar es especialmente bueno para las sesiones de lluvia de ideas cuando los diseñadores necesitan visualizar rápidamente diferentes ideas (por ejemplo, explorar una variedad de diseños para una determinada vista).</p>
-            <Reference
-                :image="imageOne"
-                description="Wireframe a mano. Author: Nicholas Swanson." />
-            <Heading type="h2" >Software de diseño gráfico</Heading>
-            <p>
-                Es bastante fácil wireframes con software como
-                <ResourceLink type="tool">
-                    Adobe Photoshop
-                    <template v-slot:popup>
-                        <ResourceCard
-                            title="Adobe Photoshop"
-                            description="Herramienta para fotografia"
-                            type="tool"
-                            :src="imagePs"
-                            />
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontTwo">
                     </template>
-                </ResourceLink>
-                o
-                <ResourceLink type="tool">
-                    Adobe Illustrator
-                    <template v-slot:popup>
-                        <ResourceCard
-                            title="Adobe Illustrator"
-                            description="Herramienta para vectores"
-                            type="tool"
-                            :src="imageAi"
-                            />
+                    El objetivo del wireframing no es crear artefactos perfectos en píxeles, sino crear los artefactos mínimos necesarios para comunicar sus ideas.
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoTwo">
                     </template>
-                </ResourceLink>
-            </p>
-            <Reference
-                :image="imageTwo"
-                description="Wireframe en Adobe Illustrator. Author: Toptal.com." />
-            <Heading type="h2" >Software de diseño de experiencia de usuario</Heading>
-            <p>La principal ventaja de usar un software especial es que puede pasar sin problemas de esquemas a prototipos sin tener que cambiar a otra herramienta. Con herramientas como
-                <ResourceLink type="tool">
-                    Adobe XD
-                    <template v-slot:popup>
-                        <ResourceCard
-                            title="Adobe XD"
-                            description="Herramienta de prototipado"
-                            type="tool"
-                            :src="imageXd"
-                            />
-                    </template>
-                </ResourceLink>
-                o
-                <ResourceLink type="tool">
-                    Figma
-                    <template v-slot:popup>
-                        <ResourceCard
-                            title="Figma"
-                            description="Herramienta de prototipado"
-                            type="tool"
-                            :src="imageFigma"
-                            />
-                    </template>
-                </ResourceLink>
-                <!-- Adobe XD o Figma, -->
-                los diseñadores pueden convertir sus wireframes en prototipos de baja fidelidad en cuestión de minutos.</p>
-            <Reference
-                :image="imageThree"
-                description="Wireframe en Adobe XD. Author: Oliver Lindberg." />
+                    Los wireframes en blanco y negro requieren de menos tiempo para crearlos. Este formato también hace que los revisores se centren en la relación de los elementos en lugar de en las decisiones de diseño visual
+                </TipCard>
+            </aside>
         </section>
         <Heading type="h1" >Recomendaciones prácticas</Heading>
         <section>
@@ -211,19 +179,7 @@ const question2 = {
                     <li>
                         <strong>Utilice plantillas de estructura alámbrica.</strong>
                         <br>
-                        Es más fácil diseñar wireframes cuando tienes referencias visuales. Hemos creado una colección muy útil de &nbsp;&nbsp;&nbsp;&nbsp;
-                        <ResourceLink type="tool">
-                            plantillas
-                            <template v-slot:popup>
-                                <ResourceCard
-                                    title="Plantillas.pdf"
-                                    description="plantillas de wireframes"
-                                    type="download"
-                                    :src="imageAi"
-                                    />
-                            </template>
-                        </ResourceLink>
-                        que lo ayudarán a comenzar.
+                        Es más fácil diseñar wireframes cuando tienes referencias visuales. 
                     </li>
                     <li>
                         <strong>Utilice un kit wireframe.</strong>
@@ -233,13 +189,50 @@ const question2 = {
                 </ul>
             </p>
         </section>
+        <Heading type="h1" >¿Que herramientas usar para hacer Wireframes?</Heading>
+        <section>
+            <p>Puede crear su diseño de wireframe utilizando uno de los siguientes métodos:</p>
+            <Heading type="h2" >Dibujando</Heading>
+            <p>Los bocetos dibujados a mano son rápidos de crear y rápidos de iterar. Esbozar es especialmente bueno para las sesiones de lluvia de ideas cuando los diseñadores necesitan visualizar rápidamente diferentes ideas (por ejemplo, explorar una variedad de diseños para una determinada vista).</p>
+            <Heading type="h2" >Software de diseño gráfico</Heading>
+            <p>
+                Es bastante fácil wireframes con software como Adobe Photoshop o Adobe Illustrator
+            </p>
+            <Heading type="h2" >Software de diseño de experiencia de usuario</Heading>
+            <p>La principal ventaja de usar un software especial es que puede pasar sin problemas de esquemas a prototipos sin tener que cambiar a otra herramienta. Con herramientas como Adobe XD o Figma, los diseñadores pueden convertir sus wireframes en prototipos de baja fidelidad en cuestión de minutos.</p>
+        </section>
+        <Heading type="h1">Reto #8</Heading>
+        <Challenge time="1" :id="8" :tasks="challenge8_tasks">
+           Elaborar el wireframe de registro de usuario en la plataforma de convocatorias de la UNHEVAL.
+            <template v-slot:tools>
+                <ResourceLink name="Figma" type="tool">
+                    <ResourceCard
+                        title="Figma"
+                        description="Herramienta para organizar ideas"
+                        type="tool"
+                        :src="imageFigma"
+                    />
+                </ResourceLink>
+                <ResourceLink name="UI Kit" type="download">
+                    <ResourceCard
+                        title="UI Kit"
+                        description="Herramienta para organizar ideas"
+                        type="download"
+                    />
+                </ResourceLink>
+                <ResourceLink name="Ejemplos" type="download">
+                    <ResourceCard
+                        title="Ejemplos"
+                        description="Herramienta para organizar ideas"
+                        type="download"
+                    />
+                </ResourceLink>
+            </template>
+        </Challenge>
         <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
-            <aside class="tests_grid">
-                <TestCard :question="question1" />
-                <TestCard :question="question2" />
-            </aside>
+            <Evaluation :questions="questions" />
         </section>
     </GuideBody>
 </template>

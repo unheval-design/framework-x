@@ -6,8 +6,9 @@ import Reference from '@/components/Reference.vue';
 import Evaluation from '@/components/Evaluation.vue';
 import Heading from '@/components/Heading.vue';
 import imageOne from '@/assets/images/guide-2/image_1.png'
+import { ref } from '@vue/reactivity';
 
-const questions = [
+const questions = ref([
     {
         id: 1,
         question: '¿Cuando dedo hacer el análisis heurístico?',
@@ -44,7 +45,7 @@ const questions = [
             }
         ]
     }
-]
+])
 </script>
 
 <template>

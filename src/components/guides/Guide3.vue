@@ -8,8 +8,11 @@ import Challenge from '@/components/Challenge.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import imageMiro from '@/assets/images/brands/miro.png';
+import imageOne from '@/assets/images/guide-3/image_1.png';
+import Reference from '@/components/Reference.vue';
+import { ref } from '@vue/reactivity';
 
-const questions = [
+const questions = ref([
     {
         id: 1,
         question: '¿Por que hacemos el mapa de empatía?',
@@ -52,7 +55,7 @@ const questions = [
             }
         ]
     }
-];
+]);
 
 const challenge2_tasks = [
     'Definir el usuario',
@@ -86,6 +89,10 @@ const challenge2_tasks = [
                 preocupaciones e incluso las aspiraciones del usuario (u otros
                 agentes sujetos a examen).
             </p>
+            <Reference
+                :image="imageOne"
+                description="Plantilla mapa de empatía. Fuente: rdstation.com"
+            />
         </section>
         <Heading type="h1">¿Cuándo usar el mapa de empatía?</Heading>
         <section>

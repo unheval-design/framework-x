@@ -1,33 +1,47 @@
 <script setup>
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
-import TestCard from '@/components/TestCard.vue';
+import Evaluation from '@/components/Evaluation.vue';
 import Reference from '@/components/Reference.vue';
+import imageDoOne from '@/assets/images/guide-10/image_do_1.png'
+import imageDontOne from '@/assets/images/guide-10/image_dont_1.png'
 import imageOne from '@/assets/images/guide-10/image_1.png'
 import imageTwo from '@/assets/images/guide-10/image_2.png'
 import imageThree from '@/assets/images/guide-10/image_3.png'
 import Blockquote from '@/components/Blockquote.vue';
 import Heading from '@/components/Heading.vue';
+import ResourceLink from '@/components/ResourceLink.vue';
+import ResourceCard from '@/components/ResourceCard.vue';
+import TipCard from '@/components/TipCard.vue';
+import Challenge from '@/components/Challenge.vue';
+import imageMiro from '@/assets/images/brands/miro.png';
+import { ref } from '@vue/reactivity';
 
-const question1 = {
-    question: '¿Por qué los flujos de usuario ayudan a hacer una interfaz intuitiva para el usuario?',
-    answer: 1,
-    alternatives: [
-        'Por que esta validado por los mismos usuarios para ser facil y rapido de navegar.',
-        'Por que fue diseñado por profesionales UX.',
-        'Por que estandarizan la forma en que cualquier usuario navega en una interfaz.'
-    ]
-};
+const questions = ref([
+    {
+        id: 1,
+        question: '¿Por qué los flujos de usuario ayudan a hacer una interfaz intuitiva para el usuario?',
+        alternatives: [
+            { answer: true, description: 'Por que esta validado por los mismos usuarios para ser facil y rapido de navegar.'},
+            { answer: false, description: 'Por que fue diseñado por profesionales UX.'},
+            { answer: false, description: 'Por que estandarizan la forma en que cualquier usuario navega en una interfaz.'}
+        ]
+    },
+    {
+        id: 2,
+        question: 'Si deseo representar una tarea que no presenta complejidad de escenarios o rutas, podria usar:',
+        alternatives: [
+            { answer: true, description: 'Flujo de tareas.'},
+            { answer: false, description: 'Wireflows.'},
+            { answer: false, description: 'Flujo de usuario.'}
+        ]
+    }
+]);
 
-const question2 = {
-    question: 'Si deseo representar una tarea que no presenta complejidad de escenarios o rutas, podria usar:',
-    answer: 3,
-    alternatives: [
-        'Flujo de tareas.',
-        'Wireflows.',
-        'Flujo de usuario.'
-    ]
-};
+const challenge9_tasks = [
+    'Hacer el flujo de usuario de tipo “flujo de tarea”',
+    'Elaborar el flujo de usuario de tipo “Wireflows” utilizando los wireframes del Reto #8'
+];
 </script>
 <template>
     <GuideTitle>
@@ -40,9 +54,6 @@ const question2 = {
             <p>
                 Un flujo de usuario es un diagrama que muestra de un vistazo la ruta que tomará su usuario a través de su aplicación o sitio web para lograr un objetivo determinado. Puede crear flujos de usuarios en cualquier etapa de la fase de diseño y esto ayudará a determinar la arquitectura de la información.
             </p>
-            <Blockquote>
-                El diagrama de flujo comienza con el punto de entrada del consumidor al producto, como una pantalla de incorporación o una página de inicio, y termina con la acción o resultado final, como comprar un producto o registrarse para obtener una cuenta.
-            </Blockquote>
             <p>
                 Aquí hay algunas preguntas básicas que debe tener en cuenta para crear un flujo de usuarios sólido:
             </p>
@@ -77,10 +88,20 @@ const question2 = {
             <p>Los flujos de UX se pueden usar para todo tipo de interfaz y diseño web, pero ciertos tipos de diagramas de flujo son más valiosos que otros según lo que estés creando. Aquí describimos algunas de las variaciones de flujo de usuario y cuándo usarlas.</p> 
             <Heading type="h2" >Flujos de Tareas</Heading>
             <p>Se centran en cómo los usuarios viajan a través de la plataforma mientras realizan una tarea específica. Por lo general, muestran solo una ruta y no incluyen múltiples ramas o rutas como lo haría un flujo de usuario tradicional. Estos se utilizan mejor cuando la tarea que se analiza se realiza de manera similar por todos los usuarios.</p>
-            <Blockquote>Cuando se utilizan flujos de tareas, se supone que todos los usuarios compartirán un punto de partida común y no tendrán variabilidad en la forma en que se lleva a cabo la tarea.</Blockquote>
-            <Reference
-                :image="imageOne"
-                description="Task Flow. Fuente: careerfoundry.com" />
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontOne">
+                    </template>
+                    Los flujos de tareas deben tener un solo punto de entrada al igual que un punto de salida, además no pueden haber flujos sueltos, que no llegen al punto de salida.
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoOne">
+                    </template>
+                    Los usuarios compartirán un punto de partida común y no tendrán variabilidad en la forma en que se lleva a cabo la tarea.
+                </TipCard>
+            </aside>
             <Heading type="h2" >Wireflows</Heading>
             <p>Son una combinación de wireframes y diagramas de flujo. Utilizan el diseño de pantallas individuales como elementos dentro del diagrama. </p>
             <p>Los Wireflows son especialmente buenos cuando se crean pantallas móviles. El tamaño relativamente pequeño de las pantallas móviles se usa fácilmente para reemplazar las formas más abstractas de los diagramas de flujo.</p>
@@ -94,13 +115,38 @@ const question2 = {
                 :image="imageThree"
                 description="User Flow. Fuente: careerfoundry.com" />
         </section>
+        <Heading type="h1">Reto #9</Heading>
+        <Challenge time="1" :id="9" :tasks="challenge9_tasks">
+           Elaborar los flujo de usuario de registro en la plataforma de convocatorias de la UNHEVAL.
+            <template v-slot:tools>
+                <ResourceLink name="Miro" type="tool">
+                    <ResourceCard
+                        title="Miro"
+                        description="Herramienta para organizar ideas"
+                        type="tool"
+                        :src="imageMiro"
+                    />
+                </ResourceLink>
+                <ResourceLink name="Plantilla" type="download">
+                    <ResourceCard
+                        title="Plantilla"
+                        description="Herramienta para organizar ideas"
+                        type="download"
+                    />
+                </ResourceLink>
+                <ResourceLink name="Ejemplos" type="download">
+                    <ResourceCard
+                        title="Ejemplos"
+                        description="Herramienta para organizar ideas"
+                        type="download"
+                    />
+                </ResourceLink>
+            </template>
+        </Challenge>
         <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
-            <aside class="tests_grid">
-                <TestCard :question="question1" />
-                <TestCard :question="question2" />
-            </aside>
+            <Evaluation :questions="questions" />
         </section>
     </GuideBody>
 </template>
