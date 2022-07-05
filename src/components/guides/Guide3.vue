@@ -1,28 +1,68 @@
 <script setup>
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
-import TestCard from '@/components/TestCard.vue';
 import Heading from '@/components/Heading.vue';
+import Evaluation from '@/components/Evaluation.vue';
+import TipCard from '@/components/TipCard.vue';
+import Challenge from '@/components/Challenge.vue';
+import ResourceLink from '@/components/ResourceLink.vue';
+import ResourceCard from '@/components/ResourceCard.vue';
+import imageMiro from '@/assets/images/brands/miro.png';
 
-const question1 = {
-    question: '¿Por que hacemos el mapa de empatía?',
-    answer: 1,
-    alternatives: [
-        'Nos permite recoger requerimientos para nuestro proyecto.',
-        'Porque nos permite organizar la información de los clientes de una empresa.',
-        'Cuando deseamos comprender al cliente/usuario y su contexto.'
-    ]
-};
+const questions = [
+    {
+        id: 1,
+        question: '¿Por que hacemos el mapa de empatía?',
+        alternatives: [
+            {
+                answer: true,
+                description:
+                    'Nos permite recoger requerimientos para nuestro proyecto.'
+            },
+            {
+                answer: false,
+                description:
+                    'Porque nos permite organizar la información de los clientes de una empresa.'
+            },
+            {
+                answer: false,
+                description:
+                    'Cuando deseamos comprender al cliente/usuario y su contexto.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        question: '¿Por qué es recomendable hacer el mapa de empatía en grupo?',
+        alternatives: [
+            {
+                answer: true,
+                description:
+                    'Los diferente puntos de vista ayudaran a validar el perfil del cliente desde diferentes perspectivas.'
+            },
+            {
+                answer: false,
+                description:
+                    'Para cumplir la meta de completarlo en 30 minutos.'
+            },
+            {
+                answer: false,
+                description:
+                    'Por que se debe hacer por un equipo multidisciplinario.'
+            }
+        ]
+    }
+];
 
-const question2 = {
-    question: '¿Por qué es recomendable hacer el mapa de empatía en grupo?',
-    answer: 3,
-    alternatives: [
-        'Los diferente puntos de vista ayudaran a validar el perfil del cliente desde diferentes perspectivas.',
-        'Para cumplir la meta de completarlo en 30 minutos.',
-        'Por que se debe hacer por un equipo multidisciplinario.'
-    ]
-};
+const challenge2_tasks = [
+    'Definir el usuario',
+    'Identificar 2 ¿Qué ve?',
+    'Identificar 2 ¿Qué dice y qué hace?',
+    'Identificar 2 ¿Qué oye?',
+    'Identificar 2 ¿Qué piensa y qué siente?',
+    'Identificar 1 ¿Cuáles son los esfuerzos que realiza?',
+    'Identificar 1 ¿Cuáles son los resultados/beneficios que espera obtener?'
+];
 </script>
 <template>
     <GuideTitle>
@@ -68,6 +108,15 @@ const question2 = {
                 trabaja o estudia. Tenemos que conocer el contexto social de la
                 persona.
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    Ve a personas usar internet para revisar sus notas
+                </TipCard>
+                <TipCard type="do">
+                    Ve a sus amigos revisar sus notas en el intranet de la
+                    UNHEVAL
+                </TipCard>
+            </aside>
             <Heading type="h2">¿Qué dice y qué hace?</Heading>
             <p>
                 Habrá que observar la coherencia que existe entre lo que el
@@ -75,6 +124,13 @@ const question2 = {
                 de cerca su comportamiento para conocer qué tipo de cliente es,
                 teniendo en cuenta sus ocupaciones, pasatiempos e intereses.
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont"> Se informa como ver sus notas </TipCard>
+                <TipCard type="do">
+                    Pregunta a sus amigos como ingresar a ver las notas en el
+                    intranet de la UNHEVAL
+                </TipCard>
+            </aside>
             <Heading type="h2">¿Qué oye?</Heading>
             <p>
                 Implica toda la información que llega al cliente, ya sean
@@ -83,6 +139,16 @@ const question2 = {
                 y otras comunicaciones que puedan generar opiniones o reseñas de
                 las marcas.
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    Escucha que no se puede entrar a ver las notas en el
+                    intranet
+                </TipCard>
+                <TipCard type="do">
+                    Escucha que algunos de sus amigos no pudieron ingresar a ver
+                    sus notas en el intranet de la UNHEVAL
+                </TipCard>
+            </aside>
             <Heading type="h2">¿Qué piensa y qué siente?</Heading>
             <p>
                 Aquí se plantea la situación general en la que se encuentra el
@@ -92,12 +158,27 @@ const question2 = {
                 sueños y sus aspiraciones. A partir de ello también se determina
                 cómo es que siente o percibe a la marca.
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont"> Se siente desorientado </TipCard>
+                <TipCard type="do">
+                    Se siente un poco desorientado de como debe de usar el
+                    intranet de la UNHEVAL
+                </TipCard>
+            </aside>
             <Heading type="h2">¿Cuáles son los esfuerzos que realiza?</Heading>
             <p>
                 Esta parte representa los obstáculos a los que se enfrenta el
                 cliente/usuario en su vida, junto con las dudas, preocupaciones
                 y frustraciones que experimenta.
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    Le cuesta entrar a ver sus notas
+                </TipCard>
+                <TipCard type="do">
+                    Le cuesta encontrar el enlace para ver sus notas
+                </TipCard>
+            </aside>
             <Heading type="h2">
                 ¿Cuáles son los resultados/beneficios que espera obtener?
             </Heading>
@@ -105,6 +186,16 @@ const question2 = {
                 Describe las posibilidades de satisfacción que puede lograr un
                 cliente/usuario una vez que supera sus obstáculos.
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    Tener una mejor pagina le permitira ver mas rapido sus notas
+                    en el intranet
+                </TipCard>
+                <TipCard type="do">
+                    Tener una interfaz mas limpia y usable le ayudaria a ver sus
+                    notas en el intranet con mayor facilidad
+                </TipCard>
+            </aside>
         </section>
         <Heading type="h1">¿Cómo aplicar el mapa de empatía?</Heading>
         <section>
@@ -126,13 +217,39 @@ const question2 = {
                 que se ha descrito del cliente/usuario.
             </p>
         </section>
+        <Heading type="h1">Reto #2</Heading>
+        <Challenge time="1" :id="2" :tasks="challenge2_tasks">
+            Crea un mapa de empatía a partir de los objetivos y tipo de perfil
+            del usuario, planteados en el reto #1.
+            <template v-slot:tools>
+                <ResourceLink name="Miro" type="tool">
+                    <ResourceCard
+                        title="Miro"
+                        description="Herramienta para organizar ideas"
+                        type="tool"
+                        :src="imageMiro"
+                    />
+                </ResourceLink>
+                <ResourceLink name="Plantilla" type="download">
+                    <ResourceCard
+                        title="Plantilla"
+                        description="Herramienta para organizar ideas"
+                        type="download"
+                    />
+                </ResourceLink>
+                <ResourceLink name="Ejemplos" type="download">
+                    <ResourceCard
+                        title="Ejemplos"
+                        description="Herramienta para organizar ideas"
+                        type="download"
+                    />
+                </ResourceLink>
+            </template>
+        </Challenge>
         <Heading type="h1">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
-            <aside class="tests_grid">
-                <TestCard :question="question1" />
-                <TestCard :question="question2" />
-            </aside>
+            <Evaluation :questions="questions" />
         </section>
     </GuideBody>
 </template>

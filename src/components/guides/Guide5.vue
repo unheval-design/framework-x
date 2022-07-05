@@ -1,31 +1,43 @@
 <script setup>
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
-import TestCard from '@/components/TestCard.vue';
+import Evaluation from '@/components/Evaluation.vue';
 import Blockquote from '@/components/Blockquote.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import Heading from '@/components/Heading.vue';
+import Challenge from '@/components/Challenge.vue';
+import TipCard from '@/components/TipCard.vue';
+import { ref } from '@vue/reactivity';
 
-const question1 = {
-    question: '¿Por que hacemos el user journey map?',
-    answer: 1,
-    alternatives: [
-        'Por que necesitamos entender si los procesos o etapas de un proceso están bien optimizados.',
-        'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.',
-        'Por que queremos detectar si las tareas son completadas y el grado de satisfacción del usuario.'
-    ]
-};
+const questions = ref([
+    {
+        id: 1,
+        question: '¿Por que hacemos el user journey map?',
+        alternatives: [
+            { answer: true, description: 'Por que necesitamos entender si los procesos o etapas de un proceso están bien optimizados.'},
+            { answer: false, description: 'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.'},
+            { answer: false, description: 'Por que queremos detectar si las tareas son completadas y el grado de satisfacción del usuario.'}
+        ]
+    },
+    {
+        id: 2,
+        question: '¿Qué son las oportunidades en un user journey map?',
+        alternatives: [
+            { answer: true, description: 'Información que describe cómo se puede optimizar la experiencia del usuario.'},
+            { answer: false, description: 'Rutas que tiene el usuario para completar su recorrido.'},
+            { answer: false, description: 'Experiencias favorables del usuario en el recorrido.'}
+        ]
+    }
+]);
 
-const question2 = {
-    question: '¿Qué son las oportunidades en un user journey map?',
-    answer: 3,
-    alternatives: [
-        'Información que describe cómo se puede optimizar la experiencia del usuario.',
-        'Rutas que tiene el usuario para completar su recorrido.',
-        'Experiencias favorables del usuario en el recorrido.'
-    ]
-};
+const challenge4_tasks = [
+    'Definir el actor',
+    'Definir el escenario y las espectativas',
+    'Definir las fases del viaje',
+    'Identificar las acciones, pensamientos y emociones',
+    'Identificar las oportunidades'
+];
 </script>
 <template>
     <GuideTitle>
@@ -87,13 +99,21 @@ const question2 = {
                 generalmente se alinean con personas y sus acciones en el mapa
                 se basan en datos.
             </p>
-            <p>
-                Por ejemplo: una universidad podría elegir a un estudiante o a
-                un docente como actor; cada uno daría como resultado diferentes
-                viajes. Para capturar ambos puntos de vista, la universidad
-                necesitará construir dos mapas separados, uno para cada uno de
-                los dos tipos de usuarios.
-            </p>
+            <p>Por ejemplo en la página web de una universidad los actores pueden ser:</p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <ul>
+                        <li>Desarrollador</li>
+                        <li>Diseñador</li>
+                    </ul>
+                </TipCard>
+                <TipCard type="do">
+                    <ul>
+                        <li>Estudiante</li>
+                        <li>Docente</li>
+                    </ul>
+                </TipCard>
+            </aside>
             <Heading type="h2" >Escenario + Expectativas</Heading>
             <p>
                 El escenario describe la situación que aborda el User Journey
@@ -103,6 +123,18 @@ const question2 = {
                 expectativas incluyen encontrar fácilmente toda la información
                 necesaria para tomar una decisión.
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <strong>Escenario:</strong> Prestamo de libro de la biblioteca.
+                    <br>
+                    <strong>Espectativas:</strong> Que me otorguen el prestamo rápidamente.
+                </TipCard>
+                <TipCard type="do">
+                    <strong>Escenario:</strong> Solicitar prestamo de libro en la página web de la bibliotena central.
+                    <br>
+                    <strong>Espectativas:</strong> Encontrar facilmente el libro que quiero prestarme.
+                </TipCard>
+            </aside>
             <Blockquote>
                 Los escenarios pueden ser reales (para productos y servicios
                 existentes) o anticipados, para productos que aún se encuentran
@@ -144,29 +176,39 @@ const question2 = {
                     <li>¿Cómo vamos a medir las mejoras que implementamos?</li>
                 </ul>
             </p>
-            <p>
-                Puedes usar esta
-                <ResourceLink type="download">
-                    plantilla de journey map
-                    <template v-slot:popup>
-                        <ResourceCard
-                            type="download"
-                            title="user_journey_map.pdf"
-                            description="Formato basico para journey map"
-                        />
-                    </template>
-                </ResourceLink>
-                para empezar a definir tus participantes.
-            </p>
         </section>
-         
+        <Heading type="h1">Reto #4</Heading>
+        <Challenge time="1" :id="4" :tasks="challenge4_tasks">
+           Realizar el User Journey Map de como el usuario visualiza un evento en la página web de la UNHEVAL.
+            <template v-slot:tools>
+                <ResourceLink name="Miro" type="tool">
+                    <ResourceCard
+                        title="Miro"
+                        description="Herramienta para organizar ideas"
+                        type="tool"
+                        :src="imageMiro"
+                    />
+                </ResourceLink>
+                <ResourceLink name="Plantilla" type="download">
+                    <ResourceCard
+                        title="Plantilla"
+                        description="Herramienta para organizar ideas"
+                        type="download"
+                    />
+                </ResourceLink>
+                <ResourceLink name="Ejemplos" type="download">
+                    <ResourceCard
+                        title="Ejemplos"
+                        description="Herramienta para organizar ideas"
+                        type="download"
+                    />
+                </ResourceLink>
+            </template>
+        </Challenge>
         <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
-            <aside class="tests_grid">
-                <TestCard :question="question1" />
-                <TestCard :question="question2" />
-            </aside>
+            <Evaluation :questions="questions" />
         </section>
     </GuideBody>
 </template>

@@ -32,7 +32,7 @@ blockquote {
     gap: var(--gap);
     color: var(--text_color);
     line-height: var(--text_line_height);
-    border: 1px solid var(--border_color_70);
+    /* border: 1px solid var(--border_color_70); */
     svg {
         min-width: var(--icon_size);
         height: var(--icon_size);

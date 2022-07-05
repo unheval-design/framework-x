@@ -1,7 +1,7 @@
 <script setup>
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
-import TestCard from '@/components/TestCard.vue';
+import Challenge from '@/components/Challenge.vue';
 import Reference from '@/components/Reference.vue';
 import imageOne from '@/assets/images/guide-6/image_1.png'
 import imageTwo from '@/assets/images/guide-6/image_2.png'
@@ -10,26 +10,37 @@ import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import imageMiro from '@/assets/images/brands/miro.png';
 import imageOw from '@/assets/images/brands/ow.png';
+import TipCard from '@/components/TipCard.vue';
+import Evaluation from '@/components/Evaluation.vue';
+import { ref } from '@vue/reactivity';
 
-const question1 = {
-    question: '¿Por qué hacemos el Card Sorting?',
-    answer: 1,
-    alternatives: [
-        'Por que necesitamos descubrir cómo las personas entienden y categorizan la información.',
-        'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.',
-        'Por que queremos entender como agrupar los elementos de nuestra interfaz.'
-    ]
-};
+const questions = ref([
+    {
+        id: 1,
+        question: '¿Por qué hacemos el Card Sorting?',
+        alternatives: [
+            { answer: true, description: 'Por que necesitamos descubrir cómo las personas entienden y categorizan la información.'},
+            { answer: false, description: 'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.'},
+            { answer: false, description: 'Por que queremos entender como agrupar los elementos de nuestra interfaz.'}
+        ]
+    },
+    {
+        id: 2,
+        question: '¿Cuándo usariamos un Card Sorting de tipo cerrado?',
+        alternatives: [
+            { answer: true, description: 'Si deseamos priorizar y clasificar funciones.'},
+            { answer: false, description: 'Si deseamos descubrir nuevas categorias para un mismo grupo de tarjetas.'},
+            { answer: false, description: 'Si deseamos mejorar la categorizacion para las funcionalidades de nuestra interfaz.'}
+        ]
+    }
+]);
 
-const question2 = {
-    question: '¿Cuándo usariamos un Card Sorting de tipo cerrado?',
-    answer: 3,
-    alternatives: [
-        'Si deseamos priorizar y clasificar funciones.',
-        'Si deseamos descubrir nuevas categorias para un mismo grupo de tarjetas.',
-        'Si deseamos mejorar la categorizacion para las funcionalidades de nuestra interfaz.'
-    ]
-};
+const challenge5_tasks = [
+    'Definir el perfil del usuario',
+    'Crear tarjetas(cards) con el contenido',
+    'Definir las categorias',
+    'Aplicar el ejercicio con un usuario'
+];
 </script>
 <template>
     <GuideTitle>
@@ -86,12 +97,46 @@ const question2 = {
             <Reference
                 :image="imageOne"
                 description="Open Card Sort. Fuente: interaction-design.org" />
+            <p>Por ejemplo, al definir cards de la página de convocatorias debes tomar en cuenta lo siguiente:</p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <ul>
+                        <li>Convocatoria para docentes</li>
+                        <li>Convocatoria para administrativas</li>
+                        <li>Convocatoria 007</li>
+                    </ul>
+                </TipCard>
+                <TipCard type="do">
+                     <ul>
+                        <li>En proceso</li>
+                        <li>Cronogramas</li>
+                        <li>Bases</li>
+                    </ul>
+                </TipCard>
+            </aside>
             <Heading type="h2" >Cerrada</Heading>
             <p>Los investigadores crean etiquetas para categorías y les piden a los participantes que clasifiquen las tarjetas en categorías predefinidas. Todo lo que los participantes deben hacer es relacionar el contenido con las categorías existentes. Este tipo de clasificación de tarjetas no revela cómo los usuarios conceptualizan los temas, pero lo ayuda a comprender qué tan bien una estructura de categoría existente admite el contenido.</p>
             <p>La clasificación de tarjetas cerradas funciona mejor para priorizar y clasificar funciones. Por ejemplo, puede aplicarlo para filtros de búsqueda en la aplicación de comercio electrónico. Los usuarios pueden distribuir todos los filtros de búsqueda que tiene en los grupos 'Obligatorio', 'Opcional' o 'Uso frecuente' a 'Nunca lo uso'.</p>
             <Reference
                 :image="imageTwo"
                 description="Closed Card Sort. Fuente: interaction-design.org" />
+            <p>Por ejemplo, para categorizar el menú principal de una universidad deberias tomar en cuenta estos ejemplos:</p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <ul>
+                        <li>Oficinas</li>
+                        <li>La universidad</li>
+                        <li>Campus Virtuales</li>
+                    </ul>
+                </TipCard>
+                <TipCard type="do">
+                     <ul>
+                        <li>Areas administrativas</li>
+                        <li>Acerca de nosotros</li>
+                        <li>Aulas virtuales</li>
+                    </ul>
+                </TipCard>
+            </aside>
             <Heading type="h2" >Híbrida</Heading>
             <p>Como sugiere el nombre, este tipo de clasificación de tarjetas donde los participantes clasifican las tarjetas en categorías predefinidas pero también pueden crear sus propias categorías.</p>
             <p>La clasificación de tarjeta híbrida funciona mejor cuando los investigadores desean generar ideas para agrupar información y saben que les faltan algunas categorías en su estructura de categorías actual. Pueden obtener información sobre las categorías que faltan, y esta información puede informar las decisiones de diseño.</p>
@@ -99,39 +144,33 @@ const question2 = {
         <Heading type="h1" >¿Que herramientas usar para hacer Card Sorting?</Heading>
         <section>
             <p>Para realizar una ordenación de tarjetas, necesita dos cosas: usuarios reales y tarjetas. </p>
-            <p>Para las tarjetas, puede usar tarjetas físicas reales (pedazos de papel) o una de varias herramientas de software de clasificación de tarjetas en línea como
-                <ResourceLink type="tool">
-                    Miro
-                    <template v-slot:popup>
-                        <ResourceCard
-                            title="Miro"
-                            description="Herramienta para organizar notas"
-                            type="tool"
-                            :src="imageMiro"
-                            />
-                    </template>
-                </ResourceLink>
-                si va acompañarlo de una entrevista una guia presencial o también
-                <ResourceLink type="tool">
-                    Optimal Workshop
-                    <template v-slot:popup>
-                        <ResourceCard
-                            title="Optimal Workshop"
-                            description="Herramienta para card sorting"
-                            type="tool"
-                            :src="imageOw"
-                            />
-                    </template>
-                </ResourceLink>
-                si desea una herramienta mas automatizada. </p>
+            <p>Para las tarjetas, puede usar tarjetas físicas reales (pedazos de papel) o una de varias herramientas de software de clasificación de tarjetas en línea como Miro o Optimal Workshop si desea una herramienta mas automatizada. </p>
         </section>
+        <Heading type="h1" >Reto #5</Heading>
+        <Challenge time="10" :id="5" :tasks="challenge5_tasks">
+           Realizar un Card Sorting cerrado con elementos de la pagina web principal de la UNHEVAL.
+            <template v-slot:tools>
+                <ResourceLink name="Miro" type="tool">
+                    <ResourceCard
+                        title="Miro"
+                        description="Herramienta para organizar ideas"
+                        type="tool"
+                        :src="imageMiro"
+                    />
+                </ResourceLink>
+                <ResourceLink name="Ejemplos" type="download">
+                    <ResourceCard
+                        title="Ejemplos"
+                        description="Herramienta para organizar ideas"
+                        type="download"
+                    />
+                </ResourceLink>
+            </template>
+        </Challenge>
         <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
-            <aside class="tests_grid">
-                <TestCard :question="question1" />
-                <TestCard :question="question2" />
-            </aside>
+            <Evaluation :questions="questions" />
         </section>
     </GuideBody>
 </template>

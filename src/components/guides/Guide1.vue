@@ -127,11 +127,11 @@ const challenge1_tasks = [
                 Permiten al usuario comentar su experiencia sin ningún tipo de limitaciones en su respuesta.
             </p>
             <aside class="tips_grid">
-                <TipCard type="do">
-                    ¿Cómo es tu experiencia usando el intranet?
-                </TipCard>
                 <TipCard type="dont">
                     ¿Tu experiencia con el intranet es buena?
+                </TipCard>
+                 <TipCard type="do">
+                    ¿Cómo es tu experiencia usando el intranet?
                 </TipCard>
             </aside>
             <p>
@@ -142,11 +142,11 @@ const challenge1_tasks = [
                 Las preguntas ya están definidas y se utilizan preguntas cerradas.
             </p>
             <aside class="tips_grid">
-                <TipCard type="do">
-                    ¿Tu experiencia con los pagos en línea es buena o mala?
-                </TipCard>
                 <TipCard type="dont">
                     ¿Que experiencias tienes pagando en línea?
+                </TipCard>
+                <TipCard type="do">
+                    ¿Tu experiencia con los pagos en línea es buena o mala?
                 </TipCard>
             </aside>
             <p>
@@ -181,11 +181,11 @@ const challenge1_tasks = [
                 Las respuestas han de ser siempre concretas y precisas, ya que las respuestas generales harán que se pierda el objetivo fácilmente o no se puedan alcanzar.
             </p>
             <aside class="tips_grid">
-                <TipCard type="do">
-                    Conocer cómo interactuan con dispositivos móviles, las personas que entran a la página principal de la UNHEVAL.
-                </TipCard>
                 <TipCard type="dont">
                     Encontrar todos los errores de responsividad de la pagina web de la UNHEVAL.
+                </TipCard>
+                <TipCard type="do">
+                    Conocer cómo interactuan con dispositivos móviles, las personas que entran a la página principal de la UNHEVAL.
                 </TipCard>
             </aside>
             <Heading type="h2" >Encontrar Participantes</Heading>
@@ -255,7 +255,6 @@ const challenge1_tasks = [
                         title="Formato"
                         description="Herramienta para organizar ideas"
                         type="download"
-                        :src="imageKeep"
                         />
                 </ResourceLink>
                 <ResourceLink name="Ejemplos" type="download">
@@ -263,7 +262,6 @@ const challenge1_tasks = [
                         title="Ejemplos"
                         description="Herramienta para organizar ideas"
                         type="download"
-                        :src="imageKeep"
                         />
                 </ResourceLink>
             </template>
@@ -273,9 +271,7 @@ const challenge1_tasks = [
             <p>
                 Valida tu aprendizaje
             </p>
-            <aside class="tests_grid">
-                <Evaluation :questions="questions"/>
-            </aside>
+            <Evaluation :questions="questions"/>
         </section>
     </GuideBody>
 </template>

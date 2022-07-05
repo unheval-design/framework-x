@@ -3,21 +3,48 @@ import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
 import Blockquote from '@/components/Blockquote.vue';
 import Reference from '@/components/Reference.vue';
-import TestCard from '@/components/TestCard.vue';
+import Evaluation from '@/components/Evaluation.vue';
 import Heading from '@/components/Heading.vue';
 import imageOne from '@/assets/images/guide-2/image_1.png'
 
-const question1 = {
-    question: '¿Cuando dedo hacer el análisis heurístico?',
-    answer: 1,
-    alternatives: ['Si es un producto nuevo, lo debo realizar al principio.', 'Siempre debo hacerlo al principio.', 'Si es un producto existente, lo debo realizar al principio.']
-}
-
-const question2 = {
-    question: '¿Cuantos evaluadores podrían se recomiendan para encontrar el 80% de los problemas de usabilidad en una interfaz?',
-    answer: 3,
-    alternatives: ['10 evaluadores', 'entre 5 y 8 evaluadores', 'entre 8 y 12 evaluadores']
-}
+const questions = [
+    {
+        id: 1,
+        question: '¿Cuando dedo hacer el análisis heurístico?',
+        alternatives: [
+            {
+                answer: true,
+                description: 'Si es un producto nuevo, lo debo realizar al principio.'
+            },
+            {
+                answer: false,
+                description: 'Siempre debo hacerlo al principio.'
+            },
+            {
+                answer: false,
+                description: 'Si es un producto existente, lo debo realizar al principio.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        question: '¿Cuantos evaluadores podrían se recomiendan para encontrar el 80% de los problemas de usabilidad en una interfaz?',
+        alternatives: [
+            {
+                answer: true,
+                description: '10 evaluadores'
+            },
+            {
+                answer: false,
+                description: 'entre 5 y 8 evaluadores'
+            },
+            {
+                answer: false,
+                description: 'entre 8 y 12 evaluadores'
+            }
+        ]
+    }
+]
 </script>
 
 <template>
@@ -104,10 +131,7 @@ const question2 = {
             <p>
                 Valida tu aprendizaje
             </p>
-            <aside class="tests_grid">
-                <TestCard :question="question1"/>
-                <TestCard :question="question2"/>
-            </aside>
+            <Evaluation :questions="questions"/>
         </section>
     </GuideBody>
 </template>

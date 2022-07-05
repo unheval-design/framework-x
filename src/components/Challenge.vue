@@ -142,6 +142,7 @@ watch(timeLeftFormatted, () => {
         display: flex;
         flex-direction: column;
         gap: var(--gap);
+        flex: 1;
         p {
             line-height: var(--title_line_height);
         }
@@ -175,7 +176,7 @@ watch(timeLeftFormatted, () => {
         }
     }
     & > svg {
-        min-width: var(--icon_size);
+        width: var(--icon_size);
         height: var(--icon_size);
         fill: var(--text_color);
         margin-top: 4px;

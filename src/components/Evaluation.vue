@@ -27,11 +27,19 @@ const questionsShuffle = computed(() =>
 </script>
 
 <template>
-    <TestCard
-        v-for="(question, index) in questionsShuffle"
-        :key="index"
-        :question="question"
-    />
+    <div class="Evaluation">
+        <TestCard
+            v-for="(question, index) in questionsShuffle"
+            :key="index"
+            :question="question"
+        />
+    </div>
 </template>
 
-<style></style>
+<style lang="scss">
+.Evaluation {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: var(--gap);
+}
+</style>

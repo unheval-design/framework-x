@@ -78,10 +78,5 @@ export default {};
             grid-gap: var(--gap_sm);
         }
     }
-    .tests_grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: var(--gap);
-    }
 }
 </style>

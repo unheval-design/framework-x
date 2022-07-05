@@ -58,7 +58,7 @@ const onClick = () => {
 
             <template v-slot:button>
                 <Button @click="onClick()">
-                    {{ guideId != 20 ? 'Completar' : 'Finalizar' }}
+                    {{ guideId != 20 ? 'Continuar' : 'Finalizar' }}
                 </Button>
             </template>
         </Empty>
