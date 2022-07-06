@@ -1,259 +1,149 @@
 <script setup>
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
-import Heading from '@/components/Heading.vue';
 import Evaluation from '@/components/Evaluation.vue';
-import TipCard from '@/components/TipCard.vue';
+import Heading from '@/components/Heading.vue';
+import Blockquote from '@/components/Blockquote.vue';
+import Reference from '@/components/Reference.vue';
 import Challenge from '@/components/Challenge.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
+import TipCard from '@/components/TipCard.vue';
 import imageMiro from '@/assets/images/brands/miro.png';
-import imageOne from '@/assets/images/guide-3/image_1.png';
-import Reference from '@/components/Reference.vue';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
     {
         id: 1,
-        question: '¿Por que hacemos el mapa de empatía?',
+        question: '¿Cuándo hacer el benchmarking?',
         alternatives: [
-            {
-                answer: true,
-                description:
-                    'Nos permite recoger requerimientos para nuestro proyecto.'
-            },
-            {
-                answer: false,
-                description:
-                    'Porque nos permite organizar la información de los clientes de una empresa.'
-            },
-            {
-                answer: false,
-                description:
-                    'Cuando deseamos comprender al cliente/usuario y su contexto.'
-            }
+            { answer: true, description: 'Antes de la fase definir o después de la fase de pruebas.'},
+            { answer: false, description: 'Antes de las pruebas o después de empatizar.'},
+            { answer: false, description: 'Después de definir o antes de las pruebas.'}
         ]
     },
     {
         id: 2,
-        question: '¿Por qué es recomendable hacer el mapa de empatía en grupo?',
+        question: 'Si estoy trabajando en un producto nuevo ¿Contra que puedo hacer el benchmarking?',
         alternatives: [
-            {
-                answer: true,
-                description:
-                    'Los diferente puntos de vista ayudaran a validar el perfil del cliente desde diferentes perspectivas.'
-            },
-            {
-                answer: false,
-                description:
-                    'Para cumplir la meta de completarlo en 30 minutos.'
-            },
-            {
-                answer: false,
-                description:
-                    'Por que se debe hacer por un equipo multidisciplinario.'
-            }
+            { answer: true, description: 'Con un producto estándar en la industria.' },
+            { answer: false, description: 'Con un producto similar de mi empresa.' },
+            { answer: false, description: 'Con un producto que me sea familiar y sepa sus características.'}
         ]
     }
 ]);
 
-const challenge2_tasks = [
-    'Definir el usuario',
-    'Identificar 2 ¿Qué ve?',
-    'Identificar 2 ¿Qué dice y qué hace?',
-    'Identificar 2 ¿Qué oye?',
-    'Identificar 2 ¿Qué piensa y qué siente?',
-    'Identificar 1 ¿Cuáles son los esfuerzos que realiza?',
-    'Identificar 1 ¿Cuáles son los resultados/beneficios que espera obtener?'
+const challenge3_tasks = [
+    'Definir la competencia',
+    'Definir las metricas a evaluar',
+    'Contruir un tablero comparativo y desarrolla la evaluacion del benchmarking',
+    'Elaborar las conclusiones'
 ];
 </script>
 <template>
     <GuideTitle>
-        Mapa de Empatía
-        <template v-slot:timeRead>3</template>
+        UX Benchmarking
+        <template v-slot:timeRead>8</template>
     </GuideTitle>
     <GuideBody>
-        <Heading type="h1">Definición</Heading>
+        <Heading type="h1" >Definición</Heading>
         <section>
             <p>
-                Es una herramienta para la síntesis de información sobre el
-                cliente/usuario a través de visualización de lo que dice, hace,
-                piensa y siente. El objetivo es ponerse en el lugar del cliente
-                y plasmar su experiencia en una hoja de papel o en formato
-                digital.
-            </p>
-            <p>
-                Esto lo hace posible organizar los datos de la fase de Inmersión
-                de tal manera como para proporcionar una comprensión de las
-                situaciones que surgen del contexto, comportamiento,
-                preocupaciones e incluso las aspiraciones del usuario (u otros
-                agentes sujetos a examen).
-            </p>
-            <Reference
-                :image="imageOne"
-                description="Plantilla mapa de empatía. Fuente: rdstation.com"
-            />
-        </section>
-        <Heading type="h1">¿Cuándo usar el mapa de empatía?</Heading>
-        <section>
-            <p>
-                Cuando hay mucha información de campo y hay necesidad de
-                organizar para generar una mejor comprensión del público
-                objetivo con el fin de desarrollar una mayor empatía.
+                El benchmarking es una metodología que permite conocer la posición de un producto en relación a los de su competencia, en un determinado momento. Los resultados obtenidos facilitan el conocimiento de sus fortalezas y debilidades, que deben ser tenidas en cuenta para las instancias de creación de nuestro prototipo.
             </p>
         </section>
-        <Heading type="h1">Elementos de un mapa de empatía</Heading>
+        <Heading type="h1" >¿Cómo aplicar benchmarking?</Heading>
         <section>
             <p>
-                Un mapa de empatía esta segmentado en 6 partes o elementos que
-                describen al cliente/usuario, estas son:
+                Para realizar un estudio de UX Benchmarking de extremo a extremo, primero decida qué va a medir y qué método de investigación utilizará para recopilar esas métricas.
             </p>
-            <Heading type="h2">¿Qué ve?</Heading>
+            <Heading type="h2">1. Define la competencia</Heading>
             <p>
-                Analiza el entorno cotidiano del cliente/usuario. Qué es lo que
-                suele mirar en redes sociales, television, en donde vive,
-                trabaja o estudia. Tenemos que conocer el contexto social de la
-                persona.
+                Identificamos cuáles son las aplicaciones con las que se hara la comparación, deberián tener funcionalidades parecidas a las que deseamos evaluar.
+            </p>
+            <p>
+                Nuestra competencia podria ser: Una versión anterior del producto o servicio, un competidor, un estándar de la industria, un objetivo determinado por las partes interesadas.
+            </p>
+            <p>
+                Si mi producto esta/estará enfocado a delivery de comida, mi competencia podria ser:
             </p>
             <aside class="tips_grid">
                 <TipCard type="dont">
-                    Ve a personas usar internet para revisar sus notas
+                    <ul>
+                        <li>Uber</li>
+                        <li>Rappi</li>
+                    </ul>
                 </TipCard>
                 <TipCard type="do">
-                    Ve a sus amigos revisar sus notas en el intranet de la
-                    UNHEVAL
+                    <ul>
+                        <li>Uber Eat</li>
+                        <li>Rappi</li>
+                    </ul>
                 </TipCard>
             </aside>
-            <Heading type="h2">¿Qué dice y qué hace?</Heading>
+            <Heading type="h2" >2. Elije que medir</Heading>
             <p>
-                Habrá que observar la coherencia que existe entre lo que el
-                cliente habla o muestra y las acciones que lo respaldan. Examina
-                de cerca su comportamiento para conocer qué tipo de cliente es,
-                teniendo en cuenta sus ocupaciones, pasatiempos e intereses.
-            </p>
-            <aside class="tips_grid">
-                <TipCard type="dont"> Se informa como ver sus notas </TipCard>
-                <TipCard type="do">
-                    Pregunta a sus amigos como ingresar a ver las notas en el
-                    intranet de la UNHEVAL
-                </TipCard>
-            </aside>
-            <Heading type="h2">¿Qué oye?</Heading>
-            <p>
-                Implica toda la información que llega al cliente, ya sean
-                conversaciones con sus amigos o familiares, la estación de radio
-                o los podcast que escucha, las figuras públicas a las que sigue
-                y otras comunicaciones que puedan generar opiniones o reseñas de
-                las marcas.
-            </p>
-            <aside class="tips_grid">
-                <TipCard type="dont">
-                    Escucha que no se puede entrar a ver las notas en el
-                    intranet
-                </TipCard>
-                <TipCard type="do">
-                    Escucha que algunos de sus amigos no pudieron ingresar a ver
-                    sus notas en el intranet de la UNHEVAL
-                </TipCard>
-            </aside>
-            <Heading type="h2">¿Qué piensa y qué siente?</Heading>
-            <p>
-                Aquí se plantea la situación general en la que se encuentra el
-                cliente/usuario, involucra sus aspectos demográficos, económicos
-                y psicológicos para indagar en lo que realmente le importa,
-                cuáles son sus principales preocupaciones, sus inquietudes, sus
-                sueños y sus aspiraciones. A partir de ello también se determina
-                cómo es que siente o percibe a la marca.
-            </p>
-            <aside class="tips_grid">
-                <TipCard type="dont"> Se siente desorientado </TipCard>
-                <TipCard type="do">
-                    Se siente un poco desorientado de como debe de usar el
-                    intranet de la UNHEVAL
-                </TipCard>
-            </aside>
-            <Heading type="h2">¿Cuáles son los esfuerzos que realiza?</Heading>
-            <p>
-                Esta parte representa los obstáculos a los que se enfrenta el
-                cliente/usuario en su vida, junto con las dudas, preocupaciones
-                y frustraciones que experimenta.
-            </p>
-            <aside class="tips_grid">
-                <TipCard type="dont">
-                    Le cuesta entrar a ver sus notas
-                </TipCard>
-                <TipCard type="do">
-                    Le cuesta encontrar el enlace para ver sus notas
-                </TipCard>
-            </aside>
-            <Heading type="h2">
-                ¿Cuáles son los resultados/beneficios que espera obtener?
-            </Heading>
-            <p>
-                Describe las posibilidades de satisfacción que puede lograr un
-                cliente/usuario una vez que supera sus obstáculos.
-            </p>
-            <aside class="tips_grid">
-                <TipCard type="dont">
-                    Tener una mejor pagina le permitira ver mas rapido sus notas
-                    en el intranet
-                </TipCard>
-                <TipCard type="do">
-                    Tener una interfaz mas limpia y usable le ayudaria a ver sus
-                    notas en el intranet con mayor facilidad
-                </TipCard>
-            </aside>
-        </section>
-        <Heading type="h1">¿Cómo aplicar el mapa de empatía?</Heading>
-        <section>
-            <p>
-                La construcción de los mapas de empatía es un ejercicio rápido
-                que no suele superar los 30 minutos y se recomienda hacerlo en
-                grupo, por ser mas dinámico, entretenido y porque los diferentes
-                puntos de vista ayudaran a que el mapa sea mas fiable, pero
-                también es susceptible de llevarla a la práctica
-                individualmente.
+                <strong>Tareas</strong>
             </p>
             <p>
-                Generalmente se suele poner la plantilla en una pizarra grande a
-                la vista de todo el grupo y mediante post-it se van escribiendo
-                las respuestas hasta contestar todos los bloques de preguntas.
+                Averigue las principales tareas que los usuarios completan en su producto. Por ejemplo:
             </p>
             <p>
-                Finalmente, se sacan conclusiones de acuerdo a la información
-                que se ha descrito del cliente/usuario.
+                <ul>
+                    <li>Para una aplicación de altavoz inteligente una posible tarea seria “configuración de un nuevo altavoz inteligente”.</li>
+                    <li>Para un sitio web de comercio electrónico una posible tarea seria “realizar una compra”.</li>
+                    <li>Para un sitio web de banca móvil una posible tarea seria “actualización de la información de contacto”.</li>
+                    <li>Para un sitio web de agencia B2B una posible tarea seria “Envío de un formulario de cliente potenciales”.</li>
+                </ul>
+            </p>
+            <p>
+                <strong>Métrica</strong>
+            </p>
+            <p>
+                Las metricas sencillas mas usadas son:
+            </p>
+            <p>
+                <ul>
+                    <li>Navegación: cantidad de pasos necesarios para completar a tarea.</li>
+                    <li>Vocabulario: Las palabras utilizadas en los elementos de interacción(botones, títulos) permiten que el usuario pueda llevar adelante la tarea y no presta a confusión.</li>
+                    <li>Diseño: Ocupación del espacio en página, distribución de los elementos y tamaño en relación al espacio.</li>
+                </ul>
+            </p>
+            <p>
+                Si necesita algo mas complejo podria optar por el marco HEART de Google: Happiness(felicidad), Engagement(compromiso), Adoption(adopción), Retention(retención), Task effectiveness and efficiency(Efectividad y Eficiencia en la Tarea).
+            </p>
+            <Heading type="h2" >3. Desarrollo del benchmarking</Heading>
+            <p>
+               A travez de un tablero, debe evaluar por puntuación, cualidades u otro tipo de indicador que le proporcione una comparativa entre las diferentes aplicaciones.
+            </p>
+            <p>
+                A medida que recopila su primer conjunto de medidas, considere los factores externos que pueden afectar sus datos y, cuando sea posible, planifique en torno a ellos. Por ejemplo, si tiene un sitio web de comercio electrónico, desconfíe de factores como campañas de marketing extensas o influencias económicas a gran escala que pueden alterar sus métricas y dificultar la correlación del cambio de diseño con los resultados.
+            </p>
+            <Heading type="h2" >4. Conclusiones</Heading>
+            <p>
+                A partir del análisis de las interfaces, elaboraremos conclusiones definiendo las Fortalezas y Debilidades que presentaron cada una de las aplicaciones de la competencia durante el desarrollo de las tareas.
             </p>
         </section>
-        <Heading type="h1">Reto #2</Heading>
-        <Challenge time="1" :id="2" :tasks="challenge2_tasks">
-            Crea un mapa de empatía a partir de los objetivos y tipo de perfil
-            del usuario, planteados en el reto #1.
+        <Challenge time="1" :id="3" :tasks="challenge3_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #3 </Heading>
+            </template>
+            Crea un UX Benchmarking para encontrar la misión y visión institucional de una universidad.
             <template v-slot:tools>
-                <ResourceLink name="Miro" type="tool">
-                    <ResourceCard
-                        title="Miro"
-                        description="Herramienta para organizar ideas"
-                        type="tool"
-                        :src="imageMiro"
-                    />
-                </ResourceLink>
-                <ResourceLink name="Plantilla" type="download">
-                    <ResourceCard
-                        title="Plantilla"
-                        description="Herramienta para organizar ideas"
-                        type="download"
-                    />
-                </ResourceLink>
-                <ResourceLink name="Ejemplos" type="download">
-                    <ResourceCard
-                        title="Ejemplos"
-                        description="Herramienta para organizar ideas"
-                        type="download"
-                    />
-                </ResourceLink>
+                <ResourceCard
+                    title="Miro"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageMiro"
+                />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
             </template>
         </Challenge>
-        <Heading type="h1">Evaluación</Heading>
+        <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
             <Evaluation :questions="questions" />

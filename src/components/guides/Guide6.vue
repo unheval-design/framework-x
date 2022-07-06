@@ -1,170 +1,175 @@
 <script setup>
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
-import Challenge from '@/components/Challenge.vue';
+import Evaluation from '@/components/Evaluation.vue';
 import Reference from '@/components/Reference.vue';
 import imageOne from '@/assets/images/guide-6/image_1.png'
 import imageTwo from '@/assets/images/guide-6/image_2.png'
+import imageThree from '@/assets/images/guide-6/image_3.png'
+import imageDoOne from '@/assets/images/guide-6/image_do_1.png';
+import imageDontOne from '@/assets/images/guide-6/image_dont_1.png';
+import imageFigma from '@/assets/images/brands/figma.png';
+import imageMiro from '@/assets/images/brands/miro.png';
 import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
-import imageMiro from '@/assets/images/brands/miro.png';
-import imageOw from '@/assets/images/brands/ow.png';
+import Challenge from '@/components/Challenge.vue';
 import TipCard from '@/components/TipCard.vue';
-import Evaluation from '@/components/Evaluation.vue';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
     {
         id: 1,
-        question: '¿Por qué hacemos el Card Sorting?',
+        question: '¿Qué conlleva una mala estructuración?',
         alternatives: [
-            { answer: true, description: 'Por que necesitamos descubrir cómo las personas entienden y categorizan la información.'},
-            { answer: false, description: 'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.'},
-            { answer: false, description: 'Por que queremos entender como agrupar los elementos de nuestra interfaz.'}
+            { answer: true, description: 'Mala identificación de las tareas del usuario.'},
+            { answer: false, description: 'Demora en el proceso de diseño de interfaces.'},
+            { answer: false, description: 'Una mala experiencia del usuario y, más allá de eso, a la pérdida de negocios.'}
         ]
     },
     {
         id: 2,
-        question: '¿Cuándo usariamos un Card Sorting de tipo cerrado?',
+        question: '¿Por qué es recomendable poner un número de referencia en las páginas del mapa del sitio?',
         alternatives: [
-            { answer: true, description: 'Si deseamos priorizar y clasificar funciones.'},
-            { answer: false, description: 'Si deseamos descubrir nuevas categorias para un mismo grupo de tarjetas.'},
-            { answer: false, description: 'Si deseamos mejorar la categorizacion para las funcionalidades de nuestra interfaz.'}
+            { answer: true, description: 'Para referenciar en la documentación del mapa del sitio.'},
+            { answer: false, description: 'Ayudan a realizar un seguimiento en la jerarquía, esquemas y prototipos de las páginas.'},
+            { answer: false, description: 'Ayudan a determinar el tipo de mapa de sitio.'}
         ]
     }
 ]);
 
-const challenge5_tasks = [
-    'Definir el perfil del usuario',
-    'Crear tarjetas(cards) con el contenido',
-    'Definir las categorias',
-    'Aplicar el ejercicio con un usuario'
+const challenge6_tasks = [
+    'Definir las páginas principales',
+    'Definir las páginas secundarias',
+    'Definir los contenidos'
 ];
 </script>
 <template>
     <GuideTitle>
-        Card Sorting
+        Mapa del Sitio
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1" >Definición</Heading>
         <section>
             <p>
-               Parte de hacer que un sitio sea fácil de usar es organizar la información para que los visitantes del sitio puedan encontrar lo que buscan sin mucho esfuerzo. Con demasiada frecuencia, el contenido se estructura en función de lo que tiene sentido para la empresa, no para los visitantes.
+               Diseñar un sitio web puede parecer bastante abrumador con tantas cosas que considerar, es fácil caer en una mala estructuración de la información que queremos mostrar.
             </p>
             <p>
-                Card Sorting (clasificación de tarjetas) es una técnica de investigación de UX para descubrir cómo las personas entienden y clasifican la información. Esta técnica se usa cuando un equipo quiere agrupar y etiquetar la información del sitio web de una manera que tenga sentido para el público objetivo. La clasificación de tarjetas crea una base para una arquitectura de información (IA) robusta, y una IA sólida permite la creación de un sistema de navegación que coincida con las expectativas de los usuarios.
+                Una mala estructuración puede conducir a una mala experiencia del usuario y, más allá de eso, a la pérdida de negocios. Si sus visitantes no saben a dónde ir o qué hacer, se irán.
             </p>
+            <p>
+                Un mapa del sitio de la experiencia del usuario (UX) es una representación visual de la arquitectura de la información de su producto que describe las diferentes páginas de su producto, junto con la jerarquía entre esas páginas. A veces se denomina diagrama de arquitectura de la información (IA) o esquema de contenido.
+            </p>
+            <p>Un mapa del sitio basico deberia tener una estructura similar al siguiente:</p>
+            <Reference
+                :image="imageThree"
+                description="UX sitemap example of a dessert blog website. Author: Jennifer Jhang." />
         </section>
-        <Heading type="h1" >¿Cuándo usar el Card Sorting?</Heading>
+        <Heading type="h1" >¿Por que hacemos un mapa de sitio?</Heading>
         <section>
             <p>
-                La clasificación de tarjetas es útil en dos casos:
-            </p>
-            <p>
                 <ul>
-                    <li>Cuando se quiere descubrir cómo las personas entienden y agrupan diferentes conceptos. Desea revelar el modelo mental del usuario, y esta comprensión lo ayudará a diseñar mejores productos para ellos.</li>
-                    <li>Cuando desea mejorar el diseño existente o crear un nuevo diseño, su objetivo es comprender cómo los usuarios categorizan la información y hacer que la interfaz de usuario sea predecible para ellos.</li>
+                    <li>
+                        <strong>Forma una mejor comprensión de los objetivos de diseño.</strong>
+                        <br>
+                        Cada sitio web debe tener un objetivo, con cada decisión de diseño alineada con él. Al presentar visualmente todo el contenido de su sitio al equipo, puede hablar sobre los objetivos y priorizar las decisiones de diseño.
+                    </li>
+                    <li>
+                        <strong>Crea una única fuente de verdad</strong>
+                        <br>
+                        Un proyecto de diseño web involucra a muchas personas, desde diseñadores front-end hasta partes interesadas. Mostrar las relaciones entre las páginas de su sitio facilita la comprensión de las conexiones y la introducción de cambios en la IA y el diseño.
+                    </li>
+                    <li>
+                        <strong>Elimina páginas innecesarias</strong>
+                        <br>
+                        La información jerárquica en un mapa del sitio ayuda a los miembros del equipo a encontrar y eliminar páginas que no están directamente relacionadas con el propósito del sitio.
+                    </li>
+                    <li>
+                        <strong>Elimina el contenido duplicado</strong>
+                        <br>
+                        Cuando puede evaluar fácilmente todas las páginas de su sitio web de acuerdo con su mapa del sitio, reduce la posibilidad de duplicar contenido y crear una experiencia confusa para el usuario.
+                    </li>
                 </ul>
             </p>
         </section>
-        <Heading type="h1" >Ventajas y Desventajas</Heading>
+        <Heading type="h1" >Tipos de mapas de sitio</Heading>
         <section>
-            <Heading type="h2" >Ventajas</Heading>
+            <p>Por lo general, hay dos tipos de mapas de sitio: un mapa de sitio plano y un mapa de sitio profundo.</p>
+            <Heading type="h2" >Mapa de sitio plano</Heading>
             <p>
-                <ul>
-                    <li>Es simple y económico ejecutar sesiones de clasificación de tarjetas.</li>
-                    <li>Rápido para realizar investigaciones y obtener resultados de los usuarios, especialmente si las sesiones se realizan de forma remota.</li>
-                    <li>Proporciona una buena perspectiva sobre los usuarios y cómo esperarían que se organizara la información.</li>
-                </ul>
+                Generalmente tiene cuatro o menos filas verticales. Se utiliza para productos de tamaño pequeño a mediano en los que hay que organizar entre 10 y 100 páginas de información.
             </p>
-            <Heading type="h2" >Desventajas</Heading>
+            <Heading type="h2" >Mapa de sitio profundo</Heading>
             <p>
-                <ul>
-                    <li>Los resultados pueden variar y es posible que no haya un patrón real en los datos.</li>
-                    <li>El análisis de los resultados puede llevar mucho tiempo dependiendo de la complejidad de los datos.</li>
-                    <li>La clasificación de tarjetas no tiene en cuenta las tareas y los objetivos de los usuarios, por lo que si la investigación se utiliza sin tener esto en cuenta, podría terminar con una estructura que el usuario no pueda utilizar para completar sus tareas en el sitio.</li>
-                </ul>
+                el mapa del sitio profundo o detallado es cuando el mapa tiene cinco o más filas verticales. Es mejor usar un mapa del sitio completo si el producto tiene más de 100 a 1000 páginas/contenidos que deben organizarse.
             </p>
-        </section>
-        <Heading type="h1" >Tipos de Card Sorting</Heading>
-        <section>
-            <p>Hay tres técnicas de UX de Card Sorting entre las que puede elegir: abierta, cerrada e híbrida.</p>
-            <Heading type="h2" >Abierta</Heading>
-            <p>A cada participante se le entrega una pila de tarjetas que se completan previamente con temas y luego se les pide que agrupen esas tarjetas de la forma que deseen. Después de eso, el participante debe crear etiquetas para los grupos que eligió. Los participantes no tienen ninguna restricción para nombrar.</p>
-            <p>Este tipo de clasificación es excelente cuando desea diseñar un nuevo sitio web o mejorar el existente. Al analizar los resultados de la clasificación de tarjetas, es fácil ver si la estructura del sitio web que tiene en este momento coincide con la forma en que las personas organizarían la misma información.</p>
             <Reference
                 :image="imageOne"
-                description="Open Card Sort. Fuente: interaction-design.org" />
-            <p>Por ejemplo, al definir cards de la página de convocatorias debes tomar en cuenta lo siguiente:</p>
-            <aside class="tips_grid">
-                <TipCard type="dont">
-                    <ul>
-                        <li>Convocatoria para docentes</li>
-                        <li>Convocatoria para administrativas</li>
-                        <li>Convocatoria 007</li>
-                    </ul>
-                </TipCard>
-                <TipCard type="do">
-                     <ul>
-                        <li>En proceso</li>
-                        <li>Cronogramas</li>
-                        <li>Bases</li>
-                    </ul>
-                </TipCard>
-            </aside>
-            <Heading type="h2" >Cerrada</Heading>
-            <p>Los investigadores crean etiquetas para categorías y les piden a los participantes que clasifiquen las tarjetas en categorías predefinidas. Todo lo que los participantes deben hacer es relacionar el contenido con las categorías existentes. Este tipo de clasificación de tarjetas no revela cómo los usuarios conceptualizan los temas, pero lo ayuda a comprender qué tan bien una estructura de categoría existente admite el contenido.</p>
-            <p>La clasificación de tarjetas cerradas funciona mejor para priorizar y clasificar funciones. Por ejemplo, puede aplicarlo para filtros de búsqueda en la aplicación de comercio electrónico. Los usuarios pueden distribuir todos los filtros de búsqueda que tiene en los grupos 'Obligatorio', 'Opcional' o 'Uso frecuente' a 'Nunca lo uso'.</p>
+                description="Mapas de sitio plano vs profundo. Author: Jennifer Jhang." />
+        </section>
+        <Heading type="h1" >¿Cómo crear el mapa del sitio?</Heading>
+        <section>
+            <p>Un mapa del sitio de UX consta de páginas vinculadas, cada una con un número de referencia y una etiqueta . Los números de referencia lo ayudan a realizar un seguimiento de las páginas, incluso cuando avanza a esquemas, prototipos e iteraciones (Mears, 2013).</p>
             <Reference
                 :image="imageTwo"
-                description="Closed Card Sort. Fuente: interaction-design.org" />
-            <p>Por ejemplo, para categorizar el menú principal de una universidad deberias tomar en cuenta estos ejemplos:</p>
+                description="A single page in a UX sitemap. Author: Jennifer Jhang." />
+            <p>Al crear el mapa del sitio, siempre comience la primera fila con una página significativa: página de inicio; luego aplique estratégicamente las subpáginas necesarias debajo de la primera fila. Todavía es beneficioso hacer una lluvia de ideas con su equipo antes de estructurar el mapa.</p>
+            <Heading type="h2" >Reuniendo el contenido</Heading>
+            <p>
+                <ol>
+                    <li>Escriba las páginas significativas en pegatinas(post-it)</li>
+                    <li>Escriba las piezas de información representativas que son necesarias para el producto final.</li>
+                    <li>Ordenar los contenidos y etiquetarlos según sus características/orígenes.</li>
+                    <li>En función de la clasificación del contenido, decida las páginas secundarias y las subpáginas.</li>
+                </ol>
+            </p>
+            <Heading type="h2" >Creación del mapa del sitio</Heading>
+            <p>
+                <ol>
+                    <li>Coloque las páginas principales o categorias como la fila superior del mapa.</li>
+                    <li>Etiquete cada página en su plan, ordene sus etiquetas y cree la hoja de ruta estructurada.</li>
+                    <li>Coloque estratégicamente las páginas secundarias o subcategorias, agréguelas a las siguientes filas según la importancia del contenido.</li>
+                    <li>Una vez que el sitio esté organizado, discuta el mapa del sitio y su flujo dentro de su equipo. Recorte, agregue o reemplace las piezas de información/páginas si es necesario.</li>
+                    <li>Reorganiza las páginas y ensambla la estructura final del producto en tu mapa del sitio.</li>
+                </ol>
+            </p>
             <aside class="tips_grid">
                 <TipCard type="dont">
-                    <ul>
-                        <li>Oficinas</li>
-                        <li>La universidad</li>
-                        <li>Campus Virtuales</li>
-                    </ul>
+                    <template v-slot:image>
+                        <img :src="imageDontOne">
+                    </template>
                 </TipCard>
                 <TipCard type="do">
-                     <ul>
-                        <li>Areas administrativas</li>
-                        <li>Acerca de nosotros</li>
-                        <li>Aulas virtuales</li>
-                    </ul>
+                    <template v-slot:image>
+                        <img :src="imageDoOne">
+                    </template>
                 </TipCard>
             </aside>
-            <Heading type="h2" >Híbrida</Heading>
-            <p>Como sugiere el nombre, este tipo de clasificación de tarjetas donde los participantes clasifican las tarjetas en categorías predefinidas pero también pueden crear sus propias categorías.</p>
-            <p>La clasificación de tarjeta híbrida funciona mejor cuando los investigadores desean generar ideas para agrupar información y saben que les faltan algunas categorías en su estructura de categorías actual. Pueden obtener información sobre las categorías que faltan, y esta información puede informar las decisiones de diseño.</p>
         </section>
-        <Heading type="h1" >¿Que herramientas usar para hacer Card Sorting?</Heading>
-        <section>
-            <p>Para realizar una ordenación de tarjetas, necesita dos cosas: usuarios reales y tarjetas. </p>
-            <p>Para las tarjetas, puede usar tarjetas físicas reales (pedazos de papel) o una de varias herramientas de software de clasificación de tarjetas en línea como Miro o Optimal Workshop si desea una herramienta mas automatizada. </p>
-        </section>
-        <Heading type="h1" >Reto #5</Heading>
-        <Challenge time="10" :id="5" :tasks="challenge5_tasks">
-           Realizar un Card Sorting cerrado con elementos de la pagina web principal de la UNHEVAL.
+        <Challenge time="1" :id="6" :tasks="challenge6_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #6 </Heading>
+            </template>
+            Construye un mapa del sitio utilizando el resultado del Reto #5 (Card Sorting).
             <template v-slot:tools>
-                <ResourceLink name="Miro" type="tool">
-                    <ResourceCard
-                        title="Miro"
-                        description="Herramienta para organizar ideas"
-                        type="tool"
-                        :src="imageMiro"
-                    />
-                </ResourceLink>
-                <ResourceLink name="Ejemplos" type="download">
-                    <ResourceCard
-                        title="Ejemplos"
-                        description="Herramienta para organizar ideas"
-                        type="download"
-                    />
-                </ResourceLink>
+                <ResourceCard
+                    title="Figma"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageFigma"
+                />
+                <ResourceCard
+                    title="Miro"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageMiro"
+                />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
             </template>
         </Challenge>
         <Heading type="h1" >Evaluación</Heading>

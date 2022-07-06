@@ -1,4 +1,4 @@
-export const LAST_GUIDE_ID = 20;
+export const LAST_GUIDE_ID = 19;
 export const substages = {
     1: 'Empatizar',
     2: 'Definir',
@@ -9,19 +9,19 @@ export const substages = {
 };
 
 export const guides = {
-    '1,2,3,4,5': {
+    '1,2,3,4': {
         start: 1,
-        last: 5,
+        last: 4,
         substage: {
             id: 1,
             name: substages[1]
         },
         stage: 1,
-        pages: 5
+        pages: 4
     },
-    '6,7,8,9,10': {
-        start: 6,
-        last: 10,
+    '5,6,7,8,9': {
+        start: 5,
+        last: 9,
         substage: {
             id: 2,
             name: substages[2]
@@ -29,9 +29,9 @@ export const guides = {
         stage: 1,
         pages: 5
     },
-    '11,12,13,14': {
-        start: 11,
-        last: 14,
+    '10,11,12,13': {
+        start: 10,
+        last: 13,
         substage: {
             id: 3,
             name: substages[3]
@@ -39,9 +39,9 @@ export const guides = {
         stage: 2,
         pages: 4
     },
-    '15,16': {
-        start: 15,
-        last: 16,
+    '14,15': {
+        start: 14,
+        last: 15,
         substage: {
             id: 4,
             name: substages[4]
@@ -49,9 +49,9 @@ export const guides = {
         stage: 2,
         pages: 2
     },
-    '17,18': {
-        start: 17,
-        last: 18,
+    '16,17': {
+        start: 16,
+        last: 17,
         substage: {
             id: 5,
             name: substages[5]
@@ -59,9 +59,9 @@ export const guides = {
         stage: 3,
         pages: 2
     },
-    '19,20': {
-        start: 19,
-        last: 20,
+    '18,19': {
+        start: 18,
+        last: 19,
         substage: {
             id: 6,
             name: substages[6]

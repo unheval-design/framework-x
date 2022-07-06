@@ -30,6 +30,7 @@
     --text_size_sm: 13px;
     --text_line_height: 1.7;
     --title_line_height: 1.4;
+    --subtext_line_height: 1.2;
 
     /* Color styles */
     --accent_color: #FFD66E;
@@ -98,6 +99,7 @@
 .dark {
     --text_line_height: 1.8;
     --title_line_height: 1.5;
+    --subtext_line_height: 1.25;
 
     --accent_color: #EECE7E;
     --primary_color: #3790ED;

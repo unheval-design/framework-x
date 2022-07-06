@@ -22,6 +22,8 @@ const slot = useSlots();
 </template>
 
 <style lang="scss">
+@import '@/assets/css/breakpoints';
+
 blockquote {
     border-radius: var(--radius);
     background-color: var(--neutral_color_95);
@@ -47,6 +49,13 @@ blockquote {
     }
     &.error {
         background-color: var(--error_color_20);
+    }
+}
+
+@include screen('xs') {
+    blockquote {
+        flex-direction: column;
+        gap: var(--gap_sm);
     }
 }
 </style>

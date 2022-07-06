@@ -95,22 +95,19 @@ watch(timeLeftFormatted, () => {
     <div class="Challenge" :class="isPlaying ? 'isPlaying' : ''">
         <IconTools />
         <div class="challenge_content">
+            <slot name="title"></slot>
             <p>
                 <slot></slot>
             </p>
             <aside class="challenge_todo">
-                <b>Tareas</b>
                 <ul>
                     <li v-for="(task, index) in tasks" :key="index">
                         {{ task }}
                     </li>
                 </ul>
             </aside>
-            <aside>
-                <b>Herramientas</b>
-                <div class="chip_grid">
-                    <slot name="tools" />
-                </div>
+            <aside class="challenge_tools">
+                <slot name="tools" />
             </aside>
             <div class="controls">
                 <Button @click="play()" :class="isPlaying ? 'error' : ''">
@@ -141,7 +138,7 @@ watch(timeLeftFormatted, () => {
     .challenge_content {
         display: flex;
         flex-direction: column;
-        gap: var(--gap);
+        gap: var(--gap_sm);
         flex: 1;
         p {
             line-height: var(--title_line_height);
@@ -170,9 +167,15 @@ watch(timeLeftFormatted, () => {
             ul {
                 li {
                     font-size: var(--text_size_l);
-                    line-height: var(--title_line_height);
+                    line-height: var(--text_line_height);
                 }
             }
+        }
+        .challenge_tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-gap: var(--gap_sm);
+            margin: 6px 0;
         }
     }
     & > svg {
@@ -185,11 +188,16 @@ watch(timeLeftFormatted, () => {
 
 @include screen('xs') {
     .Challenge {
+        flex-direction: column;
+        gap: var(--gap_sm);
         .challenge_content {
             .controls {
                 .Button {
                     width: 100%;
                 }
+            }
+            .challenge_tools {
+                grid-template-columns: 1fr;
             }
         }
     }

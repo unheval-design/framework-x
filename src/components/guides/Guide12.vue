@@ -1,270 +1,231 @@
 <script setup>
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
-import TestCard from '@/components/TestCard.vue';
+import Evaluation from '@/components/Evaluation.vue';
 import Reference from '@/components/Reference.vue';
 import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import Blockquote from '@/components/Blockquote.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
-import imageOne from '@/assets/images/guide-12/image_1.png';
-import imageMiro from '@/assets/images/brands/miro.png';
-import imageMural from '@/assets/images/brands/mural.png';
-import imageMeet from '@/assets/images/brands/meet.png';
-import imageZoom from '@/assets/images/brands/zoom.png';
+import imageFigma from '@/assets/images/brands/figma.png';
+import Challenge from '@/components/Challenge.vue';
+import TipCard from '@/components/TipCard.vue';
+import imageDoOne from '@/assets/images/guide-12/image_do_1.png'
+import imageDontOne from '@/assets/images/guide-12/image_dont_1.png'
+import imageDoTwo from '@/assets/images/guide-12/image_do_2.png'
+import imageDontTwo from '@/assets/images/guide-12/image_dont_2.png'
+import imageDoThree from '@/assets/images/guide-12/image_do_3.png'
+import imageDontThree from '@/assets/images/guide-12/image_dont_3.png'
+import imageDoFour from '@/assets/images/guide-12/image_do_4.png'
+import imageDontFour from '@/assets/images/guide-12/image_dont_4.png'
+import imageDoFive from '@/assets/images/guide-12/image_do_5.png'
+import imageDontFive from '@/assets/images/guide-12/image_dont_5.png'
 
-const question1 = {
-    question:
-        '¿Para qué hacemos una lluvia de ideas?',
-    answer: 1,
-    alternatives: [
-        'Generar mayor participación de nuestro equipo de trabajo.',
-        'Conocer diferentes formas de pensamiento de nuestro equipo.',
-        'Generar ideas innovadoras que resuelvan problemas.'
-    ]
-};
+const questions = [
+    {
+        id: 1,
+        question:
+            '¿Para qué hacemos mockups?',
+        alternatives: [
+            { answer: true, description: 'Para saber la estructura y posición de los elementos en la vista.' },
+            { answer: false, description: 'Para ver como interactuan las diferentes vistas en conjunto.' },
+            { answer: false, description: 'Para representar nuestro producto con alto grado de detalles.' }
+        ]
+    },
+    {
+        id: 2,
+        question: '¿En qué se diferencia el mockup del wireframe?',
+        alternatives: [
+            { answer: true, description: 'El mockup tiene interacciones entre vistas y el wireframe no.' },
+            { answer: false, description: 'El mockup representa visualmente al producto, mientas que el wireframe solo muestra como es la estructura de dicho producto.' },
+            { answer: false, description: 'El mockup representa el producto final mientras que el wireframe es una estructura no terminada.' }
+        ]
+    }
+];
 
-const question2 = {
-    question: '¿En qué técnica partimos por definir malas ideas?',
-    answer: 3,
-    alternatives: ['Mapa Mental.', 'Lluvia de ideas inverso.', 'En ninguna de las técnicas.']
-};
+const challenge12_tasks = [
+    'Diseñar wireframe',
+    'Crear moodboard',
+    'Hacer lluvia de ideas',
+    'Diseñar mockup'
+];
 </script>
 
 <template>
     <GuideTitle>
-        Lluvia de Ideas (Brainstorming)
+        Mockup
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1">Definición</Heading>
         <section>
             <p>
-                La lluvia de ideas es un método que utilizan los equipos de
-                diseño para generar ideas para resolver problemas de diseño
-                claramente definidos. En condiciones controladas y un entorno de
-                pensamiento libre, los equipos abordan un problema por medios
-                tales como preguntas de "¿Cómo podríamos?". Producen una amplia
-                gama de ideas y establecen vínculos entre ellas para encontrar
-                posibles soluciones.
+                El diseño del mockup es una parte fundamental del proceso de diseño. Son una representación visual o una captura de pantalla de cómo se verá el sitio web o el producto final que incluye jerarquía, tipografía, íconos y otros elementos de la interfaz de usuario.
             </p>
             <Blockquote>
-                La lluvia de ideas alienta a las personas a generar pensamientos
-                e ideas que, al principio, pueden parecer un poco locas. Algunas
-                de estas ideas se pueden convertir en soluciones originales y
-                creativas para un problema.
+                Es la primera vez que los diseñadores ven cómo sus ideas cobran vida con color, tipografía y contenido.
             </Blockquote>
-        </section>
-        <Heading type="h1">¿Cuándo hacer lluvia de ideas?</Heading>
-        <section>
             <p>
-                Por lo general lo usarás en la fase de Ideación. Es en ese
-                momento cuando debes generar el mayor número de ideas posibles.
-                Y, posteriormente, elegir aquellas que el grupo considere que
-                son más adecuadas para dar respuesta y generar propuestas
-                conceptuales de diseño.
+                Un mockup lo ayuda a tomar decisiones finales con respecto a los esquemas de color, el estilo visual y la tipografía de un producto. Con un mockup, puede permitirse experimentar con el lado visual del producto para ver qué se ve mejor, puede solicitar comentarios a sus usuarios potenciales y realizar los cambios necesarios de inmediato. Esto le ahorrará mucho más tiempo que regresar y hacer ajustes en la interfaz de usuario después de haber lanzado el producto.
             </p>
         </section>
-        <Heading type="h1">Principales reglas al hacer lluvia de ideas</Heading>
+        <Heading type="h1">¿Para qué sirven los mockups?</Heading>
         <section>
             <p>
-                <strong>Suspender el juicio</strong>
+                Son una parte crucial del proceso de pensamiento de diseño porque responden preguntas visuales importantes (como el diseño, el color y la jerarquía) y permiten a los diseñadores comenzar con la creación de prototipos de alta fidelidad.
             </p>
             <p>
-                Durante el proceso de generación de ideas, no hay que realizar ninguna valoración o crítica sobre estas. Solo se apuntan las ideas, la evaluación se realiza después.
+                Los desarrolladores pueden usarlo como referencia de especificación para analizar el tamaño, es espaciado, la cuadricula, la tipografía, etc.
             </p>
             <p>
-                <strong>Pensar libremente</strong>
-            </p>
-            <p>
-                Las ideas más prácticas muchas veces nacen de otras ideas que, en su mayoría, son inviables. Por ello, es muy importante para una sesión de lluvia de ideas efectiva, que los usuarios piensen libremente y tengan ideas imposibles.
-            </p>
-            <p>
-                <strong>La cantidad es importante</strong>
-            </p>
-            <p>
-                Al hacer lluvia de ideas se busca generar una gran cantidad de ideas, para luego escoger la mejor de todas ellas.
-            </p>
-            <p>
-                <strong>Efecto multiplicador</strong>
-            </p>
-            <p>
-                Los participantes en las lluvias de ideas, no solo contribuyen con sus pensamientos, sino que también puede sugerir mejoras o combinar las ideas que tienen los demás. Así, las ideas que tienen unos usuarios sirven de estímulo para los otros participantes.
-            </p>
-        </section>
-        <Heading type="h1">¿Cómo hacer una lluvia de ideas?</Heading>
-        <section>
-            <Heading type="h2">Paso 1: Formar un equipo de trabajo</Heading>
-            <p>
-                Como es una técnica grupal, es necesario formar un grupo de trabajo. La recomendación es que no sea superior a 10 personas. Los roles que pueden tener son las siguientes:
+                Los mockups también proporcionan:
             </p>
             <p>
                 <ul>
-                    <li><strong>Moderador</strong>: Es la persona encargada de guiar la sesión, resuleve dudas, modera y dinamiza para que sea efectiva y cumpla el objetivo marcado.</li>
-                    <li><strong>Secretario</strong>: Es la persona encargada de solventar cualquier problema o necesidad que pueda darse en la sesión. Además, es la persona que apunta todas las ideas que van surgiendo durante la sesión de Brainstorming. Según el número de participantes que haya en la sesión, el secretario, participa o no en la sesión.</li>
-                    <li><strong>Participantes</strong>: Son todas aquellas personas que intervienen en el brainstorming para encontrar y proponer soluciones al problema propuesto.</li>
+                    <li><strong>Comentarios significativos de las partes interesadas.</strong> Gracias a la mayor fidelidad se puede recibir feedback de todas las partes interesadas.</li>
+                    <li><strong>Perspectiva realista.</strong> Revelan problemas que podrían no haber sido obvios durante la estructuración de wireframes, como consideraciones de accesibilidad, opciones de color deficientes o problemas de diseño.</li>
+                    <li><strong>Flexibilidad.</strong> Es más fácil realizar cambios en un mockup de la interfaz de usuario que editar el código.</li>
                 </ul>
             </p>
-            <Heading type="h2">Paso 2: Definir el lugar y tiempo para la sesión</Heading>
-            <p>
-                <strong>El lugar</strong>
-            </p>
-            <p>
-                Antes de empezar con la lluvia de ideas es importante contar con un espacio adecuado para ello. Lo mejor es hacerlo en un ambiente relajado y no contaminado.
-            </p>
-            <p>
-                <strong>El tiempo y el momento</strong>
-            </p>
-            <p>
-                Es recomendable que la duración de la sesión no sea superior a 1 hora, aunque no hay un límite establecido y lo mejor es ser flexible.
-            </p>
-            <p>
-                Tan importante como el tiempo es el momento. Hay personas que prefieren aprovechar los primeros momentos del día porque se encuentran más creativas, otras prefieren desconectar o romper la rutina con otras actividades.
-            </p>
-            <Heading type="h2">Paso 3: Definir el problema</Heading>
-            <p>
-                Antes de empezar, es fundamental aclarar cuál es el tema a tratar para evitar desviarse del camino y generar ideas orientadas a la resolución del problema. Se podría empezar formulando preguntas como estas:
-            </p>
-            <p>
-                <ul>
-                    <li>¿Cómo podríamos mejorar la calidad de…?</li>
-                    <li>¿Cómo podríamos evitar que…?</li>
-                    <li>¿Qué podríamos hacer para…?</li>
-                </ul>
-            </p>
-            <Blockquote>Una técnica que podria usarse en este paso podria ser la Técnica de los 5 Whys. Consiste en preguntar 5 veces seguidas el por qué de un situación, acción o cosa con el fin de entender en profundidad la causa o motivación última del proceso.</Blockquote>
-            <Heading type="h2">Paso 4: Desarrollo de la sesión de lluvia de ideas</Heading>
-            <p>
-                En una sesión de lluvia de ideas se trata de conseguir el mayor número posible de ideas, sin importar la calidad (al principio).
-            </p>
-            <p>
-                También podrias usar una de las
-                <ResourceLink type="download">
-                    técnicas de brainstorming
-                    <template v-slot:popup>
-                        <ResourceCard
-                            type="download"
-                            title="técnicas_brainstorming.pdf"
-                            description="Formato para lluvia de ideas"
-                        />
-                    </template>
-                </ResourceLink>,
-                la que mejor se adapte al equipo y a los objetivos que se desean conseguir.
-            </p>
-            <Reference
-                :image="imageOne"
-                description="Una sesión de brainstorming. Fuente: interaction-design.org"
-            />
-            <Heading type="h2">Paso 5: Seleccionar las mejores ideas.</Heading>
-            <p>
-                Es el momento de votar por las ideas que mejor solucionen el problema. Lo mejor es empezar valorando las ideas de forma independiente para después seleccionar las mejor valoradas. Puedes utilizar una escala del 0 al 5 para valorar cada idea.
-            </p>
-            <p>
-                Es recomendable terminar con las 2 o 3 ideas que mejor ayuden a solucionar el problema.
-            </p>
-            <Heading type="h2">Paso 6: Tomar decisiones.</Heading>
-            <p>
-                Llega el momento de la verdad y hay que decidir cuál es la solución que mejor se adapta a las necesidades que quieres cubrir.
-            </p>
         </section>
-        <Heading type="h1">Técnicas para hacer lluvia de ideas</Heading>
+        <Heading type="h1">Mockup vs Wireframe</Heading>
         <section>
-            <Heading type="h2">Técnica de Mapa Mental</Heading>
-            <p>✏️ <strong>Materiales</strong>: Lápiz o lapicero y papel.</p>
-            <p>⏰ <strong>Duración</strong>: 20 minutos.</p>
             <p>
-                Pasos:
+                Una mockup es una forma visual de representar un producto, mientras que un wireframe representa principalmente la estructura de un producto, un mockup muestra cómo se verá el producto. Pero aún así, al igual que en los wireframes, estos no son interactivos. A diferencia de un wireframe, un mockup es una muestra de diseño de fidelidad media o alta.
             </p>
-            <p>
-                <ol>
-                    <li>Definir el problema a los integrantes del grupo.</li>
-                    <li>Escribir el problema en el centro de un folio y dibujar ramas a partir del problema.</li>
-                    <li>Por turnos, aportar ideas o pensamientos para solucionar el problema.</li>
-                    <li>Anotar una idea por rama, se pueden añadir aportaciones que surjan sobre las ideas para mejorarlas.</li>
-                    <li>Reflexionar y valorar cada idea para intentar llegar a un consenso sobre las soluciones más adecuadas. Estas pueden ser el resultado de la combinación de varias ideas o del perfeccionamiento de una de ellas.</li>
-                </ol>
-            </p>
-            <Heading type="h2">Lluvia de ideas Inverso</Heading>
-            <p>✏️ <strong>Materiales</strong>: Lápiz o lapicero y papel.</p>
-            <p>⏰ <strong>Duración</strong>: 20 minutos.</p>
-            <p>
-                Pasos:
-            </p>
-            <p>
-                <ol>
-                    <li>Generar ideas nuevas dando la vuelta totalmente al objetivo, es decir, en vez de buscar buenas ideas para solucionar el problema, se propondrán malas ideas para empeorar la situación. De esta forma es más sencillo ver qué es lo que no funciona.</li>
-                    <li>Anotar todas las malas ideas (da igual lo locas que parezcan).</li>
-                    <li>Pensar en soluciones para esas ideas opuestas. Es decir, preguntar qué se puede hacer para mejorar esas malas ideas.</li>
-                    <li>Anotar las soluciones para esas malas ideas.</li>
-                    <li>Reflexionar sobre la sesión para decidir el camino que puede llevar a resolver realmente el problema.</li>
-                </ol>
-            </p>
-            <Blockquote>Con esta técnica conseguirás, partiendo de malas ideas, encontrar las debilidades para después poder generar ideas útiles.</Blockquote>
         </section>
-        <Heading type="h1"
-            >¿Qué herramientas usar para hacer lluvia de ideas?</Heading
-        >
+        <Heading type="h1">Elementos de un mockup</Heading>
         <section>
-            <p>La lluvia de ideas ha sido siempre una técnica presencial, por lo que los herramientas son lapices, papeles y pizarras principalmente. Sin embargo, cuando las circunstancias lo exigen, también puede llevarse a cabo de forma remota.</p>
-            <p>Son varias las plataformas colaborativas que permiten a los participantes trabajar de forma simultánea. Las dos más conocidas son 
-                <ResourceLink type="tool">
-                    Mural
-                    <template v-slot:popup>
-                        <ResourceCard
-                            title="Mural"
-                            description="Herramienta para organizar notas"
-                            type="tool"
-                            :src="imageMural"
-                            />
-                    </template>
-                </ResourceLink>
-                y
-                <ResourceLink type="tool">
-                    Miro
-                    <template v-slot:popup>
-                        <ResourceCard
-                            title="Miro"
-                            description="Herramienta para organizar notas"
-                            type="tool"
-                            :src="imageMiro"
-                            />
-                    </template>
-                </ResourceLink>.
+            <Heading type="h2">Contenido</Heading>
+            <p>
+                Un mockup reemplaza los cuadros y las líneas de un wireframe con contenido real, como imágenes, componentes de la interfaz de usuario y texto. Este contenido suele dictar el diseño, ya que los diseñadores deciden cómo priorizar y ajustar todo dentro de las limitaciones de la pantalla.
             </p>
-            <p>Además, es recomendable que mantengas abierta una vía de comunicación a través de plataformas de reunión, como
-                <ResourceLink type="tool">
-                    Meet
-                    <template v-slot:popup>
-                        <ResourceCard
-                            title="Meet"
-                            description="Herramienta para videollamadas"
-                            type="tool"
-                            :src="imageMeet"
-                            />
+            <Blockquote>Es común que los diseñadores usen imágenes y texto ficticios para la primera iteración de una maqueta, que reemplazan una vez que comienzan a crear prototipos y probar.</Blockquote>
+            <Heading type="h2">Color y contraste</Heading>
+            <p>
+                El color juega un papel crucial en la marca, la agrupación de contenido, la jerarquía y la accesibilidad, mientras que el contraste es vital para la legibilidad, la usabilidad y la accesibilidad.
+            </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontOne">
                     </template>
-                </ResourceLink>
-                o
-                <ResourceLink type="tool">
-                    Zoom
-                    <template v-slot:popup>
-                        <ResourceCard
-                            title="Zoom"
-                            description="Herramienta para videollamadas"
-                            type="tool"
-                            :src="imageZoom"
-                            />
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoOne">
                     </template>
-                </ResourceLink>.
-                De esta forma, facilitador y participantes se pueden comunicar de forma fluida.
+                </TipCard>
+            </aside>
+            <Heading type="h2">Tipografía</Heading>
+            <p>
+                Las mockups le permiten explorar el tamaño de su tipografía, la fuente, el estilo y el espaciado, sin mencionar el uso estructural para mantener la coherencia, como cómo estilizar los subtítulos.
+            </p>
+            <p>
+                Los mockups son la primera oportunidad para que los diseñadores visualicen las opciones de fuente en contexto con el resto de la interfaz de usuario.
+            </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontTwo">
+                    </template>
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoTwo">
+                    </template>
+                </TipCard>
+            </aside>
+            <Heading type="h2">Espaciado</Heading>
+            <p>
+                El espaciado y el espacio en blanco son poderosas características de diseño. El espacio mejora la legibilidad y ayuda a definir la jerarquía visual. Los diseñadores a menudo usan espacios en blanco para llamar la atención sobre elementos importantes de la interfaz de usuario o una imagen del producto.
+            </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontThree">
+                    </template>
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoThree">
+                    </template>
+                </TipCard>
+            </aside>
+            <Heading type="h2">Iconografía</Heading>
+            <p>
+                A veces, los íconos parecen ser la parte "más fácil" del diseño. Algunos diseñadores incluso los ven como un elemento decorativo “extra”, cuando en realidad también son parte fundamental de las interfaces modernas. Por eso es tan importante elegir el "símbolo" correcto que comunique claramente el significado del elemento y mantener un estilo uniforme para los íconos en toda la aplicación.
+            </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontFour">
+                    </template>
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoFour">
+                    </template>
+                </TipCard>
+            </aside>
+            <Heading type="h2">Alineación</Heading>
+            <p>
+                La alineación es una parte pequeña pero importante de la interfaz. La alineación afecta la forma en que nuestro cerebro escanea el contenido en una pantalla. Una alineación de texto adecuada es uno de los indicadores más distintivos de un producto digital diseñado profesionalmente.
+            </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontFive">
+                    </template>
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoFive">
+                    </template>
+                </TipCard>
+            </aside>
+        </section>
+        <Heading type="h1">¿Qué herramientas usar para crear mockups?</Heading>
+        <section>
+            <p>
+                A diferencia de un wireframe, no puede dibujar un mockup. Necesita usar una herramienta de mockup. 
+            </p>
+            <Heading type="h2">Software de mockup</Heading>
+            <p>
+                Las herramientas de diseño de experiencia de usuario especializadas, como Figma, Adobe XD, etc. Que brindan a los diseñadores las funciones para crear mockups rápidamente, especialmente si tienen una biblioteca de componentes o un sistema de diseño.
+            </p>
+            <Heading type="h2">Software de diseño grafico</Heading>
+            <p>
+                Algunos diseñadores aún prefieren crear maquetas utilizando software de diseño gráfico, como Photoshop o Illustrator . La desventaja con el software de diseño gráfico es que no puede agregar animaciones o interacciones, por lo que debe recrear las mockups en otra aplicación para comenzar a crear prototipos.
+            </p>
+            <Heading type="h2">Código</Heading>
+            <p>
+                Algunos diseñadores técnicamente competentes construyen mockups utilizando HTML, CSS y Javascript o también aplicaciones con tecnologias “drag and drop” que permiten construir sin saber de codigo como Wordpress o Wix . La desventaja del código es que lleva mucho tiempo compilarlo, corregir errores y realizar cambios.
             </p>
         </section>
+        <Challenge time="1" :id="12" :tasks="challenge12_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #12 </Heading>
+            </template>
+            Crea un Mockup rediseñando de la pagina principal de la UNHEVAL.
+            <template v-slot:tools>
+                <ResourceCard
+                    title="Figma"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageFigma"
+                />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
+            </template>
+        </Challenge>
         <Heading type="h1">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
-            <aside class="tests_grid">
-                <TestCard :question="question1" />
-                <TestCard :question="question2" />
-            </aside>
+            <Evaluation :questions="questions" />
         </section>
     </GuideBody>
 </template>

@@ -29,28 +29,28 @@ const onClick = () => {
                     <strong>Empatizar</strong>, con las siguientes guías toca
                     <strong>Definir</strong> tu solución.
                 </p>
-                <p v-if="guideId == 10">
+                <p v-if="guideId == 9">
                     Has completado de la subetapa
                     <strong>Definir</strong>, con las siguientes guías toca
                     <strong>Idear</strong> tu solución.
                 </p>
-                <p v-if="guideId == 14">
+                <p v-if="guideId == 13">
                     Has completado de la subetapa
                     <strong>Idear</strong>, con las siguientes guías toca
                     <strong>Prototipar I</strong> tu solución.
                 </p>
-                <p v-if="guideId == 16">
+                <p v-if="guideId == 15">
                     Has completado de la subetapa
                     <strong>Prototipar I</strong>, en las siguientes guías
                     continua <strong>Prototipar II</strong> para una solución
                     mas real.
                 </p>
-                <p v-if="guideId == 18">
+                <p v-if="guideId == 17">
                     Has completado de la subetapa
                     <strong>Prototipar II</strong>, con las siguientes guías
                     toca <strong>Probar</strong> tu solución.
                 </p>
-                <p v-if="guideId == 20">
+                <p v-if="guideId == 19">
                     Has completado todas las subetapas y guias de la creación de
                     interfaces.
                 </p></template

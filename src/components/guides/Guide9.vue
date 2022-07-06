@@ -3,230 +3,140 @@ import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
 import Evaluation from '@/components/Evaluation.vue';
 import Reference from '@/components/Reference.vue';
+import imageDoOne from '@/assets/images/guide-9/image_do_1.png'
+import imageDontOne from '@/assets/images/guide-9/image_dont_1.png'
 import imageOne from '@/assets/images/guide-9/image_1.png'
 import imageTwo from '@/assets/images/guide-9/image_2.png'
 import imageThree from '@/assets/images/guide-9/image_3.png'
-import imageFigma from '@/assets/images/brands/figma.png';
 import Blockquote from '@/components/Blockquote.vue';
 import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
-import Challenge from '@/components/Challenge.vue';
 import TipCard from '@/components/TipCard.vue';
-import imageDoOne from '@/assets/images/guide-9/image_do_1.png';
-import imageDontOne from '@/assets/images/guide-9/image_dont_1.png';
-import imageDoTwo from '@/assets/images/guide-9/image_do_2.png';
-import imageDontTwo from '@/assets/images/guide-9/image_dont_2.png';
+import Challenge from '@/components/Challenge.vue';
+import imageMiro from '@/assets/images/brands/miro.png';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
     {
         id: 1,
-        question: '¿Por qué hacemos Wireframes?',
+        question: '¿Por qué los flujos de usuario ayudan a hacer una interfaz intuitiva para el usuario?',
         alternatives: [
-            { answer: true, description: 'Ayudan a crear flujos o rutas para nuestros usuarios.'},
-            { answer: false, description: 'Ayudan a comunicar la estructura de páginas individuales y como se conectan esas páginas.'},
-            { answer: false, description: 'Ayudan a visualizar el producto para que el equipo de desarrollo empiece a trabajar en paralelo.' }
+            { answer: true, description: 'Por que esta validado por los mismos usuarios para ser facil y rapido de navegar.'},
+            { answer: false, description: 'Por que fue diseñado por profesionales UX.'},
+            { answer: false, description: 'Por que estandarizan la forma en que cualquier usuario navega en una interfaz.'}
         ]
     },
     {
         id: 2,
-        question: '¿Cuando hariamos wireframes dibujando a mano?',
+        question: 'Si deseo representar una tarea que no presenta complejidad de escenarios o rutas, podria usar:',
         alternatives: [
-            { answer: true, description: 'Cuando queremos crear e iterar rapidamente.'},
-            { answer: false, description: 'Cuando trabajamos en un producto pequeño.'},
-            { answer: false, description: 'Cuando ya tenemos la idea clara y no necesitamos wireframes con muchos detalles e iteracciones.'}
+            { answer: true, description: 'Flujo de tareas.'},
+            { answer: false, description: 'Wireflows.'},
+            { answer: false, description: 'Flujo de usuario.'}
         ]
     }
 ]);
 
-
-const challenge8_tasks = [
-    'Realizar un wireframe a mano',
-    'Realizar un wireframe digital'
+const challenge9_tasks = [
+    'Hacer el flujo de usuario de tipo “flujo de tarea”',
+    'Elaborar el flujo de usuario de tipo “Wireflows” utilizando los wireframes del Reto #8'
 ];
 </script>
 <template>
     <GuideTitle>
-        Wireframe
+        Flujo de Usuario
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1" >Definición</Heading>
         <section>
             <p>
-                Un wireframe es una representación estática y de baja fidelidad de las diferentes pantallas y páginas que forman un producto. Los wireframes usan formas simples para crear representaciones visuales de diseños de página. Se utilizan para comunicar la estructura de páginas individuales (cómo funcionan juntas las piezas de la página y dónde estará el contenido) y cómo se conectan esas páginas (cómo funcionará la interfaz desde la perspectiva del usuario).
+                Un flujo de usuario es un diagrama que muestra de un vistazo la ruta que tomará su usuario a través de su aplicación o sitio web para lograr un objetivo determinado. Puede crear flujos de usuarios en cualquier etapa de la fase de diseño y esto ayudará a determinar la arquitectura de la información.
             </p>
-        </section>
-        <Heading type="h1" >Propósitos de un Wireframe</Heading>
-        <section>
             <p>
-               Los wireframes reemplazan la naturaleza abstracta del mapa del sitio, que suele ser el primer paso en el desarrollo del sitio, con algo más tangible y comprensible. Hay varios propósitos interrelacionados para los wireframes:
+                Aquí hay algunas preguntas básicas que debe tener en cuenta para crear un flujo de usuarios sólido:
             </p>
             <p>
                 <ul>
-                    <li>
-                        <strong>Asegurarse de que el sitio o la aplicación se construya de acuerdo con los objetivos.</strong>
-                        <br>
-                        Ver las características claramente con una influencia creativa mínima permite a las partes interesadas centrarse en otros aspectos del proyecto. Wireframing establece expectativas sobre cómo se implementarán las funciones al mostrar cómo funcionarán, dónde se ubicarán y cuánto beneficio brindarán.
-                    </li>
-                    <li>
-                        <strong>Centrándose en la usabilidad.</strong>
-                        <br>
-                        Wireframing proporciona una mirada objetiva a los nombres de los enlaces, las rutas de conversión, la facilidad de uso, la navegación y la ubicación de las funciones. Los wireframes lo ayudan a identificar fallas en la arquitectura o las características del sitio y le muestran qué tan bien fluye desde la perspectiva del usuario.
-                    </li>
-                    <li>
-                        <strong>Capacidad de crecimiento de contenido.</strong>
-                        <br>
-                        Si sabe que su sitio crecerá en un futuro cercano, su sitio web debe poder adaptarse a ese crecimiento con un impacto mínimo en la arquitectura, la usabilidad y el diseño del sitio. El wireframing puede revelar estas oportunidades importantes para el crecimiento del contenido y cómo encajarlas.
-                    </li>
-                    <li>
-                        <strong>Retroalimentación e iteración sin dolor.</strong>
-                        <br>
-                        En lugar de fusionar la funcionalidad completa, el diseño y los elementos creativos en un solo paso, los wireframes garantizan que estas consideraciones se tomen por separado. Esto permite que las partes interesadas proporcionen comentarios mucho antes en el proceso. La creación de wireframes con software hace que el proceso iterativo inherente al diseño web sea mucho menos complicado.
-                    </li>
+                    <li>¿Qué está tratando de lograr el usuario?</li>
+                    <li>¿Qué es importante para el usuario y qué le dará confianza para continuar?</li>
+                    <li>¿Qué información adicional necesitará el usuario para realizar la tarea?</li>
+                    <li>¿Cuáles son las dudas o barreras del usuario para realizar la tarea?</li>
                 </ul>
             </p>
         </section>
-        <Heading type="h1" >¿Cuándo deberías crear un wireframe?</Heading>
+        <Heading type="h1" >¿Por qué usamos flujos de usuario?</Heading>
         <section>
-            <p>
-                Los diseñadores suelen crear esquemas al principio del proceso de diseño, antes de que el equipo empiece a trabajar en los detalles visuales.
-            </p>
-            <p>
-                En la etapa de wireframing, es mucho más fácil hacer grandes cambios, dado que los wireframes son relativamente rápidos y económicos de producir, los diseñadores pueden experimentar agregando o eliminando objetos, moviendo contenido y objetos, y agrupando elementos.
-            </p>
-            <Blockquote>
-                Hacer wireframes en la etapa de definir, antes de que se escriba cualquier código y antes de que se finalice el diseño visual, le ahorrará mucho tiempo y un doloroso trabajo de ajuste posterior.
-            </Blockquote>
+            <p>Estudiar el flujo de usuarios de un sitio web o una aplicación puede resultar útil, ya sea que esté diseñando un producto nuevo o renovando uno antiguo. Son muy útiles si necesita:</p>
+            <Heading type="h2" >Crear una interfaz intuitiva</Heading>
+            <p>Una flujo que pueda estar validado por los mismos usuarios aumentara la probabilidad de uso o consumo del servicio. Otro beneficio es mejorar la facilidad de movimiento a través de su plataforma, asegurándose de que el tiempo del usuario no se desperdicie buscando qué hacer a continuación. Los flujos de usuarios representan estos posibles patrones de una manera que facilita a los diseñadores evaluar la eficiencia de la interfaz que están creando.</p>
+            <Heading type="h2" >Evaluar las interfaces existentes</Heading>
+            <p>Para los productos que ya están en uso, los diagramas de flujo de usuarios ayudan a determinar qué funciona, qué no y qué áreas necesitan mejoras. Ayuda a identificar por qué los usuarios pueden estar estancados en un punto determinado y qué puede hacer para solucionarlo. ¿Fluye una pantalla en la siguiente? ¿Tiene sentido el patrón de las pantallas? Mapear el movimiento dentro de una interfaz en forma de modelo le ayuda a ver qué opciones tiene el usuario en cada página y si las rutas disponibles ayudan al usuario a realizar una tarea de forma innata y sin perder tiempo.</p>
+            <Heading type="h2" >Presentar su producto a clientes o colegas</Heading>
+            <p>Los flujos de usuarios también sirven para comunicar fácilmente el funcionamiento del producto a las partes interesadas y brindan una vista general de cómo se pretende que la interfaz que ha creado funcione de la forma más eficiente.</p>
+            <p>Ayudan a su equipo de diseño a visualizar cómo se moverán los usuarios a través del producto lo que permite un ambiente de trabajo más productivo y gratificante.</p>
         </section>
-        <Heading type="h1" >Tipos de Wireframe</Heading>
+        <Heading type="h1" >¿Cuándo hacer los flujos de usuario?</Heading>
         <section>
-            <p>
-                Hay cuatro tipos diferentes de wireframes que van desde el tipo más simple (en blanco y negro o plano) hasta el más complejo (casi simulando lo real):
-            </p>
-            <Heading type="h2" >Wireframes básicos</Heading>
-            <p>
-                También conocidos como representaciones de baja fidelidad, estos son esquemas de página muy simples, generalmente en blanco y negro.
-            </p>
+            <p>Los flujos de usuario se sintetizan temprano, durante las etapas de planificación de su diseño, después de que se haya realizado la investigación del usuario. Los diagramas de flujo también se pueden hacer para las interfaces existentes para mejorar la experiencia del usuario o aclarar cualquier problema que los usuarios tengan con la interfaz.</p>
+            <p>Una vez que haya recopilado sus datos de las pruebas de usuario, los flujos de usuario ayudan a determinar cuántas pantallas se necesitan, en qué orden deben aparecer y qué componentes deben estar presentes.</p>       
+            <Blockquote>Presentar un diagrama de flujo detallado puede ayudar a validar sus decisiones de diseño a sus colegas. Sin embargo, los diseños se revisan constantemente y los flujos de usuarios pueden revisarse y editarse si la investigación adicional lo considera necesario.</Blockquote>
+        </section>
+        <Heading type="h1" >Tipos de diagramas de Flujo de Usuario</Heading>
+        <section>
+            <p>Los flujos de UX se pueden usar para todo tipo de interfaz y diseño web, pero ciertos tipos de diagramas de flujo son más valiosos que otros según lo que estés creando. Aquí describimos algunas de las variaciones de flujo de usuario y cuándo usarlas.</p> 
+            <Heading type="h2" >Flujos de Tareas</Heading>
+            <p>Se centran en cómo los usuarios viajan a través de la plataforma mientras realizan una tarea específica. Por lo general, muestran solo una ruta y no incluyen múltiples ramas o rutas como lo haría un flujo de usuario tradicional. Estos se utilizan mejor cuando la tarea que se analiza se realiza de manera similar por todos los usuarios.</p>
             <aside class="tips_grid">
                 <TipCard type="dont">
                     <template v-slot:image>
                         <img :src="imageDontOne">
                     </template>
-                    Inviertir demasiado tiempo en la creación de wireframes que pueden ser descartados después de la revisión porque no cuentan con la aprobación del equipo.
+                    Los flujos de tareas deben tener un solo punto de entrada al igual que un punto de salida, además no pueden haber flujos sueltos, que no llegen al punto de salida.
                 </TipCard>
                 <TipCard type="do">
                     <template v-slot:image>
                         <img :src="imageDoOne">
                     </template>
-                    Wireframes simples y directos en lugar de los que parecen pantallas o páginas reales. Se agregaran más detalles más adelante cuando apruebe.
+                    Los usuarios compartirán un punto de partida común y no tendrán variabilidad en la forma en que se lleva a cabo la tarea.
                 </TipCard>
             </aside>
-            <Heading type="h2" >Wireframes anotados</Heading>
-            <p>Estos agregan una amplia gama de detalles a un esquema básico. Las anotaciones son notas breves, generalmente en el costado o en la parte inferior de un wireframe, que describen cada elemento del wireframe, generalmente separados por áreas de contenido y funcionalidad, y muestran (brevemente) el motivo y el propósito de cada elemento.</p>
-            <Heading type="h2" >Wireframes de flujo de usuario</Heading>
-            <p>Cuando la anotación no es suficiente para mostrar cómo un usuario de sitio o aplicación se moverá lógicamente a través del contenido de una página a otra, es posible que se requiera más información. Estos wireframes de flujo de usuario pueden ser vistas estáticas de un wireframe completamente interactivo, pero podrían incluir una presentación de diapositivas o una colección de wireframes en serie para mostrar un flujo de usuario principal o un conjunto de flujos de usuario.</p>
-            <Heading type="h2" >Wireframes interactivos de alta definición</Heading>
-            <p>Puede experimentar interacciones (p. ej., toques, clics y deslizamientos) dentro o entre wireframes individuales. Agregar interacciones antes de pasar a las maquetas completas o la creación de prototipos en vivo ahorra horas al diseñador y al desarrollador. Esta variación de wireframes solo se puede realizar en presentaciones y diseño gráfico, o en software de creación de prototipos y wireframing.</p>
-            <aside class="tips_grid">
-                <TipCard type="dont">
-                    <template v-slot:image>
-                        <img :src="imageDontTwo">
-                    </template>
-                    El objetivo del wireframing no es crear artefactos perfectos en píxeles, sino crear los artefactos mínimos necesarios para comunicar sus ideas.
-                </TipCard>
-                <TipCard type="do">
-                    <template v-slot:image>
-                        <img :src="imageDoTwo">
-                    </template>
-                    Los wireframes en blanco y negro requieren de menos tiempo para crearlos. Este formato también hace que los revisores se centren en la relación de los elementos en lugar de en las decisiones de diseño visual
-                </TipCard>
-            </aside>
+            <Heading type="h2" >Wireflows</Heading>
+            <p>Son una combinación de wireframes y diagramas de flujo. Utilizan el diseño de pantallas individuales como elementos dentro del diagrama. </p>
+            <p>Los Wireflows son especialmente buenos cuando se crean pantallas móviles. El tamaño relativamente pequeño de las pantallas móviles se usa fácilmente para reemplazar las formas más abstractas de los diagramas de flujo.</p>
+            <Blockquote>Los wireframes por sí solos ayudan a transmitir el diseño en cada página individual, pero carecen de la capacidad de comunicar el flujo de página a página de las interfaces muy dinámicas.</Blockquote>
+            <Reference
+                :image="imageTwo"
+                description="Wireflow. Fuente: careerfoundry.com" />
+            <Heading type="h2" >Flujos de Usuario</Heading>
+            <p>Los flujos de usuarios se centran en la forma en que su público objetivo interactuará con el producto. Hacen hincapié en que es posible que no todos los usuarios realicen tareas de la misma manera y que viajen por diferentes caminos. Por lo general, se adjuntan a una persona específica y un punto de entrada. Por lo tanto, al usar este tipo de diagrama de flujo, es posible que tenga muchos escenarios diferentes que comiencen en diferentes lugares. Sin embargo, la tarea o logro principal suele ser siempre el mismo.</p>
+            <Reference
+                :image="imageThree"
+                description="User Flow. Fuente: careerfoundry.com" />
         </section>
-        <Heading type="h1" >Recomendaciones prácticas</Heading>
-        <section>
-            <p>
-                Aquí hay algunos consejos a tener en cuenta al diseñar wireframes:
-            </p>
-            <p>
-                <ul>
-                    <li>
-                        <strong>No intente hacer wireframes perfectos en píxeles.</strong>
-                        <br>
-                        El objetivo del wireframing es evaluar la estructura de las páginas individuales, no pulir los detalles del diseño visual.
-                    </li>
-                    <li>
-                        <strong>No agregue demasiados detalles.</strong>
-                        <br>
-                        Los wireframes son la estructura básica del producto, así que solo agregue los elementos esenciales.
-                    </li>
-                    <li>
-                        <strong>Usa el color para llamar la atención.</strong>
-                        <br>
-                        Los wireframes tradicionalmente usan blanco y negro o escala de grises, pero siéntase libre de usar un color de contraste para crear acentos visuales.
-                    </li>
-                    <li>
-                        <strong>Use anotaciones cortas y al punto.</strong>
-                        <br>
-                        Si planea presentar un wireframe al equipo, incluya siempre anotaciones escritas. Las anotaciones ayudan a crear contexto y ofrecen rápidamente ideas clave.
-                    </li>
-                    <li>
-                        <strong>Fomente la retroalimentación.</strong>
-                        <br>
-                        Compartir sus esquemas y alentar los comentarios de los miembros de su equipo es una forma segura de mejorarlos.
-                    </li>
-                    <li>
-                        <strong>Utilice plantillas de estructura alámbrica.</strong>
-                        <br>
-                        Es más fácil diseñar wireframes cuando tienes referencias visuales. 
-                    </li>
-                    <li>
-                        <strong>Utilice un kit wireframe.</strong>
-                        <br>
-                        Comience con su estructura alámbrica con Wires o kits de interfaz de usuario.
-                    </li>
-                </ul>
-            </p>
-        </section>
-        <Heading type="h1" >¿Que herramientas usar para hacer Wireframes?</Heading>
-        <section>
-            <p>Puede crear su diseño de wireframe utilizando uno de los siguientes métodos:</p>
-            <Heading type="h2" >Dibujando</Heading>
-            <p>Los bocetos dibujados a mano son rápidos de crear y rápidos de iterar. Esbozar es especialmente bueno para las sesiones de lluvia de ideas cuando los diseñadores necesitan visualizar rápidamente diferentes ideas (por ejemplo, explorar una variedad de diseños para una determinada vista).</p>
-            <Heading type="h2" >Software de diseño gráfico</Heading>
-            <p>
-                Es bastante fácil wireframes con software como Adobe Photoshop o Adobe Illustrator
-            </p>
-            <Heading type="h2" >Software de diseño de experiencia de usuario</Heading>
-            <p>La principal ventaja de usar un software especial es que puede pasar sin problemas de esquemas a prototipos sin tener que cambiar a otra herramienta. Con herramientas como Adobe XD o Figma, los diseñadores pueden convertir sus wireframes en prototipos de baja fidelidad en cuestión de minutos.</p>
-        </section>
-        <Heading type="h1">Reto #8</Heading>
-        <Challenge time="1" :id="8" :tasks="challenge8_tasks">
-           Elaborar el wireframe de registro de usuario en la plataforma de convocatorias de la UNHEVAL.
+        <Challenge time="1" :id="9" :tasks="challenge9_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #9 </Heading>
+            </template>
+            Elaborar los flujo de usuario de registro en la plataforma de convocatorias de la UNHEVAL.
             <template v-slot:tools>
-                <ResourceLink name="Figma" type="tool">
-                    <ResourceCard
-                        title="Figma"
-                        description="Herramienta para organizar ideas"
-                        type="tool"
-                        :src="imageFigma"
-                    />
-                </ResourceLink>
-                <ResourceLink name="UI Kit" type="download">
-                    <ResourceCard
-                        title="UI Kit"
-                        description="Herramienta para organizar ideas"
-                        type="download"
-                    />
-                </ResourceLink>
-                <ResourceLink name="Ejemplos" type="download">
-                    <ResourceCard
-                        title="Ejemplos"
-                        description="Herramienta para organizar ideas"
-                        type="download"
-                    />
-                </ResourceLink>
+                <ResourceCard
+                    title="Miro"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageMiro"
+                />
+                <ResourceCard
+                    title="Plantilla"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
             </template>
         </Challenge>
         <Heading type="h1" >Evaluación</Heading>

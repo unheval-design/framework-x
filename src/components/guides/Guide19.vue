@@ -1,172 +1,192 @@
 <script setup>
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
-import TestCard from '@/components/TestCard.vue';
+import Evaluation from '@/components/Evaluation.vue';
 import Reference from '@/components/Reference.vue';
 import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
+import imageOne from '@/assets/images/guide-19/image_1.png';
+import { ref } from '@vue/reactivity';
 
-const question1 = {
-    question: '¿Por que hacemos pruebas UI?',
-    answer: 1,
-    alternatives: [
-        'Para detectar problemas de usabilidad de las interfaces.',
-        'Comprobar el funcionamiento correcto de los elementos de la interfaz y dispositivos fisicos que se requieren.',
-        'Para comprobar si los flujos de usuario importantes de mi aplicación funcionan de manera correcta.'
-    ]
-};
-
-const question2 = {
-    question:
-        '¿Qué enfoque de pruebas UI seria el mas apropiado cuando mi objetivo es automatizar pruebas?',
-    answer: 3,
-    alternatives: [
-        'Prueba manual.',
-        'Pruebas de grabación y reproducción.',
-        'Pruebas basadas en modelos.'
-    ]
-};
+const questions = ref([
+    {
+        id: 1,
+        question: '¿En qué consisten las puebas A/B?',
+        alternatives: [
+            { answer: true, description: 'En probar dos o mas versiones de nuestro producto con dos grupos de usuarios.' },
+            { answer: false, description: 'En probar dos veces nuestro producto con dos grupos de usuarios diferentes.' },
+            { answer: false, description: 'En probar dos productos diferentes para encontrar mejoras y errores entre estos.' }
+        ]
+    },
+    {
+        id: 2,
+        question: '¿Cuándo necesitamos usar la prueba de los cinco segundos?',
+        alternatives: [
+            { answer: true, description: 'Si necesito saber si los usarios entienden la finalidad del producto en un tiempo muy corto.' },
+            { answer: false, description: 'Cuando quiero saber si mis usuarios pueden cumplir una tarea importante en cinco segundos.' },
+            { answer: false, description: 'Si necesito comprobar la optimizacion y velocidad con la que cargan los elementos en mi interfaz.' }
+        ]
+    }
+]);
 </script>
 
 <template>
     <GuideTitle>
-        Pruebas UI
+        Pruebas UX
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1">Definición</Heading>
         <section>
             <p>
-                La prueba de interfaz de usuario(UI) es una técnica para probar
-                las características de cualquier software con el que un usuario
-                interactuará. Por lo general, esto implica probar los
-                componentes visuales para asegurarse de que cumplan con los
-                requisitos descritos, tanto en términos de funcionalidad como de
-                rendimiento.
+                Las pruebas de usabilidad son una herramienta poderosa para
+                evaluar la funcionalidad de un sitio web y asegurarse de que las
+                personas puedan navegarlo de manera eficiente. En esta sección,
+                exploramos diferentes métodos de prueba de usabilidad, cuándo
+                debe usarlos y por qué.
             </p>
         </section>
-        <Heading type="h1">¿Por qué necesito hacer puedas UI?</Heading>
+        <Heading type="h1">Pruebas A/B</Heading>
         <section>
             <p>
-                Las pruebas de IU se centran en dos cosas principales. Primero,
-                verificar cómo la aplicación maneja las acciones del usuario
-                realizadas con el teclado, el mouse y otros dispositivos de
-                entrada. En segundo lugar, comprobar si los elementos visuales
-                se muestran y funcionan correctamente.
+                Es un método de investigación que nos permite conocer si
+                determinados cambios en un producto digital surten efectos en
+                nuestros usuarios.
             </p>
             <p>
-                Solo haciendo esto, las organizaciones pueden garantizar que las
-                aplicaciones cumplan con sus requisitos funcionales y que los
-                usuarios finales las adopten con éxito. Por esta razón, las
-                pruebas de IU juegan un papel importante antes de que una
-                aplicación se lance a producción.
+                El funcionamiento de este test consiste en dividir el tráfico
+                que recibe la página y derivar una parte a la variante A y el
+                resto a la variante B.
+            </p>
+            <p>
+                De esta manera una parte de los usuarios usaran la interfaz que
+                usan de forma habitual (A) y la otra parte probarán una version
+                modificada de la interfaz (B). Asi podremos saber qué variante
+                funciona mejor: si aquella “normal/habitual” o la que tiene la
+                modificación concreta.
+            </p>
+            <p>
+                Existen diferentes tipos de pruebas o test entre los más
+                destacados se encuentran los siguientes:
+            </p>
+            <Heading type="h2">Prueba A/B/n</Heading>
+            <p>
+                Es un experimento aleatorio que utiliza dos o más variantes de
+                la misma página web. Siempre se utiliza la variante original
+                (A). Las variantes de la B a la n contienen uno o más de un
+                elemento que se han modificado partiendo de la versión original.
+            </p>
+            <p>
+                Este tipo de prueba suele ser el más utilizado. Se suele
+                utilizar por ejemplo cuando queremos cambiar el color o el copy
+                de un botón y medir cuántos clics consigue cada una de las
+                variantes.
+            </p>
+            <Heading type="h2">Test multivariante</Heading>
+            <p>
+                Este tipo de test se realiza cuando se modifican varios
+                elementos en una misma página web de forma simultánea para
+                comprobar que composición es la más efectiva y arroja un mejor
+                resultado.
+            </p>
+            <p>
+                Este tipo de test mide el impacto de cada uno de los elementos
+                que se han modificado y como han afectado al objetivo que se ha
+                definido previamente.
+            </p>
+            <Heading type="h2">Prueba de redirección</Heading>
+            <p>
+                En este tipo de prueba se utilizan URL diferentes para cada
+                versión que ayudan a testar dos páginas web independientes entre
+                sí. Se utiliza frecuentemente para cuando se realiza un rediseño
+                y tanto la estructura como el diseño UI es completamente nuevo
+                con respecto a la versión original.
             </p>
         </section>
-        <Heading type="h1"
-            >Lista de verificación de pruebas de interfaz de usuario: casos de
-            prueba esenciales</Heading
-        >
+        <Heading type="h1">Prueba de cinco segundos</Heading>
         <section>
             <p>
-                Los casos de prueba cubren diferentes aspectos de la interfaz de
-                usuario, incluidas imágenes, estándares de color, contenido de
-                la página, navegación, usabilidad y más. Use esta lista de
-                verificación para asegurarse de que sus pruebas de interfaz de
-                usuario sean más exhaustivas.
+                La prueba de cinco segundos es una forma de prueba de usabilidad
+                que le permite medir qué tan bien un diseño comunica rápidamente
+                un mensaje. Este tipo de prueba proporciona comentarios tanto
+                cuantitativos como cualitativos que le ayudan a optimizar un
+                diseño.
+            </p>
+            <p>
+                La imagen que pruebe puede ser un sitio web, un diseño de
+                aplicación, un prototipo, un logotipo o una copia, cualquier
+                cosa que necesite comunicar un mensaje.
+            </p>
+            <Heading type="h2">Preguntas comunes</Heading>
+            <p>
+                Si bien hay muchos usos para la prueba de cinco segundos, los temas más comunes son:
             </p>
             <p>
                 <ul>
-                    <li>
-                        <strong>Errores de tipo de datos:</strong>
-                        <br>
-                         asegúrese de que solo se puedan ingresar datos válidos para tipos de datos específicos, como moneda y fechas.
-                    </li>
-                    <li>
-                        <strong>Anchos de campo:</strong>
-                        <br>
-                        si un cuadro de texto determinado permite una cantidad específica de caracteres, aclare en la interfaz de usuario que los datos ingresados no deben exceder el límite de caracteres. Por ejemplo, un campo que permite 50 caracteres en la base de datos de la aplicación no debe permitir que los usuarios ingresen más de 50 caracteres en la interfaz.
-                    </li>
-                    <li>
-                        <strong>Elementos de navegación:</strong>
-                        <br>
-                        verifique que todos los botones de navegación en la página funcionen correctamente y que redirijan a los usuarios a la página o pantalla correcta.
-                    </li>
-                    <li>
-                        <strong>Barras de progreso:</strong>
-                        <br>
-                        cuando se muestran pantallas que tardan en generar resultados, se debe usar una barra de progreso para mostrar al usuario que un proceso aún se está ejecutando.
-                    </li>
-                    <li>
-                        <strong>Escritura anticipada:</strong>
-                        <br>
-                        si su interfaz de usuario utiliza listas desplegables, asegúrese de incluir la escritura anticipada. En un menú desplegable con cientos de elementos, escribir la primera letra debe saltar la lista a los elementos que comienzan con esa letra para que los usuarios no tengan que revisar una lista larga.
-                    </li>
-                    <li>
-                        <strong>Desplazamiento de tablas:</strong>
-                        <br>
-                        si los datos de sus tablas se extienden a otra página, la función de desplazamiento debería permitir a los usuarios desplazarse por los datos pero mantener todos los encabezados intactos.
-                    </li>
-                    <li>
-                        <strong>Registro de errores:</strong>
-                        <br>
-                        cuando el sistema experimenta un error fatal, asegúrese de que la aplicación escriba los detalles del error en un visor de eventos o en un archivo de registro para su posterior revisión.
-                    </li>
-                    <li>
-                        <strong>Elementos de menú:</strong>
-                        <br>
-                        asegúrese de que la aplicación solo muestre elementos de menú válidos que estén disponibles en un estado en particular.
-                    </li>
-                    <li>
-                        <strong>Accesos directos que funcionan:</strong>
-                        <br>
-                        para las aplicaciones que admiten accesos directos, verifique si funcionan correctamente, sin importar el navegador, la plataforma o el dispositivo que se utilice.
-                    </li>
-                    <li>
-                        <strong>Confirmar botones de acción:</strong>
-                        <br>
-                        asegúrese de que la interfaz de usuario tenga un botón de confirmación que funcione cada vez que el usuario desee guardar o eliminar un elemento.
-                    </li>
+                    <li>¿La gente entiende el producto o servicio?</li>
+                    <li>¿Sienten las personas que recibirán un beneficio de la página?</li>
+                    <li>¿Puede la gente recordar el nombre de la empresa o del producto?</li>
                 </ul>
             </p>
+            <p>
+                Estas preguntas son importantes, porque si una página comunica rápida y fácilmente toda esta información, es más probable que capte a la audiencia adecuada. Este es un factor clave a la hora de diseñar mejoras enfocadas a aumentar la conversión y el engagement.
+            </p>
+            <Heading type="h2">¿Cómo interpretar los resultados?</Heading>
+            <p>
+                Una de las mejores cosas de las pruebas de cinco segundos es que analizar los resultados es una tarea sencilla. En general, puede simplemente clasificar los resultados en un grupo de participantes que "lo entendieron" y otro que no.
+            </p>
+            <p>
+                Si más del 80% de los participantes están en el primer grupo, entonces tienes un diseño exitoso en tus manos. Si este número es mucho más bajo, es probable que se necesiten algunos cambios.
+            </p>
+            <p>
+                Es fundamental mirar los comentarios de texto libre de ambos grupos. A veces, las opiniones de los participantes que no entendieron el punto convergerán en ideas o temas similares. Esta es una clara indicación de que hay una pista falsa en su diseño que está desconcertando a la gente.
+            </p>
         </section>
-        <Heading type="h1">Enfoques para las pruebas de interfaz de usuario</Heading>
+        <Heading type="h1">Prueba del primer click</Heading>
         <section>
             <p>
-                Hay tres enfoques principales de prueba de UI, a saber:
+                La prueba del primer clic es un método para medir la usabilidad de un sitio web, una aplicación o un diseño al descubrir qué tan fácil es completar una tarea determinada.
             </p>
-            <Heading type="h2">Prueba manual</Heading>
             <p>
-                En las pruebas manuales, un evaluador humano realiza un conjunto de operaciones para verificar si la aplicación funciona correctamente y si los elementos gráficos se ajustan a los requisitos documentados. Las pruebas manuales tienen desventajas notables, ya que pueden llevar mucho tiempo y la cobertura de la prueba es extremadamente baja. Además, la calidad de las pruebas en este enfoque depende del conocimiento y las capacidades del equipo de pruebas.
+                El objetivo de la prueba del primer click es verificar que el primer click que un usuario hace en una interfaz para realizar una tarea determinada es claro y fácil.
             </p>
-            <Heading type="h2">Pruebas de grabación y reproducción</Heading>
+            <Heading type="h2">¿Cómo funciona?</Heading>
             <p>
-                También conocida como prueba de grabación y reproducción, se ejecuta utilizando herramientas de automatización. La herramienta de prueba de IU automatizada registra todas las tareas, acciones e interacciones con la aplicación. Los pasos registrados luego se reproducen, ejecutan y comparan con el comportamiento esperado. Para realizar más pruebas, la fase de reproducción se puede repetir con varios conjuntos de datos.
+                En una prueba de primer click, al participante se le asigna una tarea (por ejemplo, "¿Dónde haría clic para comprar este producto?") y luego se le muestra una imagen de una interfaz, en la que debe hacer clic para completar la tarea.
             </p>
-            <Heading type="h2">Pruebas basadas en modelos</Heading>
             <p>
-                En este enfoque de prueba, nos enfocamos en construir modelos gráficos que describen el comportamiento de un sistema. Esto proporciona una comprensión más profunda del sistema, lo que permite al evaluador generar casos de prueba altamente eficientes. En los modelos, determinamos las entradas y salidas del sistema, que a su vez se utilizan para ejecutar las pruebas. Las pruebas basadas en modelos funcionan de la siguiente manera:
+                Se registra la posición de su click, junto con el tiempo que tardaron en hacer click. También se pueden recopilar más comentarios al final de la prueba pidiéndole al usuario que explique por qué hizo clic donde lo hizo.
+            </p>
+            <Heading type="h2">Beneficios clave</Heading>
+            <p>
+                Visualizar exactamente dónde hacen click las personas brinda una gran perspectiva del diseño. Los clicks que ocurren en lugares inesperados pueden resaltar partes confusas de una interfaz y son útiles para informar futuras opciones de diseño.
+            </p>
+        </section>
+        <Heading type="h1">Mapa de calor</Heading>
+        <section>
+            <p>
+                Un mapa de calor es una visualización de datos que muestra cómo los usuarios del sitio web hacen clic, se desplazan y se mueven en la página. La parte "caliente" del nombre proviene de la escala de colores: el rojo representa las áreas populares (calientes) de la página y el azul las áreas menos populares (frías).
+            </p>
+            <Reference
+                :image="imageOne"
+                description="Mapas de calor. Fuente: hotjar.com"
+            />
+            <p>
+                Puede recopilar datos de mapas de calor en cualquier página del sitio web en dispositivos de escritorio y móviles, y visualizarlos de diferentes maneras:
             </p>
             <p>
                 <ul>
-                    <li>Crear un modelo para el sistema</li>
-                    <li>Determinar las entradas del sistema</li>
-                    <li>Verifique la salida esperada</li>
-                    <li>Ejecutar pruebas</li>
-                    <li>Verifique y valide la salida del sistema frente a la salida esperada</li>
+                    <li>Haga clic en mapas: resalta dónde los usuarios hacen clic con el mouse (o toque en dispositivos móviles)</li>
+                    <li>Mapas de desplazamiento: resalta dónde se desplazan los usuarios en una página</li>
+                    <li>Mapas de movimiento: resalta el movimiento del mouse del usuario (sin hacer clic)</li>
                 </ul>
-            </p>
-            <p>
-                El enfoque basado en modelos es excelente porque permite un mayor nivel de automatización. También cubre un mayor número de estados en el sistema, mejorando así la cobertura de la prueba.
             </p>
         </section>
         <Heading type="h1">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
-            <aside class="tests_grid">
-                <TestCard :question="question1" />
-                <TestCard :question="question2" />
-            </aside>
+            <Evaluation :questions="questions" />
         </section>
     </GuideBody>
 </template>

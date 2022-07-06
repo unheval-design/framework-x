@@ -3,135 +3,137 @@ import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
 import Evaluation from '@/components/Evaluation.vue';
 import Reference from '@/components/Reference.vue';
-import imageOne from '@/assets/images/guide-7/image_1.png'
-import imageTwo from '@/assets/images/guide-7/image_2.png'
-import imageThree from '@/assets/images/guide-7/image_3.png'
-import imageDoOne from '@/assets/images/guide-7/image_do_1.png';
-import imageDontOne from '@/assets/images/guide-7/image_dont_1.png';
-import imageFigma from '@/assets/images/brands/figma.png';
+import imageKeep from '@/assets/images/brands/keep.png';
+import Blockquote from '@/components/Blockquote.vue';
 import Heading from '@/components/Heading.vue';
+import TipCard from '@/components/TipCard.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import Challenge from '@/components/Challenge.vue';
-import TipCard from '@/components/TipCard.vue';
+import imageDoOne from '@/assets/images/guide-7/image_do_1.png';
+import imageDontOne from '@/assets/images/guide-7/image_dont_1.png';
+import imageDoTwo from '@/assets/images/guide-7/image_do_2.png';
+import imageDontTwo from '@/assets/images/guide-7/image_dont_2.png';
+import imageDoThree from '@/assets/images/guide-7/image_do_3.png';
+import imageDontThree from '@/assets/images/guide-7/image_dont_3.png';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
     {
         id: 1,
-        question: '¿Qué conlleva una mala estructuración?',
+        question: '¿Por qué hacemos UX Writing?',
         alternatives: [
-            { answer: true, description: 'Mala identificación de las tareas del usuario.'},
-            { answer: false, description: 'Demora en el proceso de diseño de interfaces.'},
-            { answer: false, description: 'Una mala experiencia del usuario y, más allá de eso, a la pérdida de negocios.'}
+            { answer: true, description: 'Ayudar al usuario mientras realiza una tarea con textos cortos, efectivos y agradables.'},
+            { answer: false, description: 'Ayudar al usuario a completar una tarea con consejos claros y efectivos.'},
+            { answer: false, description: 'Ayudar al usuario a entender nuestro objetivo como empresa o servicio.'}
         ]
     },
     {
         id: 2,
-        question: '¿Por qué es recomendable poner un número de referencia en las páginas del mapa del sitio?',
+        question: '¿Por qué es importante el voz y tono de la marca?',
         alternatives: [
-            { answer: true, description: 'Para referenciar en la documentación del mapa del sitio.'},
-            { answer: false, description: 'Ayudan a realizar un seguimiento en la jerarquía, esquemas y prototipos de las páginas.'},
-            { answer: false, description: 'Ayudan a determinar el tipo de mapa de sitio.'}
+            { answer: true, description: 'Es la forma con la que los usuarios te conocen y conectan con la identidad de la empresa.'},
+            { answer: false, description: 'Determina la calidad de tus servicios y al publico que se orienta.'},
+            { answer: false, description: 'Es la forma en la que empatizas con el usuario para transmitir experiencias positivas.'}
         ]
     }
 ]);
 
-const challenge6_tasks = [
-    'Definir las páginas principales',
-    'Definir las páginas secundarias',
-    'Definir los contenidos'
+const challenge7_tasks = [
+    'Seleccionar un evento',
+    'Identificar usuario',
+    'Identificar el objetivo',
+    'Elegir voz y tono',
+    'Mejorar los textos'
 ];
 </script>
 <template>
     <GuideTitle>
-        Mapa del Sitio
+        UX Writing
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1" >Definición</Heading>
         <section>
             <p>
-               Diseñar un sitio web puede parecer bastante abrumador con tantas cosas que considerar, es fácil caer en una mala estructuración de la información que queremos mostrar.
+                Si lo definimos de forma literal, UX significa “user experience”
+                o “experiencia de usuario” y writing “escritura”; por lo tanto,
+                son los textos que guían al usuario mientras interactúa con la
+                interfaz de tu página web o app, con el fin de que tenga
+                sensaciones positivas y sepa qué hacer en cada momento.
             </p>
             <p>
-                Una mala estructuración puede conducir a una mala experiencia del usuario y, más allá de eso, a la pérdida de negocios. Si sus visitantes no saben a dónde ir o qué hacer, se irán.
+                Dicho de otro modo, son los textos pequeños que ayudan a que tus
+                clientes completen el proceso de compra, suscripción o reserva
+                con éxito y sin perderse por el camino, mientras se llevan una
+                impresión muy buena de tu marca.
             </p>
-            <p>
-                Un mapa del sitio de la experiencia del usuario (UX) es una representación visual de la arquitectura de la información de su producto que describe las diferentes páginas de su producto, junto con la jerarquía entre esas páginas. A veces se denomina diagrama de arquitectura de la información (IA) o esquema de contenido.
-            </p>
-            <p>Un mapa del sitio basico deberia tener una estructura similar al siguiente:</p>
-            <Reference
-                :image="imageThree"
-                description="UX sitemap example of a dessert blog website. Author: Jennifer Jhang." />
         </section>
-        <Heading type="h1" >¿Por que hacemos un mapa de sitio?</Heading>
+        <Heading type="h1" 
+            >¿Cómo conseguir un UX Writing atractivo y de conversión?</Heading
+        >
         <section>
+            <p>Asegúrate de verificar estos puntos para saber si estás en el camino correcto:</p>
             <p>
                 <ul>
-                    <li>
-                        <strong>Forma una mejor comprensión de los objetivos de diseño.</strong>
-                        <br>
-                        Cada sitio web debe tener un objetivo, con cada decisión de diseño alineada con él. Al presentar visualmente todo el contenido de su sitio al equipo, puede hablar sobre los objetivos y priorizar las decisiones de diseño.
-                    </li>
-                    <li>
-                        <strong>Crea una única fuente de verdad</strong>
-                        <br>
-                        Un proyecto de diseño web involucra a muchas personas, desde diseñadores front-end hasta partes interesadas. Mostrar las relaciones entre las páginas de su sitio facilita la comprensión de las conexiones y la introducción de cambios en la IA y el diseño.
-                    </li>
-                    <li>
-                        <strong>Elimina páginas innecesarias</strong>
-                        <br>
-                        La información jerárquica en un mapa del sitio ayuda a los miembros del equipo a encontrar y eliminar páginas que no están directamente relacionadas con el propósito del sitio.
-                    </li>
-                    <li>
-                        <strong>Elimina el contenido duplicado</strong>
-                        <br>
-                        Cuando puede evaluar fácilmente todas las páginas de su sitio web de acuerdo con su mapa del sitio, reduce la posibilidad de duplicar contenido y crear una experiencia confusa para el usuario.
-                    </li>
+                    <li>¿Es el texto amigable con el usuario?</li>
+                    <li>¿Cómo hace sentir a tus usuarios?</li>
+                    <li>¿Consideras que comunica exactamente lo que quieres comunicar?</li>
+                    <li>¿El texto aporta sentido al flujo?</li>
+                    <li>¿Está escrito en forma consistente al resto del textos?</li>
+                    <li>¿Tus textos representan el espíritu de la marca o producto?</li>
+                    <li>¿Tienen el tono correcto?</li>
+                    <li>¿Humanizan la herramienta?</li>
+                </ul>
+            </p>
+            <p>y aquí algunas claves para mejorar tu UX Wrinting:</p>
+            <p>
+                <ul>
+                    <li>Sé breve y eficiente.</li>
+                    <li>Usa el menor número de palabras posible manteniendo el significado.</li>
+                    <li>Adapta el texto y su longitud a cada tipo de pantalla (responsive).</li>
+                    <li>Háblale al tu lector de forma directa.</li>
+                    <li>Elimina tecnicismos y palabras difíciles de entender.</li>
+                    <li>Evita ser intrusivo.</li>
                 </ul>
             </p>
         </section>
-        <Heading type="h1" >Tipos de mapas de sitio</Heading>
+        <Heading type="h1" 
+            >Aspectos a tener en cuenta</Heading
+        >
         <section>
-            <p>Por lo general, hay dos tipos de mapas de sitio: un mapa de sitio plano y un mapa de sitio profundo.</p>
-            <Heading type="h2" >Mapa de sitio plano</Heading>
+            <Heading type="h2" >El usuario</Heading>
             <p>
-                Generalmente tiene cuatro o menos filas verticales. Se utiliza para productos de tamaño pequeño a mediano en los que hay que organizar entre 10 y 100 páginas de información.
+                Debemos conocer bien al usuario y entender sus emociones, sus
+                necesidades e intereses para darle lo que busca, pero no solo
+                basta con conocerlo bien, debemos saber guiarlo por la interfaz
+                para que su experiencia sea positiva.
             </p>
-            <Heading type="h2" >Mapa de sitio profundo</Heading>
             <p>
-                el mapa del sitio profundo o detallado es cuando el mapa tiene cinco o más filas verticales. Es mejor usar un mapa del sitio completo si el producto tiene más de 100 a 1000 páginas/contenidos que deben organizarse.
+                Por ejemplo en la busqueda de la pagina principal de la UNHEVAL debes tener en cuenta:
             </p>
-            <Reference
-                :image="imageOne"
-                description="Mapas de sitio plano vs profundo. Author: Jennifer Jhang." />
-        </section>
-        <Heading type="h1" >¿Cómo crear el mapa del sitio?</Heading>
-        <section>
-            <p>Un mapa del sitio de UX consta de páginas vinculadas, cada una con un número de referencia y una etiqueta . Los números de referencia lo ayudan a realizar un seguimiento de las páginas, incluso cuando avanza a esquemas, prototipos e iteraciones (Mears, 2013).</p>
-            <Reference
-                :image="imageTwo"
-                description="A single page in a UX sitemap. Author: Jennifer Jhang." />
-            <p>Al crear el mapa del sitio, siempre comience la primera fila con una página significativa: página de inicio; luego aplique estratégicamente las subpáginas necesarias debajo de la primera fila. Todavía es beneficioso hacer una lluvia de ideas con su equipo antes de estructurar el mapa.</p>
-            <Heading type="h2" >Reuniendo el contenido</Heading>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontTwo">
+                    </template>
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoTwo">
+                    </template>
+                </TipCard>
+            </aside>
+            <Heading type="h2" >Los objetivos</Heading>
             <p>
-                <ol>
-                    <li>Escriba las páginas significativas en pegatinas(post-it)</li>
-                    <li>Escriba las piezas de información representativas que son necesarias para el producto final.</li>
-                    <li>Ordenar los contenidos y etiquetarlos según sus características/orígenes.</li>
-                    <li>En función de la clasificación del contenido, decida las páginas secundarias y las subpáginas.</li>
-                </ol>
+                La redacción UX está muy relacionada con los objetivos que tiene
+                la marca. Si tu intención es vender un servicio/producto nuevo,
+                la mayoría de llamadas a la acción llevarán a este. Si lo que
+                buscas es aumentar tu lista de suscriptores, el UX writer sabrá
+                guiar al usuario hacia ese objetivo de manera intuitiva.
             </p>
-            <Heading type="h2" >Creación del mapa del sitio</Heading>
             <p>
-                <ol>
-                    <li>Coloque las páginas principales o categorias como la fila superior del mapa.</li>
-                    <li>Etiquete cada página en su plan, ordene sus etiquetas y cree la hoja de ruta estructurada.</li>
-                    <li>Coloque estratégicamente las páginas secundarias o subcategorias, agréguelas a las siguientes filas según la importancia del contenido.</li>
-                    <li>Una vez que el sitio esté organizado, discuta el mapa del sitio y su flujo dentro de su equipo. Recorte, agregue o reemplace las piezas de información/páginas si es necesario.</li>
-                    <li>Reorganiza las páginas y ensambla la estructura final del producto en tu mapa del sitio.</li>
-                </ol>
+                Por ejemplo en la pagina web de admisión de la UNHEVAL tenemos un botón de llamar a la acción:
             </p>
             <aside class="tips_grid">
                 <TipCard type="dont">
@@ -145,40 +147,77 @@ const challenge6_tasks = [
                     </template>
                 </TipCard>
             </aside>
+            <Heading type="h2" 
+                >Voz y tono de la marca</Heading
+            >
+            <p>
+                El tono y la voz son aspectos que se determinan desde el
+                principio y que acompañarán a tu marca a lo largo de su
+                trayectoria. Será la forma en la que tu público te reconocerá y
+                conectará contigo. Por lo tanto, la redacción UX tiene que ir
+                acorde con tu identidad.
+            </p>
+            <p>
+                Suele funcionar muy bien utilizar un lenguaje más coloquial y
+                cercano, ya que estamos teniendo una conversación con el usuario
+                para guiarle en sus decisiones. Puede ser un guiño para crearle
+                simpatía. Aún así, si tu identidad de marca es seria y
+                profesional, los textos no tienen que aparentar lo contrario.
+            </p>
+            <p>
+                Por ejemplo en la aplicacion web de pagos de la UNHEVAL debemos tomar en cuenta lo siguiente:
+            </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontThree">
+                    </template>
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoThree">
+                    </template>
+                </TipCard>
+            </aside>
+            <Heading type="h2" 
+                >Movimientos previos y posteriores</Heading
+            >
+            <p>
+                Por último es imprescindible entender en qué punto de la
+                interfaz nos encontramos, cómo llegó el usuario allí y hacia
+                dónde querrá/deberá ir después.
+            </p>
+            <p>
+                Los textos tendrán que ir en sintonía con todo el proceso para
+                que, como ya sabes, el usuario no pierda el hilo y se vaya sin
+                actuar.
+            </p>
         </section>
-        <Heading type="h1">Reto #6</Heading>
-        <Challenge time="1" :id="6" :tasks="challenge6_tasks">
-           Construye un mapa del sitio utilizando el resultado del Reto #5 (Card Sorting).
+        <Challenge time="1" :id="7" :tasks="challenge7_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #7 </Heading>
+            </template>
+            Mejora el UX Writing de un evento de la pagina de eventos de la UNHEVAL.
             <template v-slot:tools>
-                <ResourceLink name="Figma" type="tool">
-                    <ResourceCard
-                        title="Figma"
-                        description="Herramienta para organizar ideas"
-                        type="tool"
-                        :src="imageFigma"
-                    />
-                </ResourceLink>
-                <ResourceLink name="Miro" type="tool">
-                    <ResourceCard
-                        title="Miro"
-                        description="Herramienta para organizar ideas"
-                        type="tool"
-                        :src="imageMiro"
-                    />
-                </ResourceLink>
-                <ResourceLink name="Ejemplos" type="download">
-                    <ResourceCard
-                        title="Ejemplos"
-                        description="Herramienta para organizar ideas"
-                        type="download"
-                    />
-                </ResourceLink>
+                <ResourceCard
+                    title="Keep"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageKeep"
+                />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
             </template>
         </Challenge>
         <Heading type="h1" >Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
-            <Evaluation :questions="questions" />
+            <aside class="tests_grid">
+                <Evaluation :questions="questions" />
+            </aside>
         </section>
     </GuideBody>
 </template>

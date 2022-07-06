@@ -78,5 +78,8 @@ export default {};
             grid-gap: var(--gap_sm);
         }
     }
+    .Challenge {
+        margin-top: var(--gap);
+    }
 }
 </style>

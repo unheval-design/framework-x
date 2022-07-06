@@ -1,200 +1,170 @@
 <script setup>
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
-import TestCard from '@/components/TestCard.vue';
+import Evaluation from '@/components/Evaluation.vue';
 import Reference from '@/components/Reference.vue';
 import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
-import imageOne from '@/assets/images/guide-18/image_1.png';
-import imageTwo from '@/assets/images/guide-18/image_2.png';
-import imageThree from '@/assets/images/guide-18/image_3.png';
+import { ref } from '@vue/reactivity';
 
-const question1 = {
-    question: '¿En cuál de estos proyectos seria recomendable usar un CMS?',
-    answer: 1,
-    alternatives: [
-        'Para promocionar un evento de emprendedores.',
-        'Publicación de noticias de la Universidad.',
-        'Control de asistencia para un colegio.'
-    ]
-};
-
-const question2 = {
-    question:
-        '¿Cuál seria la razon principal para escojer el desarrollo de una aplicación móvil nativo?',
-    answer: 3,
-    alternatives: [
-        'Se necesita aprovechar los componentes fisicos de telefono o del sistema operativo.',
-        'Se necesita mejorar el sistema de interacción con el usuario.',
-        'Se piensa replicar en diferentes tipos de telefonos.'
-    ]
-};
+const questions = ref([
+    {
+        id: 1,
+        question: '¿Por que hacemos pruebas UI?',
+        alternatives: [
+            { answer: true, description: 'Para detectar problemas de usabilidad de las interfaces.' },
+            { answer: false, description: 'Comprobar el funcionamiento correcto de los elementos de la interfaz y dispositivos fisicos que se requieren.' },
+            { answer: false, description: 'Para comprobar si los flujos de usuario importantes de mi aplicación funcionan de manera correcta.' }
+        ]
+    },
+    {
+        id: 2,
+        question: '¿Qué enfoque de pruebas UI seria el mas apropiado cuando mi objetivo es automatizar pruebas?',
+        alternatives: [
+            { answer: true, description: 'Prueba manual.' },
+            { answer: false, description: 'Pruebas de grabación y reproducción.' },
+            { answer: false, description: 'Pruebas basadas en modelos.' }
+        ]
+    }
+]);
 </script>
 
 <template>
     <GuideTitle>
-        Implementación
+        Pruebas UI
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1">Definición</Heading>
         <section>
             <p>
-                Llegado el punto donde tenemos que comenzar con el desarrollo
-                del producto, es decir convertir nuestros prototipos en el
-                producto real. En este pundo hay que tomar muchas deciciones
-                importantes con respecto a la infrestructura tecnologia que
-                necesitamos para nuestro proyecto, como por ejemplo el lenguaje
-                de programación o la base de datos mas adecuado para el
-                producto, si es que vamos a programar.
-            </p>
-            <p>
-                Te dejaremos algunos tipos de implementación que puede tomar tu
-                proyecto a partir de este punto.
+                La prueba de interfaz de usuario(UI) es una técnica para probar
+                las características de cualquier software con el que un usuario
+                interactuará. Por lo general, esto implica probar los
+                componentes visuales para asegurarse de que cumplan con los
+                requisitos descritos, tanto en términos de funcionalidad como de
+                rendimiento.
             </p>
         </section>
-        <Heading type="h1">Tipos de Implementación</Heading>
+        <Heading type="h1">¿Por qué necesito hacer puedas UI?</Heading>
         <section>
             <p>
-                El tipo de implementación va estar ligado directamente al tipo
-                de producto que se desea desarrollar. Los podriamos categorizar
-                por:
-            </p>
-            <Heading type="h2">Builders</Heading>
-            <p>
-                Si nuestro proyecto es una pagina web simple e informativa, las
-                denominadas Landing Page, es muy probable que quieras una
-                implementación rápida sin tener que codificar. Para estos tipos
-                de implementación existen soluciones con tecnologia “drag and
-                drop” que consta de arrastrar y soltar elementos hacia la
-                interfaz, uno de los mas conocidos es Wix.
-            </p>
-            <Reference
-                :image="imageOne"
-                description="El contructor de paginas web de Wix. Fuente: pcmag.com"
-            />
-            <Heading type="h2">CMS</Heading>
-            <p>
-                Los Content Managment System (CMS), en español sistema de
-                administración de contenido, son constructores y gestores de
-                contenido los cuales por lo general necesitan un nivel de
-                coconocimiento medianamiente técnico para poder construir
-                proyectos tipo blog o hasta incluso tiendas en linea. Algunos de
-                los mas conocidos son WordPress y Joomla.
-            </p>
-            <Reference
-                :image="imageTwo"
-                description="Constructor de páginas Divi, plugin para Wordpress. Fuente: wpbeginner.com"
-            />
-            <Heading type="h2">Codificación</Heading>
-            <p>
-                Cuando pensamos en hacer nuestro proyecto por programación
-                tenemos en mente control y escalabilidad, debido a que podemos
-                abordar cualquier funcionalidad que el proyecto lo requiera a
-                nivel experiencia, visual o de infraestructura, lo que conlleva
-                a un nivel de conocimiento mas avanzado.
+                Las pruebas de IU se centran en dos cosas principales. Primero,
+                verificar cómo la aplicación maneja las acciones del usuario
+                realizadas con el teclado, el mouse y otros dispositivos de
+                entrada. En segundo lugar, comprobar si los elementos visuales
+                se muestran y funcionan correctamente.
             </p>
             <p>
-                En este basto mundo de la programación existen muchas
-                tecnologias, estas por lo general deben ser convinadas con otras
-                y puede ser facil abrumarse o no saber cuál elegir. Aqui te
-                dejamos algunas recomendaciones de acuerdo al tipo de proyecto.
+                Solo haciendo esto, las organizaciones pueden garantizar que las
+                aplicaciones cumplan con sus requisitos funcionales y que los
+                usuarios finales las adopten con éxito. Por esta razón, las
+                pruebas de IU juegan un papel importante antes de que una
+                aplicación se lance a producción.
             </p>
-            <Reference
-                :image="imageThree"
-                description="Interfaz del IDE Android Studio. Fuente: developer.android.com"
-            />
+        </section>
+        <Heading type="h1"
+            >Lista de verificación de pruebas de interfaz de usuario: casos de
+            prueba esenciales</Heading
+        >
+        <section>
             <p>
-                <strong>Landing Page</strong>
-            </p>
-            <p>
-                Para construir una web informativa, de una página, simple
-                necesitaremos de tecnologias base para la web: HTML, CSS y
-                JavaScript, cada una de estas pueden ser potenciadas para un
-                mejor trabajo. Por ejemplo HTML puede usar Pug, para trabajar
-                con estilos se recomienda usar SASS en lugar de directamente
-                CSS.
-            </p>
-            <p>
-                <strong>Sitio Web</strong>
+                Los casos de prueba cubren diferentes aspectos de la interfaz de
+                usuario, incluidas imágenes, estándares de color, contenido de
+                la página, navegación, usabilidad y más. Use esta lista de
+                verificación para asegurarse de que sus pruebas de interfaz de
+                usuario sean más exhaustivas.
             </p>
             <p>
-                Vamos a denominar sitio web, cuando nuestro proyecto tiene
-                varias vistas e incluso funcionadidades como de un formulario de
-                contacto.
+                <ul>
+                    <li>
+                        <strong>Errores de tipo de datos:</strong>
+                        <br>
+                         asegúrese de que solo se puedan ingresar datos válidos para tipos de datos específicos, como moneda y fechas.
+                    </li>
+                    <li>
+                        <strong>Anchos de campo:</strong>
+                        <br>
+                        si un cuadro de texto determinado permite una cantidad específica de caracteres, aclare en la interfaz de usuario que los datos ingresados no deben exceder el límite de caracteres. Por ejemplo, un campo que permite 50 caracteres en la base de datos de la aplicación no debe permitir que los usuarios ingresen más de 50 caracteres en la interfaz.
+                    </li>
+                    <li>
+                        <strong>Elementos de navegación:</strong>
+                        <br>
+                        verifique que todos los botones de navegación en la página funcionen correctamente y que redirijan a los usuarios a la página o pantalla correcta.
+                    </li>
+                    <li>
+                        <strong>Barras de progreso:</strong>
+                        <br>
+                        cuando se muestran pantallas que tardan en generar resultados, se debe usar una barra de progreso para mostrar al usuario que un proceso aún se está ejecutando.
+                    </li>
+                    <li>
+                        <strong>Escritura anticipada:</strong>
+                        <br>
+                        si su interfaz de usuario utiliza listas desplegables, asegúrese de incluir la escritura anticipada. En un menú desplegable con cientos de elementos, escribir la primera letra debe saltar la lista a los elementos que comienzan con esa letra para que los usuarios no tengan que revisar una lista larga.
+                    </li>
+                    <li>
+                        <strong>Desplazamiento de tablas:</strong>
+                        <br>
+                        si los datos de sus tablas se extienden a otra página, la función de desplazamiento debería permitir a los usuarios desplazarse por los datos pero mantener todos los encabezados intactos.
+                    </li>
+                    <li>
+                        <strong>Registro de errores:</strong>
+                        <br>
+                        cuando el sistema experimenta un error fatal, asegúrese de que la aplicación escriba los detalles del error en un visor de eventos o en un archivo de registro para su posterior revisión.
+                    </li>
+                    <li>
+                        <strong>Elementos de menú:</strong>
+                        <br>
+                        asegúrese de que la aplicación solo muestre elementos de menú válidos que estén disponibles en un estado en particular.
+                    </li>
+                    <li>
+                        <strong>Accesos directos que funcionan:</strong>
+                        <br>
+                        para las aplicaciones que admiten accesos directos, verifique si funcionan correctamente, sin importar el navegador, la plataforma o el dispositivo que se utilice.
+                    </li>
+                    <li>
+                        <strong>Confirmar botones de acción:</strong>
+                        <br>
+                        asegúrese de que la interfaz de usuario tenga un botón de confirmación que funcione cada vez que el usuario desee guardar o eliminar un elemento.
+                    </li>
+                </ul>
+            </p>
+        </section>
+        <Heading type="h1">Enfoques para las pruebas de interfaz de usuario</Heading>
+        <section>
+            <p>
+                Hay tres enfoques principales de prueba de UI, a saber:
+            </p>
+            <Heading type="h2">Prueba manual</Heading>
+            <p>
+                En las pruebas manuales, un evaluador humano realiza un conjunto de operaciones para verificar si la aplicación funciona correctamente y si los elementos gráficos se ajustan a los requisitos documentados. Las pruebas manuales tienen desventajas notables, ya que pueden llevar mucho tiempo y la cobertura de la prueba es extremadamente baja. Además, la calidad de las pruebas en este enfoque depende del conocimiento y las capacidades del equipo de pruebas.
+            </p>
+            <Heading type="h2">Pruebas de grabación y reproducción</Heading>
+            <p>
+                También conocida como prueba de grabación y reproducción, se ejecuta utilizando herramientas de automatización. La herramienta de prueba de IU automatizada registra todas las tareas, acciones e interacciones con la aplicación. Los pasos registrados luego se reproducen, ejecutan y comparan con el comportamiento esperado. Para realizar más pruebas, la fase de reproducción se puede repetir con varios conjuntos de datos.
+            </p>
+            <Heading type="h2">Pruebas basadas en modelos</Heading>
+            <p>
+                En este enfoque de prueba, nos enfocamos en construir modelos gráficos que describen el comportamiento de un sistema. Esto proporciona una comprensión más profunda del sistema, lo que permite al evaluador generar casos de prueba altamente eficientes. En los modelos, determinamos las entradas y salidas del sistema, que a su vez se utilizan para ejecutar las pruebas. Las pruebas basadas en modelos funcionan de la siguiente manera:
             </p>
             <p>
-                Al igual que en el anterior vamos a requerir las tecnologias
-                base para la web, adicionalmente podriamos empezar a usar
-                librerias y frameworks, en especial para Javascript. Los mas
-                conocidos son ReactJS, VueJS y Angular.
+                <ul>
+                    <li>Crear un modelo para el sistema</li>
+                    <li>Determinar las entradas del sistema</li>
+                    <li>Verifique la salida esperada</li>
+                    <li>Ejecutar pruebas</li>
+                    <li>Verifique y valide la salida del sistema frente a la salida esperada</li>
+                </ul>
             </p>
             <p>
-                <strong>Aplicación Web</strong>
-            </p>
-            <p>
-                Para este tipo de proyectos, vamos a usar tecnologias anteriores
-                para construir interfaces para el usuario(Front-end) pero
-                también vamos a requerir de un lenguaje de programación que
-                procese y gestione la información en el lado del
-                servidor(Back-end), los lenguajes Back-end mas utilizados son
-                NodeJS, Python, Java, C# entre otros, cada uno tiene sus pros y
-                sus contras, por lo que es recomendable que escoja el que sea
-                mejor para su proyecto.
-            </p>
-            <p>
-                Adicionalmente, es posible que necesite una Base de Datos, si
-                necesita tener una arquitectura estructura pude usar PostgreSQL
-                o MySQL. Si por el contrario va optar por una no estructurada,
-                es recomendable que use MongoBD.
-            </p>
-            <p>
-                <strong>Aplicación Móvil</strong>
-            </p>
-            <p>
-                Para hacer aplicaciones para telefonos inteligentes(apps)
-                existen 2 opciones: Desarrollo Nativo o Desarrollo Hibrido.
-            </p>
-            <p>
-                Optariamos por el desarrollo nativo si necesitamos aprobechar
-                los recursos nativos del sistema operativo o sus componentes
-                fisicos, como por ejemplo la bateria o el giroscopio. Los
-                lenguajes de programación principales para este tipo de
-                aplicaciones son JAVA, KOTLIN para Sistemas operativos Android y
-                SWIFT para iOS.
-            </p>
-            <p>
-                Por otra parte, el desarrollo hibrido se ha caracterizados por
-                usar tecnologias multiproposito, es decir lenguajes que ya usas
-                para hacer otro tipo de aplicaciones, tambien ligado a eso
-                tienen la caracteristica de ser multiplataforma y ser muy
-                personalizables en cuanto al diseño visual y de interacciones
-                debido al tipo de tecnologia que se usa. Los lenguajes mas
-                reconocidos para hacer este tipo de aplicaciones son Flutter,
-                Xamarin o las librerias para JavaScript como React Native.
-            </p>
-            <p>
-                <strong>Aplicación de Escritorio</strong>
-            </p>
-            <p>
-                Las aplicaciones de escritorio aun son una buena opción cuando
-                queremos aprovechar los recursos nativos de un sistema operativo
-                y de sus componentes de hardware. Los lenguajes de programación
-                que mas resaltan en este campo son C# y su interfaz de
-                desarrollo Visual Studio. Pero también puede optar por JAVA, su
-                principal diferencia podria ser que es multiplataforma entre
-                sistemas operativos que soporten JRE como por ejemplo las
-                distribuciones de Linux y Windows.
+                El enfoque basado en modelos es excelente porque permite un mayor nivel de automatización. También cubre un mayor número de estados en el sistema, mejorando así la cobertura de la prueba.
             </p>
         </section>
         <Heading type="h1">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
-            <aside class="tests_grid">
-                <TestCard :question="question1" />
-                <TestCard :question="question2" />
-            </aside>
+            <Evaluation :questions="questions" />
         </section>
     </GuideBody>
 </template>

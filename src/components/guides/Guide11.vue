@@ -5,320 +5,186 @@ import Evaluation from '@/components/Evaluation.vue';
 import Reference from '@/components/Reference.vue';
 import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
+import Blockquote from '@/components/Blockquote.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
-import imageFigma from '@/assets/images/brands/figma.png';
 import imageOne from '@/assets/images/guide-11/image_1.png';
-import imageTwo from '@/assets/images/guide-11/image_2.png';
-import imageDoOne from '@/assets/images/guide-11/image_do_1.png';
-import imageDontOne from '@/assets/images/guide-11/image_dont_1.png';
-import TipCard from '@/components/TipCard.vue';
+import imageMiro from '@/assets/images/brands/miro.png';
 import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
     {
         id: 1,
-        question: '¿Para qué usamos los moodboard?',
+        question: '¿Para qué hacemos una lluvia de ideas?',
         alternatives: [
-            {
-                answer: false,
-                description:
-                    'Organizar información, que siva de inspiración en el proceso de diseño.'
-            },
-            {
-                answer: false,
-                description: 'Definir como seran los componentes a diseñar.'
-            },
-            {
-                answer: false,
-                description:
-                    'Organizar elementos que sirvan para comparar con nuestro diseño actual.'
-            }
+            { answer: true, description: 'Generar mayor participación de nuestro equipo de trabajo.' },
+            { answer: false, description: 'Conocer diferentes formas de pensamiento de nuestro equipo.' },
+            { answer: false, description: 'Generar ideas innovadoras que resuelvan problemas.' }
         ]
     },
     {
         id: 2,
-        question: '¿Cuál es la ventaja de usar un moodboard digital?',
+        question: '¿En qué técnica partimos por definir malas ideas?',
         alternatives: [
-            {
-                answer: false,
-                description:
-                    'Pueden contener enormes especios de trabajo para recolectar mucha información.'
-            },
-            {
-                answer: false,
-                description:
-                    'Por que ayudan a que el proceso de recoleccion sea mas rápida.'
-            },
-            {
-                answer: false,
-                description:
-                    'Pueden contener mayor numero de personas trabajando al mismo tiempo.'
-            }
+            { answer: true, description: 'Mapa Mental.' },
+            { answer: false, description: 'Lluvia de ideas inverso.' },
+            { answer: false, description: 'En ninguna de las técnicas.' }
         ]
     }
 ]);
 
-const challenge10_tasks = [
-    'Define el propósito',
-    'Define el tono y los valores',
-    'Llenar el moodboard con recursos',
-    'Elegir los recursos mas relevantes',
-    'Resaltar los elementos mas relvantes'
+const challenge11_tasks = [
+    'Definir el problema a los integrantes',
+    'Escribir el problema y dibujar ramas a partir del problema',
+    'Por turnos, aportar ideas para solucionar el problema.',
+    'Anotar una idea por rama, se pueden añadir aportaciones sobre las ideas para mejorarlas.',
+    'Reflexionar y valorar cada idea para intentar llegar a un consenso sobre las soluciones más adecuadas'
 ];
 </script>
 
 <template>
     <GuideTitle>
-        Moodboards
+        Lluvia de Ideas (Brainstorming)
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1">Definición</Heading>
         <section>
             <p>
-                Su traducción literal es mapa de inspiración y aunque su uso
-                está muy asociado al ámbito de la decoración de interiores o la
-                moda, realmente se utiliza en entornos creativos muy diversos,
-                desde el diseño de productos o servicios al audiovisual o el
-                diseño gráfico.
+                La lluvia de ideas es un método que utilizan los equipos de
+                diseño para generar ideas para resolver problemas de diseño
+                claramente definidos. En condiciones controladas y un entorno de
+                pensamiento libre, los equipos abordan un problema por medios
+                tales como preguntas de "¿Cómo podríamos?". Producen una amplia
+                gama de ideas y establecen vínculos entre ellas para encontrar
+                posibles soluciones.
             </p>
-            <p>
-                Un Moodbard es un panel de imágenes recogidas en torno a un
-                marco o concepto. Su finalidad es organizar la información de
-                forma clara, bien sea para inspirar el lanzamiento de nuevas
-                ideas, o para mostrar de forma atractiva imágenes o elementos
-                vertebrados por un concepto.
-            </p>
+            <Blockquote>
+                La lluvia de ideas alienta a las personas a generar pensamientos
+                e ideas que, al principio, pueden parecer un poco locas. Algunas
+                de estas ideas se pueden convertir en soluciones originales y
+                creativas para un problema.
+            </Blockquote>
         </section>
-        <Heading type="h1">¿Por qué usar un moodboard?</Heading>
+        <Heading type="h1">¿Cuándo hacer lluvia de ideas?</Heading>
         <section>
             <p>
-                Funcionan como un depósito de activos centralizado y el equipo
-                puede acceder a ellos en cualquier momento. Los Moodboards son
-                útiles para:
-            </p>
-            <p>
-                <strong>Documentación de investigación</strong>
-            </p>
-            <p>
-                Se pueden tomar varios pasos de investigación en forma de
-                paneles de estado de ánimo, como la investigación de evaluación
-                comparativa, la definición de personas y la ideación
-                de interfaces de usuario.
-            </p>
-            <p>
-                <strong>Exploración y orientación para diseñadores</strong>
-            </p>
-            <p>
-                Al comienzo del proyecto, un moodboard es un espacio donde los
-                diseñadores pueden explorar sus ideas libremente, sin
-                juzgar. Cuando se concluye un tablero, se convierte en una
-                referencia para el equipo a lo largo del proyecto.
-            </p>
-            <p>
-                <strong>Unificando visiones</strong>
-            </p>
-            <p>
-                Una idea es, por definición, abstracta, y esbozar pensamientos
-                es una de las funciones más importantes de un tablero digital o
-                físico. Diferentes partes interesadas pueden contribuir con sus
-                visiones y llegar a un terreno común, haciendo que todos tengan
-                más confianza en la dirección del proyecto.
+                Por lo general lo usarás en la fase de Ideación. Es en ese
+                momento cuando debes generar el mayor número de ideas posibles.
+                Y, posteriormente, elegir aquellas que el grupo considere que
+                son más adecuadas para dar respuesta y generar propuestas
+                conceptuales de diseño.
             </p>
         </section>
-        <Heading type="h1">Tipos de Moodboard</Heading>
+        <Heading type="h1">Principales reglas al hacer lluvia de ideas</Heading>
         <section>
             <p>
-                Un moodboard puede ser físico o digital, y ambos tienen sus
-                valores: los tableros digitales son más rápidos de ensamblar,
-                formatear y aceptar referencias digitales nativas, como
-                animaciones y GIF. Las pizarras físicas requieren un mayor
-                esfuerzo para ser formateadas y pueden exponerse en entornos
-                físicos, como en la pared de un espacio de trabajo.
+                <strong>Suspender el juicio</strong>
             </p>
             <p>
-                <strong>Moodboard Físico</strong>
+                Durante el proceso de generación de ideas, no hay que realizar ninguna valoración o crítica sobre estas. Solo se apuntan las ideas, la evaluación se realiza después.
             </p>
             <p>
-                Es posible explorar de manera más completa objetos como
-                pinturas, telas, papeles, metales y perfumes, además de
-                materiales orgánicos como plantas. Algunos de estos elementos,
-                cuando se reproducen digitalmente, pierden partes de su
-                significado, como los asociados con el tacto o el olfato.
+                <strong>Pensar libremente</strong>
+            </p>
+            <p>
+                Las ideas más prácticas muchas veces nacen de otras ideas que, en su mayoría, son inviables. Por ello, es muy importante para una sesión de lluvia de ideas efectiva, que los usuarios piensen libremente y tengan ideas imposibles.
+            </p>
+            <p>
+                <strong>La cantidad es importante</strong>
+            </p>
+            <p>
+                Al hacer lluvia de ideas se busca generar una gran cantidad de ideas, para luego escoger la mejor de todas ellas.
+            </p>
+            <p>
+                <strong>Efecto multiplicador</strong>
+            </p>
+            <p>
+                Los participantes en las lluvias de ideas, no solo contribuyen con sus pensamientos, sino que también puede sugerir mejoras o combinar las ideas que tienen los demás. Así, las ideas que tienen unos usuarios sirven de estímulo para los otros participantes.
+            </p>
+        </section>
+        <Heading type="h1">¿Cómo hacer una lluvia de ideas?</Heading>
+        <section>
+            <Heading type="h2">Paso 1: Formar un equipo de trabajo</Heading>
+            <p>
+                Como es una técnica grupal, es necesario formar un grupo de trabajo. La recomendación es que no sea superior a 10 personas. Los roles que pueden tener son las siguientes:
+            </p>
+            <p>
+                <ul>
+                    <li><strong>Moderador</strong>: Es la persona encargada de guiar la sesión, resuleve dudas, modera y dinamiza para que sea efectiva y cumpla el objetivo marcado.</li>
+                    <li><strong>Secretario</strong>: Es la persona encargada de solventar cualquier problema o necesidad que pueda darse en la sesión. Además, es la persona que apunta todas las ideas que van surgiendo durante la sesión de Brainstorming. Según el número de participantes que haya en la sesión, el secretario, participa o no en la sesión.</li>
+                    <li><strong>Participantes</strong>: Son todas aquellas personas que intervienen en el brainstorming para encontrar y proponer soluciones al problema propuesto.</li>
+                </ul>
+            </p>
+            <Heading type="h2">Paso 2: Definir el lugar y tiempo para la sesión</Heading>
+            <p>
+                <strong>El lugar</strong>
+            </p>
+            <p>
+                Antes de empezar con la lluvia de ideas es importante contar con un espacio adecuado para ello. Lo mejor es hacerlo en un ambiente relajado y no contaminado.
+            </p>
+            <p>
+                <strong>El tiempo y el momento</strong>
+            </p>
+            <p>
+                Es recomendable que la duración de la sesión no sea superior a 1 hora, aunque no hay un límite establecido y lo mejor es ser flexible.
+            </p>
+            <p>
+                Tan importante como el tiempo es el momento. Hay personas que prefieren aprovechar los primeros momentos del día porque se encuentran más creativas, otras prefieren desconectar o romper la rutina con otras actividades.
+            </p>
+            <Heading type="h2">Paso 3: Definir el problema</Heading>
+            <p>
+                Antes de empezar, es fundamental aclarar cuál es el tema a tratar para evitar desviarse del camino y generar ideas orientadas a la resolución del problema. Se podría empezar formulando preguntas como estas:
+            </p>
+            <p>
+                <ul>
+                    <li>¿Cómo podríamos mejorar la calidad de…?</li>
+                    <li>¿Cómo podríamos evitar que…?</li>
+                    <li>¿Qué podríamos hacer para…?</li>
+                </ul>
+            </p>
+            <Blockquote>Una técnica que podria usarse en este paso podria ser la Técnica de los 5 Whys. Consiste en preguntar 5 veces seguidas el por qué de un situación, acción o cosa con el fin de entender en profundidad la causa o motivación última del proceso.</Blockquote>
+            <Heading type="h2">Paso 4: Desarrollo de la sesión de lluvia de ideas</Heading>
+            <p>
+                En una sesión de lluvia de ideas se trata de conseguir el mayor número posible de ideas, sin importar la calidad (al principio).
+            </p>
+            <p>
+                También podrias usar una de las técnicas de brainstorming la que mejor se adapte al equipo y a los objetivos que se desean conseguir.
             </p>
             <Reference
                 :image="imageOne"
-                description="Mood boards. Fuente: invisionapp.com"
+                description="Una sesión de brainstorming. Fuente: interaction-design.org"
             />
+            <Heading type="h2">Paso 5: Seleccionar las mejores ideas.</Heading>
             <p>
-                <strong>Moodboard Digital</strong>
+                Es el momento de votar por las ideas que mejor solucionen el problema. Lo mejor es empezar valorando las ideas de forma independiente para después seleccionar las mejor valoradas. Puedes utilizar una escala del 0 al 5 para valorar cada idea.
             </p>
             <p>
-                Pueden aprovechar su entorno nativo y agregar una inmensa
-                cantidad de información que se vuelve accesible de una manera
-                mucho más práctica. Este tipo de tablero favorece a los equipos
-                remotos y al catálogo de medios, como videos y animaciones.
+                Es recomendable terminar con las 2 o 3 ideas que mejor ayuden a solucionar el problema.
             </p>
-            <Reference
-                :image="imageTwo"
-                description="UI Moodboard Template. Fuente: milanote.com"
-            />
-        </section>
-        <Heading type="h1">¿Qué incluye un moodboard?</Heading>
-        <section>
+            <Heading type="h2">Paso 6: Tomar decisiones.</Heading>
             <p>
-                Puede incluir cualquier referencia, algunos elementos comunes
-                son:
-            </p>
-            <p><strong>Colores</strong></p>
-            <p>
-                Registra los colores de la marca o de la competencia, prueba
-                nuevas paletas relacionadas con las emociones que deseas
-                explorar dentro de nuevos conceptos.
-            </p>
-            <p><strong>Imágenes</strong></p>
-            <p>
-                hay muchas opciones de imágenes. Es posible explorar fotografías
-                que traduzcan los conceptos deseados o incluso construir una
-                galería de logotipos, íconos e ilustraciones para futuras
-                referencias.
-            </p>
-            <p><strong>Animaciones</strong></p>
-            <p>
-                Las animaciones, que se registran fácilmente en paneles de
-                estado de ánimo digitales, contienen elementos emocionales que
-                conforman una experiencia completa, como referencias de curvas
-                sencillas, barras de progreso, íconos de carga animados,
-                interacciones en el desplazamiento o microinteracciones.
-            </p>
-            <p><strong>Fuentes</strong></p>
-            <p>
-                Busque familias tipográficas que puedan ayudarlo a componer sus
-                caminos visuales, reforzando o contrastando las ideas presentes
-                en el pizarrón.
-            </p>
-            <p><strong>Texturas y patrones</strong></p>
-            <p>
-                Estas son excelentes formas de evocar recuerdos afectivos y
-                pueden indicar indirectamente conceptos establecidos.
-            </p>
-            <p><strong>Textos</strong></p>
-            <p>
-                Organice sus notas, ideas, palabras clave o citas, junto con
-                otros elementos del tablero, para enfatizar sus ideas.
+                Llega el momento de la verdad y hay que decidir cuál es la solución que mejor se adapta a las necesidades que quieres cubrir.
             </p>
         </section>
-        <Heading type="h1">¿Cómo hacer un Moodboard?</Heading>
-        <section>
-            <p>
-                Siga estos pasos clave para crear paneles de ideas efectivos y
-                centrados en el usuario:
-            </p>
-            <Heading type="h2">Entiende tu propósito</Heading>
-            <p>
-                Antes de comenzar a recolectar las piezas del rompecabezas,
-                elige el camino principal. Cree una declaración clara que
-                explique qué emoción debe activarse en una persona cuando
-                contacta su solución:
-            </p>
-            <aside class="tips_grid">
-                <TipCard type="dont">
-                    “Cuando Edith instala nuestra aplicación, debe ver una
-                    interfaz bonita”
-                </TipCard>
-                <TipCard type="do">
-                    “Cuando Edith instala nuestra aplicación, debe estar
-                    motivada para comenzar a hacer ejercicio”
-                </TipCard>
-            </aside>
-            <Heading type="h2">Encuentra tu tono</Heading>
-            <p>
-                Establecer el tono de la marca ayuda a preparar un moodboard
-                efectivo. Un ejercicio simple es elegir algunas palabras clave
-                que representen la visión del equipo. Las palabras de tono se
-                pueden registrar en el propio tablero para que siempre estén
-                accesibles para todos.
-            </p>
-            <Heading type="h2">Reunir datos sobre el tema</Heading>
-            <p>
-                Investigue un poco más sobre el tema antes de empezar a buscar
-                referencias visuales. Recopile notas tomadas durante las
-                reuniones, datos de encuestas de usuarios y entrevistas con
-                clientes para tratar de extraer información para el proyecto.
-            </p>
-            <Heading type="h2">Define tus valores</Heading>
-            <p>
-                Al comenzar con un moodboard, establezca valores claros desde el
-                principio, como por ejemplo: moderno, divertido, infantil,
-                colorido o deportivo. Para facilitar el proceso de selección de
-                referencias, define tres o cuatro adjetivos para tu tablero.
-            </p>
-            <Heading type="h2">Piensa en grande, luego en pequeño</Heading>
-            <p>
-                Comience por definir grandes grupos dentro del tema principal y
-                profundice en cada uno, lo que organizará el proceso de
-                descubrimiento.
-            </p>
-            <Heading type="h2">Ser selectivo</Heading>
-            <p>
-                No ponga simplemente algo en su moodboard. Elija solo lo que
-                marcará la diferencia en la dirección del proyecto. Si tienes
-                dudas sobre piezas muy similares, elige solo una que represente
-                esa idea.
-            </p>
-            <Heading type="h2">Organice visualmente sus referencias</Heading>
-            <p>
-                Utiliza el tamaño de cada elemento para resaltar su importancia
-                en la composición. Las fotos más grandes y las frases más
-                grandes funcionan naturalmente como puntos destacados durante
-                este caos organizado.
-            </p>
-            <aside class="tips_grid">
-                <TipCard type="dont">
-                    <template v-slot:image>
-                        <img :src="imageDontOne" />
-                    </template>
-                    Si los elementos tienen el mismo tamaño o no destacan uno
-                    sobre otro, no podremos diferenciar los mas importantes.
-                </TipCard>
-                <TipCard type="do">
-                    <template v-slot:image>
-                        <img :src="imageDoOne" />
-                    </template>
-                    Destacar los elementos por tamaño o color, ya sean fotos
-                    colores o tipografia transmitirán facilmente la jerarquia e
-                    importancia de estos.
-                </TipCard>
-            </aside>
-        </section>
-        <Heading type="h1">Reto #10</Heading>
-        <Challenge time="1" :id="10" :tasks="challenge10_tasks">
-            Elaborar un moodbard con ideas para un rediseño del login del
+        <Challenge time="1" :id="11" :tasks="challenge11_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #11 </Heading>
+            </template>
+            Elaborar una lluvia de ideas con la técnica de Mapa Mental para mejorar el login del
             intranet de alumnos de la UNHEVAL.
             <template v-slot:tools>
-                <ResourceLink name="Figma" type="tool">
-                    <ResourceCard
-                        title="Figma"
-                        description="Herramienta para organizar ideas"
-                        type="tool"
-                        :src="imageFigma"
-                    />
-                </ResourceLink>
-                <ResourceLink name="Plantilla" type="download">
-                    <ResourceCard
-                        title="Plantilla"
-                        description="Herramienta para organizar ideas"
-                        type="download"
-                    />
-                </ResourceLink>
-                <ResourceLink name="Ejemplos" type="download">
-                    <ResourceCard
-                        title="Ejemplos"
-                        description="Herramienta para organizar ideas"
-                        type="download"
-                    />
-                </ResourceLink>
+                <ResourceCard
+                    title="Miro"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageMiro"
+                />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
             </template>
         </Challenge>
         <Heading type="h1">Evaluación</Heading>

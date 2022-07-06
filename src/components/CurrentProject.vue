@@ -25,7 +25,7 @@ const progress = computed(() => (projects.current.guide / 17) * 100);
     <div class="CurrentProject">
         <div class="current_project_wrapper" @click="showCurrentProject()">
             <IconFolder />
-            <p>{{ projects.current.title }}</p>
+            <!-- <p>{{ projects.current.title }}</p> -->
         </div>
         <Dropdown :show="flagCurrentProject" @close="hideCurrentProject">
             <div class="current_project_detail">
@@ -62,10 +62,10 @@ const progress = computed(() => (projects.current.guide / 17) * 100);
             fill: var(--text_color);
             width: var(--icon_size);
             height: var(--icon_size);
+            padding-right: var(--gap);
         }
         p {
             font-size: var(--text_size);
-            padding-right: var(--gap);
             color: var(--text_color_70);
             line-height: var(--title_line_height);
             max-width: 150px;
@@ -125,6 +125,9 @@ const progress = computed(() => (projects.current.guide / 17) * 100);
     .CurrentProject {
         .current_project_wrapper {
             border: none;
+            svg {
+                padding-right: 0;
+            }
             p {
                 display: none;
             }

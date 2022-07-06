@@ -230,40 +230,34 @@ const challenge1_tasks = [
                 </ul>
             </p>
         </section>
-        <Heading type="h1" >Reto #1</Heading>
         <Challenge time="1" :id="1" :tasks="challenge1_tasks">
+            <template v-slot:title>
+                <Heading type="h1" >Reto #1</Heading>
+            </template>
             Crea un guión de entrevista para usuarios de la pagina web de eventos de la UNHEVAL.
             <template v-slot:tools>
-                <ResourceLink name="Google Docs" type="tool">
-                    <ResourceCard
-                        title="Google Docs"
-                        description="Herramienta para organizar ideas"
-                        type="tool"
-                        :src="imageDocs"
-                        />
-                </ResourceLink>
-                    <ResourceLink name="Google Keep" type="tool">
-                    <ResourceCard
-                        title="Google Keep"
-                        description="Herramienta para organizar ideas"
-                        type="tool"
-                        :src="imageKeep"
-                        />
-                </ResourceLink>
-                <ResourceLink name="Formato" type="download">
-                    <ResourceCard
-                        title="Formato"
-                        description="Herramienta para organizar ideas"
-                        type="download"
-                        />
-                </ResourceLink>
-                <ResourceLink name="Ejemplos" type="download">
-                    <ResourceCard
-                        title="Ejemplos"
-                        description="Herramienta para organizar ideas"
-                        type="download"
-                        />
-                </ResourceLink>
+                <ResourceCard
+                    title="Google Docs"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageDocs"
+                    />
+                <ResourceCard
+                    title="Google Keep"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageKeep"
+                    />
+                <ResourceCard
+                    title="Formato"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                    />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                    />
             </template>
         </Challenge>
         <Heading type="h1" >Evaluación</Heading>

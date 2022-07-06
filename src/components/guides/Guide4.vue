@@ -2,146 +2,210 @@
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
 import Evaluation from '@/components/Evaluation.vue';
-import Heading from '@/components/Heading.vue';
 import Blockquote from '@/components/Blockquote.vue';
-import Reference from '@/components/Reference.vue';
-import Challenge from '@/components/Challenge.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
+import Heading from '@/components/Heading.vue';
+import Challenge from '@/components/Challenge.vue';
 import TipCard from '@/components/TipCard.vue';
+import imageMiro from '@/assets/images/brands/miro.png';
+import imageOne from '@/assets/images/guide-4/image_1.png';
+import Reference from '@/components/Reference.vue';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
     {
         id: 1,
-        question: '¿Cuándo hacer el benchmarking?',
+        question: '¿Por que hacemos el user journey map?',
         alternatives: [
-            { answer: true, description: 'Antes de la fase definir o después de la fase de pruebas.'},
-            { answer: false, description: 'Antes de las pruebas o después de empatizar.'},
-            { answer: false, description: 'Después de definir o antes de las pruebas.'}
+            { answer: true, description: 'Por que necesitamos entender si los procesos o etapas de un proceso están bien optimizados.'},
+            { answer: false, description: 'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.'},
+            { answer: false, description: 'Por que queremos detectar si las tareas son completadas y el grado de satisfacción del usuario.'}
         ]
     },
     {
         id: 2,
-        question: 'Si estoy trabajando en un producto nuevo ¿Contra que puedo hacer el benchmarking?',
+        question: '¿Qué son las oportunidades en un user journey map?',
         alternatives: [
-            { answer: true, description: 'Con un producto estándar en la industria.' },
-            { answer: false, description: 'Con un producto similar de mi empresa.' },
-            { answer: false, description: 'Con un producto que me sea familiar y sepa sus características.'}
+            { answer: true, description: 'Información que describe cómo se puede optimizar la experiencia del usuario.'},
+            { answer: false, description: 'Rutas que tiene el usuario para completar su recorrido.'},
+            { answer: false, description: 'Experiencias favorables del usuario en el recorrido.'}
         ]
     }
 ]);
 
-const challenge3_tasks = [
-    'Definir la competencia',
-    'Definir las metricas a evaluar',
-    'Contruir un tablero comparativo y desarrolla la evaluacion del benchmarking',
-    'Elaborar las conclusiones'
+const challenge4_tasks = [
+    'Definir el actor',
+    'Definir el escenario y las espectativas',
+    'Definir las fases del viaje',
+    'Identificar las acciones, pensamientos y emociones',
+    'Identificar las oportunidades'
 ];
 </script>
 <template>
     <GuideTitle>
-        UX Benchmarking
-        <template v-slot:timeRead>8</template>
+        User Journey Map
+        <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1" >Definición</Heading>
         <section>
             <p>
-                El benchmarking es una metodología que permite conocer la posición de un producto en relación a los de su competencia, en un determinado momento. Los resultados obtenidos facilitan el conocimiento de sus fortalezas y debilidades, que deben ser tenidas en cuenta para las instancias de creación de nuestro prototipo.
+                El “Journey Map” es una herramienta proveniente del Design
+                Thinking y define las distintas actividades que desarrolla un
+                usuario en el uso de un producto o servicio. Con el paso del
+                tiempo se descubrió que también puede responder a cómo
+                interactúan los usuarios con marcas o servicios.
             </p>
+            <p>
+                Dentro del proceso del Design Thinking, es una herramienta muy
+                eficaz para diseñar una solución, o para detectar puntos
+                conflictivos de un producto o servicio existentes que pudieran
+                requerir una mejora, y fue definida de esta manera por Philip
+                Kotler en 2013.
+            </p>
+            <Reference
+                :image="imageOne"
+                description="User Journey Map. Fuente: fromdoppler.com"
+            />
         </section>
-        <Heading type="h1" >¿Cómo aplicar benchmarking?</Heading>
+        <Heading type="h1" >¿Por qué usar User Journey Map?</Heading>
         <section>
             <p>
-                Para realizar un estudio de UX Benchmarking de extremo a extremo, primero decida qué va a medir y qué método de investigación utilizará para recopilar esas métricas.
+                El User Journer Map es un proceso que brinda una visión
+                holística de la experiencia del cliente al descubrir momentos
+                tanto de frustración como de placer a lo largo de una serie de
+                interacciones. Realizado con éxito, revela oportunidades para
+                abordar los puntos débiles de los clientes, aliviar la
+                fragmentación y, en última instancia, crear una mejor
+                experiencia para sus usuarios.
             </p>
-            <Heading type="h2">1. Define la competencia</Heading>
             <p>
-                Identificamos cuáles son las aplicaciones con las que se hara la comparación, deberián tener funcionalidades parecidas a las que deseamos evaluar.
+                El proceso de creación de un mapa fuerza la conversación y un
+                modelo mental alineado para todo el equipo. Los mapas también
+                pueden convertirse en la base para la toma de decisiones a
+                medida que el equipo avanza.
+            </p>
+        </section>
+        <Heading type="h1" >Elementos del User Journey Map</Heading>
+        <section>
+            <p>
+                El mapa está compuesto por filas (secciones fijas) y columnas
+                (el número de columnas varía según el proyecto). Te
+                sugerimos definir las etapas con el tiempo de duración, de ese
+                modo podrás saber cuántas columnas necesitas.
             </p>
             <p>
-                Nuestra competencia podria ser: Una versión anterior del producto o servicio, un competidor, un estándar de la industria, un objetivo determinado por las partes interesadas.
+                Los mapas de viaje vienen en todas las formas y
+                tamaños. Independientemente de cómo se vean, los mapas de viaje
+                tienen los siguientes 5 elementos clave en común:
             </p>
+            <Heading type="h2" >Actor</Heading>
             <p>
-                Si mi producto esta/estará enfocado a delivery de comida, mi competencia podria ser:
+                Es la persona o usuario que experimenta el viaje. Los actores
+                generalmente se alinean con personas y sus acciones en el mapa
+                se basan en datos.
             </p>
+            <p>Por ejemplo en la página web de una universidad los actores pueden ser:</p>
             <aside class="tips_grid">
                 <TipCard type="dont">
                     <ul>
-                        <li>Uber</li>
-                        <li>Rappi</li>
+                        <li>Desarrollador</li>
+                        <li>Diseñador</li>
                     </ul>
                 </TipCard>
                 <TipCard type="do">
                     <ul>
-                        <li>Uber Eat</li>
-                        <li>Rappi</li>
+                        <li>Estudiante</li>
+                        <li>Docente</li>
                     </ul>
                 </TipCard>
             </aside>
-            <Heading type="h2" >2. Elije que medir</Heading>
+            <Heading type="h2" >Escenario + Expectativas</Heading>
             <p>
-                <strong>Tareas</strong>
+                El escenario describe la situación que aborda el User Journey
+                Map y está asociado con la meta o necesidad de un actor y sus
+                expectativas específicas. Por ejemplo, un escenario podría ser
+                cambiar de planes móviles para ahorrar dinero, y las
+                expectativas incluyen encontrar fácilmente toda la información
+                necesaria para tomar una decisión.
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <strong>Escenario:</strong> Prestamo de libro de la biblioteca.
+                    <br>
+                    <strong>Espectativas:</strong> Que me otorguen el prestamo rápidamente.
+                </TipCard>
+                <TipCard type="do">
+                    <strong>Escenario:</strong> Solicitar prestamo de libro en la página web de la bibliotena central.
+                    <br>
+                    <strong>Espectativas:</strong> Encontrar facilmente el libro que quiero prestarme.
+                </TipCard>
+            </aside>
+            <Blockquote>
+                Los escenarios pueden ser reales (para productos y servicios
+                existentes) o anticipados, para productos que aún se encuentran
+                en la etapa de diseño.
+            </Blockquote>
+            <Heading type="h2" >Fases del viaje</Heading>
             <p>
-                Averigue las principales tareas que los usuarios completan en su producto. Por ejemplo:
+                Las fases del viaje son las diferentes etapas de alto nivel del
+                viaje. Proporcionan organización para el resto de la información
+                del User Journey Map (acciones, pensamientos y emociones). Las
+                etapas variarán de un escenario a otro; cada organización
+                normalmente tendrá datos que le ayuden a determinar cuáles son
+                estas fases para un escenario determinado. 
+            </p>
+            <p>Aquí hay unos ejemplos:</p>
+            <p>
+                <ul>
+                    <li>Para un escenario de comercio electrónico (como comprar parlantes Bluetooth), las fases pueden ser descubrir, probar, comprar, usar, buscar soporte.</li>
+                    <li>Para compras grandes (o de lujo) (como conducir una prueba y comprar un automóvil), las fases pueden ser compromiso, educación, investigación, evaluación, justificación.</li>
+                    <li>Para un escenario de negocio a negocio (como el despliegue de una herramienta interna), las fases podrían ser compra, adopción, retención, expansión, promoción.</li>
+                </ul>
+            </p>
+            <Heading type="h2" >Acciones, pensamientos y emociones</Heading>
+            <p>
+                Estos son comportamientos, pensamientos y sentimientos que el actor tiene a lo largo del viaje y que se mapean dentro de cada una de las fases del viaje.
+            </p>
+            <p>Las acciones: son los comportamientos reales y los pasos tomados por los usuarios.</p>
+            <p>Los pensamientos: corresponden a las preguntas, motivaciones y necesidades de información de los usuarios en diferentes etapas de viaje.</p>
+            <p>Las emociones: Se trazan como una sola línea a lo largo de las fases del viaje, indicando literalmente los "altibajos" emocionales de la experiencia.</p>
+            <Heading type="h2" >Oportunidades</Heading>
+            <p>
+                Las oportunidades son información que se obtiene del mapeo; hablan de cómo se puede optimizar la experiencia del usuario. Las perspectivas y las oportunidades ayudan al equipo a extraer conocimiento del mapa:
             </p>
             <p>
                 <ul>
-                    <li>Para una aplicación de altavoz inteligente una posible tarea seria “configuración de un nuevo altavoz inteligente”.</li>
-                    <li>Para un sitio web de comercio electrónico una posible tarea seria “realizar una compra”.</li>
-                    <li>Para un sitio web de banca móvil una posible tarea seria “actualización de la información de contacto”.</li>
-                    <li>Para un sitio web de agencia B2B una posible tarea seria “Envío de un formulario de cliente potenciales”.</li>
+                    <li>¿Qué hay que hacer con este conocimiento?</li>
+                    <li>¿Quién es dueño de qué cambio?</li>
+                    <li>¿Dónde están las mayores oportunidades?</li>
+                    <li>¿Cómo vamos a medir las mejoras que implementamos?</li>
                 </ul>
-            </p>
-            <p>
-                <strong>Métrica</strong>
-            </p>
-            <p>
-                Las metricas sencillas mas usadas son:
-            </p>
-            <p>
-                <ul>
-                    <li>Navegación: cantidad de pasos necesarios para completar a tarea.</li>
-                    <li>Vocabulario: Las palabras utilizadas en los elementos de interacción(botones, títulos) permiten que el usuario pueda llevar adelante la tarea y no presta a confusión.</li>
-                    <li>Diseño: Ocupación del espacio en página, distribución de los elementos y tamaño en relación al espacio.</li>
-                </ul>
-            </p>
-            <p>
-                Si necesita algo mas complejo podria optar por el marco HEART de Google: Happiness(felicidad), Engagement(compromiso), Adoption(adopción), Retention(retención), Task effectiveness and efficiency(Efectividad y Eficiencia en la Tarea).
-            </p>
-            <Heading type="h2" >3. Desarrollo del benchmarking</Heading>
-            <p>
-               A travez de un tablero, debe evaluar por puntuación, cualidades u otro tipo de indicador que le proporcione una comparativa entre las diferentes aplicaciones.
-            </p>
-            <p>
-                A medida que recopila su primer conjunto de medidas, considere los factores externos que pueden afectar sus datos y, cuando sea posible, planifique en torno a ellos. Por ejemplo, si tiene un sitio web de comercio electrónico, desconfíe de factores como campañas de marketing extensas o influencias económicas a gran escala que pueden alterar sus métricas y dificultar la correlación del cambio de diseño con los resultados.
-            </p>
-            <Heading type="h2" >4. Conclusiones</Heading>
-            <p>
-                A partir del análisis de las interfaces, elaboraremos conclusiones definiendo las Fortalezas y Debilidades que presentaron cada una de las aplicaciones de la competencia durante el desarrollo de las tareas.
             </p>
         </section>
-        <Heading type="h1">Reto #3</Heading>
-        <Challenge time="1" :id="3" :tasks="challenge3_tasks">
-            Crea un UX Benchmarking para encontrar la misión y visión institucional de una universidad.
+        <Challenge time="1" :id="4" :tasks="challenge4_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #4 </Heading>
+            </template>
+           Realizar el User Journey Map de como el usuario visualiza un evento en la página web de la UNHEVAL.
             <template v-slot:tools>
-                <ResourceLink name="Miro" type="tool">
-                    <ResourceCard
-                        title="Miro"
-                        description="Herramienta para organizar ideas"
-                        type="tool"
-                        :src="imageMiro"
-                    />
-                </ResourceLink>
-                <ResourceLink name="Ejemplos" type="download">
-                    <ResourceCard
-                        title="Ejemplos"
-                        description="Herramienta para organizar ideas"
-                        type="download"
-                    />
-                </ResourceLink>
+                <ResourceCard
+                    title="Miro"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageMiro"
+                />
+                <ResourceCard
+                    title="Plantilla"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
             </template>
         </Challenge>
         <Heading type="h1" >Evaluación</Heading>

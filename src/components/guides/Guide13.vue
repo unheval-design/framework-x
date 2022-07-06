@@ -1,7 +1,7 @@
 <script setup>
 import GuideTitle from '@/components/GuideTitle.vue';
 import GuideBody from '@/components/GuideBody.vue';
-import TestCard from '@/components/TestCard.vue';
+import Evaluation from '@/components/Evaluation.vue';
 import Reference from '@/components/Reference.vue';
 import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
@@ -9,32 +9,42 @@ import Blockquote from '@/components/Blockquote.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import imageOne from '@/assets/images/guide-13/image_1.png';
 import imageFigma from '@/assets/images/brands/figma.png';
-import imageXd from '@/assets/images/brands/xd.png';
-import imagePs from '@/assets/images/brands/ps.png';
-import imageAi from '@/assets/images/brands/ai.png';
-import imageWix from '@/assets/images/brands/wix.png';
-import imageWp from '@/assets/images/brands/wp.png';
+import imageDoOne from '@/assets/images/guide-13/image_do_1.png'
+import imageDontOne from '@/assets/images/guide-13/image_dont_1.png'
+import imageDoTwo from '@/assets/images/guide-13/image_do_2.png'
+import imageDontTwo from '@/assets/images/guide-13/image_dont_2.png'
+import Challenge from '@/components/Challenge.vue';
+import TipCard from '@/components/TipCard.vue';
+import { ref } from '@vue/reactivity';
 
-const question1 = {
-    question:
-        '¿Cuándo debo escojer el enfoque mobile first?',
-    answer: 1,
-    alternatives: [
-        'Cuando necesito priorizar el contenido y las funcionanidades esenciales.',
-        'Cuando hago diseño atómico, primero los elementos pequelos y luego los grandes.',
-        'Cuando mis usuarios no tienen mucho conocimiento sobre usar interfaces.'
-    ]
-};
+const questions = ref([
+    {
+        id: 1,
+        question: '¿Cuándo debo escojer el enfoque mobile first?',
+        alternatives: [
+            { answer: true, description: 'Cuando necesito priorizar el contenido y las funcionanidades esenciales.'},
+            { answer: false, description: 'Cuando hago diseño atómico, primero los elementos pequelos y luego los grandes.'},
+            { answer: false, description: 'Cuando mis usuarios no tienen mucho conocimiento sobre usar interfaces.'}
+        ]
+    },
+    {
+        id: 2,
+        question: '¿Cuándo debe escojer el enfoque desktop first?',
+        alternatives: [
+            { answer: true, description: 'Cuando nuestros usuarios son adultos y estan acostumbrados a las interfaces tradicionales.'},
+            { answer: false, description: 'Cuando necesitamos utilizar un trabajo mejor estandarizado.'},
+            { answer: false, description: 'Cuando necesitamos que nuestras interfaces tengan mucha funcionalidad y contenido.'}
+        ]
+    }
+]);
 
-const question2 = {
-    question: '¿Cuándo debe escojer el enfoque desktop first?',
-    answer: 3,
-    alternatives: [
-        'Cuando nuestros usuarios son adultos y estan acostumbrados a las interfaces tradicionales.',
-        'Cuando necesitamos utilizar un trabajo mejor estandarizado.',
-        'Cuando necesitamos que nuestras interfaces tengan mucha funcionalidad y contenido.'
-    ]
-};
+const challenge13_tasks = [
+    'Priorizar el contenido necesario',
+    'Revisar consistencia de los texto.',
+    'Ubicar las acciones importante siempre visibles',
+    'Validar cumplimiento de la funcionabilidad.',
+    'Diseñar mockup'
+];
 </script>
 
 <template>
@@ -57,6 +67,20 @@ const question2 = {
             <Blockquote>
                 Con un espacio tan limitado en una pequeña pantalla móvil, los diseñadores de UX deben priorizar los aspectos más importantes de su producto.
             </Blockquote>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontOne">
+                    </template>
+                    Opciones de dificil acceso y contenido extra que no aportan valor.
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoOne">
+                    </template>
+                    Opciones accesibles y solo contenido necesario acerca de la sección.
+                </TipCard>
+            </aside>
             <Heading type="h2">¿Por qué vista móvil primero?</Heading>
             <p>
                 El uso de Internet móvil ha superado el uso de Internet de escritorio. Si el 72,5% de las personas accederá a Internet únicamente con sus teléfonos en 2025, esto demuestra la importancia de tener una experiencia de usuario móvil óptima. Además, es más probable que los consumidores compren y regresen a las empresas que tienen un sitio compatible con dispositivos móviles.
@@ -153,6 +177,20 @@ const question2 = {
                     </li>
                 </ul>
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    <template v-slot:image>
+                        <img :src="imageDontTwo">
+                    </template>
+                    La pagina web no es responsiva por miedo a que no se entienda.
+                </TipCard>
+                <TipCard type="do">
+                    <template v-slot:image>
+                        <img :src="imageDoTwo">
+                    </template>
+                    Pagina responsiva sin perder funcionalidad.
+                </TipCard>
+            </aside>
         </section>
         <Heading type="h1">¿Cuál es el mejor enfoque?</Heading>
         <section>
@@ -166,13 +204,29 @@ const question2 = {
                 Revisa tus analytics y descubre cuáles son las circunstancias en las cuales la gente ve tu sitio, y si aún no tienes analytics, puedes ponerte en los pies de tus usuarios y tratar de proyectar en qué condiciones la gente llegará.
             </p>
         </section>
+        <Challenge time="1" :id="13" :tasks="challenge13_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #13 </Heading>
+            </template>
+            Crea un Mockup rediseñando la pagina principal de la UNHEVAL con la técnica Mobile First.
+            <template v-slot:tools>
+                <ResourceCard
+                    title="Figma"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageFigma"
+                />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
+            </template>
+        </Challenge>
         <Heading type="h1">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>
-            <aside class="tests_grid">
-                <TestCard :question="question1" />
-                <TestCard :question="question2" />
-            </aside>
+            <Evaluation :questions="questions" />
         </section>
     </GuideBody>
 </template>
