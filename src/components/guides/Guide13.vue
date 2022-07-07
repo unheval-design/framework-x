@@ -40,9 +40,9 @@ const questions = ref([
 
 const challenge13_tasks = [
     'Priorizar el contenido necesario',
-    'Revisar consistencia de los texto.',
+    'Revisar consistencia de los texto',
     'Ubicar las acciones importante siempre visibles',
-    'Validar cumplimiento de la funcionabilidad.',
+    'Validar cumplimiento de la funcionabilidad',
     'Diseñar mockup'
 ];
 </script>
@@ -101,17 +101,17 @@ const challenge13_tasks = [
                     <li bold>
                         <strong>Los usuarios están a la vanguardia del diseño</strong>
                         <br>
-                        su diseño debe ayudar a los usuarios a resolver un problema o completar una tarea de manera rápida y eficaz.
+                        Su diseño debe ayudar a los usuarios a resolver un problema o completar una tarea de manera rápida y eficaz.
                     </li>
                     <li bold>
                         <strong>Jerarquía visual del contenido</strong>
                         <br>
-                        su contenido debe ser conciso y directo. Es importante centrarse en ofrecer solo lo que el usuario está buscando y eliminar los elemntos que puedan distraerlo.
+                        Su contenido debe ser conciso y directo. Es importante centrarse en ofrecer solo lo que el usuario está buscando y eliminar los elemntos que puedan distraerlo.
                     </li>
                     <li bold>
                         <strong>Manténgalo simple</strong>
                         <br>
-                        un diseño móvil simple es una excelente manera de mejorar la claridad del contenido mientras ayuda a los usuarios a concentrarse en el contenido que más importa. Algunos métodos para mantenerlo simple incluyen:
+                        Un diseño móvil simple es una excelente manera de mejorar la claridad del contenido mientras ayuda a los usuarios a concentrarse en el contenido que más importa. Algunos métodos para mantenerlo simple incluyen:
                         <ul>
                             <li>
                                 Reducir la cantidad de enlaces en su menú de navegación.
@@ -136,12 +136,12 @@ const challenge13_tasks = [
                     <li bold>
                         <strong>CTA audaces y consistentes</strong>
                         <br>
-                        tener un CTA(botones que llaman a acciones importantes) brillante, audaz y consistente ayuda a garantizar que los usuarios puedan ubicarlos con facilidad.
+                        Tener un CTA(botones que llaman a acciones importantes) brillante, audaz y consistente ayuda a garantizar que los usuarios puedan ubicarlos con facilidad.
                     </li>
                     <li bold>
                         <strong>Considere la velocidad de carga de su sitio</strong>
                         <br>
-                        si los usuarios experimentan un bajo rendimiento del sitio web, es menos probable que el 79% de los compradores vuelvan a comprar en ese sitio web. Por lo tanto, la velocidad de su sitio móvil, incluida su pantalla de inicio, es extremadamente importante.
+                        Si los usuarios experimentan un bajo rendimiento del sitio web, es menos probable que el 79% de los compradores vuelvan a comprar en ese sitio web. Por lo tanto, la velocidad de su sitio móvil, incluida su pantalla de inicio, es extremadamente importante.
                     </li>
                 </ol>
             </p>

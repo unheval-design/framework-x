@@ -41,7 +41,7 @@ export default {
     img {
         border-radius: var(--radius);
         width: 100%;
-        max-height: 360px;
+        /* max-height: 380px; */
         object-fit: cover;
     }
     caption {

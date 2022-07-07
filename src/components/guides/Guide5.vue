@@ -37,7 +37,7 @@ const questions = ref([
 
 const challenge5_tasks = [
     'Definir el perfil del usuario',
-    'Crear tarjetas(cards) con el contenido',
+    'Crear tarjetas (cards) con el contenido',
     'Definir las categorias',
     'Aplicar el ejercicio con un usuario'
 ];

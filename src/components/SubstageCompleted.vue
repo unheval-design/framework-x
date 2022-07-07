@@ -24,7 +24,7 @@ const onClick = () => {
                 }}
             </template>
             <template v-slot:description>
-                <p v-if="guideId == 5">
+                <p v-if="guideId == 4">
                     Has completado de la subetapa
                     <strong>Empatizar</strong>, con las siguientes guías toca
                     <strong>Definir</strong> tu solución.
@@ -45,12 +45,12 @@ const onClick = () => {
                     continua <strong>Prototipar II</strong> para una solución
                     mas real.
                 </p>
-                <p v-if="guideId == 17">
+                <p v-if="guideId == 18">
                     Has completado de la subetapa
                     <strong>Prototipar II</strong>, con las siguientes guías
                     toca <strong>Probar</strong> tu solución.
                 </p>
-                <p v-if="guideId == 19">
+                <p v-if="guideId == 20">
                     Has completado todas las subetapas y guias de la creación de
                     interfaces.
                 </p></template

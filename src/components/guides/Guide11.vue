@@ -36,8 +36,8 @@ const questions = ref([
 const challenge11_tasks = [
     'Definir el problema a los integrantes',
     'Escribir el problema y dibujar ramas a partir del problema',
-    'Por turnos, aportar ideas para solucionar el problema.',
-    'Anotar una idea por rama, se pueden añadir aportaciones sobre las ideas para mejorarlas.',
+    'Por turnos, aportar ideas para solucionar el problema',
+    'Anotar una idea por rama, se pueden añadir aportaciones sobre las ideas para mejorarlas',
     'Reflexionar y valorar cada idea para intentar llegar a un consenso sobre las soluciones más adecuadas'
 ];
 </script>

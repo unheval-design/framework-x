@@ -7,49 +7,33 @@ import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import imageOne from '@/assets/images/guide-17/image_1.png';
-import imageTwo from '@/assets/images/guide-17/image_2.png';
-import imageThree from '@/assets/images/guide-17/image_3.png';
+import imageTwo from '@/assets/images/guide-17/image_2.gif';
+import imageThree from '@/assets/images/guide-17/image_3.gif';
+import imageFour from '@/assets/images/guide-17/image_4.gif';
+import imageFive from '@/assets/images/guide-17/image_5.gif';
+import imageFigma from '@/assets/images/brands/figma.png';
+import imageFramer from '@/assets/images/brands/framer.png';
+import imageXcode from '@/assets/images/brands/xcode.png';
+import imageAndroid from '@/assets/images/brands/android.png';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
     {
         id: 1,
-        question: '¿En cuál de estos proyectos seria recomendable usar un CMS?',
+        question: '¿Para qué hacemos diseño de interacciones?',
         alternatives: [
-            {
-                answer: true,
-                description: 'Para promocionar un evento de emprendedores.'
-            },
-            {
-                answer: false,
-                description: 'Publicación de noticias de la Universidad.'
-            },
-            {
-                answer: false,
-                description: 'Control de asistencia para un colegio.'
-            }
+            { answer: true, description: 'Para que el proceso de usar nuestro producto sea mas entretenido para los usuarios.' },
+            { answer: false, description: 'Para mejorar las funcionalidades de los elementos de la interfaz.' },
+            { answer: false, description: 'Para mejorar la comunicación que existe entre la interfaz y el usuario.' }
         ]
     },
     {
         id: 2,
-        question:
-            '¿Cuál seria la razon principal para escojer el desarrollo de una aplicación móvil nativo?',
+        question: '¿En qué consiste la retroalimentación en las microinteracciones?',
         alternatives: [
-            {
-                answer: true,
-                description:
-                    'Se necesita aprovechar los componentes fisicos de telefono o del sistema operativo.'
-            },
-            {
-                answer: false,
-                description:
-                    'Se necesita mejorar el sistema de interacción con el usuario.'
-            },
-            {
-                answer: false,
-                description:
-                    'Se piensa replicar en diferentes tipos de telefonos.'
-            }
+            { answer: true, description: 'Es la mejora que el usuario puede aportar acerca de una interacción realizada.' },
+            { answer: false, description: 'Es la opinión que tiene el usuario luego de ejecutar una tarea o acción en la interfaz.' },
+            { answer: false, description: 'La respuesta que ve el usuario luego de ejecutar un disparador o realizar una acción.' }
         ]
     }
 ]);
@@ -57,158 +41,175 @@ const questions = ref([
 
 <template>
     <GuideTitle>
-        Implementación
+        Diseño de Interacción(IxD)
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1">Definición</Heading>
         <section>
             <p>
-                Llegado el punto donde tenemos que comenzar con el desarrollo
-                del producto, es decir convertir nuestros prototipos en el
-                producto real. En este pundo hay que tomar muchas deciciones
-                importantes con respecto a la infrestructura tecnologia que
-                necesitamos para nuestro proyecto, como por ejemplo el lenguaje
-                de programación o la base de datos mas adecuado para el
-                producto, si es que vamos a programar.
+                El diseño de interacción, a menudo abreviado como IxD, es la
+                práctica de diseñar productos y servicios digitales
+                interactivos. John Kolko, autor de Thoughts on Interaction
+                Design, da la siguiente definición de diseño de interacción: “El
+                diseño de interacción es la creación de un diálogo entre una
+                persona y un producto, sistema o servicio. Este diálogo es tanto
+                de naturaleza física como emocional y se manifiesta en la
+                interacción entre la forma, la función y la tecnología tal como
+                se experimenta a lo largo del tiempo”.
             </p>
             <p>
-                Te dejaremos algunos tipos de implementación que puede tomar tu
-                proyecto a partir de este punto.
-            </p>
-        </section>
-        <Heading type="h1">Tipos de Implementación</Heading>
-        <section>
-            <p>
-                El tipo de implementación va estar ligado directamente al tipo
-                de producto que se desea desarrollar. Los podriamos categorizar
-                por:
-            </p>
-            <Heading type="h2">Builders</Heading>
-            <p>
-                Si nuestro proyecto es una pagina web simple e informativa, las
-                denominadas Landing Page, es muy probable que quieras una
-                implementación rápida sin tener que codificar. Para estos tipos
-                de implementación existen soluciones con tecnologia “drag and
-                drop” que consta de arrastrar y soltar elementos hacia la
-                interfaz, uno de los mas conocidos es Wix.
+                Por tanto, en este punto necesitamos fusionar la interfaz que
+                diseñamos con la experiencia de usuario para mejorar la
+                comunicacion que existe entre nuestro producto y el usuario.
             </p>
             <Reference
                 :image="imageOne"
-                description="El contructor de paginas web de Wix. Fuente: pcmag.com"
+                description="UI vs IxD vs UX. Fuente: formiux.com"
             />
-            <Heading type="h2">CMS</Heading>
+        </section>
+        <Heading type="h1">¿Cuáles son los beneficios de IxD?</Heading>
+        <section>
             <p>
-                Los Content Managment System (CMS), en español sistema de
-                administración de contenido, son constructores y gestores de
-                contenido los cuales por lo general necesitan un nivel de
-                coconocimiento medianamiente técnico para poder construir
-                proyectos tipo blog o hasta incluso tiendas en linea. Algunos de
-                los mas conocidos son WordPress y Joomla.
+                Los mayores beneficios de invertir en Diseño de Interacción
+                están en los atributos que aporta al proyecto. En otras
+                palabras, un diseñador de interacción garantiza un proyecto
+                hermoso, fácil de usar, útil y efectivo.
+            </p>
+            <p>
+                Además, la adopción de IxD en un proyecto da como resultado la
+                mejor comunicación posible entre la interfaz, la usabilidad y la
+                idea del producto, lo que aumenta las posibilidades de que los
+                usuarios se involucren.
+            </p>
+        </section>
+        <Heading type="h1">Dimensiones del IxD</Heading>
+        <section>
+            <p>
+                Las cinco dimensiones del diseño de interacción son un modelo
+                útil para comprender lo que implica el diseño de
+                interacción. Gillian Crampton Smith, académica de diseño de
+                interacción, introdujo por primera vez el concepto de cuatro
+                dimensiones de un lenguaje de diseño de interacción. Kevin
+                Silver luego amplió su modelo con la quinta dimensión.
+            </p>
+            <p>
+                <strong>1D: Palabras.</strong>
+                Las palabras deben de ser sencillas de entender y de permitir la
+                interacción. Deben comunicar información a los usuarios sin
+                abrumarlos con demasiados detalles.
+            </p>
+            <p>
+                <strong>2D: Representaciones visuales.</strong>
+                Cada gráfico, ilustración, diagrama, icono, foto, etc. debe de
+                ser usada con cautela, pero sobre todo debe de tener un
+                fundamento. Evita el uso como decoración.
+            </p>
+            <p>
+                <strong>3D: Objetos físicos o espacio.</strong>
+                Con lo que interactúa el usuario en el mundo real. Estos pueden
+                ser objetos físicos de hardware como un mouse, apuntador,
+                teclado, joystick, que son utilizados como herramientas de
+                mando.
+            </p>
+            <p>
+                <strong>4D: Tiempo.</strong>
+                Se refiere a la duración que el usuario pasa interactuando con
+                las palabras, representaciones visuales y el espacio.
+            </p>
+            <p>
+                <strong>5D: Comportamiento.</strong>
+                En la que se incluyen las emociones y reacciones que tiene el
+                usuario al operar, presentar, utilizar o realizar una acción en
+                el sistema.
+            </p>
+        </section>
+        <Heading type="h1">Principios de diseño de interacción</Heading>
+        <section>
+            <p>
+                Los 6 principios fundamentales de interacción, descritos por Don Norman. Son los siguientes:
+            </p>
+            <p>
+                <ol>
+                    <li>Visibilidad</li>
+                    <li>Feedback</li>
+                    <li>Restricciones</li>
+                    <li>Mapeamiento</li>
+                    <li>Consistencia</li>
+                    <li>Affordance y significantes</li>
+                </ol>
+            </p>
+            <p>
+                Ya analizamos las interacciones en general, pero estas interacciones estan presentes principalmente en elementos pequeños o individuales que forman parte de nuestro diseño, y estos tienen pequeñas interacciones, denominadas microinteracciones, que son el foco principal cuando trabajamos en Diseño de Interaccion (IxD).
+            </p>
+        </section>
+        <Heading type="h1">Microinteracciones</Heading>
+        <section>
+            <p>
+                Las microinteracciones proporcionan una experiencia al usuario más comprensible y visual, son aquellos elementos sutiles de diseño que transmiten el estado de un producto digital. Su propósito principal es proporcionar una respuesta visual, una retroalimentación instantánea creando así, un momento agradable y sorprendente para el usuario.
+            </p>
+            <Heading type="h2">Partes de una microinteracción</Heading>
+            <p>
+                Según Dan Saffer, diseñador de productos sénior del personal de Twitter y autor de "Microinteractions: Designing with Details” hay cuatro partes de una microinteracción.
+            </p>
+            <p>
+                <strong>1. Disparador</strong>
+                <br>
+                También llamado Trigger por su definición en ingles, define qué elemento o acción va a poner en marcha la microinteracción, ésta puede ser accionada por el usuario o por el sistema. Uno de los más famosos disparadores es el famoso “Me gusta” de Facebook.
             </p>
             <Reference
                 :image="imageTwo"
-                description="Constructor de páginas Divi, plugin para Wordpress. Fuente: wpbeginner.com"
+                description="Iconos animados de llamar a la acción. Author: Margarita Ivanchikova"
             />
-            <Heading type="h2">Codificación</Heading>
             <p>
-                Cuando pensamos en hacer nuestro proyecto por programación
-                tenemos en mente control y escalabilidad, debido a que podemos
-                abordar cualquier funcionalidad que el proyecto lo requiera a
-                nivel experiencia, visual o de infraestructura, lo que conlleva
-                a un nivel de conocimiento mas avanzado.
-            </p>
-            <p>
-                En este basto mundo de la programación existen muchas
-                tecnologias, estas por lo general deben ser convinadas con otras
-                y puede ser facil abrumarse o no saber cuál elegir. Aqui te
-                dejamos algunas recomendaciones de acuerdo al tipo de proyecto.
+                <strong>2. Reglas</strong>
+                <br>
+                La regla define las variantes que deben suceder para que la microinteracción se accione. La regla generalmente no se visualiza al usuario, en un formulario por ejemplo, las reglas son las que definen cuales son los elementos básicos de llenado para que éste sea completado de forma correcta. Por ejemplo, en el input de contraseña, la regla sería introducir la password correcta.
             </p>
             <Reference
                 :image="imageThree"
-                description="Interfaz del IDE Android Studio. Fuente: developer.android.com"
+                description="Microinteracciones en un data input. Author: Gustavo Gómez"
             />
             <p>
-                <strong>Landing Page</strong>
+                <strong>Retroalimentación</strong>
+                <br>
+                Mejor conocido como Feedback, es la respuesta que el usuario ve cuándo es accionado el disparador, aunque puede llegar a ser imperceptible es lo que se acciona como respuesta a algo. En el formulario sería la respuesta de llenado correcto o incorrecto antes o después de ser enviado.
+            </p>
+            <Reference
+                :image="imageFour"
+                description="Animación de correcto e incorrecto en un input de contraseña. Author: Aaron Iker"
+            />
+            <p>
+                <strong>Bucles y Modos</strong>
+                <br>
+                Los bucles y modos definen las metarreglas de la microinteracción y cómo cambia la microinteracción cuando se usa repetidamente. Por ejemplo, en el comercio electrónico, un botón "Cómpralo ahora" podría cambiar a "Comprar otro" cuando el usuario haya comprado el artículo anteriormente.
+            </p>
+            <Reference
+                small 
+                :image="imageFive"
+                description="Animación de un boton de favorito. Author: Aaron Iker"
+            />
+            <Heading type="h2">Herramientas para crear micro interacciones</Heading>
+            <p>
+                Existen muchas herramientas, pero no todos saben qué funciona mejor para tareas específicas de microinteracción. Aquí están recomendaciones basadas en experiencias personales diseñando estos elementos.
             </p>
             <p>
-                Para construir una web informativa, de una página, simple
-                necesitaremos de tecnologias base para la web: HTML, CSS y
-                JavaScript, cada una de estas pueden ser potenciadas para un
-                mejor trabajo. Por ejemplo HTML puede usar Pug, para trabajar
-                con estilos se recomienda usar SASS en lugar de directamente
-                CSS.
+                Si estas familiarizado con el código:
             </p>
             <p>
-                <strong>Sitio Web</strong>
+               Mobile: Xcode, Android studio
             </p>
             <p>
-                Vamos a denominar sitio web, cuando nuestro proyecto tiene
-                varias vistas e incluso funcionadidades como de un formulario de
-                contacto.
+               Mobile or Web: Framer.Web: CSS animation
             </p>
             <p>
-                Al igual que en el anterior vamos a requerir las tecnologias
-                base para la web, adicionalmente podriamos empezar a usar
-                librerias y frameworks, en especial para Javascript. Los mas
-                conocidos son ReactJS, VueJS y Angular.
+                Si deseas crear transiciones entre pantallas: Figma, Framer.
             </p>
             <p>
-                <strong>Aplicación Web</strong>
+                Si deseas crear interacciones mas detalladas: Principle, origami Studio y Protopie
             </p>
             <p>
-                Para este tipo de proyectos, vamos a usar tecnologias anteriores
-                para construir interfaces para el usuario(Front-end) pero
-                también vamos a requerir de un lenguaje de programación que
-                procese y gestione la información en el lado del
-                servidor(Back-end), los lenguajes Back-end mas utilizados son
-                NodeJS, Python, Java, C# entre otros, cada uno tiene sus pros y
-                sus contras, por lo que es recomendable que escoja el que sea
-                mejor para su proyecto.
-            </p>
-            <p>
-                Adicionalmente, es posible que necesite una Base de Datos, si
-                necesita tener una arquitectura estructura pude usar PostgreSQL
-                o MySQL. Si por el contrario va optar por una no estructurada,
-                es recomendable que use MongoBD.
-            </p>
-            <p>
-                <strong>Aplicación Móvil</strong>
-            </p>
-            <p>
-                Para hacer aplicaciones para telefonos inteligentes(apps)
-                existen 2 opciones: Desarrollo Nativo o Desarrollo Hibrido.
-            </p>
-            <p>
-                Optariamos por el desarrollo nativo si necesitamos aprobechar
-                los recursos nativos del sistema operativo o sus componentes
-                fisicos, como por ejemplo la bateria o el giroscopio. Los
-                lenguajes de programación principales para este tipo de
-                aplicaciones son JAVA, KOTLIN para Sistemas operativos Android y
-                SWIFT para iOS.
-            </p>
-            <p>
-                Por otra parte, el desarrollo hibrido se ha caracterizados por
-                usar tecnologias multiproposito, es decir lenguajes que ya usas
-                para hacer otro tipo de aplicaciones, tambien ligado a eso
-                tienen la caracteristica de ser multiplataforma y ser muy
-                personalizables en cuanto al diseño visual y de interacciones
-                debido al tipo de tecnologia que se usa. Los lenguajes mas
-                reconocidos para hacer este tipo de aplicaciones son Flutter,
-                Xamarin o las librerias para JavaScript como React Native.
-            </p>
-            <p>
-                <strong>Aplicación de Escritorio</strong>
-            </p>
-            <p>
-                Las aplicaciones de escritorio aun son una buena opción cuando
-                queremos aprovechar los recursos nativos de un sistema operativo
-                y de sus componentes de hardware. Los lenguajes de programación
-                que mas resaltan en este campo son C# y su interfaz de
-                desarrollo Visual Studio. Pero también puede optar por JAVA, su
-                principal diferencia podria ser que es multiplataforma entre
-                sistemas operativos que soporten JRE como por ejemplo las
-                distribuciones de Linux y Windows.
+                Si deseas crear interacciones con avanzado detalle de animación: After Effects + Lottie
             </p>
         </section>
         <Heading type="h1">Evaluación</Heading>
