@@ -13,205 +13,217 @@ import imageFour from '@/assets/images/guide-17/image_4.gif';
 import imageFive from '@/assets/images/guide-17/image_5.gif';
 import imageFigma from '@/assets/images/brands/figma.png';
 import imageFramer from '@/assets/images/brands/framer.png';
-import imageXcode from '@/assets/images/brands/xcode.png';
-import imageAndroid from '@/assets/images/brands/android.png';
+import imageCode from '@/assets/images/brands/code.png';
+import imageLottie from '@/assets/images/brands/lottie.png';
+import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
     {
         id: 1,
-        question: '¿Para qué hacemos diseño de interacciones?',
+        question: '¿Cual es el objetivo de las microinteracciones?',
         alternatives: [
-            { answer: true, description: 'Para que el proceso de usar nuestro producto sea mas entretenido para los usuarios.' },
-            { answer: false, description: 'Para mejorar las funcionalidades de los elementos de la interfaz.' },
-            { answer: false, description: 'Para mejorar la comunicación que existe entre la interfaz y el usuario.' }
+            {
+                answer: false,
+                description:
+                    'Estandarizar conceptos, componentes y patrones que serán reutilizados.'
+            },
+            {
+                answer: true,
+                description:
+                    'Deleitar al usuario; para crear un momento atractivo y más humano.'
+            },
+            {
+                answer: false,
+                description:
+                    'Ver como interactuan las diferentes vistas en conjunto.'
+            }
         ]
     },
     {
         id: 2,
-        question: '¿En qué consiste la retroalimentación en las microinteracciones?',
+        question:
+            '¿En qué consiste la retroalimentación en las microinteracciones?',
         alternatives: [
-            { answer: true, description: 'Es la mejora que el usuario puede aportar acerca de una interacción realizada.' },
-            { answer: false, description: 'Es la opinión que tiene el usuario luego de ejecutar una tarea o acción en la interfaz.' },
-            { answer: false, description: 'La respuesta que ve el usuario luego de ejecutar un disparador o realizar una acción.' }
+            {
+                answer: true,
+                description:
+                    'Es la mejora que el usuario puede aportar acerca de una interacción realizada.'
+            },
+            {
+                answer: false,
+                description:
+                    'Es la opinión que tiene el usuario luego de ejecutar una tarea o acción en la interfaz.'
+            },
+            {
+                answer: false,
+                description:
+                    'La respuesta que ve el usuario luego de ejecutar un disparador o realizar una acción.'
+            }
         ]
     }
 ]);
+
+const challenge17_tasks = [
+    'Crear una microinteracción de disparador',
+    'Crear una microinteracción de reglas',
+    'Crear una microinteracción de retroalimentación',
+    'Crear una microinteracción de bucles y modos'
+];
 </script>
 
 <template>
     <GuideTitle>
-        Diseño de Interacción(IxD)
+        Microinteracciones
         <template v-slot:timeRead>6</template>
     </GuideTitle>
     <GuideBody>
         <Heading type="h1">Definición</Heading>
         <section>
             <p>
-                El diseño de interacción, a menudo abreviado como IxD, es la
-                práctica de diseñar productos y servicios digitales
-                interactivos. John Kolko, autor de Thoughts on Interaction
-                Design, da la siguiente definición de diseño de interacción: “El
-                diseño de interacción es la creación de un diálogo entre una
-                persona y un producto, sistema o servicio. Este diálogo es tanto
-                de naturaleza física como emocional y se manifiesta en la
-                interacción entre la forma, la función y la tecnología tal como
-                se experimenta a lo largo del tiempo”.
+                La microinteracción es una de las cosas clave a tener en cuenta en el diseño de UI/UX. Son, quizás, la mejor prueba de que la atención a los pequeños detalles es capaz de dar grandes y poderosos resultados.
             </p>
             <p>
-                Por tanto, en este punto necesitamos fusionar la interfaz que
-                diseñamos con la experiencia de usuario para mejorar la
-                comunicacion que existe entre nuestro producto y el usuario.
-            </p>
-            <Reference
-                :image="imageOne"
-                description="UI vs IxD vs UX. Fuente: formiux.com"
-            />
-        </section>
-        <Heading type="h1">¿Cuáles son los beneficios de IxD?</Heading>
-        <section>
-            <p>
-                Los mayores beneficios de invertir en Diseño de Interacción
-                están en los atributos que aporta al proyecto. En otras
-                palabras, un diseñador de interacción garantiza un proyecto
-                hermoso, fácil de usar, útil y efectivo.
-            </p>
-            <p>
-                Además, la adopción de IxD en un proyecto da como resultado la
-                mejor comunicación posible entre la interfaz, la usabilidad y la
-                idea del producto, lo que aumenta las posibilidades de que los
-                usuarios se involucren.
+                Las microinteracciones son eventos que tienen una tarea principal, un solo propósito, y se encuentran en todo su dispositivo y dentro de las aplicaciones. Su finalidad es deleitar al usuario; para crear un momento atractivo y más humano.
             </p>
         </section>
-        <Heading type="h1">Dimensiones del IxD</Heading>
+        <Heading type="h1">Tipos de microinteracción</Heading>
         <section>
             <p>
-                Las cinco dimensiones del diseño de interacción son un modelo
-                útil para comprender lo que implica el diseño de
-                interacción. Gillian Crampton Smith, académica de diseño de
-                interacción, introdujo por primera vez el concepto de cuatro
-                dimensiones de un lenguaje de diseño de interacción. Kevin
-                Silver luego amplió su modelo con la quinta dimensión.
+                Según Dan Saffer, diseñador de productos sénior del personal
+                de Twitter y autor de "Microinteractions: Designing with
+                Details” hay cuatro partes de una microinteracción.
             </p>
+            <Heading type="h2">Disparador</Heading>
             <p>
-                <strong>1D: Palabras.</strong>
-                Las palabras deben de ser sencillas de entender y de permitir la
-                interacción. Deben comunicar información a los usuarios sin
-                abrumarlos con demasiados detalles.
-            </p>
-            <p>
-                <strong>2D: Representaciones visuales.</strong>
-                Cada gráfico, ilustración, diagrama, icono, foto, etc. debe de
-                ser usada con cautela, pero sobre todo debe de tener un
-                fundamento. Evita el uso como decoración.
-            </p>
-            <p>
-                <strong>3D: Objetos físicos o espacio.</strong>
-                Con lo que interactúa el usuario en el mundo real. Estos pueden
-                ser objetos físicos de hardware como un mouse, apuntador,
-                teclado, joystick, que son utilizados como herramientas de
-                mando.
-            </p>
-            <p>
-                <strong>4D: Tiempo.</strong>
-                Se refiere a la duración que el usuario pasa interactuando con
-                las palabras, representaciones visuales y el espacio.
-            </p>
-            <p>
-                <strong>5D: Comportamiento.</strong>
-                En la que se incluyen las emociones y reacciones que tiene el
-                usuario al operar, presentar, utilizar o realizar una acción en
-                el sistema.
-            </p>
-        </section>
-        <Heading type="h1">Principios de diseño de interacción</Heading>
-        <section>
-            <p>
-                Los 6 principios fundamentales de interacción, descritos por Don Norman. Son los siguientes:
-            </p>
-            <p>
-                <ol>
-                    <li>Visibilidad</li>
-                    <li>Feedback</li>
-                    <li>Restricciones</li>
-                    <li>Mapeamiento</li>
-                    <li>Consistencia</li>
-                    <li>Affordance y significantes</li>
-                </ol>
-            </p>
-            <p>
-                Ya analizamos las interacciones en general, pero estas interacciones estan presentes principalmente en elementos pequeños o individuales que forman parte de nuestro diseño, y estos tienen pequeñas interacciones, denominadas microinteracciones, que son el foco principal cuando trabajamos en Diseño de Interaccion (IxD).
-            </p>
-        </section>
-        <Heading type="h1">Microinteracciones</Heading>
-        <section>
-            <p>
-                Las microinteracciones proporcionan una experiencia al usuario más comprensible y visual, son aquellos elementos sutiles de diseño que transmiten el estado de un producto digital. Su propósito principal es proporcionar una respuesta visual, una retroalimentación instantánea creando así, un momento agradable y sorprendente para el usuario.
-            </p>
-            <Heading type="h2">Partes de una microinteracción</Heading>
-            <p>
-                Según Dan Saffer, diseñador de productos sénior del personal de Twitter y autor de "Microinteractions: Designing with Details” hay cuatro partes de una microinteracción.
-            </p>
-            <p>
-                <strong>1. Disparador</strong>
-                <br>
-                También llamado Trigger por su definición en ingles, define qué elemento o acción va a poner en marcha la microinteracción, ésta puede ser accionada por el usuario o por el sistema. Uno de los más famosos disparadores es el famoso “Me gusta” de Facebook.
+                También llamado Trigger por su definición en ingles, define qué
+                elemento o acción va a poner en marcha la microinteracción, ésta
+                puede ser accionada por el usuario o por el sistema. Uno de los
+                más famosos disparadores es el famoso “Me gusta” de Facebook.
             </p>
             <Reference
                 :image="imageTwo"
                 description="Iconos animados de llamar a la acción. Author: Margarita Ivanchikova"
             />
+            <Heading type="h2">Reglas</Heading>
             <p>
-                <strong>2. Reglas</strong>
-                <br>
-                La regla define las variantes que deben suceder para que la microinteracción se accione. La regla generalmente no se visualiza al usuario, en un formulario por ejemplo, las reglas son las que definen cuales son los elementos básicos de llenado para que éste sea completado de forma correcta. Por ejemplo, en el input de contraseña, la regla sería introducir la password correcta.
+                La regla define las variantes que deben suceder para que la
+                microinteracción se accione. La regla generalmente no se
+                visualiza al usuario, en un formulario por ejemplo, las reglas
+                son las que definen cuales son los elementos básicos de llenado
+                para que éste sea completado de forma correcta. Por ejemplo, en
+                el input de contraseña, la regla sería introducir la password
+                correcta.
             </p>
             <Reference
                 :image="imageThree"
                 description="Microinteracciones en un data input. Author: Gustavo Gómez"
             />
+            <Heading type="h2">Retroalimentación</Heading>
             <p>
-                <strong>Retroalimentación</strong>
-                <br>
-                Mejor conocido como Feedback, es la respuesta que el usuario ve cuándo es accionado el disparador, aunque puede llegar a ser imperceptible es lo que se acciona como respuesta a algo. En el formulario sería la respuesta de llenado correcto o incorrecto antes o después de ser enviado.
+                Mejor conocido como Feedback, es la respuesta que el usuario ve
+                cuándo es accionado el disparador, aunque puede llegar a ser
+                imperceptible es lo que se acciona como respuesta a algo. En el
+                formulario sería la respuesta de llenado correcto o incorrecto
+                antes o después de ser enviado.
             </p>
             <Reference
                 :image="imageFour"
                 description="Animación de correcto e incorrecto en un input de contraseña. Author: Aaron Iker"
             />
+            <Heading type="h2">Bucles y Modos</Heading>
             <p>
-                <strong>Bucles y Modos</strong>
-                <br>
-                Los bucles y modos definen las metarreglas de la microinteracción y cómo cambia la microinteracción cuando se usa repetidamente. Por ejemplo, en el comercio electrónico, un botón "Cómpralo ahora" podría cambiar a "Comprar otro" cuando el usuario haya comprado el artículo anteriormente.
+                Los bucles y modos definen las metarreglas de la
+                microinteracción y cómo cambia la microinteracción cuando se usa
+                repetidamente. Por ejemplo, en el comercio electrónico, un botón
+                "Cómpralo ahora" podría cambiar a "Comprar otro" cuando el
+                usuario haya comprado el artículo anteriormente.
             </p>
             <Reference
-                small 
+                small
                 :image="imageFive"
                 description="Animación de un boton de favorito. Author: Aaron Iker"
             />
-            <Heading type="h2">Herramientas para crear micro interacciones</Heading>
+        </section>
+        <Heading type="h1">¿Cuándo usar Microinteracciones?</Heading>
+        <section>
             <p>
-                Existen muchas herramientas, pero no todos saben qué funciona mejor para tareas específicas de microinteracción. Aquí están recomendaciones basadas en experiencias personales diseñando estos elementos.
+                En el mundo de UX/UI, aunque son pequeñas, las microinteracciones se promocionan como el centro neurálgico cuando se trata de comunicarse con el usuario. A continuación se muestran las siete microinteracciones principales y su impacto en la experiencia del usuario:
             </p>
             <p>
-                Si estas familiarizado con el código:
-            </p>
-            <p>
-               Mobile: Xcode, Android studio
-            </p>
-            <p>
-               Mobile or Web: Framer.Web: CSS animation
-            </p>
-            <p>
-                Si deseas crear transiciones entre pantallas: Figma, Framer.
-            </p>
-            <p>
-                Si deseas crear interacciones mas detalladas: Principle, origami Studio y Protopie
-            </p>
-            <p>
-                Si deseas crear interacciones con avanzado detalle de animación: After Effects + Lottie
+                <ul>
+                    <li>
+                        <strong>Deslizar</strong>
+                        <br>
+                        La acción Deslizar elimina el toque y es mucho más interactiva y
+                        fluida. Ayuda al usuario a cambiar rápidamente entre las
+                        pestañas y adquirir más información sobre el producto.
+                    </li>
+                    <li>
+                        <strong>Entrada de datos</strong>
+                        <br>
+                        Todos conocemos las frustraciones de establecer una contraseña o crear una cuenta. Esta acción puede levantar fácilmente los pelos de punta. Si bien las sugerencias proactivas sobre la seguridad y el uso de la contraseña facilitan que el usuario avance, algunas interacciones interactivas en el momento de la entrada de datos también mantienen a los usuarios comprometidos con el proceso y ayudan a lograr el objetivo.
+                    </li>
+                    <li>
+                        <strong>Animaciones</strong>
+                        <br>
+                        La animación simplemente habilita y mejora las microinteracciones. Personifican el buen diseño; su presencia puede no ser notada, pero la ausencia afecta a todos. Actúan como un pegamento que ayuda a los diseñadores a hacer que los procesos más simples sean interesantes y adictivos. Pero tenga mucho cuidado, ya que están destinados a atraer a los usuarios y no distraerlos o frustrarlos; el procesamiento retrasado o la introducción de un nuevo estilo en el sitio web puede causar confusión.
+                    </li>
+                    <li>
+                        <strong>Call to Action</strong>
+                        <br>
+                        Empuja al usuario a interactuar con una aplicación o sitio web. El llamado a la acción infunde una sensación de logro y también un factor de empatía en el comportamiento del usuario y la mejor manera de hacer que su usuario interactúe con el CTA es hacerlo atractivo para atraer el interés del usuario.
+                    </li>
+                </ul>
             </p>
         </section>
+        <Heading type="h1">¿Cómo diseñar Microinteracciones?</Heading>
+        <section>
+            <p>
+                Hacer microinteracciones es emocionante para los diseñadores, porque es posible experimentar nuevas soluciones de diseño y buscar nuevas formas de sorprender a los usuarios. Pero para hacerlo debes tener en cuenta algunas cosas:
+            </p>
+            <p>
+                <ol>
+                    <li>Ponte en el lugar de los usuarios y usa todo lo que tengas para descubrir cómo usan tu aplicación.</li>
+                    <li>Crear animaciones funcionales. Animaciones que no solo tienen una estética sino que pueden mejorar la experiencia del usuario.</li>
+                    <li>Diviértete y entretiene a tus usuarios. Lo que el usuario siente cuando usa la aplicación es la razón por la que la sigue usando. Si el usuario disfruta de la experiencia y la encuentra agradable, vuelve.</li>
+                    <li>No seas molesto. Demasiadas animaciones tienen el efecto contrario en los usuarios. Los usuarios molestos hacen que se mantengan alejados de su aplicación.</li>
+                    <li>Utilizar un lenguaje humano y no técnico. Una copia divertida e irónica puede hacerte olvidar por un momento lo frustrante que puede ser una página en blanco dentro de la aplicación.</li>
+                </ol>
+            </p>
+        </section>
+        <Challenge time="1" :id="17" :tasks="challenge17_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #17 </Heading>
+            </template>
+            Crea microinteracciones de la pagina web de la biblioteca la UNHEVAL.
+            <template v-slot:tools>
+                <ResourceCard
+                    title="Figma"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageFigma"
+                />
+                <ResourceCard
+                    title="Framer"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageFramer"
+                />
+                <ResourceCard
+                    title="VS Code"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageCode"
+                />
+                <ResourceCard
+                    title="Lottie"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageLottie"
+                />
+            </template>
+        </Challenge>
         <Heading type="h1">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>

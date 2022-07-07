@@ -9,6 +9,8 @@ import ResourceCard from '@/components/ResourceCard.vue';
 import imageOne from '@/assets/images/guide-18/image_1.png';
 import imageTwo from '@/assets/images/guide-18/image_2.png';
 import imageThree from '@/assets/images/guide-18/image_3.png';
+import imageCode from '@/assets/images/brands/code.png';
+import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
@@ -53,6 +55,11 @@ const questions = ref([
         ]
     }
 ]);
+
+const challenge18_tasks = [
+    'Preparar entonrno de desarrollo (HTMl, JS, CSS)',
+    'Implementar lo realizado en el Reto #16'
+];
 </script>
 
 <template>
@@ -77,14 +84,8 @@ const questions = ref([
                 proyecto a partir de este punto.
             </p>
         </section>
-        <Heading type="h1">Tipos de Implementación</Heading>
+        <Heading type="h1">Builders</Heading>
         <section>
-            <p>
-                El tipo de implementación va estar ligado directamente al tipo
-                de producto que se desea desarrollar. Los podriamos categorizar
-                por:
-            </p>
-            <Heading type="h2">Builders</Heading>
             <p>
                 Si nuestro proyecto es una pagina web simple e informativa, las
                 denominadas Landing Page, es muy probable que quieras una
@@ -97,7 +98,9 @@ const questions = ref([
                 :image="imageOne"
                 description="El contructor de paginas web de Wix. Fuente: pcmag.com"
             />
-            <Heading type="h2">CMS</Heading>
+        </section>
+        <Heading type="h1">CMS</Heading>
+        <section>
             <p>
                 Los Content Managment System (CMS), en español sistema de
                 administración de contenido, son constructores y gestores de
@@ -110,7 +113,9 @@ const questions = ref([
                 :image="imageTwo"
                 description="Constructor de páginas Divi, plugin para Wordpress. Fuente: wpbeginner.com"
             />
-            <Heading type="h2">Codificación</Heading>
+        </section>
+        <Heading type="h1">Codificación</Heading>
+        <section>
             <p>
                 Cuando pensamos en hacer nuestro proyecto por programación
                 tenemos en mente control y escalabilidad, debido a que podemos
@@ -128,9 +133,7 @@ const questions = ref([
                 :image="imageThree"
                 description="Interfaz del IDE Android Studio. Fuente: developer.android.com"
             />
-            <p>
-                <strong>Landing Page</strong>
-            </p>
+            <Heading type="h2">Landing Page</Heading>
             <p>
                 Para construir una web informativa, de una página, simple
                 necesitaremos de tecnologias base para la web: HTML, CSS y
@@ -139,9 +142,7 @@ const questions = ref([
                 con estilos se recomienda usar SASS en lugar de directamente
                 CSS.
             </p>
-            <p>
-                <strong>Sitio Web</strong>
-            </p>
+            <Heading type="h2">Sitio Web</Heading>
             <p>
                 Vamos a denominar sitio web, cuando nuestro proyecto tiene
                 varias vistas e incluso funcionadidades como de un formulario de
@@ -153,9 +154,7 @@ const questions = ref([
                 librerias y frameworks, en especial para Javascript. Los mas
                 conocidos son ReactJS, VueJS y Angular.
             </p>
-            <p>
-                <strong>Aplicación Web</strong>
-            </p>
+            <Heading type="h2">Aplicación Web</Heading>
             <p>
                 Para este tipo de proyectos, vamos a usar tecnologias anteriores
                 para construir interfaces para el usuario(Front-end) pero
@@ -172,9 +171,7 @@ const questions = ref([
                 o MySQL. Si por el contrario va optar por una no estructurada,
                 es recomendable que use MongoBD.
             </p>
-            <p>
-                <strong>Aplicación Móvil</strong>
-            </p>
+            <Heading type="h2">Aplicación Móvil</Heading>
             <p>
                 Para hacer aplicaciones para telefonos inteligentes(apps)
                 existen 2 opciones: Desarrollo Nativo o Desarrollo Hibrido.
@@ -197,9 +194,7 @@ const questions = ref([
                 reconocidos para hacer este tipo de aplicaciones son Flutter,
                 Xamarin o las librerias para JavaScript como React Native.
             </p>
-            <p>
-                <strong>Aplicación de Escritorio</strong>
-            </p>
+            <Heading type="h2">Aplicación de Escritorio</Heading>
             <p>
                 Las aplicaciones de escritorio aun son una buena opción cuando
                 queremos aprovechar los recursos nativos de un sistema operativo
@@ -211,6 +206,25 @@ const questions = ref([
                 distribuciones de Linux y Windows.
             </p>
         </section>
+        <Challenge time="1" :id="18" :tasks="challenge18_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #18 </Heading>
+            </template>
+            Crea el Sitio Web login del intranet de alumnos de la UNHEVAL
+            <template v-slot:tools>
+                <ResourceCard
+                    title="VS Code"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageCode"
+                />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
+            </template>
+        </Challenge>
         <Heading type="h1">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>

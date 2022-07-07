@@ -70,7 +70,7 @@ defineProps({
     }
     b {
         margin-top: var(--padding_xl);
-        font-weight: 500;
+        font-weight: 600;
         text-align: center;
         color: var(--text_color);
         font-size: var(--text_size_l);

@@ -86,7 +86,7 @@ const challenge16_tasks = [
             </p>
             <Reference
                 :image="imageThree"
-                description="An Introduction to Digital Prototyping. Fuente: protopie.io"
+                description="Design in the Browser Prototyping. Fuente: ssagov.github.io"
             />
         </section>
         <Heading type="h1">Ventajas del prototipado</Heading>
