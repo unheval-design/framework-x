@@ -26,6 +26,7 @@ import useGuide from '@/hooks/useGuide.js';
 import { useTodoStore } from '@/stores/todo.js';
 import { useNotesStore } from '@/stores/notes.js';
 import { useProjectsStore } from '@/stores/projects.js';
+import { useChallengesStore } from '@/stores/challenges.js';
 
 const guideId = inject('guideId');
 const { guideRef, closeContextMenu } = useGuideContextMenu();
@@ -35,10 +36,13 @@ const currentGuide = { id: guideId.value, substage: guide.value.substage };
 const projects = useProjectsStore();
 const todo = useTodoStore();
 const notes = useNotesStore();
+const challenges = useChallengesStore();
 
 todo.guide = currentGuide;
 todo.project = projects.current.id;
 notes.guide = currentGuide;
+notes.project = projects.current.id;
+challenges.project = projects.current.id;
 </script>
 
 <template>

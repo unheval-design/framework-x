@@ -10,6 +10,7 @@ import { computed, inject, onMounted, ref, watch } from '@vue/runtime-core';
 import dayjs from 'dayjs';
 import { useToastStore } from '@/stores/toast.js';
 import { useTodoStore } from '@/stores/todo.js';
+import { useChallengesStore } from '@/stores/challenges.js';
 
 const timeLeft = ref('00:00');
 const isPlaying = ref(false);
@@ -20,6 +21,8 @@ const todo = useTodoStore();
 const toast = useToastStore();
 const audioStart = new Audio(start);
 const audioEnd = new Audio(end);
+
+const challenges = useChallengesStore();
 
 const props = defineProps({
     id: {
@@ -73,6 +76,7 @@ const play = () => {
     addTasks();
     toast.type = 4;
     toast.message = 'Reto iniciado';
+    challenges.add(props.id);
 };
 
 const stop = () => {

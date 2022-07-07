@@ -6,6 +6,15 @@ import IconTrophy from '@/components/drawables/IconTrophy.vue';
 import IconTools from '@/components/drawables/IconTools.vue';
 import IconNotes from '@/components/drawables/IconNotes.vue';
 import IconTodo from '@/components/drawables/IconTodo.vue';
+import { useTodoStore } from '@/stores/todo.js';
+import { useNotesStore } from '@/stores/notes.js';
+import { useProjectsStore } from '@/stores/projects.js';
+import { useChallengesStore } from '@/stores/challenges.js';
+
+const projects = useProjectsStore();
+const todo = useTodoStore();
+const notes = useNotesStore();
+const challenges = useChallengesStore();
 </script>
 
 <template>
@@ -28,18 +37,24 @@ import IconTodo from '@/components/drawables/IconTodo.vue';
             </StatCard>
             <StatCard>
                 <template v-slot:icon><IconTools /></template>
-                <template v-slot:title>12/20</template>
-                <template v-slot:text>Retos</template>
+                <template v-slot:title
+                    >{{ challenges.currentChallenges }}/20</template
+                >
+                <template v-slot:text>Retos tomados</template>
             </StatCard>
             <StatCard>
                 <template v-slot:icon><IconNotes /></template>
-                <template v-slot:title>10</template>
+                <template v-slot:title>{{ notes.currentNotes }}</template>
                 <template v-slot:text>Notas guardadas</template>
             </StatCard>
             <StatCard>
                 <template v-slot:icon><IconTodo /></template>
-                <template v-slot:title>16/32</template>
-                <template v-slot:text>Tareas</template>
+                <template v-slot:title>
+                    {{ todo.currentTodosCompleted }}/{{
+                        todo.currentTodos
+                    }}</template
+                >
+                <template v-slot:text>Tareas completadas</template>
             </StatCard>
         </div>
     </section>

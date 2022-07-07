@@ -46,6 +46,19 @@ export const useTodoStore = defineStore(
             )
         );
 
+        const currentTodos = computed(
+            () =>
+                listAll.value.filter((todo) => todo.project === project.value)
+                    .length
+        );
+
+        const currentTodosCompleted = computed(
+            () =>
+                listAll.value.filter(
+                    (todo) => todo.project === project.value && todo.completed
+                ).length
+        );
+
         return {
             listAll,
             list,
@@ -56,7 +69,9 @@ export const useTodoStore = defineStore(
             remove,
             removeChallengeTasks,
             lastTaskCreated,
-            taskAdded
+            taskAdded,
+            currentTodos,
+            currentTodosCompleted
         };
     },
     { persist: true }

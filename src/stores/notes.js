@@ -8,6 +8,7 @@ export const useNotesStore = defineStore(
     () => {
         const listAll = ref([]);
         const guide = ref({});
+        const project = ref('');
         const noteAdded = ref(false);
 
         const add = (title) => {
@@ -15,7 +16,8 @@ export const useNotesStore = defineStore(
                 id: ID(),
                 title,
                 color: random(0, 4),
-                guide: guide.value
+                guide: guide.value,
+                project: project.value
             };
             listAll.value.unshift(note);
         };
@@ -29,6 +31,12 @@ export const useNotesStore = defineStore(
 
         const list = computed(() => listAll.value);
 
+        const currentNotes = computed(
+            () =>
+                listAll.value.filter((note) => note.project === project.value)
+                    .length
+        );
+
         return {
             listAll,
             list,
@@ -36,7 +44,9 @@ export const useNotesStore = defineStore(
             notify,
             guide,
             remove,
-            noteAdded
+            noteAdded,
+            project,
+            currentNotes
         };
     },
     { persist: true }
