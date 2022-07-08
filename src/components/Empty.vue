@@ -8,16 +8,18 @@ defineProps({
 </script>
 
 <template>
-    <div class="Empty" :class="{ full: full }">
-        <div class="icon_wrapper">
-            <span></span>
-            <i><slot name="icon" /></i>
-            <span></span>
+    <Transition name="fade">
+        <div class="Empty" :class="{ full: full }">
+            <div class="icon_wrapper">
+                <span></span>
+                <i><slot name="icon" /></i>
+                <span></span>
+            </div>
+            <b><slot name="title" /></b>
+            <small><slot name="description" /></small>
+            <slot name="button" />
         </div>
-        <b><slot name="title" /></b>
-        <small><slot name="description" /></small>
-        <slot name="button" />
-    </div>
+    </Transition>
 </template>
 
 <style lang="scss">
@@ -45,8 +47,8 @@ defineProps({
             border-radius: var(--radius);
             z-index: 2;
             svg {
-                width: var(--icon_size_xl);
-                height: var(--icon_size_xl);
+                width: var(--icon_size_l);
+                height: var(--icon_size_l);
                 fill: var(--text_color);
             }
         }

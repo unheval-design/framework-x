@@ -3,7 +3,7 @@ import GuidesProgress from '@/components/GuidesProgress.vue';
 import SubstageCompleted from '@/components/SubstageCompleted.vue';
 import Button from '@/components/Button.vue';
 import IconCheck from '@/components/drawables/IconCheck.vue';
-import { inject, ref } from '@vue/runtime-core';
+import { inject, nextTick, onMounted, ref } from '@vue/runtime-core';
 import { useRouter } from 'vue-router';
 import { LAST_GUIDE_ID } from '@/helpers/stagesData.js';
 import { isCheckpoint } from '@/helpers/utils.js';
@@ -17,6 +17,7 @@ const guideId = inject('guideId');
 const router = useRouter();
 const projects = useProjectsStore();
 const flagCompletedModal = ref(false);
+const allowNext = ref(false);
 
 const goToPrevious = () => {
     if (guideId.value > 1) {
@@ -46,6 +47,20 @@ const openCompletedModal = () => {
 const closeCompletedModal = () => {
     flagCompletedModal.value = false;
 };
+
+onMounted(() => {
+    nextTick(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                allowNext.value = entry.isIntersecting;
+            });
+        });
+
+        document.querySelectorAll('.Evaluation').forEach((title) => {
+            observer.observe(title);
+        });
+    });
+});
 </script>
 
 <template>
@@ -62,11 +77,20 @@ const closeCompletedModal = () => {
             </div>
         </div>
         <div class="guide_nav_controls">
-            <Button secondary @click="goToPrevious()">Anterior</Button>
-            <Button v-if="!isCheckpoint(guideId)" @click="goToNext()"
+            <Button :disabled="guideId < 2" secondary @click="goToPrevious()"
+                >Anterior</Button
+            >
+            <Button
+                :disabled="!allowNext"
+                v-if="!isCheckpoint(guideId)"
+                @click="goToNext()"
                 >Continuar</Button
             >
-            <Button v-if="isCheckpoint(guideId)" @click="openCompletedModal()">
+            <Button
+                :disabled="!allowNext"
+                v-if="isCheckpoint(guideId)"
+                @click="openCompletedModal()"
+            >
                 <template v-slot:icon>
                     <IconCheck />
                 </template>
