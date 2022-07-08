@@ -85,7 +85,13 @@ export const GUIDES = {
     11: 'Moodboards',
     12: 'Lluvia de Ideas',
     13: 'Mockup',
-    14: 'Sistema de Diseño'
+    14: 'Atomic Design',
+    15: 'Sistema de Diseño',
+    16: 'Prototipo',
+    17: 'Microinteracciones',
+    18: 'Implementación',
+    19: 'Pruebas UI',
+    20: 'Pruebas UX'
 };
 
 export const GUIDES_SPEECH = {
@@ -102,7 +108,13 @@ export const GUIDES_SPEECH = {
     11: 'Moodboards',
     12: 'Lluvia de Ideas',
     13: 'Mockup',
-    14: 'Sistema de Diseño'
+    14: 'Atomic Design',
+    15: 'Sistema de Diseño',
+    16: 'Prototipo',
+    17: 'Microinteracciones',
+    18: 'Implementación',
+    19: 'Pruebas UI',
+    20: 'Pruebas UX'
 };
 
 export default guides;

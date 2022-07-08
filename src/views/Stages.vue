@@ -33,29 +33,37 @@ const closeStageTwoModal = () => {
     flagStageTwoModal.value = false;
 };
 
-const goToGuidesStageOne = () => {
+const goToGuidesSubStageOne = () => {
     projects.update({ guide: 1, step: 1 });
     router.replace({ name: 'Guides', params: { id: 1 } });
 };
-const goToGuidesStageTwo = () => {
-    projects.update({ guide: 6, step: 2 });
-    router.replace({ name: 'Guides', params: { id: 6 } });
+const goToGuidesSubStageTwo = () => {
+    projects.update({ guide: 5, step: 1 });
+    router.replace({ name: 'Guides', params: { id: 5 } });
+};
+const goToGuidesSubStageThree = () => {
+    projects.update({ guide: 10, step: 2 });
+    router.replace({ name: 'Guides', params: { id: 10 } });
+};
+const goToGuidesSubStageFour = () => {
+    projects.update({ guide: 14, step: 2 });
+    router.replace({ name: 'Guides', params: { id: 14 } });
 };
 
-const goToGuidesStageThree = () => {
-    projects.update({ guide: 11, step: 2 });
-    router.replace({ name: 'Guides', params: { id: 11 } });
-};
-const goToGuidesStageFour = () => {
-    projects.update({ guide: 16, step: 2 });
+const goToGuidesSubStageFive = () => {
+    projects.update({ guide: 16, step: 3 });
     router.replace({ name: 'Guides', params: { id: 16 } });
+};
+const goToGuidesSubStageSix = () => {
+    projects.update({ guide: 19, step: 4 });
+    router.replace({ name: 'Guides', params: { id: 19 } });
 };
 
 const selectStage = (stage) => {
     if (stage === 1) openStageOneModal();
     if (stage === 2) openStageTwoModal();
-    if (stage === 3) goToGuidesStageThree();
-    if (stage === 4) goToGuidesStageFour();
+    if (stage === 3) goToGuidesSubStageFive();
+    if (stage === 4) goToGuidesSubStageSix();
 };
 </script>
 <template>
@@ -67,14 +75,14 @@ const selectStage = (stage) => {
                 empezar.
             </template>
             <div class="grid">
-                <StageCard compact @click="goToGuidesStageOne()">
+                <StageCard compact @click="goToGuidesSubStageOne()">
                     <template v-slot:icon><IconEmpathize /></template>
                     <template v-slot:title>Empatizar</template>
                     <template v-slot:text
                         >Mapa de empatia, Journey Map, etc.</template
                     >
                 </StageCard>
-                <StageCard compact @click="goToGuidesStageTwo()">
+                <StageCard compact @click="goToGuidesSubStageTwo()">
                     <template v-slot:icon><IconDefine /></template>
                     <template v-slot:title>Definir</template>
                     <template v-slot:text
@@ -90,12 +98,12 @@ const selectStage = (stage) => {
                 empezar.
             </template>
             <div class="grid">
-                <StageCard compact @click="goToGuidesStageThree()">
+                <StageCard compact @click="goToGuidesSubStageThree()">
                     <template v-slot:icon><IconIdea /></template>
                     <template v-slot:title>Idear</template>
                     <template v-slot:text>Lluvia de ideas, Moodboards</template>
                 </StageCard>
-                <StageCard compact @click="goToGuidesStageFour()">
+                <StageCard compact @click="goToGuidesSubStageFour()">
                     <template v-slot:icon><IconPrototype /></template>
                     <template v-slot:title>Prototipar</template>
                     <template v-slot:text

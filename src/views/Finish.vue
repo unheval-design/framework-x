@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar.vue';
 import Empty from '@/components/Empty.vue';
 import StatCard from '@/components/StatCard.vue';
 import IconTrophy from '@/components/drawables/IconTrophy.vue';
+import IconQuestion from '@/components/drawables/IconQuestion.vue';
 import IconTools from '@/components/drawables/IconTools.vue';
 import IconNotes from '@/components/drawables/IconNotes.vue';
 import IconTodo from '@/components/drawables/IconTodo.vue';
@@ -38,7 +39,7 @@ evaluations.project = projects.current.id;
         </Empty>
         <div class="stats_grid">
             <StatCard>
-                <template v-slot:icon><IconTrophy /></template>
+                <template v-slot:icon><IconQuestion /></template>
                 <template v-slot:title
                     >{{ evaluations.currentEvaluations }}/40</template
                 >
@@ -70,6 +71,8 @@ evaluations.project = projects.current.id;
 </template>
 
 <style lang="scss">
+@import '@/assets/css/breakpoints';
+
 .Finish {
     margin-top: 8rem;
     .Empty {
@@ -80,10 +83,23 @@ evaluations.project = projects.current.id;
     .stats_grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        width: 540px;
+        width: 560px;
         margin: 0 auto;
         margin-top: 1rem;
         gap: var(--gap);
+        padding: 0 var(--padding);
+    }
+}
+
+@include screen('md') {
+    .Finish {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        .stats_grid {
+            max-width: 280px;
+            width: 100%;
+            grid-template-columns: 1fr;
+        }
     }
 }
 </style>
