@@ -3,9 +3,13 @@ import { inject } from '@vue/runtime-core';
 import Empty from '@/components/Empty.vue';
 import Button from '@/components/Button.vue';
 import IconCheckpoint from '@/components/drawables/IconCheckpoint.vue';
+import success from '@/assets/media/substage.wav';
 
 const guideId = inject('guideId');
 const emit = defineEmits(['click']);
+const audioSuccess = new Audio(success);
+
+audioSuccess.play();
 
 const onClick = () => {
     emit('click');

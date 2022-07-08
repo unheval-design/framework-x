@@ -6,6 +6,10 @@ import Reference from '@/components/Reference.vue';
 import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
+import imageFigma from '@/assets/images/brands/figma.png';
+import imageZoom from '@/assets/images/brands/zoom.png';
+import imageKeep from '@/assets/images/brands/keep.png';
+import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
@@ -30,6 +34,12 @@ const questions = ref([
         ]
     }
 ]);
+
+const challenge19_tasks = [
+    'Aplicar prueba de Errores de tipo de datos',
+    'Aplicar prueba de Anchos de campo',
+    'Aplicar prueba de Confirmar botones de acción',
+];
 </script>
 
 <template>
@@ -163,6 +173,37 @@ const questions = ref([
                 El enfoque basado en modelos es excelente porque permite un mayor nivel de automatización. También cubre un mayor número de estados en el sistema, mejorando así la cobertura de la prueba.
             </p>
         </section>
+        <Challenge time="1" :id="19" :tasks="challenge19_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #19 </Heading>
+            </template>
+            Aplica las Prueba UI al login del intranet de alumnos de la UNHEVAL
+            <template v-slot:tools>
+                <ResourceCard
+                    title="Figma"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageFigma"
+                />
+                <ResourceCard
+                    title="Zoom"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageZoom"
+                />
+                <ResourceCard
+                    title="Google Keep"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageKeep"
+                />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
+            </template>
+        </Challenge>
         <Heading type="h1">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>

@@ -4,6 +4,9 @@ import RadioButton from '@/components/RadioButton.vue';
 import { ID } from '@/helpers/utils.js';
 import { inject, onMounted, watch } from '@vue/runtime-core';
 import { useEvaluationsStore } from '@/stores/evaluations.js';
+import success from '@/assets/media/success.wav';
+
+const audioSuccess = new Audio(success);
 
 const props = defineProps({
     question: {
@@ -17,7 +20,7 @@ const evaluationId = inject('guideId');
 
 const answer = ref(null);
 watch(answer, (val) => {
-    // if (props.question.answer === val)
+    if (props.question.answer === val) audioSuccess.play();
     evaluations.add(
         evaluationId.value,
         props.question.id,
@@ -27,7 +30,7 @@ watch(answer, (val) => {
 </script>
 
 <template>
-    <section class="TestCard">
+    <section class="TestCard" :class="{ disabled: question.answer === answer }">
         <h2>{{ question.question }}</h2>
         <div class="test_alternatives">
             <RadioButton
@@ -96,6 +99,17 @@ watch(answer, (val) => {
                 font-weight: 500;
                 margin-left: 30px;
             }
+        }
+    }
+    &.disabled {
+        user-select: none;
+        pointer-events: none;
+        .RadioButton {
+            pointer-events: none !important;
+            opacity: 0.25;
+        }
+        .RadioButton.success.msg {
+            opacity: 1;
         }
     }
 }

@@ -156,6 +156,17 @@ article.ProjectCard {
             .project_title {
                 margin-bottom: var(--gap_sm);
             }
+            .project_completed {
+                i {
+                    width: 18px;
+                    height: 18px;
+                    svg {
+                        width: 12px;
+                        height: 12px;
+                        margin-bottom: -2px;
+                    }
+                }
+            }
         }
     }
 }

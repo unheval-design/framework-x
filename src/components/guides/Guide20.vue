@@ -7,6 +7,10 @@ import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import imageOne from '@/assets/images/guide-20/image_1.png';
+import Challenge from '@/components/Challenge.vue';
+import imageFigma from '@/assets/images/brands/figma.png';
+import imageZoom from '@/assets/images/brands/zoom.png';
+import imageKeep from '@/assets/images/brands/keep.png';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
@@ -31,6 +35,12 @@ const questions = ref([
         ]
     }
 ]);
+
+const challenge20_tasks = [
+    'Aplicar prueba A/B/n a la sección de accesos',
+    'Aplicar prueba de Cinco Segundos a la portada',
+    'Aplicar prueba del Primer Click en la navegación ',
+];
 </script>
 
 <template>
@@ -185,6 +195,37 @@ const questions = ref([
                 </ul>
             </p>
         </section>
+        <Challenge time="1" :id="20" :tasks="challenge20_tasks">
+            <template v-slot:title>
+                <Heading type="h1">Reto #20 </Heading>
+            </template>
+            Aplica las Prueba UX a la pagina principal de la UNHEVAL.
+            <template v-slot:tools>
+                <ResourceCard
+                    title="Figma"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageFigma"
+                />
+                <ResourceCard
+                    title="Zoom"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageZoom"
+                />
+                <ResourceCard
+                    title="Google Keep"
+                    description="Herramienta para organizar ideas"
+                    type="tool"
+                    :src="imageKeep"
+                />
+                <ResourceCard
+                    title="Ejemplos"
+                    description="Herramienta para organizar ideas"
+                    type="download"
+                />
+            </template>
+        </Challenge>
         <Heading type="h1">Evaluación</Heading>
         <section>
             <p>Valida tu aprendizaje</p>

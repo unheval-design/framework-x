@@ -9,7 +9,6 @@ import { LAST_GUIDE_ID } from '@/helpers/stagesData.js';
 import { isCheckpoint } from '@/helpers/utils.js';
 import { useProjectsStore } from '@/stores/projects.js';
 import Modal from '@/components/Modal.vue';
-
 import JSConfetti from 'js-confetti';
 
 const jsConfetti = new JSConfetti();

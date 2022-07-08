@@ -12,6 +12,12 @@ import { useNotesStore } from '@/stores/notes.js';
 import { useProjectsStore } from '@/stores/projects.js';
 import { useChallengesStore } from '@/stores/challenges.js';
 import { useEvaluationsStore } from '@/stores/evaluations.js';
+import success from '@/assets/media/finish.wav';
+import { computed, onMounted, reactive, ref, watch } from '@vue/runtime-core';
+import JSConfetti from 'js-confetti';
+import gsap from 'gsap';
+
+const jsConfetti = new JSConfetti();
 
 const projects = useProjectsStore();
 const todo = useTodoStore();
@@ -23,6 +29,54 @@ todo.project = projects.current.id;
 notes.project = projects.current.id;
 challenges.project = projects.current.id;
 evaluations.project = projects.current.id;
+
+const challengesNumber = ref(0);
+const questionsNumber = ref(0);
+const notesNumber = ref(0);
+const tasksNumber = ref(0);
+
+onMounted(() => {
+    const audioSuccess = new Audio(success);
+    audioSuccess.play();
+    jsConfetti.addConfetti({
+        confettiColors: ['#FFD66E', '#318BEA', '#FFEFC5', '#ADD0F7'],
+        confettiRadius: 3.5,
+        confettiNumber: 350
+    });
+});
+
+const number = ref(10);
+const tweened = reactive({
+    challenges: 0,
+    questions: 0,
+    notes: 0,
+    tasks: 0
+});
+
+onMounted(() => {
+    setTimeout(() => {
+        challengesNumber.value = challenges.currentChallenges;
+        notesNumber.value = notes.currentNotes;
+        tasksNumber.value = todo.currentTodosCompleted;
+        questionsNumber.value = evaluations.currentEvaluations;
+    }, 200);
+});
+
+watch(challengesNumber, (n) => {
+    gsap.to(tweened, { duration: 1, challenges: Number(n) || 0 });
+});
+
+watch(questionsNumber, (n) => {
+    gsap.to(tweened, { duration: 1, questions: Number(n) || 0 });
+});
+
+watch(notesNumber, (n) => {
+    gsap.to(tweened, { duration: 1, notes: Number(n) || 0 });
+});
+
+watch(tasksNumber, (n) => {
+    gsap.to(tweened, { duration: 1, tasks: Number(n) || 0 });
+});
 </script>
 
 <template>
@@ -41,26 +95,26 @@ evaluations.project = projects.current.id;
             <StatCard>
                 <template v-slot:icon><IconQuestion /></template>
                 <template v-slot:title
-                    >{{ evaluations.currentEvaluations }}/40</template
+                    >{{ tweened.questions.toFixed(0) }}/40</template
                 >
                 <template v-slot:text>Preguntas respondidas</template>
             </StatCard>
             <StatCard>
                 <template v-slot:icon><IconTools /></template>
                 <template v-slot:title
-                    >{{ challenges.currentChallenges }}/20</template
+                    >{{ tweened.challenges.toFixed(0) }}/20</template
                 >
                 <template v-slot:text>Retos tomados</template>
             </StatCard>
             <StatCard>
                 <template v-slot:icon><IconNotes /></template>
-                <template v-slot:title>{{ notes.currentNotes }}</template>
+                <template v-slot:title>{{ tweened.notes.toFixed(0) }}</template>
                 <template v-slot:text>Notas guardadas</template>
             </StatCard>
             <StatCard>
                 <template v-slot:icon><IconTodo /></template>
                 <template v-slot:title>
-                    {{ todo.currentTodosCompleted }}/{{
+                    {{ tweened.tasks.toFixed(0) }}/{{
                         todo.currentTodos
                     }}</template
                 >
