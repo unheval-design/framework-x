@@ -21,19 +21,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Por qué los flujos de usuario ayudan a hacer una interfaz intuitiva para el usuario?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Por que esta validado por los mismos usuarios para ser facil y rapido de navegar.'},
-            { answer: false, description: 'Por que fue diseñado por profesionales UX.'},
-            { answer: false, description: 'Por que estandarizan la forma en que cualquier usuario navega en una interfaz.'}
+            { id: 1, description: 'Por que esta validado por los mismos usuarios para ser facil y rapido de navegar.'},
+            { id: 2, description: 'Por que fue diseñado por profesionales UX.'},
+            { id: 3, description: 'Por que estandarizan la forma en que cualquier usuario navega en una interfaz.'}
         ]
     },
     {
         id: 2,
         question: 'Si deseo representar una tarea que no presenta complejidad de escenarios o rutas, podria usar:',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Flujo de tareas.'},
-            { answer: false, description: 'Wireflows.'},
-            { answer: false, description: 'Flujo de usuario.'}
+            { id: 1, description: 'Flujo de tareas.'},
+            { id: 2, description: 'Wireflows.'},
+            { id: 3, description: 'Flujo de usuario.'}
         ]
     }
 ]);

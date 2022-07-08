@@ -21,19 +21,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Cuándo debo escojer el enfoque mobile first?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Cuando necesito priorizar el contenido y las funcionanidades esenciales.'},
-            { answer: false, description: 'Cuando hago diseño atómico, primero los elementos pequelos y luego los grandes.'},
-            { answer: false, description: 'Cuando mis usuarios no tienen mucho conocimiento sobre usar interfaces.'}
+            { id: 1, description: 'Cuando necesito priorizar el contenido y las funcionanidades esenciales.'},
+            { id: 2, description: 'Cuando hago diseño atómico, primero los elementos pequelos y luego los grandes.'},
+            { id: 3, description: 'Cuando mis usuarios no tienen mucho conocimiento sobre usar interfaces.'}
         ]
     },
     {
         id: 2,
         question: '¿Cuándo debe escojer el enfoque desktop first?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Cuando nuestros usuarios son adultos y estan acostumbrados a las interfaces tradicionales.'},
-            { answer: false, description: 'Cuando necesitamos utilizar un trabajo mejor estandarizado.'},
-            { answer: false, description: 'Cuando necesitamos que nuestras interfaces tengan mucha funcionalidad y contenido.'}
+            { id: 1, description: 'Cuando nuestros usuarios son adultos y estan acostumbrados a las interfaces tradicionales.'},
+            { id: 2, description: 'Cuando necesitamos utilizar un trabajo mejor estandarizado.'},
+            { id: 3, description: 'Cuando necesitamos que nuestras interfaces tengan mucha funcionalidad y contenido.'}
         ]
     }
 ]);

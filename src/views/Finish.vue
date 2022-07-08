@@ -10,11 +10,18 @@ import { useTodoStore } from '@/stores/todo.js';
 import { useNotesStore } from '@/stores/notes.js';
 import { useProjectsStore } from '@/stores/projects.js';
 import { useChallengesStore } from '@/stores/challenges.js';
+import { useEvaluationsStore } from '@/stores/evaluations.js';
 
 const projects = useProjectsStore();
 const todo = useTodoStore();
 const notes = useNotesStore();
 const challenges = useChallengesStore();
+const evaluations = useEvaluationsStore();
+
+todo.project = projects.current.id;
+notes.project = projects.current.id;
+challenges.project = projects.current.id;
+evaluations.project = projects.current.id;
 </script>
 
 <template>
@@ -32,7 +39,9 @@ const challenges = useChallengesStore();
         <div class="stats_grid">
             <StatCard>
                 <template v-slot:icon><IconTrophy /></template>
-                <template v-slot:title>20/30</template>
+                <template v-slot:title
+                    >{{ evaluations.currentEvaluations }}/40</template
+                >
                 <template v-slot:text>Preguntas respondidas</template>
             </StatCard>
             <StatCard>

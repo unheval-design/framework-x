@@ -24,21 +24,22 @@ import imageDontFive from '@/assets/images/guide-12/image_dont_5.png'
 const questions = [
     {
         id: 1,
-        question:
-            '¿Para qué hacemos mockups?',
+        question: '¿Para qué hacemos mockups?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Para saber la estructura y posición de los elementos en la vista.' },
-            { answer: false, description: 'Para ver como interactuan las diferentes vistas en conjunto.' },
-            { answer: false, description: 'Para representar nuestro producto con alto grado de detalles.' }
+            { id: 1, description: 'Para saber la estructura y posición de los elementos en la vista.' },
+            { id: 2, description: 'Para ver como interactuan las diferentes vistas en conjunto.' },
+            { id: 3, description: 'Para representar nuestro producto con alto grado de detalles.' }
         ]
     },
     {
         id: 2,
         question: '¿En qué se diferencia el mockup del wireframe?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'El mockup tiene interacciones entre vistas y el wireframe no.' },
-            { answer: false, description: 'El mockup representa visualmente al producto, mientas que el wireframe solo muestra como es la estructura de dicho producto.' },
-            { answer: false, description: 'El mockup representa el producto final mientras que el wireframe es una estructura no terminada.' }
+            { id: 1, description: 'El mockup tiene interacciones entre vistas y el wireframe no.' },
+            { id: 2, description: 'El mockup representa visualmente al producto, mientas que el wireframe solo muestra como es la estructura de dicho producto.' },
+            { id: 3, description: 'El mockup representa el producto final mientras que el wireframe es una estructura no terminada.' }
         ]
     }
 ];

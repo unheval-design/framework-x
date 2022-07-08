@@ -17,17 +17,18 @@ const questions = ref([
     {
         id: 1,
         question: '¿En cuál de estos proyectos seria recomendable usar un CMS?',
+        answer: 1,
         alternatives: [
             {
-                answer: true,
+                id: 1,
                 description: 'Para promocionar un evento de emprendedores.'
             },
             {
-                answer: false,
+                id: 2,
                 description: 'Publicación de noticias de la Universidad.'
             },
             {
-                answer: false,
+                id: 3,
                 description: 'Control de asistencia para un colegio.'
             }
         ]
@@ -36,19 +37,20 @@ const questions = ref([
         id: 2,
         question:
             '¿Cuál seria la razon principal para escojer el desarrollo de una aplicación móvil nativo?',
+        answer: 1,
         alternatives: [
             {
-                answer: true,
+                id: 1,
                 description:
                     'Se necesita aprovechar los componentes fisicos de telefono o del sistema operativo.'
             },
             {
-                answer: false,
+                id: 2,
                 description:
                     'Se necesita mejorar el sistema de interacción con el usuario.'
             },
             {
-                answer: false,
+                id: 3,
                 description:
                     'Se piensa replicar en diferentes tipos de telefonos.'
             }

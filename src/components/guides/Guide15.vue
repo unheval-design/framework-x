@@ -18,19 +18,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Para qué sirven los sistemas de diseño?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Estandarizar conceptos, componentes y patrones que serán reutilizados.' },
-            { answer: false, description: 'Comunicar los componentes que usamos en un determinado proyecto.' },
-            { answer: false, description: 'Ayudar a nuestros usuarios a reconocer nuestras interfaces y facilitar su uso.' }
+            { id: 1, description: 'Estandarizar conceptos, componentes y patrones que serán reutilizados.' },
+            { id: 2, description: 'Comunicar los componentes que usamos en un determinado proyecto.' },
+            { id: 3, description: 'Ayudar a nuestros usuarios a reconocer nuestras interfaces y facilitar su uso.' }
         ]
     },
     {
         id: 2,
         question: '¿Qué son las bibliotecas de patrones?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Todos los componentes que seran reutilizados.' },
-            { answer: false, description: 'Agrupaciones de componentes y elementos de la interfaz.' },
-            { answer: false, description: 'Elementos de la interfaz que se han repetido al menos una vez.' }
+            { id: 1, description: 'Todos los componentes que seran reutilizados.' },
+            { id: 2, description: 'Agrupaciones de componentes y elementos de la interfaz.' },
+            { id: 3, description: 'Elementos de la interfaz que se han repetido al menos una vez.' }
         ]
     }
 ]);

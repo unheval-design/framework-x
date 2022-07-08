@@ -19,19 +19,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Para qué hacemos el prototipado?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Para saber la estructura y posición de los elementos en la vista.' },
-            { answer: false, description: 'Para ver como interactuan las diferentes vistas y elementos en conjunto.' },
-            { answer: false, description: 'Para mostrar el diseño con contenido real sobre el producto.' }
+            { id: 1, description: 'Para saber la estructura y posición de los elementos en la vista.' },
+            { id: 2, description: 'Para ver como interactuan las diferentes vistas y elementos en conjunto.' },
+            { id: 3, description: 'Para mostrar el diseño con contenido real sobre el producto.' }
         ]
     },
     {
         id: 2,
         question: '¿En qué se diferencia el prototipo del mockup?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'El prototipo tiene interacciones y animaciones mientras que el mockup no.' },
-            { answer: false, description: 'El prototipo representa visualmente al producto, mientas que el mockup solo muestra como es la estructura de dicho producto.' },
-            { answer: false, description: 'El prototipo es la implementación inicial de un producto mientras que el mockup es el diseño mas fiel del producto.' }
+            { id: 1, description: 'El prototipo tiene interacciones y animaciones mientras que el mockup no.' },
+            { id: 2, description: 'El prototipo representa visualmente al producto, mientas que el mockup solo muestra como es la estructura de dicho producto.' },
+            { id: 3, description: 'El prototipo es la implementación inicial de un producto mientras que el mockup es el diseño mas fiel del producto.' }
         ]
     }
 ]);

@@ -13,19 +13,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿En qué consisten las puebas A/B?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'En probar dos o mas versiones de nuestro producto con dos grupos de usuarios.' },
-            { answer: false, description: 'En probar dos veces nuestro producto con dos grupos de usuarios diferentes.' },
-            { answer: false, description: 'En probar dos productos diferentes para encontrar mejoras y errores entre estos.' }
+            { id: 1, description: 'En probar dos o mas versiones de nuestro producto con dos grupos de usuarios.' },
+            { id: 2, description: 'En probar dos veces nuestro producto con dos grupos de usuarios diferentes.' },
+            { id: 3, description: 'En probar dos productos diferentes para encontrar mejoras y errores entre estos.' }
         ]
     },
     {
         id: 2,
         question: '¿Cuándo necesitamos usar la prueba de los cinco segundos?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Si necesito saber si los usarios entienden la finalidad del producto en un tiempo muy corto.' },
-            { answer: false, description: 'Cuando quiero saber si mis usuarios pueden cumplir una tarea importante en cinco segundos.' },
-            { answer: false, description: 'Si necesito comprobar la optimizacion y velocidad con la que cargan los elementos en mi interfaz.' }
+            { id: 1, description: 'Si necesito saber si los usarios entienden la finalidad del producto en un tiempo muy corto.' },
+            { id: 2, description: 'Cuando quiero saber si mis usuarios pueden cumplir una tarea importante en cinco segundos.' },
+            { id: 3, description: 'Si necesito comprobar la optimizacion y velocidad con la que cargan los elementos en mi interfaz.' }
         ]
     }
 ]);

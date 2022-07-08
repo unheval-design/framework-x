@@ -20,19 +20,20 @@ const questions = ref([
     {
         id: 1,
         question: '¿Para qué hacemos el Diseño Atómico?',
+        answer: 2,
         alternatives: [
             {
-                answer: false,
+                id: 1,
                 description:
                     'Mejora la claridad del contenido mientras ayuda a los usuarios a concentrarse en el contenido que más importa'
             },
             {
-                answer: true,
+                id: 2,
                 description:
                     'Nos brinda una estructura para formular nuestro diseño, nos ayuda a crear componentes básicos para construir nuestros sistemas de diseño.'
             },
             {
-                answer: false,
+                id: 3,
                 description:
                     'Ayuda a tomar decisiones finales con respecto a los esquemas de color, el estilo visual y la tipografía de un producto.'
             }
@@ -41,19 +42,20 @@ const questions = ref([
     {
         id: 2,
         question: '¿Que son los átomos?',
+        answer: 2,
         alternatives: [
             {
-                answer: false,
+                id: 1,
                 description:
                     'Elemento simple compuesto por un avatar y un par de elementos de etiqueta.'
             },
             {
-                answer: true,
+                id: 2,
                 description:
                     'Son los bloques de construcción más pequeños de nuestro sistema.'
             },
             {
-                answer: false,
+                id: 3,
                 description:
                     'Elementos de UI básicos con los que los desarrolladores tendrán que trabajar.'
             }

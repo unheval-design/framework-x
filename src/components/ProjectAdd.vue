@@ -37,7 +37,7 @@ const goToStages = () => {
     <div class="ProjectAdd">
         <div class="project_add_form">
             <Input
-                label="Titulo"
+                label="Título"
                 required
                 placeholder="Ej: Pagina web de eventos"
                 v-model="title"

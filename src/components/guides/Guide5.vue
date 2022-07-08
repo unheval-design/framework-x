@@ -18,19 +18,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Por qué hacemos el Card Sorting?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Por que necesitamos descubrir cómo las personas entienden y categorizan la información.'},
-            { answer: false, description: 'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.'},
-            { answer: false, description: 'Por que queremos entender como agrupar los elementos de nuestra interfaz.'}
+            { id: 1, description: 'Por que necesitamos descubrir cómo las personas entienden y categorizan la información.'},
+            { id: 2, description: 'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.'},
+            { id: 3, description: 'Por que queremos entender como agrupar los elementos de nuestra interfaz.'}
         ]
     },
     {
         id: 2,
         question: '¿Cuándo usariamos un Card Sorting de tipo cerrado?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Si deseamos priorizar y clasificar funciones.'},
-            { answer: false, description: 'Si deseamos descubrir nuevas categorias para un mismo grupo de tarjetas.'},
-            { answer: false, description: 'Si deseamos mejorar la categorizacion para las funcionalidades de nuestra interfaz.'}
+            { id: 1, description: 'Si deseamos priorizar y clasificar funciones.'},
+            { id: 2, description: 'Si deseamos descubrir nuevas categorias para un mismo grupo de tarjetas.'},
+            { id: 3, description: 'Si deseamos mejorar la categorizacion para las funcionalidades de nuestra interfaz.'}
         ]
     }
 ]);

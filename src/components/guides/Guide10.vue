@@ -19,18 +19,19 @@ const questions = ref([
     {
         id: 1,
         question: '¿Para qué usamos los moodboard?',
+        answer: 1,
         alternatives: [
             {
-                answer: false,
+                id: 1,
                 description:
                     'Organizar información, que siva de inspiración en el proceso de diseño.'
             },
             {
-                answer: false,
+                id: 2,
                 description: 'Definir como seran los componentes a diseñar.'
             },
             {
-                answer: false,
+                id: 3,
                 description:
                     'Organizar elementos que sirvan para comparar con nuestro diseño actual.'
             }
@@ -39,19 +40,20 @@ const questions = ref([
     {
         id: 2,
         question: '¿Cuál es la ventaja de usar un moodboard digital?',
+        answer: 1,
         alternatives: [
             {
-                answer: false,
+                id: 1,
                 description:
                     'Pueden contener enormes especios de trabajo para recolectar mucha información.'
             },
             {
-                answer: false,
+                id: 2,
                 description:
                     'Por que ayudan a que el proceso de recoleccion sea mas rápida.'
             },
             {
-                answer: false,
+                id: 3,
                 description:
                     'Pueden contener mayor numero de personas trabajando al mismo tiempo.'
             }

@@ -11,23 +11,24 @@ import Heading from '@/components/Heading.vue';
 import Challenge from '@/components/Challenge.vue';
 import imageKeep from '@/assets/images/brands/keep.png';
 import imageDocs from '@/assets/images/brands/docs.png';
-import { computed, onMounted, ref } from '@vue/runtime-core';
+import { computed, onMounted, provide, ref } from '@vue/runtime-core';
 
 const questions = ref([
     {
         id: 1,
         question: '¿Cuando dedo usar entrevistas a usuarios?',
+        answer: 1,
         alternatives: [
             {
-                answer: true,
+                id: 1,
                 description: 'Cuando deseo profundizar en un tema especifico.',
             },
             {
-                answer: false,
+                id: 2,
                 description: 'Cuando deseo hacer una recolección de datos significativa.',
             },
             {
-                answer: false,
+                id: 3,
                 description: 'Cuando deseo estudiar el comportamiento de mis usuarios a futuro.',
             }
         ]
@@ -35,17 +36,18 @@ const questions = ref([
     {
         id: 2,
         question: 'Cuando quiero explorar las dificultades en mi sitio web pero no tengo definido los problemas principales, podría usar una entrevista de tipo:',
+        answer: 2,
         alternatives: [
             {
-                answer: true,
+                id: 1,
                 description: 'Abierta'
             },
             {
-                answer: false,
+                id: 2,
                 description: 'Estructurada'
             },
             {
-                answer: false,
+                id: 3,
                 description: 'Semi-estructurada'
             }
         ],

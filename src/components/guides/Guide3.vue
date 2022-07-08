@@ -16,19 +16,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Cuándo hacer el benchmarking?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Antes de la fase definir o después de la fase de pruebas.'},
-            { answer: false, description: 'Antes de las pruebas o después de empatizar.'},
-            { answer: false, description: 'Después de definir o antes de las pruebas.'}
+            { id: 1, description: 'Antes de la fase definir o después de la fase de pruebas.'},
+            { id: 2, description: 'Antes de las pruebas o después de empatizar.'},
+            { id: 3, description: 'Después de definir o antes de las pruebas.'}
         ]
     },
     {
         id: 2,
         question: 'Si estoy trabajando en un producto nuevo ¿Contra que puedo hacer el benchmarking?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Con un producto estándar en la industria.' },
-            { answer: false, description: 'Con un producto similar de mi empresa.' },
-            { answer: false, description: 'Con un producto que me sea familiar y sepa sus características.'}
+            { id: 1, description: 'Con un producto estándar en la industria.' },
+            { id: 2, description: 'Con un producto similar de mi empresa.' },
+            { id: 3, description: 'Con un producto que me sea familiar y sepa sus características.'}
         ]
     }
 ]);

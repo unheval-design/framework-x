@@ -16,19 +16,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Para qué hacemos una lluvia de ideas?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Generar mayor participación de nuestro equipo de trabajo.' },
-            { answer: false, description: 'Conocer diferentes formas de pensamiento de nuestro equipo.' },
-            { answer: false, description: 'Generar ideas innovadoras que resuelvan problemas.' }
+            { id: 1, description: 'Generar mayor participación de nuestro equipo de trabajo.' },
+            { id: 2, description: 'Conocer diferentes formas de pensamiento de nuestro equipo.' },
+            { id: 3, description: 'Generar ideas innovadoras que resuelvan problemas.' }
         ]
     },
     {
         id: 2,
         question: '¿En qué técnica partimos por definir malas ideas?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Mapa Mental.' },
-            { answer: false, description: 'Lluvia de ideas inverso.' },
-            { answer: false, description: 'En ninguna de las técnicas.' }
+            { id: 1, description: 'Mapa Mental.' },
+            { id: 2, description: 'Lluvia de ideas inverso.' },
+            { id: 3, description: 'En ninguna de las técnicas.' }
         ]
     }
 ]);

@@ -17,19 +17,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Por que hacemos el user journey map?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Por que necesitamos entender si los procesos o etapas de un proceso están bien optimizados.'},
-            { answer: false, description: 'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.'},
-            { answer: false, description: 'Por que queremos detectar si las tareas son completadas y el grado de satisfacción del usuario.'}
+            { id: 1, description: 'Por que necesitamos entender si los procesos o etapas de un proceso están bien optimizados.'},
+            { id: 2, description: 'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.'},
+            { id: 3, description: 'Por que queremos detectar si las tareas son completadas y el grado de satisfacción del usuario.'}
         ]
     },
     {
         id: 2,
         question: '¿Qué son las oportunidades en un user journey map?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Información que describe cómo se puede optimizar la experiencia del usuario.'},
-            { answer: false, description: 'Rutas que tiene el usuario para completar su recorrido.'},
-            { answer: false, description: 'Experiencias favorables del usuario en el recorrido.'}
+            { id: 1, description: 'Información que describe cómo se puede optimizar la experiencia del usuario.'},
+            { id: 2, description: 'Rutas que tiene el usuario para completar su recorrido.'},
+            { id: 3, description: 'Experiencias favorables del usuario en el recorrido.'}
         ]
     }
 ]);

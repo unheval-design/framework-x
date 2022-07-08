@@ -27,6 +27,7 @@ import { useTodoStore } from '@/stores/todo.js';
 import { useNotesStore } from '@/stores/notes.js';
 import { useProjectsStore } from '@/stores/projects.js';
 import { useChallengesStore } from '@/stores/challenges.js';
+import { useEvaluationsStore } from '@/stores/evaluations.js';
 
 const guideId = inject('guideId');
 const { guideRef, closeContextMenu } = useGuideContextMenu();
@@ -37,12 +38,14 @@ const projects = useProjectsStore();
 const todo = useTodoStore();
 const notes = useNotesStore();
 const challenges = useChallengesStore();
+const evaluations = useEvaluationsStore();
 
 todo.guide = currentGuide;
 todo.project = projects.current.id;
 notes.guide = currentGuide;
 notes.project = projects.current.id;
 challenges.project = projects.current.id;
+evaluations.project = projects.current.id;
 </script>
 
 <template>

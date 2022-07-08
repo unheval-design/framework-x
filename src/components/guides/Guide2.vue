@@ -16,19 +16,20 @@ const questions = ref([
     {
         id: 1,
         question: '¿Por que hacemos el mapa de empatía?',
+        answer: 1,
         alternatives: [
             {
-                answer: true,
+                id: 1,
                 description:
                     'Nos permite recoger requerimientos para nuestro proyecto.'
             },
             {
-                answer: false,
+                id: 2,
                 description:
                     'Porque nos permite organizar la información de los clientes de una empresa.'
             },
             {
-                answer: false,
+                id: 3,
                 description:
                     'Cuando deseamos comprender al cliente/usuario y su contexto.'
             }
@@ -37,19 +38,20 @@ const questions = ref([
     {
         id: 2,
         question: '¿Por qué es recomendable hacer el mapa de empatía en grupo?',
+        answer: 1,
         alternatives: [
             {
-                answer: true,
+                id: 1,
                 description:
                     'Los diferente puntos de vista ayudaran a validar el perfil del cliente desde diferentes perspectivas.'
             },
             {
-                answer: false,
+                id: 2,
                 description:
                     'Para cumplir la meta de completarlo en 30 minutos.'
             },
             {
-                answer: false,
+                id: 3,
                 description:
                     'Por que se debe hacer por un equipo multidisciplinario.'
             }

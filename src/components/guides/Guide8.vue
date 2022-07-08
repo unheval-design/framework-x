@@ -20,19 +20,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Por qué hacemos Wireframes?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Ayudan a crear flujos o rutas para nuestros usuarios.'},
-            { answer: false, description: 'Ayudan a comunicar la estructura de páginas individuales y como se conectan esas páginas.'},
-            { answer: false, description: 'Ayudan a visualizar el producto para que el equipo de desarrollo empiece a trabajar en paralelo.' }
+            { id: 1, description: 'Ayudan a crear flujos o rutas para nuestros usuarios.'},
+            { id: 2, description: 'Ayudan a comunicar la estructura de páginas individuales y como se conectan esas páginas.'},
+            { id: 3, description: 'Ayudan a visualizar el producto para que el equipo de desarrollo empiece a trabajar en paralelo.' }
         ]
     },
     {
         id: 2,
         question: '¿Cuando hariamos wireframes dibujando a mano?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Cuando queremos crear e iterar rapidamente.'},
-            { answer: false, description: 'Cuando trabajamos en un producto pequeño.'},
-            { answer: false, description: 'Cuando ya tenemos la idea clara y no necesitamos wireframes con muchos detalles e iteracciones.'}
+            { id: 1, description: 'Cuando queremos crear e iterar rapidamente.'},
+            { id: 2, description: 'Cuando trabajamos en un producto pequeño.'},
+            { id: 3, description: 'Cuando ya tenemos la idea clara y no necesitamos wireframes con muchos detalles e iteracciones.'}
         ]
     }
 ]);

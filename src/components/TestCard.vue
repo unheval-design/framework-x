@@ -2,7 +2,9 @@
 import { ref } from '@vue/reactivity';
 import RadioButton from '@/components/RadioButton.vue';
 import { ID } from '@/helpers/utils.js';
-import { onMounted } from '@vue/runtime-core';
+import { inject, onMounted, watch } from '@vue/runtime-core';
+import { useEvaluationsStore } from '@/stores/evaluations.js';
+
 const props = defineProps({
     question: {
         type: Object,
@@ -10,8 +12,18 @@ const props = defineProps({
     }
 });
 
-const id = ID();
+const evaluations = useEvaluationsStore();
+const evaluationId = inject('guideId');
+
 const answer = ref(null);
+watch(answer, (val) => {
+    // if (props.question.answer === val)
+    evaluations.add(
+        evaluationId.value,
+        props.question.id,
+        props.question.answer === val
+    );
+});
 </script>
 
 <template>
@@ -19,31 +31,31 @@ const answer = ref(null);
         <h2>{{ question.question }}</h2>
         <div class="test_alternatives">
             <RadioButton
-                :success="answer === 1 && question.alternatives[0].answer"
-                :error="answer === 1 && !question.alternatives[0].answer"
-                :name="`alternative_${id}`"
+                :success="answer === question.answer"
+                :error="answer !== question.answer"
+                :name="`alternative_${question.id}`"
                 :label="question.alternatives[0].description"
-                :val="1"
+                :val="question.alternatives[0].id"
                 v-model:model.number="answer"
-                :class="{ msg: answer === 1 }"
+                :class="{ msg: answer === question.alternatives[0].id }"
             />
             <RadioButton
-                :success="answer === 2 && question.alternatives[1].answer"
-                :error="answer === 2 && !question.alternatives[1].answer"
-                :name="`alternative_${id}`"
+                :success="answer === question.answer"
+                :error="answer !== question.answer"
+                :name="`alternative_${question.id}`"
                 :label="question.alternatives[1].description"
-                :val="2"
+                :val="question.alternatives[1].id"
                 v-model:model.number="answer"
-                :class="{ msg: answer === 2 }"
+                :class="{ msg: answer === question.alternatives[1].id }"
             />
             <RadioButton
-                :success="answer === 3 && question.alternatives[2].answer"
-                :error="answer === 3 && !question.alternatives[2].answer"
-                :name="`alternative_${id}`"
+                :success="answer === question.answer"
+                :error="answer !== question.answer"
+                :name="`alternative_${question.id}`"
                 :label="question.alternatives[2].description"
-                :val="3"
+                :val="question.alternatives[2].id"
                 v-model:model.number="answer"
-                :class="{ msg: answer === 3 }"
+                :class="{ msg: answer === question.alternatives[2].id }"
             />
         </div>
     </section>

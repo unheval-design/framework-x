@@ -22,19 +22,20 @@ const questions = ref([
     {
         id: 1,
         question: '¿Cual es el objetivo de las microinteracciones?',
+        answer: 1,
         alternatives: [
             {
-                answer: false,
+                id: 1,
                 description:
                     'Estandarizar conceptos, componentes y patrones que serán reutilizados.'
             },
             {
-                answer: true,
+                id: 2,
                 description:
                     'Deleitar al usuario; para crear un momento atractivo y más humano.'
             },
             {
-                answer: false,
+                id: 3,
                 description:
                     'Ver como interactuan las diferentes vistas en conjunto.'
             }
@@ -44,19 +45,20 @@ const questions = ref([
         id: 2,
         question:
             '¿En qué consiste la retroalimentación en las microinteracciones?',
+            answer: 1,
         alternatives: [
             {
-                answer: true,
+                id: 1,
                 description:
                     'Es la mejora que el usuario puede aportar acerca de una interacción realizada.'
             },
             {
-                answer: false,
+                id: 2,
                 description:
                     'Es la opinión que tiene el usuario luego de ejecutar una tarea o acción en la interfaz.'
             },
             {
-                answer: false,
+                id: 3,
                 description:
                     'La respuesta que ve el usuario luego de ejecutar un disparador o realizar una acción.'
             }

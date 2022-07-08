@@ -22,19 +22,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Por qué hacemos UX Writing?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Ayudar al usuario mientras realiza una tarea con textos cortos, efectivos y agradables.'},
-            { answer: false, description: 'Ayudar al usuario a completar una tarea con consejos claros y efectivos.'},
-            { answer: false, description: 'Ayudar al usuario a entender nuestro objetivo como empresa o servicio.'}
+            { id: 1, description: 'Ayudar al usuario mientras realiza una tarea con textos cortos, efectivos y agradables.'},
+            { id: 2, description: 'Ayudar al usuario a completar una tarea con consejos claros y efectivos.'},
+            { id: 3, description: 'Ayudar al usuario a entender nuestro objetivo como empresa o servicio.'}
         ]
     },
     {
         id: 2,
         question: '¿Por qué es importante el voz y tono de la marca?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Es la forma con la que los usuarios te conocen y conectan con la identidad de la empresa.'},
-            { answer: false, description: 'Determina la calidad de tus servicios y al publico que se orienta.'},
-            { answer: false, description: 'Es la forma en la que empatizas con el usuario para transmitir experiencias positivas.'}
+            { id: 1, description: 'Es la forma con la que los usuarios te conocen y conectan con la identidad de la empresa.'},
+            { id: 2, description: 'Determina la calidad de tus servicios y al publico que se orienta.'},
+            { id: 3, description: 'Es la forma en la que empatizas con el usuario para transmitir experiencias positivas.'}
         ]
     }
 ]);

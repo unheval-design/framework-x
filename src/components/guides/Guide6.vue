@@ -21,19 +21,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Qué conlleva una mala estructuración?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Mala identificación de las tareas del usuario.'},
-            { answer: false, description: 'Demora en el proceso de diseño de interfaces.'},
-            { answer: false, description: 'Una mala experiencia del usuario y, más allá de eso, a la pérdida de negocios.'}
+            { id: 1, description: 'Mala identificación de las tareas del usuario.'},
+            { id: 2, description: 'Demora en el proceso de diseño de interfaces.'},
+            { id: 3, description: 'Una mala experiencia del usuario y, más allá de eso, a la pérdida de negocios.'}
         ]
     },
     {
         id: 2,
         question: '¿Por qué es recomendable poner un número de referencia en las páginas del mapa del sitio?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Para referenciar en la documentación del mapa del sitio.'},
-            { answer: false, description: 'Ayudan a realizar un seguimiento en la jerarquía, esquemas y prototipos de las páginas.'},
-            { answer: false, description: 'Ayudan a determinar el tipo de mapa de sitio.'}
+            { id: 1, description: 'Para referenciar en la documentación del mapa del sitio.'},
+            { id: 2, description: 'Ayudan a realizar un seguimiento en la jerarquía, esquemas y prototipos de las páginas.'},
+            { id: 3, description: 'Ayudan a determinar el tipo de mapa de sitio.'}
         ]
     }
 ]);

@@ -12,19 +12,21 @@ const questions = ref([
     {
         id: 1,
         question: '¿Por que hacemos pruebas UI?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Para detectar problemas de usabilidad de las interfaces.' },
-            { answer: false, description: 'Comprobar el funcionamiento correcto de los elementos de la interfaz y dispositivos fisicos que se requieren.' },
-            { answer: false, description: 'Para comprobar si los flujos de usuario importantes de mi aplicación funcionan de manera correcta.' }
+            { id: 1, description: 'Para detectar problemas de usabilidad de las interfaces.' },
+            { id: 2, description: 'Comprobar el funcionamiento correcto de los elementos de la interfaz y dispositivos fisicos que se requieren.' },
+            { id: 3, description: 'Para comprobar si los flujos de usuario importantes de mi aplicación funcionan de manera correcta.' }
         ]
     },
     {
         id: 2,
         question: '¿Qué enfoque de pruebas UI seria el mas apropiado cuando mi objetivo es automatizar pruebas?',
+        answer: 1,
         alternatives: [
-            { answer: true, description: 'Prueba manual.' },
-            { answer: false, description: 'Pruebas de grabación y reproducción.' },
-            { answer: false, description: 'Pruebas basadas en modelos.' }
+            { id: 1, description: 'Prueba manual.' },
+            { id: 2, description: 'Pruebas de grabación y reproducción.' },
+            { id: 3, description: 'Pruebas basadas en modelos.' }
         ]
     }
 ]);
