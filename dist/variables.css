@@ -1,0 +1,146 @@
+:root {
+    --font: "Inter", sans-serif;
+    
+    --button_height: 40px;
+    --button_height_small: 32px;
+    --input_height: 40px;
+    --textarea_height: 80px;
+    --navbar_height: 64px;
+    --padding_xl: 2.5rem;
+    --padding: 1.5rem;
+    --padding_sm: 1rem;
+    --gap_xl: 60px;
+    --gap: 20px;
+    --gap_block: 10px;
+    --gap_sm: 12px;
+    --radius: 8px;
+    --icon_size: 22px;
+    --icon_size_sm: 18px;
+    --icon_size_xl: 28px;
+    --icon_size_l: 24px;
+    --dropdown_width: 150px;
+    --list_option_height: 36px;
+    --container_width: 1220px;
+    --modal_container_width: 650px;
+    --modal_slide_container_width: 480px;
+
+    --title_size: 24px;
+    --text_size_xl: 18px;
+    --text_size_l: 16px;
+    --text_size: 14px;
+    --text_size_sm: 13px;
+    --text_line_height: 1.7;
+    --title_line_height: 1.4;
+    --subtext_line_height: 1.2;
+
+    /* Color styles */
+    --accent_color: #FFD66E;
+    --primary_color: #318BEA;
+    --success_color: #5ADD8F;
+    --error_color: #FE6E67;
+    --neutral_color_50: #C3D4E5;
+    --neutral_color_60: #CFDDEA;
+    --neutral_color_70: #DBE5EF;
+    --neutral_color_80: #E7EEF5;
+    --neutral_color_90: #F3F6FA;
+    --neutral_color_95: #F9FBFD;
+    --neutral_color: #FFFFFF;
+    --text_color: #000000;
+    --primary_color_20: #D6E8FB;
+    --primary_color_40: #ADD0F7;
+    --primary_color_60: #83B9F2;
+    --primary_color_80: #5AA2EE;
+    --accent_color_20: #FFF7E2;
+    --accent_color_40: #FFEFC5;
+    --accent_color_60: #FFE6A8;
+    --accent_color_80: #FFDE8B;
+    --error_color_20: #FFE2E0;
+    --error_color_40: #FFC5C2;
+    --error_color_60: #FEA8A4;
+    --error_color_80: #FE8B85;
+    --success_color_20: #DEF8E8;
+    --success_color_40: #BDF1D2;
+    --success_color_60: #9CEBBC;
+    --success_color_80: #7BE4A5;
+    --primary_color_10: #EAF3FD;
+    --accent_color_10: #FFFBF1;
+    --error_color_10: #FFF0F0;
+    --success_color_10: #EFFCF4;
+    --text_color_70: #4C4C4C;
+    --text_color_50: #808080;
+    --border_color: #D8D8D8;
+    --border_color_70: #EBEBEB;
+    --border_color_50: #F5F5F5;
+    --surface_color: #FFFFFF;
+    --surface_color_alpha: rgba(255, 255, 255, 0.15);
+
+    --hover_color: rgba(0, 0, 0, 0.03);
+    /* Text-size styles */
+    /* --hero_1: 64px;
+    --hero_2: 48px;
+    --headline_1: 32px;
+    --headline_2: 24px;
+    --headline_3: 20px;
+    --text_1: 16px;
+    --text_2: 14px;
+    --text_3: 12px;
+    --text_bold_1: 16px;
+    --text_bold_2: 14px;
+    --text_bold_3: 12px;
+    --text_button: 16px;
+    --text_button_small: 14px;
+    --text_article: 18px;
+    --text_article_bold: 18px; */
+
+    /* Effect styles */
+    --shadow:  0px 5px 15px rgba(0, 0, 0, 0.04);
+    --shadow_deep:  0px 5px 40px rgba(0, 0, 0, 0.04);
+}
+
+.dark {
+    --text_line_height: 1.8;
+    --title_line_height: 1.5;
+    --subtext_line_height: 1.25;
+
+    --accent_color: #EECE7E;
+    --primary_color: #3790ED;
+    --error_color: #EF7F79;
+    --success_color: #73E4A0;
+    --neutral_color_50: #506377;
+    --neutral_color_60: #455666;
+    --neutral_color_70: #3A4855;
+    --neutral_color_80: #2F3A45;
+    --neutral_color_90: #242C34;
+    --neutral_color_95: #1F252B;
+    --neutral_color: #191E23;
+    --text_color: #FFFFFF;
+    --primary_color_10: #1C2937;
+    --primary_color_20: #1F354B;
+    --primary_color_40: #254B74;
+    --primary_color_60: #2B629C;
+    --primary_color_80: #3179C4;
+    --accent_color_10: #2E302C;
+    --accent_color_20: #444135;
+    --accent_color_40: #6E6547;
+    --accent_color_60: #99885A;
+    --accent_color_80: #C3AB6C;
+    --error_color_10: #2E282C;
+    --error_color_20: #443134;
+    --error_color_40: #6F4545;
+    --error_color_60: #995857;
+    --error_color_80: #C46C68;
+    --success_color_10: #22322F;
+    --success_color_20: #2B463C;
+    --success_color_40: #3D6D55;
+    --success_color_60: #4F956E;
+    --success_color_80: #61BC87;
+    --text_color_70: #BABCBD;
+    --text_color_50: #8C8E91;
+    --border_color: #455666;
+    --border_color_70: #2F3944;
+    --border_color_50: #242C33;
+    --surface_color: #242C34;
+    --surface_color_alpha: rgba(255, 255, 255, 0.1);
+
+    --hover_color: rgba(210, 225, 240, 0.03);
+}
