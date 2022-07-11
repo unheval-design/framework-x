@@ -5,10 +5,6 @@ import { computed, onMounted } from '@vue/runtime-core';
 import TestCard from '@/components/TestCard.vue';
 
 const props = defineProps({
-    id: {
-        type: Number,
-        required: true
-    },
     questions: {
         type: Array,
         required: true

@@ -17,7 +17,7 @@ const questions = ref([
     {
         id: 1,
         question: '¿Por que hacemos el user journey map?',
-        answer: 1,
+        answer: 2,
         alternatives: [
             { id: 1, description: 'Por que necesitamos entender si los procesos o etapas de un proceso están bien optimizados.'},
             { id: 2, description: 'Por que queremos descubrir la experiencia del usuario a lo largo de una serie de interacciones.'},
@@ -194,19 +194,16 @@ const challenge4_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Miro"
-                    description="Herramienta para organizar ideas"
+                    description="Analisis visual"
                     type="tool"
                     :src="imageMiro"
+                    href="https://miro.com/es/"
                 />
                 <ResourceCard
                     title="Plantilla"
-                    description="Herramienta para organizar ideas"
+                    description="Journey Map"
                     type="download"
-                />
-                <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    href="https://miro.com/es/plantillas/plantilla-mapa-experiencia-del-cliente/"
                 />
             </template>
         </Challenge>

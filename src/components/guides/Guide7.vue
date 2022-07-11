@@ -4,6 +4,7 @@ import GuideBody from '@/components/GuideBody.vue';
 import Evaluation from '@/components/Evaluation.vue';
 import Reference from '@/components/Reference.vue';
 import imageKeep from '@/assets/images/brands/keep.png';
+import imageFigma from '@/assets/images/brands/figma.png';
 import Blockquote from '@/components/Blockquote.vue';
 import Heading from '@/components/Heading.vue';
 import TipCard from '@/components/TipCard.vue';
@@ -202,15 +203,18 @@ const challenge7_tasks = [
             Mejora el UX Writing de un evento de la pagina de eventos de la UNHEVAL.
             <template v-slot:tools>
                 <ResourceCard
-                    title="Keep"
-                    description="Herramienta para organizar ideas"
+                    title="Google Keep"
+                    description="Análisis de caso"
                     type="tool"
                     :src="imageKeep"
+                    href="https://keep.google.com/"
                 />
                 <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    title="Figma"
+                    description="Prototipo interactivo"
+                    type="tool"
+                    :src="imageFigma"
+                    href="https://figma.com/"
                 />
             </template>
         </Challenge>

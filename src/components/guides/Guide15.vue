@@ -28,7 +28,7 @@ const questions = ref([
     {
         id: 2,
         question: '¿Qué son las bibliotecas de patrones?',
-        answer: 1,
+        answer: 2,
         alternatives: [
             { id: 1, description: 'Todos los componentes que seran reutilizados.' },
             { id: 2, description: 'Agrupaciones de componentes y elementos de la interfaz.' },
@@ -137,14 +137,16 @@ const challenge15_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"
-                    description="Herramienta para organizar ideas"
+                    description="Creación de componentes"
                     type="tool"
                     :src="imageFigma"
+                    href="https://figma.com/"
                 />
                 <ResourceCard
                     title="Ejemplos"
-                    description="Herramienta para organizar ideas"
+                    description="Sistemas de diseño"
                     type="download"
+                    href="https://www.figma.com/community/file/1127116371239304194"
                 />
             </template>
         </Challenge>

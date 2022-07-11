@@ -10,6 +10,7 @@ import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import TipCard from '@/components/TipCard.vue';
 import imageMiro from '@/assets/images/brands/miro.png';
+import imageKeep from '@/assets/images/brands/keep.png';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
@@ -133,15 +134,18 @@ const challenge3_tasks = [
             Crea un UX Benchmarking para encontrar la misión y visión institucional de una universidad.
             <template v-slot:tools>
                 <ResourceCard
+                    title="Google Keep"
+                    description="Recopila las ideas"
+                    type="tool"
+                    :src="imageKeep"
+                    href="https://keep.google.com/"
+                    />
+                <ResourceCard
                     title="Miro"
-                    description="Herramienta para organizar ideas"
+                    description="Modela los resultados"
                     type="tool"
                     :src="imageMiro"
-                />
-                <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    href="https://miro.com/es/"
                 />
             </template>
         </Challenge>

@@ -156,14 +156,15 @@ const challenge5_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Miro"
-                    description="Herramienta para organizar ideas"
+                    description="Analisis visual"
                     type="tool"
                     :src="imageMiro"
                 />
                 <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
+                    title="Plantilla"
+                    description="Card Sorting"
                     type="download"
+                    href="https://miro.com/es/plantillas/clasificacion-de-tarjetas/"
                 />
             </template>
         </Challenge>

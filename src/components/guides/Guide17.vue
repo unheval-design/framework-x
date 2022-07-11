@@ -22,7 +22,7 @@ const questions = ref([
     {
         id: 1,
         question: '¿Cual es el objetivo de las microinteracciones?',
-        answer: 1,
+        answer: 2,
         alternatives: [
             {
                 id: 1,
@@ -45,7 +45,7 @@ const questions = ref([
         id: 2,
         question:
             '¿En qué consiste la retroalimentación en las microinteracciones?',
-            answer: 1,
+            answer: 3,
         alternatives: [
             {
                 id: 1,
@@ -201,28 +201,31 @@ const challenge17_tasks = [
             Crea microinteracciones de la pagina web de la biblioteca la UNHEVAL.
             <template v-slot:tools>
                 <ResourceCard
+                    title="Lottie"
+                    description="Libreria y recursos"
+                    type="tool"
+                    :src="imageLottie"
+                    href="https://lottiefiles.com/"
+                />
+                <ResourceCard
                     title="Figma"
-                    description="Herramienta para organizar ideas"
+                    description="Componente funcional"
                     type="tool"
                     :src="imageFigma"
+                    href="https://figma.com/"
                 />
                 <ResourceCard
                     title="Framer"
-                    description="Herramienta para organizar ideas"
-                    type="tool"
+                    description="Componente interactivo"
                     :src="imageFramer"
+                    href="https://www.framer.com/"
                 />
                 <ResourceCard
                     title="VS Code"
-                    description="Herramienta para organizar ideas"
+                    description="Componente implementado"
                     type="tool"
                     :src="imageCode"
-                />
-                <ResourceCard
-                    title="Lottie"
-                    description="Herramienta para organizar ideas"
-                    type="tool"
-                    :src="imageLottie"
+                    href="https://code.visualstudio.com/"
                 />
             </template>
         </Challenge>

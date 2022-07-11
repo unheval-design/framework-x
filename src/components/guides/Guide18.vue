@@ -17,7 +17,7 @@ const questions = ref([
     {
         id: 1,
         question: '¿En cuál de estos proyectos seria recomendable usar un CMS?',
-        answer: 1,
+        answer: 2,
         alternatives: [
             {
                 id: 1,
@@ -216,14 +216,10 @@ const challenge18_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="VS Code"
-                    description="Herramienta para organizar ideas"
+                    description="Herramientas e implementación "
                     type="tool"
                     :src="imageCode"
-                />
-                <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    href="https://code.visualstudio.com/"
                 />
             </template>
         </Challenge>

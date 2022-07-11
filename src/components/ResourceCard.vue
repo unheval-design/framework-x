@@ -23,7 +23,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="ResourceCard">
+    <a class="ResourceCard" target="_blank">
         <i v-if="type === 'download'" class="resource_image">
             <IconDownloadFile />
         </i>
@@ -36,7 +36,7 @@ defineProps({
                 >Descargar</Button
             > -->
         </div>
-    </div>
+    </a>
 </template>
 
 <style lang="scss" scoped>
@@ -51,6 +51,7 @@ defineProps({
     min-width: 240px;
     transition: background ease-in-out 0.2s;
     cursor: pointer;
+    text-decoration: none;
     i.resource_image {
         min-width: 48px;
         height: 48px;

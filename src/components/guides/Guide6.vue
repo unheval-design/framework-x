@@ -21,7 +21,7 @@ const questions = ref([
     {
         id: 1,
         question: '¿Qué conlleva una mala estructuración?',
-        answer: 1,
+        answer: 3,
         alternatives: [
             { id: 1, description: 'Mala identificación de las tareas del usuario.'},
             { id: 2, description: 'Demora en el proceso de diseño de interfaces.'},
@@ -31,7 +31,7 @@ const questions = ref([
     {
         id: 2,
         question: '¿Por qué es recomendable poner un número de referencia en las páginas del mapa del sitio?',
-        answer: 1,
+        answer: 2,
         alternatives: [
             { id: 1, description: 'Para referenciar en la documentación del mapa del sitio.'},
             { id: 2, description: 'Ayudan a realizar un seguimiento en la jerarquía, esquemas y prototipos de las páginas.'},
@@ -156,21 +156,18 @@ const challenge6_tasks = [
             Construye un mapa del sitio utilizando el resultado del Reto #5 (Card Sorting).
             <template v-slot:tools>
                 <ResourceCard
-                    title="Figma"
-                    description="Herramienta para organizar ideas"
-                    type="tool"
-                    :src="imageFigma"
-                />
-                <ResourceCard
                     title="Miro"
-                    description="Herramienta para organizar ideas"
+                    description="Organización visual"
                     type="tool"
                     :src="imageMiro"
+                    href="https://miro.com/es"
                 />
                 <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    title="Figma"
+                    description="Prototipo interactivo"
+                    type="tool"
+                    :src="imageFigma"
+                    href="https://figma.com/"
                 />
             </template>
         </Challenge>

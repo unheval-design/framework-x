@@ -16,7 +16,7 @@ const questions = ref([
     {
         id: 1,
         question: '¿Por que hacemos el mapa de empatía?',
-        answer: 1,
+        answer: 3,
         alternatives: [
             {
                 id: 1,
@@ -235,20 +235,22 @@ const challenge2_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Miro"
-                    description="Herramienta para organizar ideas"
+                    description="Modela los resultados"
                     type="tool"
                     :src="imageMiro"
+                    href="https://miro.com/es/"
                 />
                 <ResourceCard
-                    title="Plantilla"
-                    description="Herramienta para organizar ideas"
+                    title="Ejemplo"
+                    description="Mapa de empatía"
                     type="download"
+                    href="https://miro.com/es/plantillas/mapa-de-empatia/"
                 />
-                <ResourceCard
+                <!-- <ResourceCard
                     title="Ejemplos"
                     description="Herramienta para organizar ideas"
                     type="download"
-                />
+                /> -->
             </template>
         </Challenge>
         <Heading type="h1">Evaluación</Heading>

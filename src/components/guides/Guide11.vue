@@ -16,7 +16,7 @@ const questions = ref([
     {
         id: 1,
         question: '¿Para qué hacemos una lluvia de ideas?',
-        answer: 1,
+        answer: 3,
         alternatives: [
             { id: 1, description: 'Generar mayor participación de nuestro equipo de trabajo.' },
             { id: 2, description: 'Conocer diferentes formas de pensamiento de nuestro equipo.' },
@@ -25,12 +25,12 @@ const questions = ref([
     },
     {
         id: 2,
-        question: '¿En qué técnica partimos por definir malas ideas?',
-        answer: 1,
+        question: '¿Cuál es la función del moderador?',
+        answer: 2,
         alternatives: [
-            { id: 1, description: 'Mapa Mental.' },
-            { id: 2, description: 'Lluvia de ideas inverso.' },
-            { id: 3, description: 'En ninguna de las técnicas.' }
+            { id: 1, description: 'Persona encargada de solventar cualquier problema o necesidad que pueda darse en la sesión.' },
+            { id: 2, description: 'Persona encargada de guiar la sesión y resolver las dudas.' },
+            { id: 3, description: 'Organizar los elementos que sirvan para comparar con nuestro diseño actual.' }
         ]
     }
 ]);
@@ -157,14 +157,14 @@ const challenge11_tasks = [
                 :image="imageOne"
                 description="Una sesión de brainstorming. Fuente: interaction-design.org"
             />
-            <Heading type="h2">Paso 5: Seleccionar las mejores ideas.</Heading>
+            <Heading type="h2">Paso 5: Seleccionar las mejores ideas</Heading>
             <p>
                 Es el momento de votar por las ideas que mejor solucionen el problema. Lo mejor es empezar valorando las ideas de forma independiente para después seleccionar las mejor valoradas. Puedes utilizar una escala del 0 al 5 para valorar cada idea.
             </p>
             <p>
                 Es recomendable terminar con las 2 o 3 ideas que mejor ayuden a solucionar el problema.
             </p>
-            <Heading type="h2">Paso 6: Tomar decisiones.</Heading>
+            <Heading type="h2">Paso 6: Tomar decisiones</Heading>
             <p>
                 Llega el momento de la verdad y hay que decidir cuál es la solución que mejor se adapta a las necesidades que quieres cubrir.
             </p>
@@ -178,14 +178,16 @@ const challenge11_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Miro"
-                    description="Herramienta para organizar ideas"
+                    description="Organización visual"
                     type="tool"
                     :src="imageMiro"
+                    href="https://miro.com/es"
                 />
                 <ResourceCard
                     title="Ejemplos"
-                    description="Herramienta para organizar ideas"
+                    description="Mapa mental"
                     type="download"
+                    href="https://miro.com/es/plantillas/plantilla-mapa-mental/"
                 />
             </template>
         </Challenge>

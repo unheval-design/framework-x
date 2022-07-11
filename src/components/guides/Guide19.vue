@@ -16,7 +16,7 @@ const questions = ref([
     {
         id: 1,
         question: '¿Por que hacemos pruebas UI?',
-        answer: 1,
+        answer: 2,
         alternatives: [
             { id: 1, description: 'Para detectar problemas de usabilidad de las interfaces.' },
             { id: 2, description: 'Comprobar el funcionamiento correcto de los elementos de la interfaz y dispositivos fisicos que se requieren.' },
@@ -26,7 +26,7 @@ const questions = ref([
     {
         id: 2,
         question: '¿Qué enfoque de pruebas UI seria el mas apropiado cuando mi objetivo es automatizar pruebas?',
-        answer: 1,
+        answer: 3,
         alternatives: [
             { id: 1, description: 'Prueba manual.' },
             { id: 2, description: 'Pruebas de grabación y reproducción.' },
@@ -181,26 +181,23 @@ const challenge19_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"
-                    description="Herramienta para organizar ideas"
+                    description="Interfaz interactiva"
                     type="tool"
                     :src="imageFigma"
+                    href="https://figma.com/"
                 />
                 <ResourceCard
                     title="Zoom"
-                    description="Herramienta para organizar ideas"
+                    description="Entrevistas personales"
                     type="tool"
                     :src="imageZoom"
                 />
                 <ResourceCard
                     title="Google Keep"
-                    description="Herramienta para organizar ideas"
+                    description="Recopilación de resultados"
                     type="tool"
                     :src="imageKeep"
-                />
-                <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    href="https://keep.google.com/"
                 />
             </template>
         </Challenge>

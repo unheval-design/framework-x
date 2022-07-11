@@ -20,7 +20,7 @@ const questions = ref([
     {
         id: 1,
         question: '¿Por qué hacemos Wireframes?',
-        answer: 1,
+        answer: 2,
         alternatives: [
             { id: 1, description: 'Ayudan a crear flujos o rutas para nuestros usuarios.'},
             { id: 2, description: 'Ayudan a comunicar la estructura de páginas individuales y como se conectan esas páginas.'},
@@ -208,19 +208,16 @@ const challenge8_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"
-                    description="Herramienta para organizar ideas"
+                    description="Creación de wireframes"
                     type="tool"
                     :src="imageFigma"
-                />
-                <ResourceCard
-                    title="UI Kit"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    href="https://figma.com/"
                 />
                 <ResourceCard
                     title="Ejemplos"
-                    description="Herramienta para organizar ideas"
+                    description="Wireframe Kits"
                     type="download"
+                    href="https://www.figma.com/templates/wireframe-kits/"
                 />
             </template>
         </Challenge>

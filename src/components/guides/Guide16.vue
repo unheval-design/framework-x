@@ -19,7 +19,7 @@ const questions = ref([
     {
         id: 1,
         question: '¿Para qué hacemos el prototipado?',
-        answer: 1,
+        answer: 2,
         alternatives: [
             { id: 1, description: 'Para saber la estructura y posición de los elementos en la vista.' },
             { id: 2, description: 'Para ver como interactuan las diferentes vistas y elementos en conjunto.' },
@@ -120,26 +120,24 @@ const challenge16_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"
-                    description="Herramienta para organizar ideas"
+                    description="Prototipo funcional"
                     type="tool"
                     :src="imageFigma"
+                    href="https://figma.com/"
                 />
                 <ResourceCard
                     title="Framer"
-                    description="Herramienta para organizar ideas"
+                    description="Prototipo interactivo"
                     type="tool"
                     :src="imageFramer"
+                    href="https://www.framer.com/"
                 />
                 <ResourceCard
                     title="VS Code"
-                    description="Herramienta para organizar ideas"
+                    description="Prototipo implementado"
                     type="tool"
                     :src="imageCode"
-                />
-                <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    href="https://code.visualstudio.com/"
                 />
             </template>
         </Challenge>

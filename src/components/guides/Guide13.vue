@@ -9,6 +9,8 @@ import Blockquote from '@/components/Blockquote.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
 import imageOne from '@/assets/images/guide-13/image_1.png';
 import imageFigma from '@/assets/images/brands/figma.png';
+import imageCode from '@/assets/images/brands/code.png';
+import imageRv from '@/assets/images/brands/rv.png';
 import imageDoOne from '@/assets/images/guide-13/image_do_1.png'
 import imageDontOne from '@/assets/images/guide-13/image_dont_1.png'
 import imageDoTwo from '@/assets/images/guide-13/image_do_2.png'
@@ -31,7 +33,7 @@ const questions = ref([
     {
         id: 2,
         question: '¿Cuándo debe escojer el enfoque desktop first?',
-        answer: 1,
+        answer: 3,
         alternatives: [
             { id: 1, description: 'Cuando nuestros usuarios son adultos y estan acostumbrados a las interfaces tradicionales.'},
             { id: 2, description: 'Cuando necesitamos utilizar un trabajo mejor estandarizado.'},
@@ -214,14 +216,24 @@ const challenge13_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"
-                    description="Herramienta para organizar ideas"
+                    description="Creación de mockups"
                     type="tool"
                     :src="imageFigma"
+                    href="https://figma.com/"
                 />
                 <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    title="VSCode"
+                    description="Creación de web"
+                    type="tool"
+                    :src="imageCode"
+                    href="https://code.visualstudio.com/"
+                />
+                <ResourceCard
+                    title="Responsive Viewer"
+                    description="Prueba de medidas"
+                    type="tool"
+                    :src="imageRv"
+                    href="https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb"
                 />
             </template>
         </Challenge>

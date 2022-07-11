@@ -15,6 +15,7 @@ import ResourceCard from '@/components/ResourceCard.vue';
 import TipCard from '@/components/TipCard.vue';
 import Challenge from '@/components/Challenge.vue';
 import imageMiro from '@/assets/images/brands/miro.png';
+import imageFigma from '@/assets/images/brands/figma.png';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
@@ -31,11 +32,11 @@ const questions = ref([
     {
         id: 2,
         question: 'Si deseo representar una tarea que no presenta complejidad de escenarios o rutas, podria usar:',
-        answer: 1,
+        answer: 3,
         alternatives: [
-            { id: 1, description: 'Flujo de tareas.'},
-            { id: 2, description: 'Wireflows.'},
-            { id: 3, description: 'Flujo de usuario.'}
+            { id: 1, description: 'Wireflows.'},
+            { id: 2, description: 'Flujo de usuario.'},
+            { id: 3, description: 'Flujo de tareas.'}
         ]
     }
 ]);
@@ -125,19 +126,22 @@ const challenge9_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Miro"
-                    description="Herramienta para organizar ideas"
+                    description="Creación de flujos"
                     type="tool"
                     :src="imageMiro"
                 />
                 <ResourceCard
-                    title="Plantilla"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    title="Figma"
+                    description="Creación de wireflows"
+                    type="tool"
+                    :src="imageFigma"
+                    href="https://figma.com/"
                 />
                 <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
+                    title="Plantilla"
+                    description="Flujo de usuario"
                     type="download"
+                    href="https://miro.com/es/plantillas/flujo-de-usuario/"
                 />
             </template>
         </Challenge>

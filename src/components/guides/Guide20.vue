@@ -27,11 +27,11 @@ const questions = ref([
     {
         id: 2,
         question: '¿Cuándo necesitamos usar la prueba de los cinco segundos?',
-        answer: 1,
+        answer: 3,
         alternatives: [
-            { id: 1, description: 'Si necesito saber si los usarios entienden la finalidad del producto en un tiempo muy corto.' },
+            { id: 1, description: 'Si necesito comprobar la optimizacion y velocidad con la que cargan los elementos en mi interfaz.' },
             { id: 2, description: 'Cuando quiero saber si mis usuarios pueden cumplir una tarea importante en cinco segundos.' },
-            { id: 3, description: 'Si necesito comprobar la optimizacion y velocidad con la que cargan los elementos en mi interfaz.' }
+            { id: 3, description: 'Si necesito saber si los usuarios entienden la finalidad del producto en un tiempo muy corto.' }
         ]
     }
 ]);
@@ -203,26 +203,23 @@ const challenge20_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"
-                    description="Herramienta para organizar ideas"
+                    description="Interfaz interactiva"
                     type="tool"
                     :src="imageFigma"
+                    href="https://figma.com/"
                 />
                 <ResourceCard
                     title="Zoom"
-                    description="Herramienta para organizar ideas"
+                    description="Entrevistas personales"
                     type="tool"
                     :src="imageZoom"
                 />
                 <ResourceCard
                     title="Google Keep"
-                    description="Herramienta para organizar ideas"
+                    description="Recopilación de resultados"
                     type="tool"
                     :src="imageKeep"
-                />
-                <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    href="https://keep.google.com/"
                 />
             </template>
         </Challenge>

@@ -6,7 +6,7 @@ import Reference from '@/components/Reference.vue';
 import Heading from '@/components/Heading.vue';
 import ResourceLink from '@/components/ResourceLink.vue';
 import ResourceCard from '@/components/ResourceCard.vue';
-import imageFigma from '@/assets/images/brands/figma.png';
+import imageMiro from '@/assets/images/brands/miro.png';
 import imageOne from '@/assets/images/guide-10/image_1.png';
 import imageTwo from '@/assets/images/guide-10/image_2.png';
 import imageDoOne from '@/assets/images/guide-10/image_do_1.png';
@@ -19,16 +19,16 @@ const questions = ref([
     {
         id: 1,
         question: '¿Para qué usamos los moodboard?',
-        answer: 1,
+        answer: 2,
         alternatives: [
             {
                 id: 1,
-                description:
-                    'Organizar información, que siva de inspiración en el proceso de diseño.'
+                description: 'Definir como seran los componentes a diseñar.'
             },
             {
                 id: 2,
-                description: 'Definir como seran los componentes a diseñar.'
+                description:
+                    'Organizar información, que siva de inspiración en el proceso de diseño.'
             },
             {
                 id: 3,
@@ -302,20 +302,17 @@ const challenge10_tasks = [
             intranet de alumnos de la UNHEVAL.
             <template v-slot:tools>
                 <ResourceCard
-                    title="Figma"
-                    description="Herramienta para organizar ideas"
+                    title="Miro"
+                    description="Organización visual"
                     type="tool"
-                    :src="imageFigma"
+                    :src="imageMiro"
+                    href="https://miro.com/es"
                 />
                 <ResourceCard
                     title="Plantilla"
-                    description="Herramienta para organizar ideas"
+                    description="Moodboard"
                     type="download"
-                />
-                <ResourceCard
-                    title="Ejemplos"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    href="https://miro.com/es/plantillas/panel-de-inspiracion/"
                 />
             </template>
         </Challenge>

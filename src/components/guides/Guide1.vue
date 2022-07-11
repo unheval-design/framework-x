@@ -17,7 +17,7 @@ const questions = ref([
     {
         id: 1,
         question: '¿Cuando dedo usar entrevistas a usuarios?',
-        answer: 1,
+        answer: 2,
         alternatives: [
             {
                 id: 1,
@@ -36,7 +36,7 @@ const questions = ref([
     {
         id: 2,
         question: 'Cuando quiero explorar las dificultades en mi sitio web pero no tengo definido los problemas principales, podría usar una entrevista de tipo:',
-        answer: 2,
+        answer: 1,
         alternatives: [
             {
                 id: 1,
@@ -239,27 +239,25 @@ const challenge1_tasks = [
             Crea un guión de entrevista para usuarios de la pagina web de eventos de la UNHEVAL.
             <template v-slot:tools>
                 <ResourceCard
-                    title="Google Docs"
-                    description="Herramienta para organizar ideas"
-                    type="tool"
-                    :src="imageDocs"
-                    />
-                <ResourceCard
                     title="Google Keep"
-                    description="Herramienta para organizar ideas"
+                    description="Organiza las ideas"
                     type="tool"
                     :src="imageKeep"
+                    href="https://keep.google.com/"
                     />
                 <ResourceCard
-                    title="Formato"
-                    description="Herramienta para organizar ideas"
-                    type="download"
+                    title="Google Docs"
+                    description="Ordena y recopila información"
+                    type="tool"
+                    :src="imageDocs"
+                    href="https://docs.google.com/"
                     />
-                <ResourceCard
+                <!-- <ResourceCard
                     title="Ejemplos"
-                    description="Herramienta para organizar ideas"
+                    description="Entrevistas y consejos"
                     type="download"
-                    />
+                    href=""
+                    /> -->
             </template>
         </Challenge>
         <Heading type="h1" >Evaluación</Heading>

@@ -243,14 +243,16 @@ const challenge14_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"
-                    description="Herramienta para organizar ideas"
+                    description="Creación de componentes"
                     type="tool"
                     :src="imageFigma"
+                    href="https://figma.com/"
                 />
                 <ResourceCard
                     title="Ejemplos"
-                    description="Herramienta para organizar ideas"
+                    description="Atomic Design"
                     type="download"
+                    href="https://www.figma.com/community/file/1073848703449461140"
                 />
             </template>
         </Challenge>

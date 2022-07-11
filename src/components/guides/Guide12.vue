@@ -25,7 +25,7 @@ const questions = [
     {
         id: 1,
         question: '¿Para qué hacemos mockups?',
-        answer: 1,
+        answer: 3,
         alternatives: [
             { id: 1, description: 'Para saber la estructura y posición de los elementos en la vista.' },
             { id: 2, description: 'Para ver como interactuan las diferentes vistas en conjunto.' },
@@ -212,14 +212,16 @@ const challenge12_tasks = [
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"
-                    description="Herramienta para organizar ideas"
+                    description="Creación de mockups"
                     type="tool"
                     :src="imageFigma"
+                    href="https://figma.com/"
                 />
                 <ResourceCard
                     title="Ejemplos"
-                    description="Herramienta para organizar ideas"
+                    description="Mockups"
                     type="download"
+                    href="https://www.figma.com/community/file/1126792861965409028"
                 />
             </template>
         </Challenge>
