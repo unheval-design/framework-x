@@ -11,10 +11,6 @@ import Challenge from '@/components/Challenge.vue';
 import imageFigma from '@/assets/images/brands/figma.png';
 import imageZoom from '@/assets/images/brands/zoom.png';
 import imageKeep from '@/assets/images/brands/keep.png';
-import imageDoOne from '@/assets/images/guide-20/image_do_1.png'
-import imageDontOne from '@/assets/images/guide-20/image_dont_1.png'
-import imageDoTwo from '@/assets/images/guide-20/image_do_2.png'
-import imageDontTwo from '@/assets/images/guide-20/image_dont_2.png'
 import TipCard from '@/components/TipCard.vue';
 import { ref } from '@vue/reactivity';
 
