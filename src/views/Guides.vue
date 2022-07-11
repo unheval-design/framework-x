@@ -32,15 +32,16 @@ const closeTodoModal = () => {
 };
 
 const params = computed(() => route.hash);
+const path = computed(() => route.path);
 
 watchEffect(() => {
     guideId.value = Number(route.params.id);
 });
 
 watch(
-    params,
-    () => {
-        if (!params.value) guideTableContent.value = [];
+    path,
+    (old, current) => {
+        if (old !== current) guideTableContent.value = [];
     },
     { deep: true }
 );

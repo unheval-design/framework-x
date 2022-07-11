@@ -11,6 +11,11 @@ import Challenge from '@/components/Challenge.vue';
 import imageFigma from '@/assets/images/brands/figma.png';
 import imageZoom from '@/assets/images/brands/zoom.png';
 import imageKeep from '@/assets/images/brands/keep.png';
+import imageDoOne from '@/assets/images/guide-20/image_do_1.png'
+import imageDontOne from '@/assets/images/guide-20/image_dont_1.png'
+import imageDoTwo from '@/assets/images/guide-20/image_do_2.png'
+import imageDontTwo from '@/assets/images/guide-20/image_dont_2.png'
+import TipCard from '@/components/TipCard.vue';
 import { ref } from '@vue/reactivity';
 
 const questions = ref([
@@ -95,6 +100,14 @@ const challenge20_tasks = [
                 de un botón y medir cuántos clics consigue cada una de las
                 variantes.
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    Los cambios sutiles suelen para desapercibido y no significan un cambio conceptual para el cliente.
+                </TipCard>
+                <TipCard type="do">
+                    La diferencia entre los elementos tiene que ser significativa para probar realmente la prefencia de una sobre otra.
+                </TipCard>
+            </aside>
             <Heading type="h2">Test multivariante</Heading>
             <p>
                 Este tipo de test se realiza cuando se modifican varios
@@ -174,6 +187,14 @@ const challenge20_tasks = [
             <p>
                 Visualizar exactamente dónde hacen click las personas brinda una gran perspectiva del diseño. Los clicks que ocurren en lugares inesperados pueden resaltar partes confusas de una interfaz y son útiles para informar futuras opciones de diseño.
             </p>
+            <aside class="tips_grid">
+                <TipCard type="dont">
+                    Los elementos principales que no resalten sobre otros pasaran desapercibidos y el usuario perdera tiempo en encontrarlos.
+                </TipCard>
+                <TipCard type="do">
+                    La acción principal en nuestra interfaz debe resaltar sobre las demás para ayudar al usuario a completar una tarea, rápida sin mucha dificultad.
+                </TipCard>
+            </aside>
         </section>
         <Heading type="h1">Mapa de calor</Heading>
         <section>
