@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { useProjectsStore } from '@/stores/projects.js';
+import Welcome from '@/views/Welcome.vue';
 
 export default createRouter({
     scrollBehavior(to, from, savedPosition) {
@@ -10,7 +11,7 @@ export default createRouter({
         {
             path: '/',
             name: 'Welcome',
-            component: () => import('@/views/Welcome.vue')
+            component: Welcome
         },
         {
             path: '/resumen',

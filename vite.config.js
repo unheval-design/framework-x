@@ -8,6 +8,5 @@ export default defineConfig({
             '@': path.resolve(__dirname, './src')
         }
     },
-    base: '/framework-x/',
     plugins: [vue()]
 });
