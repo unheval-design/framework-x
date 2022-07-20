@@ -54,7 +54,7 @@ const questions = ref([
     }
 ])
 
-const challenge1_tasks = [
+const challenge21_tasks = [
     'Establecer objetivo',
     'Definir perfil general del participante',
     'Redactar una introducción',
@@ -66,7 +66,7 @@ const challenge1_tasks = [
 
 <template>
     <GuideTitle>
-        Entrevistas a Usuarios (Inicial)
+        Entrevistas a Usuarios (Final)
         <template v-slot:timeRead>5</template>
     </GuideTitle>
     <GuideBody>
@@ -109,9 +109,9 @@ const challenge1_tasks = [
         </section>
         <Heading type="h1" >¿Cuándo usar la entrevista a usuario?</Heading>
         <section>
-            <p>
+            <!-- <p>
                 Se las utiliza como método de recolección de datos en la fase inicial de un proyecto, para posteriormente crear Mapas de Empatía y Journey Map.
-            </p>
+            </p> -->
             <p>
                 La entrevista no es el enfoque adecuado para todos los problemas. Debido a que favorece la profundidad sobre el tamaño de la muestra, no es una fuente de datos estadísticamente significativos. Al ser semiestructurada, cada entrevista será única, lo que dificultará contar objetivamente los puntos de datos de toda la muestra.
             </p>
@@ -232,9 +232,9 @@ const challenge1_tasks = [
                 </ul>
             </p>
         </section>
-        <Challenge time="1" :id="1" :tasks="challenge1_tasks">
+        <Challenge time="1" :id="21" :tasks="challenge21_tasks">
             <template v-slot:title>
-                <Heading type="h1" >Reto #1</Heading>
+                <Heading type="h1" >Reto #21</Heading>
             </template>
             Crea un guión de entrevista para usuarios de la pagina web de eventos de la UNHEVAL.
             <template v-slot:tools>

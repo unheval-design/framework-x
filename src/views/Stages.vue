@@ -34,7 +34,7 @@ const closeStageTwoModal = () => {
 };
 
 const goToGuidesSubStageOne = () => {
-    projects.update({ guide: 1, step: 1 });
+    projects.update({ guide: 1, step: 1, fromStart: true });
     router.replace({ name: 'Guides', params: { id: 1 } });
 };
 const goToGuidesSubStageTwo = () => {

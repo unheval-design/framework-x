@@ -24,7 +24,7 @@ const onClick = () => {
             </template>
             <template v-slot:title>
                 {{
-                    guideId != 20 ? 'Subetapa Completada' : 'Etapas Completadas'
+                    guideId != 21 ? 'Subetapa Completada' : 'Etapas Completadas'
                 }}
             </template>
             <template v-slot:description>
@@ -54,7 +54,7 @@ const onClick = () => {
                     <strong>Prototipar II</strong>, con las siguientes guías
                     toca <strong>Probar</strong> tu solución.
                 </p>
-                <p v-if="guideId == 20">
+                <p v-if="guideId == 21">
                     Has completado todas las subetapas y guias de la creación de
                     interfaces.
                 </p></template
@@ -62,7 +62,8 @@ const onClick = () => {
 
             <template v-slot:button>
                 <Button @click="onClick()">
-                    {{ guideId != 20 ? 'Continuar' : 'Finalizar' }}
+                    Continuar
+                    <!-- {{ guideId != 21 ? 'Continuar' : 'Finalizar' }} -->
                 </Button>
             </template>
         </Empty>

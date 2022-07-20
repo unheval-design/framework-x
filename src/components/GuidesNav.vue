@@ -27,12 +27,21 @@ const goToPrevious = () => {
 
 const goToNext = () => {
     if (guideId.value < LAST_GUIDE_ID) {
-        const nextGuideId = guideId.value + 1;
-        projects.update({ guide: nextGuideId });
-        router.push({ name: 'Guides', params: { id: nextGuideId } });
+        if (
+            !projects?.current?.diagnosisOne &&
+            projects?.current?.fromStart &&
+            guideId.value === 1
+        ) {
+            router.push({
+                name: 'Diagnosis'
+            });
+        } else {
+            const nextGuideId = guideId.value + 1;
+            projects.update({ guide: nextGuideId });
+            router.push({ name: 'Guides', params: { id: nextGuideId } });
+        }
     } else {
-        projects.update({ completed: true });
-        router.push({ name: 'Finish' });
+        router.push({ name: 'Results' });
     }
 };
 

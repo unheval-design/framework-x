@@ -1,4 +1,4 @@
-export const LAST_GUIDE_ID = 20;
+export const LAST_GUIDE_ID = 21;
 export const substages = {
     1: 'Empatizar',
     2: 'Definir',
@@ -59,15 +59,15 @@ export const guides = {
         stage: 3,
         pages: 3
     },
-    '19,20': {
+    '19,20,21': {
         start: 19,
-        last: 20,
+        last: 21,
         substage: {
             id: 6,
             name: substages[6]
         },
         stage: 4,
-        pages: 2
+        pages: 3
     }
 };
 

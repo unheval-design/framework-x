@@ -2,6 +2,8 @@
 import Navbar from '@/components/Navbar.vue';
 import Empty from '@/components/Empty.vue';
 import StatCard from '@/components/StatCard.vue';
+import DiagnosisChar from '@/components/DiagnosisChar.vue';
+import DiagnosisCharWrapper from '@/components/DiagnosisCharWrapper.vue';
 import IconTrophy from '@/components/drawables/IconTrophy.vue';
 import IconQuestion from '@/components/drawables/IconQuestion.vue';
 import IconTools from '@/components/drawables/IconTools.vue';
@@ -77,6 +79,32 @@ watch(notesNumber, (n) => {
 watch(tasksNumber, (n) => {
     gsap.to(tweened, { duration: 1, tasks: Number(n) || 0 });
 });
+
+const scoreTotalOne = computed(
+    () =>
+        ((projects.current.diagnosisOne.layout +
+            projects.current.diagnosisOne.imagery +
+            projects.current.diagnosisOne.interactivity +
+            projects.current.diagnosisOne.branding +
+            projects.current.diagnosisOne.media +
+            projects.current.diagnosisOne.messaging +
+            projects.current.diagnosisOne.performance) *
+            100) /
+        35
+);
+
+const scoreTotalTwo = computed(
+    () =>
+        ((projects.current.diagnosisTwo.layout +
+            projects.current.diagnosisTwo.imagery +
+            projects.current.diagnosisTwo.interactivity +
+            projects.current.diagnosisTwo.branding +
+            projects.current.diagnosisTwo.media +
+            projects.current.diagnosisTwo.messaging +
+            projects.current.diagnosisTwo.performance) *
+            100) /
+        35
+);
 </script>
 
 <template>
@@ -92,6 +120,44 @@ watch(tasksNumber, (n) => {
             </template>
         </Empty>
         <div class="stats_grid">
+            <DiagnosisCharWrapper
+                title="Puntuación inicial"
+                :scoreTotal="scoreTotalOne"
+            >
+                <DiagnosisChar
+                    small
+                    :layoutScore="projects.current.diagnosisOne.layout"
+                    :imageryScore="projects.current.diagnosisOne.imagery"
+                    :interactivityScore="
+                        projects.current.diagnosisOne.interactivityScore
+                    "
+                    :brandingScore="projects.current.diagnosisOne.branding"
+                    :mediaScore="projects.current.diagnosisOne.media"
+                    :messagingScore="projects.current.diagnosisOne.messaging"
+                    :performanceScore="
+                        projects.current.diagnosisOne.performance
+                    "
+                />
+            </DiagnosisCharWrapper>
+            <DiagnosisCharWrapper
+                title="Puntuación final"
+                :scoreTotal="scoreTotalTwo"
+            >
+                <DiagnosisChar
+                    small
+                    :layoutScore="projects.current.diagnosisTwo.layout"
+                    :imageryScore="projects.current.diagnosisTwo.imagery"
+                    :interactivityScore="
+                        projects.current.diagnosisTwo.interactivityScore
+                    "
+                    :brandingScore="projects.current.diagnosisTwo.branding"
+                    :mediaScore="projects.current.diagnosisTwo.media"
+                    :messagingScore="projects.current.diagnosisTwo.messaging"
+                    :performanceScore="
+                        projects.current.diagnosisTwo.performance
+                    "
+                />
+            </DiagnosisCharWrapper>
             <StatCard>
                 <template v-slot:icon><IconQuestion /></template>
                 <template v-slot:title
@@ -138,8 +204,8 @@ watch(tasksNumber, (n) => {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         width: 560px;
-        margin: 0 auto;
-        margin-top: 1rem;
+        margin: var(--padding) auto;
+        /* margin-top: 1rem; */
         gap: var(--gap);
         padding: 0 var(--padding);
     }

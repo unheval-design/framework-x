@@ -90,7 +90,7 @@ watch(
         }
     }
     .GuidesNav {
-        width: 320px;
+        width: 360px;
         z-index: 5;
         position: sticky;
         top: calc(#{var(--navbar_height)} + #{var(--padding)});
@@ -101,7 +101,7 @@ watch(
 @include screen('nm') {
     .guides_grid {
         flex-direction: column;
-        gap: var(--gap);
+        gap: var(--gap_l);
         .Guide {
             .guide_wrapper {
                 max-width: inherit;
