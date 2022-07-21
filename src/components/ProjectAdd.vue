@@ -39,7 +39,7 @@ const goToStages = () => {
             <Input
                 label="Título"
                 required
-                placeholder="Ej: Pagina web de eventos"
+                placeholder="Ej: Página web de eventos"
                 v-model="title"
                 :validation="validationTitle"
                 errorMessage="Título de proyecto no debe estar vacío"

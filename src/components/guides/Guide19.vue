@@ -21,7 +21,7 @@ const questions = ref([
         answer: 2,
         alternatives: [
             { id: 1, description: 'Para detectar problemas de usabilidad de las interfaces.' },
-            { id: 2, description: 'Comprobar el funcionamiento correcto de los elementos de la interfaz y dispositivos fisicos que se requieren.' },
+            { id: 2, description: 'Comprobar el funcionamiento correcto de los elementos de la interfaz y dispositivos físicos que se requieren.' },
             { id: 3, description: 'Para comprobar si los flujos de usuario importantes de mi aplicación funcionan de manera correcta.' }
         ]
     },

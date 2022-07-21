@@ -114,7 +114,7 @@ const challenge7_tasks = [
                 para que su experiencia sea positiva.
             </p>
             <p>
-                Por ejemplo en la busqueda de la pagina principal de la UNHEVAL debes tener en cuenta:
+                Por ejemplo en la busqueda de la página principal de la UNHEVAL debes tener en cuenta:
             </p>
             <aside class="tips_grid">
                 <TipCard type="dont">
@@ -137,7 +137,7 @@ const challenge7_tasks = [
                 guiar al usuario hacia ese objetivo de manera intuitiva.
             </p>
             <p>
-                Por ejemplo en la pagina web de admisión de la UNHEVAL tenemos un botón de llamar a la acción:
+                Por ejemplo en la página web de admisión de la UNHEVAL tenemos un botón de llamar a la acción:
             </p>
             <aside class="tips_grid">
                 <TipCard type="dont">

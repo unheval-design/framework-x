@@ -188,13 +188,13 @@ const challenge13_tasks = [
                     <template v-slot:image>
                         <img :src="imageDontTwo">
                     </template>
-                    La pagina web no es responsiva por miedo a que no se entienda.
+                    La página web no es responsiva por miedo a que no se entienda.
                 </TipCard>
                 <TipCard type="do">
                     <template v-slot:image>
                         <img :src="imageDoTwo">
                     </template>
-                    Pagina responsiva sin perder funcionalidad.
+                    Página responsiva sin perder funcionalidad.
                 </TipCard>
             </aside>
         </section>

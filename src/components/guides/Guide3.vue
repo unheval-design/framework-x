@@ -41,7 +41,7 @@ const questions = ref([
 const challenge3_tasks = [
     'Definir la competencia',
     'Definir las metricas a evaluar',
-    'Contruir un tablero comparativo y desarrolla la evaluacion del benchmarking',
+    'Contruir un tablero comparativo y desarrolla la evaluación del benchmarking',
     'Elaborar las conclusiones'
 ];
 </script>
@@ -133,7 +133,7 @@ const challenge3_tasks = [
             <template v-slot:title>
                 <Heading type="h1">Reto #3 </Heading>
             </template>
-            Crea un analisis UX Benchmarking para "{{projectName}}".
+            Crea un análisis UX Benchmarking para "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Google Keep"
@@ -144,7 +144,7 @@ const challenge3_tasks = [
                     />
                 <ResourceCard
                     title="Plantilla"
-                    description="Analisis competitivo"
+                    description="Análisis competitivo"
                     type="download"
                     href="https://miro.com/es/plantillas/analisis-de-competidores/"
                 />

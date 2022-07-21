@@ -50,7 +50,7 @@ const challenge12_tasks = [
     'Tomar en cuenta Reto #8',
     'Tomar en cuenta Reto #10',
     'Tomar en cuenta Reto #11',
-    'Definir color, tipografia, etc.',
+    'Definir color, tipografía, etc.',
     'Crear el mockup'
 ];
 </script>

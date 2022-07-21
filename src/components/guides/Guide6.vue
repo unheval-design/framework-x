@@ -129,9 +129,9 @@ const challenge6_tasks = [
             <Heading type="h2" >Creación del mapa del sitio</Heading>
             <p>
                 <ol>
-                    <li>Coloque las páginas principales o categorias como la fila superior del mapa.</li>
+                    <li>Coloque las páginas principales o categorías como la fila superior del mapa.</li>
                     <li>Etiquete cada página en su plan, ordene sus etiquetas y cree la hoja de ruta estructurada.</li>
-                    <li>Coloque estratégicamente las páginas secundarias o subcategorias, agréguelas a las siguientes filas según la importancia del contenido.</li>
+                    <li>Coloque estratégicamente las páginas secundarias o subcategorías, agréguelas a las siguientes filas según la importancia del contenido.</li>
                     <li>Una vez que el sitio esté organizado, discuta el mapa del sitio y su flujo dentro de su equipo. Recorte, agregue o reemplace las piezas de información/páginas si es necesario.</li>
                     <li>Reorganiza las páginas y ensambla la estructura final del producto en tu mapa del sitio.</li>
                 </ol>

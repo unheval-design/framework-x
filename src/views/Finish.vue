@@ -129,7 +129,7 @@ const scoreTotalTwo = computed(
                     :layoutScore="projects.current.diagnosisOne.layout"
                     :imageryScore="projects.current.diagnosisOne.imagery"
                     :interactivityScore="
-                        projects.current.diagnosisOne.interactivityScore
+                        projects.current.diagnosisOne.interactivity
                     "
                     :brandingScore="projects.current.diagnosisOne.branding"
                     :mediaScore="projects.current.diagnosisOne.media"
@@ -148,7 +148,7 @@ const scoreTotalTwo = computed(
                     :layoutScore="projects.current.diagnosisTwo.layout"
                     :imageryScore="projects.current.diagnosisTwo.imagery"
                     :interactivityScore="
-                        projects.current.diagnosisTwo.interactivityScore
+                        projects.current.diagnosisTwo.interactivity
                     "
                     :brandingScore="projects.current.diagnosisTwo.branding"
                     :mediaScore="projects.current.diagnosisTwo.media"

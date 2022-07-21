@@ -197,7 +197,7 @@ const challenge2_tasks = [
             </p>
             <aside class="tips_grid">
                 <TipCard type="dont">
-                    Tener una mejor pagina le permitira ver mas rapido sus notas
+                    Tener una mejor página le permitira ver mas rapido sus notas
                     en el intranet
                 </TipCard>
                 <TipCard type="do">

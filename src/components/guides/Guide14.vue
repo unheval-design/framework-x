@@ -66,11 +66,11 @@ const questions = ref([
 ]);
 
 const challenge14_tasks = [
-    'Identificar y crear las atomos',
-    'Identificar y crear las moleculas',
+    'Identificar y crear las átomos',
+    'Identificar y crear las moléculas',
     'Identificar y crear los organismos',
     'Crear la plantilla',
-    'Crear la pagina'
+    'Crear la página'
 ];
 </script>
 

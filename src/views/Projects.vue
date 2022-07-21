@@ -26,7 +26,7 @@ const closeCreateProjectModal = () => {
         <Modal :show="flagCreateProjectModal" @close="closeCreateProjectModal">
             <template v-slot:title>Nuevo Proyecto</template>
             <template v-slot:text>
-                Un proyecto nuevo sirve como guia interactiva para construir
+                Un proyecto nuevo sirve como guía interactiva para construir
                 cualquier tipo de interfaz.
             </template>
             <ProjectAdd />

@@ -22,7 +22,7 @@ const questions = ref([
         alternatives: [
             {
                 id: 1,
-                description: 'Cuando deseo profundizar en un tema especifico.',
+                description: 'Cuando deseo profundizar en un tema específico.',
             },
             {
                 id: 2,
@@ -185,7 +185,7 @@ const challenge1_tasks = [
             </p>
             <aside class="tips_grid">
                 <TipCard type="dont">
-                    Encontrar todos los errores de responsividad de la pagina web de la UNHEVAL.
+                    Encontrar todos los errores de responsividad de la página web de la UNHEVAL.
                 </TipCard>
                 <TipCard type="do">
                     Conocer cómo interactuan con dispositivos móviles, las personas que entran a la página principal de la UNHEVAL.
@@ -199,7 +199,7 @@ const challenge1_tasks = [
                 Lo mejor es crear varios perfiles en función de criterios tanto demográficos (género, edad lugar de residencia) como de comportamiento (sistema operativo, actividades, tipo de uso) y plasmarlo en un documento. Este documento se denomina (Screener de captación de usuarios).
             </p>
             <p>
-                Screener de captación de usuarios: Es un documento-guia en el que se describen una serie de características que deben cumplir los usuarios para participar en una prueba de investigación.
+                Screener de captación de usuarios: Es un documento-guía en el que se describen una serie de características que deben cumplir los usuarios para participar en una prueba de investigación.
             </p>
             <Heading type="h2" >Estructura de la entrevista</Heading>
             <p>
@@ -225,7 +225,7 @@ const challenge1_tasks = [
                         Preguntas introductorias para establecer confianza
                     </li>
                     <li>
-                        Preguntas especificas
+                        Preguntas específicas
                     </li>
                     <li>
                         Cierre de entrevista

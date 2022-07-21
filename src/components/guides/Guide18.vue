@@ -44,7 +44,7 @@ const questions = ref([
             {
                 id: 1,
                 description:
-                    'Se necesita aprovechar los componentes fisicos de telefono o del sistema operativo.'
+                    'Se necesita aprovechar los componentes físicos de telefono o del sistema operativo.'
             },
             {
                 id: 2,
@@ -91,7 +91,7 @@ const challenge18_tasks = [
         <Heading type="h1">Builders</Heading>
         <section>
             <p>
-                Si nuestro proyecto es una pagina web simple e informativa, las
+                Si nuestro proyecto es una página web simple e informativa, las
                 denominadas Landing Page, es muy probable que quieras una
                 implementación rápida sin tener que codificar. Para estos tipos
                 de implementación existen soluciones con tecnologia “drag and
@@ -100,7 +100,7 @@ const challenge18_tasks = [
             </p>
             <Reference
                 :image="imageOne"
-                description="El contructor de paginas web de Wix. Fuente: pcmag.com"
+                description="El contructor de páginas web de Wix. Fuente: pcmag.com"
             />
         </section>
         <Heading type="h1">CMS</Heading>
@@ -183,7 +183,7 @@ const challenge18_tasks = [
             <p>
                 Optariamos por el desarrollo nativo si necesitamos aprobechar
                 los recursos nativos del sistema operativo o sus componentes
-                fisicos, como por ejemplo la bateria o el giroscopio. Los
+                físicos, como por ejemplo la bateria o el giroscopio. Los
                 lenguajes de programación principales para este tipo de
                 aplicaciones son JAVA, KOTLIN para Sistemas operativos Android y
                 SWIFT para iOS.

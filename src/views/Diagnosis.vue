@@ -57,7 +57,8 @@ const goToNext = () => {
         });
         router.push({ name: 'Finish' });
     } else {
-        const nextGuideId = projects.current.guide;
+        let nextGuideId = projects.current.guide;
+        if (projects.current.guide === 1) nextGuideId++;
         projects.update({ guide: nextGuideId });
         projects.update({
             diagnosisOne: {
@@ -141,7 +142,7 @@ const allIsSelected = computed(
                     <div class="diagnosis_feature">
                         <h2>Imagery</h2>
                         <small
-                            >Informacion que las imagenes e iconos
+                            >Informacion que las imágenes e iconos
                             trasmiten.</small
                         >
                         <DiagnosisScore @selection="setImageryScore" />
@@ -149,7 +150,7 @@ const allIsSelected = computed(
                     <div class="diagnosis_feature">
                         <h2>Interactivity</h2>
                         <small>
-                            Animaciones,y movimientos con la que interactua el
+                            Animaciones y movimientos con la que interactua el
                             usuario.
                         </small>
                         <DiagnosisScore @selection="setInteractivityScore" />
@@ -157,7 +158,7 @@ const allIsSelected = computed(
                     <div class="diagnosis_feature">
                         <h2>Branding</h2>
                         <small>
-                            Relacion entre la marca y las interfaces como
+                            Relación entre la marca y las interfaces como
                             colores, consistencia e identidad.
                         </small>
                         <DiagnosisScore @selection="setBrandingScore" />

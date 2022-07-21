@@ -30,7 +30,7 @@ const questions = ref([
             {
                 id: 2,
                 description:
-                    'Organizar información, que siva de inspiración en el proceso de diseño.'
+                    'Organizar información, que sirvan de inspiración en el proceso de diseño.'
             },
             {
                 id: 3,
@@ -47,17 +47,17 @@ const questions = ref([
             {
                 id: 1,
                 description:
-                    'Pueden contener enormes especios de trabajo para recolectar mucha información.'
+                    'Pueden contener enormes espacios de trabajo para recolectar mucha información.'
             },
             {
                 id: 2,
                 description:
-                    'Por que ayudan a que el proceso de recoleccion sea mas rápida.'
+                    'Por que ayudan a que el proceso de recolección sea mas rápida.'
             },
             {
                 id: 3,
                 description:
-                    'Pueden contener mayor numero de personas trabajando al mismo tiempo.'
+                    'Pueden contener mayor número de personas trabajando al mismo tiempo.'
             }
         ]
     }
@@ -291,7 +291,7 @@ const challenge10_tasks = [
                         <img :src="imageDoOne" />
                     </template>
                     Destacar los elementos por tamaño o color, ya sean fotos
-                    colores o tipografia transmitirán facilmente la jerarquia e
+                    colores o tipografía transmitirán facilmente la jerarquia e
                     importancia de estos.
                 </TipCard>
             </aside>

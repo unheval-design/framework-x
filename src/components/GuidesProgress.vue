@@ -8,7 +8,7 @@ const { guide } = useGuide();
     <div class="GuideProgress">
         <div class="guide_title">
             <h1>{{ guide.substage.name }}</h1>
-            <span>Guia {{ guide.current }} de {{ guide.pages }}</span>
+            <span>Guía {{ guide.current }} de {{ guide.pages }}</span>
         </div>
         <div class="guide_progress_indicator">
             <span

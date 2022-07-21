@@ -33,7 +33,7 @@ const questions = ref([
         answer: 1,
         alternatives: [
             { id: 1, description: 'Si deseamos priorizar y clasificar funciones.'},
-            { id: 2, description: 'Si deseamos descubrir nuevas categorias para un mismo grupo de tarjetas.'},
+            { id: 2, description: 'Si deseamos descubrir nuevas categorías para un mismo grupo de tarjetas.'},
             { id: 3, description: 'Si deseamos mejorar la categorizacion para las funcionalidades de nuestra interfaz.'}
         ]
     }
@@ -42,7 +42,7 @@ const questions = ref([
 const challenge5_tasks = [
     'Definir el perfil del usuario',
     'Crear tarjetas (cards) con el contenido',
-    'Definir las categorias',
+    'Definir las categorías',
     'Aplicar el ejercicio con un usuario'
 ];
 </script>
