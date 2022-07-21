@@ -17,7 +17,9 @@ import Challenge from '@/components/Challenge.vue';
 import imageMiro from '@/assets/images/brands/miro.png';
 import imageFigma from '@/assets/images/brands/figma.png';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName')
 const questions = ref([
     {
         id: 1,
@@ -118,11 +120,11 @@ const challenge9_tasks = [
                 :image="imageThree"
                 description="User Flow. Fuente: careerfoundry.com" />
         </section>
-        <Challenge time="1" :id="9" :tasks="challenge9_tasks">
+        <Challenge time="30" :id="9" :tasks="challenge9_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #9 </Heading>
             </template>
-            Elaborar los flujo de usuario de registro en la plataforma de convocatorias de la UNHEVAL.
+            Elaborar el flujo de usuario de "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Miro"

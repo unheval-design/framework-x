@@ -12,7 +12,9 @@ import TipCard from '@/components/TipCard.vue';
 import imageMiro from '@/assets/images/brands/miro.png';
 import imageKeep from '@/assets/images/brands/keep.png';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName')
 const questions = ref([
     {
         id: 1,
@@ -127,11 +129,11 @@ const challenge3_tasks = [
                 A partir del análisis de las interfaces, elaboraremos conclusiones definiendo las Fortalezas y Debilidades que presentaron cada una de las aplicaciones de la competencia durante el desarrollo de las tareas.
             </p>
         </section>
-        <Challenge time="1" :id="3" :tasks="challenge3_tasks">
+        <Challenge time="20" :id="3" :tasks="challenge3_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #3 </Heading>
             </template>
-            Crea un UX Benchmarking para encontrar la misión y visión institucional de una universidad.
+            Crea un analisis UX Benchmarking para "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Google Keep"
@@ -141,11 +143,10 @@ const challenge3_tasks = [
                     href="https://keep.google.com/"
                     />
                 <ResourceCard
-                    title="Miro"
-                    description="Modela los resultados"
-                    type="tool"
-                    :src="imageMiro"
-                    href="https://miro.com/es/"
+                    title="Plantilla"
+                    description="Analisis competitivo"
+                    type="download"
+                    href="https://miro.com/es/plantillas/analisis-de-competidores/"
                 />
             </template>
         </Challenge>

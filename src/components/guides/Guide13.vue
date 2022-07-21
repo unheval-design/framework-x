@@ -18,7 +18,9 @@ import imageDontTwo from '@/assets/images/guide-13/image_dont_2.png'
 import Challenge from '@/components/Challenge.vue';
 import TipCard from '@/components/TipCard.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName');
 const questions = ref([
     {
         id: 1,
@@ -47,7 +49,7 @@ const challenge13_tasks = [
     'Revisar consistencia de los texto',
     'Ubicar las acciones importante siempre visibles',
     'Validar cumplimiento de la funcionabilidad',
-    'Diseñar mockup'
+    'Crear mockup'
 ];
 </script>
 
@@ -208,11 +210,11 @@ const challenge13_tasks = [
                 Revisa tus analytics y descubre cuáles son las circunstancias en las cuales la gente ve tu sitio, y si aún no tienes analytics, puedes ponerte en los pies de tus usuarios y tratar de proyectar en qué condiciones la gente llegará.
             </p>
         </section>
-        <Challenge time="1" :id="13" :tasks="challenge13_tasks">
+        <Challenge time="45" :id="13" :tasks="challenge13_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #13 </Heading>
             </template>
-            Crea un Mockup rediseñando la pagina principal de la UNHEVAL con la técnica Mobile First.
+            Crea un Mockup de "{{projectName}}" con la técnica Mobile First.
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"

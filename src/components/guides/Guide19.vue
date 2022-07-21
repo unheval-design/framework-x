@@ -11,7 +11,9 @@ import imageZoom from '@/assets/images/brands/zoom.png';
 import imageKeep from '@/assets/images/brands/keep.png';
 import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName');
 const questions = ref([
     {
         id: 1,
@@ -36,9 +38,9 @@ const questions = ref([
 ]);
 
 const challenge19_tasks = [
-    'Aplicar prueba de Errores de tipo de datos',
-    'Aplicar prueba de Anchos de campo',
-    'Aplicar prueba de Confirmar botones de acción',
+    'Aplicar prueba de errores de tipo de datos',
+    'Aplicar prueba de anchos de campo',
+    'Aplicar prueba de confirmar botones de acción',
 ];
 </script>
 
@@ -173,11 +175,11 @@ const challenge19_tasks = [
                 El enfoque basado en modelos es excelente porque permite un mayor nivel de automatización. También cubre un mayor número de estados en el sistema, mejorando así la cobertura de la prueba.
             </p>
         </section>
-        <Challenge time="1" :id="19" :tasks="challenge19_tasks">
+        <Challenge time="30" :id="19" :tasks="challenge19_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #19 </Heading>
             </template>
-            Aplica las Prueba UI al login del intranet de alumnos de la UNHEVAL
+            Aplica las Prueba UI a "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"

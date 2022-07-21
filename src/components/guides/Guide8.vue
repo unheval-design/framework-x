@@ -15,7 +15,9 @@ import imageDontOne from '@/assets/images/guide-8/image_dont_1.png';
 import imageDoTwo from '@/assets/images/guide-8/image_do_2.png';
 import imageDontTwo from '@/assets/images/guide-8/image_dont_2.png';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName')
 const questions = ref([
     {
         id: 1,
@@ -200,11 +202,11 @@ const challenge8_tasks = [
             <Heading type="h2" >Software de diseño de experiencia de usuario</Heading>
             <p>La principal ventaja de usar un software especial es que puede pasar sin problemas de esquemas a prototipos sin tener que cambiar a otra herramienta. Con herramientas como Adobe XD o Figma, los diseñadores pueden convertir sus wireframes en prototipos de baja fidelidad en cuestión de minutos.</p>
         </section>
-        <Challenge time="1" :id="8" :tasks="challenge8_tasks">
+        <Challenge time="30" :id="8" :tasks="challenge8_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #8 </Heading>
             </template>
-            Elaborar el wireframe de registro de usuario en la plataforma de convocatorias de la UNHEVAL.
+            Elaborar el wireframe de "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"

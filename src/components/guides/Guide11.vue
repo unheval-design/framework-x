@@ -11,7 +11,9 @@ import imageOne from '@/assets/images/guide-11/image_1.png';
 import imageMiro from '@/assets/images/brands/miro.png';
 import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName');
 const questions = ref([
     {
         id: 1,
@@ -38,9 +40,9 @@ const questions = ref([
 const challenge11_tasks = [
     'Definir el problema a los integrantes',
     'Escribir el problema y dibujar ramas a partir del problema',
-    'Por turnos, aportar ideas para solucionar el problema',
-    'Anotar una idea por rama, se pueden añadir aportaciones sobre las ideas para mejorarlas',
-    'Reflexionar y valorar cada idea para intentar llegar a un consenso sobre las soluciones más adecuadas'
+    'Aportar ideas para solucionar el problema',
+    'Anotar una idea por rama y añadir aportaciones sobre las ideas para mejorarlas',
+    'Valorar cada idea para intentar llegar a un consenso sobre las soluciones más adecuadas'
 ];
 </script>
 
@@ -169,12 +171,11 @@ const challenge11_tasks = [
                 Llega el momento de la verdad y hay que decidir cuál es la solución que mejor se adapta a las necesidades que quieres cubrir.
             </p>
         </section>
-        <Challenge time="1" :id="11" :tasks="challenge11_tasks">
+        <Challenge time="30" :id="11" :tasks="challenge11_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #11 </Heading>
             </template>
-            Elaborar una lluvia de ideas con la técnica de Mapa Mental para mejorar el login del
-            intranet de alumnos de la UNHEVAL.
+            Elaborar una lluvia de ideas con la técnica de Mapa Mental para el diseño de "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Miro"

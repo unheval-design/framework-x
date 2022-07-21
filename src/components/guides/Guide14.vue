@@ -15,7 +15,9 @@ import imageSix from '@/assets/images/guide-14/image_6.png';
 import imageFigma from '@/assets/images/brands/figma.png';
 import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName');
 const questions = ref([
     {
         id: 1,
@@ -234,12 +236,12 @@ const challenge14_tasks = [
                 crear moléculas y organismos distintos.
             </p>
         </section>
-        <Challenge time="1" :id="14" :tasks="challenge14_tasks">
+        <Challenge time="30" :id="14" :tasks="challenge14_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #14 </Heading>
             </template>
-            Tomando en cuenta el resultado del Reto #13, crear el Diseño Atómico
-            de la pagina principal de la UNHEVAL.
+            Crear el Diseño Atómico de "{{ projectName }}" basado en el
+            resultado del Reto #13.
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"

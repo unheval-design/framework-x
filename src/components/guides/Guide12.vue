@@ -20,7 +20,9 @@ import imageDoFour from '@/assets/images/guide-12/image_do_4.png'
 import imageDontFour from '@/assets/images/guide-12/image_dont_4.png'
 import imageDoFive from '@/assets/images/guide-12/image_do_5.png'
 import imageDontFive from '@/assets/images/guide-12/image_dont_5.png'
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName');
 const questions = [
     {
         id: 1,
@@ -45,10 +47,11 @@ const questions = [
 ];
 
 const challenge12_tasks = [
-    'Diseñar wireframe',
-    'Crear moodboard',
-    'Hacer lluvia de ideas',
-    'Diseñar mockup'
+    'Tomar en cuenta Reto #8',
+    'Tomar en cuenta Reto #10',
+    'Tomar en cuenta Reto #11',
+    'Definir color, tipografia, etc.',
+    'Crear el mockup'
 ];
 </script>
 
@@ -204,11 +207,11 @@ const challenge12_tasks = [
                 Algunos diseñadores técnicamente competentes construyen mockups utilizando HTML, CSS y Javascript o también aplicaciones con tecnologias “drag and drop” que permiten construir sin saber de codigo como Wordpress o Wix . La desventaja del código es que lleva mucho tiempo compilarlo, corregir errores y realizar cambios.
             </p>
         </section>
-        <Challenge time="1" :id="12" :tasks="challenge12_tasks">
+        <Challenge time="45" :id="12" :tasks="challenge12_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #12 </Heading>
             </template>
-            Crea un Mockup rediseñando de la pagina principal de la UNHEVAL.
+            Elaborar el Mockup de "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"

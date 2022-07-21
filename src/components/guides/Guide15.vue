@@ -13,7 +13,9 @@ import imageFigma from '@/assets/images/brands/figma.png';
 import imageBl from '@/assets/images/brands/bl.png';
 import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName');
 const questions = ref([
     {
         id: 1,
@@ -129,11 +131,11 @@ const challenge15_tasks = [
                 :image="imageThree"
                 description="Patrones de diseño del sistema de diseño de Atlassian. Fuente: atlassian.design/patterns" />
         </section>
-        <Challenge time="1" :id="15" :tasks="challenge15_tasks">
+        <Challenge time="45" :id="15" :tasks="challenge15_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #15 </Heading>
             </template>
-            Crea el Sistema de Diseño la pagina principal de la UNHEVAL.
+            Crear el Sistema de Diseño de "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"

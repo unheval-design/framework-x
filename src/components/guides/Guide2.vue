@@ -226,7 +226,7 @@ const challenge2_tasks = [
                 que se ha descrito del cliente/usuario.
             </p>
         </section>
-        <Challenge time="1" :id="2" :tasks="challenge2_tasks">
+        <Challenge time="15" :id="2" :tasks="challenge2_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #2 </Heading>
             </template>

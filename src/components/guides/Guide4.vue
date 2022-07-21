@@ -12,7 +12,9 @@ import imageMiro from '@/assets/images/brands/miro.png';
 import imageOne from '@/assets/images/guide-4/image_1.png';
 import Reference from '@/components/Reference.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName')
 const questions = ref([
     {
         id: 1,
@@ -186,11 +188,11 @@ const challenge4_tasks = [
                 </ul>
             </p>
         </section>
-        <Challenge time="1" :id="4" :tasks="challenge4_tasks">
+        <Challenge time="30" :id="4" :tasks="challenge4_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #4 </Heading>
             </template>
-           Realizar el User Journey Map de como el usuario visualiza un evento en la página web de la UNHEVAL.
+           Realizar el User Journey Map de "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Miro"

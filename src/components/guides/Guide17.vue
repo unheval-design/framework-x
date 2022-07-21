@@ -17,7 +17,9 @@ import imageCode from '@/assets/images/brands/code.png';
 import imageLottie from '@/assets/images/brands/lottie.png';
 import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName');
 const questions = ref([
     {
         id: 1,
@@ -194,11 +196,11 @@ const challenge17_tasks = [
                 </ol>
             </p>
         </section>
-        <Challenge time="1" :id="17" :tasks="challenge17_tasks">
+        <Challenge time="30" :id="17" :tasks="challenge17_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #17 </Heading>
             </template>
-            Crea microinteracciones de la pagina web de la biblioteca la UNHEVAL.
+            Crea microinteracciones para "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Lottie"

@@ -12,7 +12,9 @@ import imageThree from '@/assets/images/guide-18/image_3.png';
 import imageCode from '@/assets/images/brands/code.png';
 import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName');
 const questions = ref([
     {
         id: 1,
@@ -60,7 +62,7 @@ const questions = ref([
 
 const challenge18_tasks = [
     'Preparar entonrno de desarrollo (HTMl, JS, CSS)',
-    'Implementar lo realizado en el Reto #16'
+    'Implementar sitio basado en el Reto #16'
 ];
 </script>
 
@@ -208,11 +210,11 @@ const challenge18_tasks = [
                 distribuciones de Linux y Windows.
             </p>
         </section>
-        <Challenge time="1" :id="18" :tasks="challenge18_tasks">
+        <Challenge time="60" :id="18" :tasks="challenge18_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #18 </Heading>
             </template>
-            Crea el Sitio Web login del intranet de alumnos de la UNHEVAL
+            Crea el Sitio Web de "{{ projectName }}".
             <template v-slot:tools>
                 <ResourceCard
                     title="VS Code"

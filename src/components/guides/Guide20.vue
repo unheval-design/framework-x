@@ -13,7 +13,9 @@ import imageZoom from '@/assets/images/brands/zoom.png';
 import imageKeep from '@/assets/images/brands/keep.png';
 import TipCard from '@/components/TipCard.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName');
 const questions = ref([
     {
         id: 1,
@@ -39,8 +41,8 @@ const questions = ref([
 
 const challenge20_tasks = [
     'Aplicar prueba A/B/n a la sección de accesos',
-    'Aplicar prueba de Cinco Segundos a la portada',
-    'Aplicar prueba del Primer Click en la navegación ',
+    'Aplicar prueba de cinco segundos a la portada',
+    'Aplicar prueba del primer click en la navegación ',
 ];
 </script>
 
@@ -212,11 +214,11 @@ const challenge20_tasks = [
                 </ul>
             </p>
         </section>
-        <Challenge time="1" :id="20" :tasks="challenge20_tasks">
+        <Challenge time="30" :id="20" :tasks="challenge20_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #20 </Heading>
             </template>
-            Aplica las Prueba UX a la pagina principal de la UNHEVAL.
+            Aplica las Prueba UX a "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"

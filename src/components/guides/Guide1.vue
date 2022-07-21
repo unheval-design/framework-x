@@ -11,8 +11,9 @@ import Heading from '@/components/Heading.vue';
 import Challenge from '@/components/Challenge.vue';
 import imageKeep from '@/assets/images/brands/keep.png';
 import imageDocs from '@/assets/images/brands/docs.png';
-import { computed, onMounted, provide, ref } from '@vue/runtime-core';
+import { computed, inject, onMounted, provide, ref } from '@vue/runtime-core';
 
+const projectName = inject('projectName')
 const questions = ref([
     {
         id: 1,
@@ -232,11 +233,11 @@ const challenge1_tasks = [
                 </ul>
             </p>
         </section>
-        <Challenge time="1" :id="1" :tasks="challenge1_tasks">
+        <Challenge time="30" :id="1" :tasks="challenge1_tasks">
             <template v-slot:title>
                 <Heading type="h1" >Reto #1</Heading>
             </template>
-            Crea un guión de entrevista para usuarios de la pagina web de eventos de la UNHEVAL.
+            Crea un guión de entrevista para usuarios de "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Google Keep"
@@ -252,12 +253,6 @@ const challenge1_tasks = [
                     :src="imageDocs"
                     href="https://docs.google.com/"
                     />
-                <!-- <ResourceCard
-                    title="Ejemplos"
-                    description="Entrevistas y consejos"
-                    type="download"
-                    href=""
-                    /> -->
             </template>
         </Challenge>
         <Heading type="h1" >Evaluación</Heading>

@@ -14,7 +14,9 @@ import imageDontOne from '@/assets/images/guide-10/image_dont_1.png';
 import TipCard from '@/components/TipCard.vue';
 import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName');
 const questions = ref([
     {
         id: 1,
@@ -294,12 +296,13 @@ const challenge10_tasks = [
                 </TipCard>
             </aside>
         </section>
-        <Challenge time="1" :id="10" :tasks="challenge10_tasks">
+        <Challenge time="20" :id="10" :tasks="challenge10_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #10 </Heading>
             </template>
-            Elaborar un moodbard con ideas para un rediseño del login del
-            intranet de alumnos de la UNHEVAL.
+            Elaborar un moodbard con ideas para el diseño de "{{
+                projectName
+            }}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Miro"

@@ -12,8 +12,10 @@ import Dropdown from '@/components/Dropdown.vue';
 import { useRoute } from 'vue-router';
 import { computed, provide, ref, watch, watchEffect } from '@vue/runtime-core';
 import { useTodoStore } from '@/stores/todo.js';
+import { useProjectsStore } from '@/stores/projects.js';
 
 const todo = useTodoStore();
+const projects = useProjectsStore();
 const route = useRoute();
 const guideId = ref(Number(route.params.id));
 const flagTodoModal = ref(false);
@@ -22,6 +24,7 @@ const guideTableContent = ref([]);
 provide('guideTableContent', guideTableContent);
 provide('guideId', guideId);
 provide('flagTodoModal', flagTodoModal);
+provide('projectName', projects.current.title);
 
 const openTodoModal = () => {
     flagTodoModal.value = true;

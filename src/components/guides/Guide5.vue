@@ -13,7 +13,9 @@ import imageOw from '@/assets/images/brands/ow.png';
 import TipCard from '@/components/TipCard.vue';
 import Evaluation from '@/components/Evaluation.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName')
 const questions = ref([
     {
         id: 1,
@@ -148,11 +150,11 @@ const challenge5_tasks = [
             <p>Para realizar una ordenación de tarjetas, necesita dos cosas: usuarios reales y tarjetas. </p>
             <p>Para las tarjetas, puede usar tarjetas físicas reales (pedazos de papel) o una de varias herramientas de software de clasificación de tarjetas en línea como Miro o Optimal Workshop si desea una herramienta mas automatizada. </p>
         </section>
-        <Challenge time="10" :id="5" :tasks="challenge5_tasks">
+        <Challenge time="15" :id="5" :tasks="challenge5_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #5 </Heading>
             </template>
-            Realizar un Card Sorting cerrado con elementos de la pagina web principal de la UNHEVAL.
+            Realizar un Card Sorting cerrado de "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Miro"

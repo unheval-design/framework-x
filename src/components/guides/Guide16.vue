@@ -14,7 +14,9 @@ import imageFramer from '@/assets/images/brands/framer.png';
 import imageCode from '@/assets/images/brands/code.png';
 import Challenge from '@/components/Challenge.vue';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName');
 const questions = ref([
     {
         id: 1,
@@ -112,11 +114,11 @@ const challenge16_tasks = [
                 </ul>
             </p>
         </section>
-        <Challenge time="1" :id="16" :tasks="challenge16_tasks">
+        <Challenge time="30" :id="16" :tasks="challenge16_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #16 </Heading>
             </template>
-            Crea un prototipo del login del intranet de alumnos de la UNHEVAL.
+            Crear el prototipo de "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Figma"

@@ -18,7 +18,9 @@ import imageDontTwo from '@/assets/images/guide-7/image_dont_2.png';
 import imageDoThree from '@/assets/images/guide-7/image_do_3.png';
 import imageDontThree from '@/assets/images/guide-7/image_dont_3.png';
 import { ref } from '@vue/reactivity';
+import { inject } from '@vue/runtime-core';
 
+const projectName = inject('projectName')
 const questions = ref([
     {
         id: 1,
@@ -43,7 +45,6 @@ const questions = ref([
 ]);
 
 const challenge7_tasks = [
-    'Seleccionar un evento',
     'Identificar usuario',
     'Identificar el objetivo',
     'Elegir voz y tono',
@@ -196,11 +197,11 @@ const challenge7_tasks = [
                 actuar.
             </p>
         </section>
-        <Challenge time="1" :id="7" :tasks="challenge7_tasks">
+        <Challenge time="20" :id="7" :tasks="challenge7_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #7 </Heading>
             </template>
-            Mejora el UX Writing de un evento de la pagina de eventos de la UNHEVAL.
+            Crear UX Writing de "{{projectName}}".
             <template v-slot:tools>
                 <ResourceCard
                     title="Google Keep"

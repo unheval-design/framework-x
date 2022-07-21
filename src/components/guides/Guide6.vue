@@ -149,11 +149,11 @@ const challenge6_tasks = [
                 </TipCard>
             </aside>
         </section>
-        <Challenge time="1" :id="6" :tasks="challenge6_tasks">
+        <Challenge time="30" :id="6" :tasks="challenge6_tasks">
             <template v-slot:title>
                 <Heading type="h1">Reto #6 </Heading>
             </template>
-            Construye un mapa del sitio utilizando el resultado del Reto #5 (Card Sorting).
+            Construye un mapa del sitio basado en el resultado del Reto #5 (Card Sorting).
             <template v-slot:tools>
                 <ResourceCard
                     title="Miro"
